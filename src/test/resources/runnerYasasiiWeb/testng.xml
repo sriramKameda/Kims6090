@@ -1,0 +1,44 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<!-- <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"> -->
+<suite name="Suite">
+  <test  name="YasasiiScript">
+    
+    <classes>
+    
+    <class name="pagesTestCasesYasasiiWeb.LoginTestcasesYW"/>
+    <class name="pagesTestCasesYasasiiWeb.MastersScheduleSettingsTestCasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.FOFullRegTestCasesYW"/>
+          <class name="pagesTestCasesYasasiiWeb.FORegTestCasesYW"/>
+<!--           <class name="pagesTestCasesYasasiiWeb.OutsiderPatientRegTestCases"/> -->
+       <class name="pagesTestCasesYasasiiWeb.ERPatientTestCasesYW"/>
+       
+          <class name="pagesTestCasesYasasiiWeb.EMRHomePageYW"/>
+           <class name="pagesTestCasesYasasiiWeb.EMRADTTestCasesYW"/>
+             <class name="pagesTestCasesYasasiiWeb.EMRIPDischargeTestCasesYW"/>
+           
+      <class name="pagesTestCasesYasasiiWeb.MastersGenericTestCasesYW"/>
+     <class name="pagesTestCasesYasasiiWeb.MastersMedicineTestCasesYW"/>
+     <class name="pagesTestCasesYasasiiWeb.MastersRecommendDoseYW"/>
+    <class name="pagesTestCasesYasasiiWeb.MastersServiceTestCasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.MastersContainerTestCasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.MastersSpecimenTestCasesYW"/>
+         <class name="pagesTestCasesYasasiiWeb.MastersDisplayOrderTestCasesYW"/>
+       
+<!--       <class name="pagesTestCasesYasasiiWeb.MastersResourceCategoryTestCasesYW"/> -->
+<!--      <class name="pagesTestCasesYasasiiWeb.MastersResourceMasterTestCasesYW"/> -->
+<!--       <class name="pagesTestCasesYasasiiWeb.MastersResourceMappingTestCasesYW"/> -->
+      
+       <class name="pagesTestCasesYasasiiWeb.EMROPNoteTestCaseYW"/>
+       <class name="pagesTestCasesYasasiiWeb.EMR_ERBedAllocationTestCaseYW"/>
+        <class name="pagesTestCasesYasasiiWeb.EMRBirthRegistrationTestCasesYW"/>
+         <class name="pagesTestCasesYasasiiWeb.FOEMR_BirthRegTwoChildTestCaseYW"/>
+         <class name="pagesTestCasesYasasiiWeb.EMRDietNoteTestCasesYW"/>
+           <class name="pagesTestCasesYasasiiWeb.EMRJuniorSeniorDoctorVerificationTestCasesYW"/>
+           <class name="pagesTestCasesYasasiiWeb.EMRNurseNoteTestCasesYasasiiWeb"/>
+      <class name="pagesTestCasesYasasiiWeb.FOEMRFollowUpNoteTestcaseYW"/>
+      
+<!--       <class name="pagesTestCasesYasasiiWeb.IVSampleCollectionTestCases"/> -->
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

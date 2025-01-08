@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+<!--     --> 
+
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_NutritionManagement_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Inventory_TestcaseYW"/> 
+      <class name="pagesTestCasesYasasiiWeb.KIMS_FinalBilling_OP_TestcaseYW"/> 
+      <class name="pagesTestCasesYasasiiWeb.KIMS_MergedMRNO_TestcaseYW"/>  
+      <class name="pagesTestCasesYasasiiWeb.KIMS_MedicineMaster_Diagnosis_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW"/>   
+      <class name="pagesTestCasesYasasiiWeb.KIMS_ER_Admission_IPEnquiry_Staypass_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IPFinalbilling_TestcaseYW"/>  
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Limit_Approval_TestcaseYW"/>   
+      <class name="pagesTestCasesYasasiiWeb.KIMS_MedicineAdmin_VisitSummary_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_interimIncoice_IP_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IncomingServices_DifferentSiteBilling_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_nursingStationTransfer_Testcase"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_InstructionOrder_TestcasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IPpanel_MedicineAdministration_TestcaseYW"/>  
+      <class name="pagesTestCasesYasasiiWeb.KIMS_OrdersetFormulatory_testcaseYW"/> 
+      <class name="pagesTestCasesYasasiiWeb.KIMS_nurseNote_ConsentForm_TestcaseYW"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
