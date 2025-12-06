@@ -38,7 +38,7 @@ public void EMRapp(String Genericname,String Itemname,String MRNO,String Code,St
 		    
 		KIMS_MedicineMaster_Diagnosis_Yasasiiweb med = new KIMS_MedicineMaster_Diagnosis_Yasasiiweb(driver);
 		
-		//med.MastersPharmacy(Genericname, Itemname, Code,ERPcode);
+	//	med.MastersPharmacy(Genericname, Itemname, Code,ERPcode);
 		
 		med.EMRDiagnosis(MRNO, Itemname);
 		

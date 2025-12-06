@@ -367,7 +367,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//label[normalize-space()='Service Administration']")
 	public WebElement ServiceAdministration;
 
-	@FindBy(xpath="//i[@title='Open Consumption']")
+	@FindBy(xpath="(//i[@title='Open Consumption'])[1]")
 	public WebElement OpenConsumption;
 
 	@FindBy(xpath="//button[normalize-space()='Save']")
@@ -376,7 +376,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//span[@class='btn btn-link ng-star-inserted']")
 	public WebElement Consumablesview;
 
-	@FindBy(xpath = "//input[@id='consqty']")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-commonconsumption[1]/div[2]/div[1]/div[1]/div[3]/div[1]/form[1]/div[2]/div[3]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement ConsumableQuantity;
 
 	@FindBy(xpath = "//button[@title='Add']")
@@ -761,14 +761,14 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//	Thread.sleep(1000); 
 		chargingParameter.click();
 		Thread.sleep(1000); 
-		SubMode.click();
-		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
-		Thread.sleep(1000); 
-		PayMode.click();
-		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//li[normalize-space()='Cash']")).click();
-		Thread.sleep(1000); 
+//		SubMode.click();
+//		Thread.sleep(1000); 
+//		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
+//		Thread.sleep(1000); 
+//		PayMode.click();
+//		Thread.sleep(1000); 
+//		driver.findElement(By.xpath("//li[normalize-space()='Cash']")).click();
+//		Thread.sleep(1000); 
 		
 		SubMode.click();
 		Thread.sleep(1000); 
@@ -858,7 +858,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		limitAmount.click();
 		Thread.sleep(600);
-		limitAmount.sendKeys("2000");
+		limitAmount.sendKeys("3100");
 		Thread.sleep(600);
 		AddRule.click();
 		Thread.sleep(600);
@@ -893,6 +893,10 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 			Thread.sleep(1000); 	
 
+			Save1.click();
+			Thread.sleep(600);
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(1000);
 		}
 
 
@@ -900,7 +904,18 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 			System.out.println("sri");
 		}
 		Thread.sleep(600);
+		
+		
 
+		SchemeSearch.clear();
+		Thread.sleep(600);
+		SchemeSearch.sendKeys("MSD Ins Corp PVT.LTD" , Keys.ENTER);
+		Thread.sleep(1000); 
+		driver.findElement(By.xpath("//div[@title='MSD Ins Corp PVT.LTD']")).click();
+		Thread.sleep(1000); 
+		Edit.click();
+		Thread.sleep(1000); 
+		
 		limitrule.click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[normalize-space()='Scalp rule']")).click();
@@ -916,10 +931,6 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 	}
-
-
-
-
 
 
 
@@ -1249,10 +1260,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 			System.out.println("sri");
 		}
 		Thread.sleep(600);
-
-
-
-
+		
 		Thread.sleep(600);
 		BillingSave.click();
 		Thread.sleep(3000);
@@ -1346,6 +1354,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		TemplateOK.click();
 		Thread.sleep(1000);
 
+		
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));	
+		Thread.sleep(1000);
 		disgnosis.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -1375,6 +1386,21 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='Biopsy-Frozen-Liver']")).click();
 		Thread.sleep(1000);
+		Thread.sleep(600);
+		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement11.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(600);
+		
+		
 //		driver.findElement(By.xpath("//button[@id='orderdetails_add']")).click();
 //		Thread.sleep(1000);
 
@@ -1384,10 +1410,26 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='"+ServiceName+"']")).click();
 		Thread.sleep(1000);
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
+		if(dynamicElement111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(600);
+		
+		
 		EmrSave.click();
 		Thread.sleep(3000);    
 
+		
+		wait.until(ExpectedConditions.elementToBeClickable(CpoeAdministration));	
+		Thread.sleep(1000);
 
 	}
 
@@ -1456,6 +1498,8 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		ConsumableSave.click();
 		Thread.sleep(3000);
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='OK']")));
 
 
 		String str = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/ki-dialog[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]")).getText();
@@ -1792,6 +1836,10 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		}
 		Thread.sleep(600);
 		
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")));
+		Thread.sleep(600);
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(3000);
 

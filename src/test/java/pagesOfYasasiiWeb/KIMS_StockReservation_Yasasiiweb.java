@@ -96,6 +96,10 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")
 	public WebElement Save;
+	
+	@FindBy(xpath = "//input[@id='text']")
+	public WebElement RejectRemarks;
+	
 
 	@FindBy(xpath = "//span[normalize-space()='Update']")
 	public WebElement Update;
@@ -219,6 +223,10 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='General']")
 	public WebElement General;
+	
+	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='Consumption']")
+	public WebElement Consumption;
+	
 
 	@FindBy(xpath = "//input[@placeholder='MRNo']")
 	public WebElement MRNoSearch;
@@ -229,7 +237,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[@title='Approver Comments']")
 	public WebElement consumptionApproverComments;
 
-	@FindBy(xpath = "//label[@class='check-container ']//span[@class='checkmark']")
+	@FindBy(xpath = "//span[@class='checkmark ng-star-inserted']")
 	public WebElement Consumptioncancel;
 
 	@FindBy(xpath = "//button[@title='Clear']")
@@ -287,6 +295,13 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		PatientIndent.click();
 
+		
+		Thread.sleep(800);
+		MRNO1.click();
+		Thread.sleep(800);
+		MRNO1.sendKeys( MRNo , Keys.ENTER);
+		Thread.sleep(800);
+		
 		Thread.sleep(800);
 		reqLocation.click();//div[@class='form-group ki-dropdown']//input[@id='phreqlocid']
 		Thread.sleep(800);
@@ -297,13 +312,6 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		isslocation.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
-
-
-		Thread.sleep(800);
-		MRNO1.click();
-		Thread.sleep(800);
-		MRNO1.sendKeys( MRNo , Keys.ENTER);
-		Thread.sleep(800);
 		IndentType.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Regular']")).click();
@@ -491,6 +499,12 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
 
 
+		driver.findElement(By.xpath("//input[@id='indenttypeid']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='Regular']")).click();
+		Thread.sleep(800);
+		
+		
 		Thread.sleep(800);
 		indentsEARCH.click();
 		Thread.sleep(800);
@@ -522,6 +536,10 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 
 		sAVE.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(800);
+		
 
 		Thread.sleep(2000);
 		String StockTransferNo= driver.findElement(By.xpath("/html/body/app-root/ki-dialog/div[2]/div/div/div/div[2]/div[1]")).getText();
@@ -544,22 +562,22 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1800);
 		transfer.click();
 		Thread.sleep(800);
-		SearchText.clear();
-		Thread.sleep(800);
-		SearchText.sendKeys(word[1]);
-		Thread.sleep(800);
-		SearchICon.click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
-		Thread.sleep(800);
-		Submittransfer.click();
-		Thread.sleep(800);
-		Update1.click();
-		Thread.sleep(800);
-		Ok.click();
-		Thread.sleep(800);
-		Refresh.click();
-		Thread.sleep(800);
+//		SearchText.clear();
+//		Thread.sleep(800);
+//		SearchText.sendKeys(word[1]);
+//		Thread.sleep(800);
+//		SearchICon.click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
+//		Thread.sleep(800);
+//		Submittransfer.click();
+//		Thread.sleep(800);
+//		Update1.click();
+//		Thread.sleep(800);
+//		Ok.click();
+//		Thread.sleep(800);
+//		Refresh.click();
+//		Thread.sleep(800);
 
 		//verify
 		Thread.sleep(800);
@@ -573,7 +591,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		SearchICon.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='"+word[1]+"']")).click();
 		Thread.sleep(800);
 		verify.click();
 		Thread.sleep(800);
@@ -614,7 +632,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		SearchICon.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='"+word[1]+"']")).click();
 		Thread.sleep(800);
 		Approve.click();
 		Thread.sleep(800);
@@ -646,7 +664,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		search.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='"+word[1]+"']")).click();
 		Thread.sleep(800);
 		Recieve.click();
 		Thread.sleep(800);
@@ -665,7 +683,11 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Save.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+	
+		Thread.sleep(800);
+		RejectRemarks.sendKeys("rejected as per the user request");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//div[@class='col-md-12']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1500);
 		Ok.click();
 		Thread.sleep(800);
@@ -688,7 +710,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		search.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='"+word[1]+"']")).click();
 		Thread.sleep(800);
 		Recieve.click();
 		Thread.sleep(800);
@@ -729,7 +751,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		SearchICon.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+word[1]+"')]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='"+word[1]+"']")).click();
 		Thread.sleep(2000);
 
 
@@ -742,24 +764,37 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Hamburger.click();
 		Thread.sleep(800);
-		General.click();
+		Consumption.click();
 		Thread.sleep(800);
 		StockConsumption.click();
 		Thread.sleep(800);
+	
+		pharmacyLocation.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")).click();
+		Thread.sleep(800);
+		
+		//input[@id='sublocationid']
+//		driver.findElement(By.xpath("//div[@class='form-group ki-dropdown']//input[@id='phconslocationid']")).click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//li[normalize-space()='North Central pharmacy']")).click();
+//		Thread.sleep(800);
+
 		driver.findElement(By.xpath("//label[normalize-space()='Patientwise']")).click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[@class='form-group ki-dropdown']//input[@id='phconslocationid']")).click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='North Central pharmacy']")).click();
-		Thread.sleep(800);
-
-
-
-
+		
 		MRNO.click();
 		Thread.sleep(800);
 		MRNO.sendKeys(MRNo, Keys.ENTER);
 
+		
+		driver.findElement(By.xpath("//div[@class='form-group ki-dropdown']//input[@id='phconslocationid']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+		Thread.sleep(800);
+		
 		//item 1	
 
 		Thread.sleep(800);
@@ -857,14 +892,53 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//
 		//		System.out.println("COnsumpNo"+ COnsumpNo);
 
-
-		Thread.sleep(800);	
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(800);
 		Ok.click();
 		Thread.sleep(800);
+		
+	
+		Status.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='Created']")).click();
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//div[@class='form-group zero-bottom ki-dropdown']//input[@id='phconslocationid']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+		Thread.sleep(800);
+		
+		MRNoSearch.clear();
+		Thread.sleep(800);
+		MRNoSearch.sendKeys(MRNo, Keys.ENTER);
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-inventory-landing[1]/app-stockconsumption[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1]")).click();
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//label[normalize-space()='Submit']//span[@class='checkmark']")).click();
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//span[@class='ng-star-inserted']")).click();
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		Thread.sleep(800);
+		
+		
+
 		Status.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Submitted']")).click();
 		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//div[@class='form-group zero-bottom ki-dropdown']//input[@id='phconslocationid']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+		Thread.sleep(800);
+	
 
 		MRNoSearch.clear();
 		Thread.sleep(800);

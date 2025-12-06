@@ -742,14 +742,18 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Generic']")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-sort-alpha-start']")).click();
+		Thread.sleep(1000);
+		
 		Search.click();
 		Thread.sleep(1000);
 		Search.sendKeys("paracetamol" , Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='result-name'][normalize-space()='Paracetamol']")).click();
+		driver.findElement(By.xpath("(//div[@title='Paracetamol'])[1]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@id='search-results']//div[1]//div[1]//div[1]//div[1]//div[2]//label[1]//i[1]")).click();
 		Thread.sleep(1000);
+		
 
 		mindose.sendKeys("650");
 		Thread.sleep(1000);
@@ -884,7 +888,7 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		//medicineSelect.click();
 		Recomdose.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[contains(text(),'Paracetamol - - 650 Mg')]")).click();
+		driver.findElement(By.xpath("//li[contains(text(),'Paracetamol - 650 Mg')]")).click();
 		Thread.sleep(1000);
 		/*	Frequency.click();
 		Thread.sleep(1000);
@@ -1010,8 +1014,8 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		//	driver.findElement(By.xpath("//li[normalize-space()='2nd Level Pharmacy-Caller 1']")).click();
 		pharlocOK.click();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
 
 
 		counterSearch.click();
@@ -1207,7 +1211,7 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		Thread.sleep(1000);
 		counterSearch.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
-		//counterIcon2.click();
+		counterSearchicon.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
@@ -1227,6 +1231,8 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		counterSearch.clear();
 		Thread.sleep(1000);
 		counterSearch.sendKeys(MRNO , Keys.ENTER);
+		Thread.sleep(1000);
+		counterSearchicon.click();
 		Thread.sleep(1000);
 //		counterIcon2.click();
 //		Thread.sleep(1000);
@@ -1250,7 +1256,8 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		Thread.sleep(1000);
 		counterSearch.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
-		//	counterIcon2.click();
+		counterSearchicon.click();
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);

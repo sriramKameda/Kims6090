@@ -63,6 +63,9 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 
 	@FindBy(xpath = "//button[contains(text(),'Save')]")
 	public WebElement fosave;
+	
+	@FindBy(xpath = "//i[@id='capture']")
+	public WebElement signupload;
 
 	@FindBy(xpath = "//i[@class='ki ki-calendar-fill']")
 	public WebElement Appointment;
@@ -318,26 +321,12 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 
 		fosave.click();
 		Thread.sleep(2000);
-
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-		System.out.println(dynamicElement11.size());
-		if(dynamicElement11.size() !=0)
-		{
-			driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-			Thread.sleep(3000);
-
-		}
-		
-		
-	
 		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='pat-mrno']")));
+		Thread.sleep(3000);		
+		
+
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
 
@@ -393,6 +382,14 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[contains(text(),'Appointment')]")).click();
 		Thread.sleep(600);
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//input[@id='subcategory']")).click();
+		Thread.sleep(600);
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='All(Pending)']")).click();
+		Thread.sleep(600);
+		
+		//input[@id='subcategory']
 		Search.click();
 		Thread.sleep(600);
 		Search.sendKeys(MRNO);
@@ -485,8 +482,6 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(800);
 		Organisation.sendKeys("All Kerala Blood Donars Association");
 		Thread.sleep(800);
-//		driver.findElement(By.xpath("//li[normalize-space()='All Kerala Blood Donars Association']")).click();
-//		Thread.sleep(800);
 
 
 		//////////////Enter contact information
@@ -494,10 +489,6 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(1000);
 		contInformation.click();
 		Thread.sleep(1000);
-		preferedcommunicationid.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//span[@title='Phone']")).click();
-		Thread.sleep(600);
 		homeadd1.sendKeys("ganga nagar");
 		Thread.sleep(600);
 

@@ -842,14 +842,15 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 //		Thread.sleep(700);
 		SiteName.sendKeys(Keys.ENTER);
 		Thread.sleep(700);
-		//		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagarcoil']"));
-		//		Thread.sleep(2000);
+//				driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']"));
+//				Thread.sleep(2000);
 		providername.click();
 		Thread.sleep(700);
-		providername.sendKeys(FirstName);
+		providername.sendKeys(userId);
 		Thread.sleep(700);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+userId+"')])[1]")).click();
 		Thread.sleep(700);
+		try {
 
 		ProviderRoomNo.click();
 		Thread.sleep(700);
@@ -875,7 +876,14 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		save.click();
 		Thread.sleep(1500);
-
+		}
+		
+		catch(Exception e){
+			
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(500);	
+			
+		}
 
 	}
 
@@ -911,7 +919,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("//input[@id='plan']")).click();
 		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultTvm']")).click();
 		Thread.sleep(1000); 
 
 
@@ -982,14 +990,14 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		ADJpercent.sendKeys("10.5");
 		Thread.sleep(1000); 
-		SponsorAmount.click();
-		Thread.sleep(1000); 
-		SponsorAmount.sendKeys("219.28");
-		Thread.sleep(1000); 
-		withoutvat.click();
-		Thread.sleep(1000); 
-		withoutvat.sendKeys("219.28");
-		Thread.sleep(1000); 
+//		SponsorAmount.click();
+//		Thread.sleep(1000); 
+//		SponsorAmount.sendKeys("219.28");
+//		Thread.sleep(1000); 
+//		withoutvat.click();
+//		Thread.sleep(1000); 
+//		withoutvat.sendKeys("219.28");
+//		Thread.sleep(1000); 
 
 
 		//	JavascriptExecutor js= (JavascriptExecutor) driver;
@@ -1084,7 +1092,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000); 
 		plan.click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultTvm']")).click();
 		Thread.sleep(2000); 	
 		Department2.click();
 		Thread.sleep(600);

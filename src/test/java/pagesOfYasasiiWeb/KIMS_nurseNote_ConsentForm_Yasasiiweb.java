@@ -189,7 +189,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 	public WebElement TemplateOK;
 
 	//Medicalhistory
-	@FindBy(xpath="//app-medical[@medicalflag='medicalhistoryFlag']//div[@class='ng-star-inserted']//div[@class='row']//div[@class='col-md-12']//div[@class='empty-card-info md']//div//button[@id='addform']")
+	@FindBy(xpath="//app-medical[@medicalflag='medicalhistoryFlag']//div[@class='ng-star-inserted']//div[@class='row']//div[@class='col-md-12']//div[@class='empty-card-info md']//div//button[@class='btn btn-primary lg'][normalize-space()='Add New']")
 	public WebElement Maddnew;
 
 	@FindBy(xpath="//input[@id='diagnosis']")
@@ -199,14 +199,15 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 	public WebElement addmedical;
 
 	///Family History
-	@FindBy(xpath="//div[@class='card-body form-inputs']//app-family//div[@class='ng-star-inserted']//div[@class='row']//div[@class='col-md-12']//div[@class='empty-card-info md']//div//button[@id='addform']")
+	@FindBy(xpath="//div[@class='card-body form-inputs']//app-family//div[@class='ng-star-inserted']//div[@class='row']//div[@class='col-md-12']//div[@class='empty-card-info md']//div//button[@class='btn btn-primary lg ng-star-inserted'][normalize-space()='Add New']")
 	public WebElement familyaddnew;
 	@FindBy(xpath="//input[@id='relationid']")
 	public WebElement relative;
 
 	//Surgical History
-	@FindBy(xpath="//div[@class='card-body form-inputs overflow-visible']//app-surgical//div[@class='ng-star-inserted']//div[@class='row']//div[@class='col-md-12']//div[@class='empty-card-info md']//div//button[@id='addform']")
+	@FindBy(xpath="//button[@id='addform']")
 	public WebElement surgicaladdnew;
+	
 	@FindBy(xpath="//input[@id='servicename']")
 	public WebElement servicename;
 
@@ -310,7 +311,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 	@FindBy(xpath = "//button[@class='icon emrsave']")
 	public WebElement emrsave;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]")
 	public WebElement note;
 
 	@FindBy(xpath = "//div[@class='child-list-group']//i[@title='More']")
@@ -584,10 +585,6 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Thread.sleep(600);
 		EnterMob.sendKeys(MobNo);
 		Thread.sleep(500);
-	
-
-
-
 
 		ContactInformation.click();
 		Thread.sleep(1000);
@@ -632,6 +629,11 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Save.click();
 		Thread.sleep(3000);
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(3000);		
+		
+		
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -676,11 +678,14 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		providerName.sendKeys(Provider);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(text(),'"+Provider+"')]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		EncounterAdd.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(2000);
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SAvesuccess));
+		Thread.sleep(3000);		
 		SAvesuccess.click();
 		Thread.sleep(3000);
 
@@ -784,38 +789,18 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 				Thread.sleep(1000);
 				Template.click();
 				Thread.sleep(1000);
-				driver.findElement(By.xpath("//app-list-item[@id='droplistkey5']//li[@class='uparrow-yellow'][contains(text(),'Nursing Initial Assessment')]")).click();
+				driver.findElement(By.xpath("//li[normalize-space()='Nursing Initial Assessment - Daycare']")).click();
 				Thread.sleep(1000);
 				TemplateOK.click();
 				Thread.sleep(1000); 
 				
 				
-		
-//				Note.click();
-//				Thread.sleep(1000);
-//		
-//				Subjective.clear();
-//				Thread.sleep(500);
-//				Subjective.sendKeys("at com.websystique.testng.Calculator.divide(Calculator.java:10)\r\n"
-//						+ "    at com.websystique.testng.TestNGDependsOnMethodsExample.testDivide(TestNGDependsOnMethodsExample.java:31)\r\n"
-//						+ "    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n"
-//						+ " ");
-//		
-//				Thread.sleep(500);
-				//				objective.clear();
-				//				Thread.sleep(500);
-				//				objective.sendKeys("We use cookies to personalize content and ads, to provide the best browsing experience possible, to provide social media features and to analyse our traffic. We also share information about your USAGE OF OUR SITE with our social media, advertising and analytics partners. We do not store any user details. When user contacts us using contact-form");
-				//				Thread.sleep(500);
-				//				
-				//				Assesement.clear();
-				//				Thread.sleep(500);
-				//				Assesement.sendKeys("TesNG expectedExceptions example\r\n"
-				//						+ "TestNG Suites Example\r\n"
-				//						+ "TestNG enabled example");
-				Thread.sleep(1000);
+
 		
 				////History
-		
+				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+				wait.until(ExpectedConditions.elementToBeClickable(History));
+				Thread.sleep(3000);
 		
 				History.click();
 				Thread.sleep(1000);
@@ -970,8 +955,14 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//li[normalize-space()='Femoral(L)']")).click();
 				Thread.sleep(1000);
-				ADD.click();
+				
+				driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-insertion[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/ki-calender-time[1]/div[1]/input[1]")).click();
 				Thread.sleep(1000);
+				driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+				Thread.sleep(1000);
+				
+				ADD.click();
+				Thread.sleep(2500);
 		
 				ThreeDot.click();
 				Thread.sleep(1000);
@@ -997,8 +988,8 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 							
 				emrsave.click();
 				Thread.sleep(1000);
-				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]")));
+//				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='chief-complaint']")));
 				Thread.sleep(3000);
 				/////noteview
 		
@@ -1008,15 +999,15 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 				Thread.sleep(1000);
 				Log.click();
 				Thread.sleep(1000);
-				Print.click();
-				Thread.sleep(1000);
-				driver.findElement(By.xpath("//label[normalize-space()='With Header']")).click();
-				Thread.sleep(1000);
-				driver.findElement(By.xpath("//span[@class='btn btn-primary sm active ng-star-inserted']")).click();
-				Thread.sleep(3000);
-				Robot t=new Robot();
-				t.keyPress(KeyEvent.VK_ESCAPE);
-				t.keyRelease(KeyEvent.VK_ESCAPE);   
+//				Print.click();
+//				Thread.sleep(1000);
+//				driver.findElement(By.xpath("//label[normalize-space()='With Header']")).click();
+//				Thread.sleep(1000);
+//				driver.findElement(By.xpath("//span[@class='btn btn-primary sm active ng-star-inserted']")).click();
+//				Thread.sleep(12000);
+//				Robot t=new Robot();
+//				t.keyPress(KeyEvent.VK_ESCAPE);
+//				t.keyRelease(KeyEvent.VK_ESCAPE);   
 
 
 		//////////VisistSummary
@@ -1025,14 +1016,14 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Thread.sleep(1000);
 		list.click();  
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='KIMS Medical Report']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Medical Report']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")).click();
 		Thread.sleep(4000);
 
 		driver.findElement(By.xpath("//label[normalize-space()='Operation/Special Procedure']//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@id='icd']")).sendKeys("ABDOMINOPLASTY /DIVARTICULATIONS OF RECTOM /INCISIONAL HERNIA" , Keys.ENTER);
+		driver.findElement(By.xpath("//input[@id='icd']")).sendKeys("C-Section" , Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@id='listText']")).click();
 		Thread.sleep(1000);
@@ -1052,7 +1043,11 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 
 		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
 		Thread.sleep(2500);
-
+		
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")));
+		Thread.sleep(3000);		
+		
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[normalize-space()='Delete']")).click();
@@ -1088,6 +1083,10 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Robot t1=new Robot();
 		t1.keyPress(KeyEvent.VK_ESCAPE);
 		t1.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(DOD));
 		Thread.sleep(1000);
 
 		DOD.click();
@@ -1192,26 +1191,36 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Thread.sleep(1000);
 		Add.click();
 		Thread.sleep(1000);
-		Consentview.click();
-		Thread.sleep(1000);
-		consentPrint.click();
-
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[normalize-space()='With Header']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[@class='btn btn-primary sm active ng-star-inserted']")).click();
-		Thread.sleep(3000);
-//	/	Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(1000);
-		viewclose.click();
-		Thread.sleep(1000);
 		save.click();
 		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")).click();
+		
+//		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")));
 		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")).click();
+		Thread.sleep(2000);
+
+		Consentview.click();
+		Thread.sleep(1000);
+//		consentPrint.click();
+//
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[normalize-space()='Without Header']")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//span[@class='btn btn-primary sm active ng-star-inserted']")).click();
+//		Thread.sleep(3000);
+//		Robot t=new Robot();
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		viewclose.click();
+		Thread.sleep(3000);
+//		save.click();
+//		Thread.sleep(3000);
+//
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")).click();
+//		Thread.sleep(1000);
 
 		consentEdit.click();
 		Thread.sleep(4000);
@@ -1249,7 +1258,11 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Add.click();
 		Thread.sleep(1000);
 		save.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")));
+		Thread.sleep(2000);
+		
 		log.click();
 		Thread.sleep(2000);
 		//Arrow.click();

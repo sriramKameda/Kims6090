@@ -207,7 +207,7 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//body/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[2]/accordion[1]/accordion-group[3]/div[1]/div[2]/div[1]/app-document-verification[1]/form[1]/div[1]/div[1]/div[4]/div[1]/ki-calendar[1]/div[1]/input[1]")
 	public WebElement validto;
 
-	@FindBy(xpath = "//span[normalize-space()='No Items Selected']")
+	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-fo-landing/div[2]/app-frontoffice-patientregistration/div[1]/form/div/div[2]/accordion/accordion-group[2]/div/div[2]/div/div[1]/div[3]/lib-hismultiselect/div/div/button/span")
 	public WebElement CommunicationType;
 
 	@FindBy(xpath = "//input[@id='homezip']")
@@ -936,6 +936,8 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(3000);
+		
+	
 
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);

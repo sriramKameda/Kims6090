@@ -140,7 +140,7 @@ public class KIMS_ClosedEncounterBilling_Yasassiweb extends PageFactoryInitYasas
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement AddService;
 
 	@FindBy(xpath = "//input[@id='EncBillingproviders']")
@@ -269,7 +269,7 @@ public class KIMS_ClosedEncounterBilling_Yasassiweb extends PageFactoryInitYasas
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",emergencyContact );
 		
-		Thread.sleep(600);
+		Thread.sleep(1600);
 		emergencyContact.click();
 		Thread.sleep(600);
 		Type.click();
@@ -416,8 +416,8 @@ public class KIMS_ClosedEncounterBilling_Yasassiweb extends PageFactoryInitYasas
 		Thread.sleep(1000);
 		AddService.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[@class='check-container zero-label']")).click();
-		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[@class='check-container zero-label']")).click();
+//		Thread.sleep(1000);
 		ServSave.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();

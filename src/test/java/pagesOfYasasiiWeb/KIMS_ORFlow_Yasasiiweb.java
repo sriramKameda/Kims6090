@@ -198,7 +198,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@formcontrolname='searchText']")
 	public WebElement entermedicine;
 
-	@FindBy(xpath = "//div[@class='item-name'][normalize-space()='Referral']")
+	@FindBy(xpath = "//div[@class='item-name'][normalize-space()='Referral/Handover/Handoff']")
 	public WebElement referral;
 
 	@FindBy(xpath = "//div[@class='col-md-6 md-height-dropdown-list']//input[@id='rhtonamewithid']")
@@ -927,6 +927,13 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-pencil']")).click();
 		Thread.sleep(3000);
+		
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//input[@id='plan']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultTvm']")).click();
+		Thread.sleep(3000);
+		
 
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody/tr[1]/td[1]/label[1]/a[1]/i[1]")));
@@ -977,7 +984,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		ContractCharge.sendKeys("15000");
 		Thread.sleep(700);
-		js.executeScript("arguments[0].scrollIntoView();",Add2 );
+		js.executeScript("arguments[0].scrollIntoView();",SchemeAdd );
 		Thread.sleep(400);
 		SchemeAdd.click();
 		Thread.sleep(700);
@@ -1050,7 +1057,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		name.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Sujitha MS(NGL17744)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Abhirami S(TVM16528)']")).click();
 		Thread.sleep(1000); 
 		Add2.click();
 		Thread.sleep(700);
@@ -1096,7 +1103,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		name.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Beni S(NGL17734)']")).click();
+		driver.findElement(By.xpath("(//li[@class='uparrow-yellow'])[1]")).click();
 		Thread.sleep(1000); 
 		Add2.click();
 		Thread.sleep(700);
@@ -1444,8 +1451,11 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		SplitupCondition.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Anesthetist)']")).click();
+//		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Anesthetist)']")).click();
+//		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR(ANAESTHESIA)']")).click();
 		Thread.sleep(1000);
+		
 		AdtlParameterType.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[@class='uparrow-yellow']")).click();
@@ -1501,7 +1511,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		SplitupCondition.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Surgeon)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR SURGEON']")).click();
 		Thread.sleep(1000);
 		Add2.click();
 		Thread.sleep(1700);
@@ -1579,7 +1589,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		AttendeeSplitName.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Anesthetist)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR(ANAESTHESIA)']")).click();
 		Thread.sleep(1000);
 		Edit.click();
 		Thread.sleep(700);
@@ -1606,7 +1616,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		AttendeeSplitName.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Anesthetist)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR(ANAESTHESIA)']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//i[@class='ki ki-pencil'])[2]")).click();
 		Thread.sleep(1000);
@@ -1644,7 +1654,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		AttendeeSplitName.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Surgeon)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR SURGEON']")).click();
 		Thread.sleep(1000);
 		Edit.click();
 		Thread.sleep(700);
@@ -1676,6 +1686,11 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-pencil']")).click();
 		Thread.sleep(2700);
+		driver.findElement(By.xpath("//input[@id='planid']")).click();
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultTvm']")).click();
+		Thread.sleep(700);
+		
 		Surgerytype1.click();
 		Thread.sleep(100);
 		driver.findElement(By.xpath("//li[normalize-space()='"+ServiceName+"']")).click();
@@ -1686,6 +1701,18 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//i[@class='ki ki-plus']")).click();
 		Thread.sleep(1000);
+		List<WebElement> dynamicElement0=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']//label[@class='dialog-title'][normalize-space()='Warning']"));
+
+		if(dynamicElement0.size() ==0)
+		{
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(1000);
+			FO.click();
+			Thread.sleep(1000);
+		}
+
+		
+		
 		Save.click();
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
@@ -1781,8 +1808,12 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//aadharNo.click();
 		aadharNo.sendKeys(Keys.HOME + AADHAAR);
 		Thread.sleep(1000);
+		
+		try{
+			
 		docAdd.click();
 		Thread.sleep(1000);
+	
 
 		Thread.sleep(600);
 		emergencyContact.click();
@@ -1827,7 +1858,24 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 			Thread.sleep(1600);
 
 		}
-
+		}
+		
+		catch(Exception e) {
+			
+			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
+			Thread.sleep(1600);
+			
+			Searchfield.clear();
+			Thread.sleep(600);
+			Searchfield.sendKeys(NAME +" "+lastname, Keys.ENTER);
+			Thread.sleep(600);
+			driver.findElement(By.xpath("(//div[@class='pat-img'])[1]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+			Thread.sleep(2000);
+			
+			
+		}
 
 
 		//////Encounter
@@ -2042,6 +2090,11 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		tempOk.click();
 		Thread.sleep(1000);
 
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Diagnosis));
+		Thread.sleep(2000);
+		
 		Diagnosis.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();

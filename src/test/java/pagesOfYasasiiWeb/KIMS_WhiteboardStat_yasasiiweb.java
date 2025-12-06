@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -89,7 +92,7 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[normalize-space()='White Board']")
 	public WebElement WhiteBoard;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[8]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement NameSearch;
 
 	@FindBy(xpath = "//i[@class='ki ki-search']")
@@ -258,22 +261,42 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		clickOK.click();
 		Thread.sleep(1000);
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
+		Thread.sleep(3000);
+
 
 		Diagnosisandplan.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[contains(text(),'normal pressure hydrocephalus')]")).click();
 		//SelectICD.click();
 		Thread.sleep(1000);
-		Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(2000);
-		//Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		Thread.sleep(500);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
+		List<WebElement> dynamicElement211=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+		if(dynamicElement211.size() !=0)
+		{
+			driver.findElement(By.xpath("//button[@class='btn btn-primary sm'][normalize-space()='OK']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
+		
+//		Robot t=new Robot();
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(500);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(2000);
+//		//Robot t=new Robot();
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(500);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(1000);
 
 
 		Thread.sleep(1000);  
@@ -285,19 +308,22 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[contains(text(),'Haemoglobin A1C (HPLC')]")).click();
 		Thread.sleep(1000);
-		//Stat1.click();
-		//	Plus.click();
-		//	Thread.sleep(1000);
-		//	serviceadd.click();
-		Thread.sleep(1000);
+		
+		
+		 Thread.sleep(500);
+			List<WebElement> dynamicElement111=driver.findElements(By.xpath("//ki-dialog-common//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+			if(dynamicElement111.size() !=0)
+			{
+				driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+			}
 
 
-
-
-		//service.click();
-		Thread.sleep(2000);
-		//act.moveToElement(ThreeDot).click().build().perform();
-		Thread.sleep(1000);
+			else {
+				System.out.println("sri");
+			}
+			Thread.sleep(1000);
+			
 		ThreeDot.click();
 		Thread.sleep(1000);
 		ServEdit.click();
@@ -306,7 +332,19 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
 		Thread.sleep(2000);
-		
+		 Thread.sleep(500);
+			List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//ki-dialog-common//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+			if(dynamicElement1111.size() !=0)
+			{
+				driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+			}
+
+
+			else {
+				System.out.println("sri");
+			}
+			Thread.sleep(1000);
 		///Pharmacy
 		
 		

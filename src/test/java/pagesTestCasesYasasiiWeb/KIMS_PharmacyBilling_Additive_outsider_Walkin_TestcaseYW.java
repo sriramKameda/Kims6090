@@ -43,6 +43,7 @@ public void patreg(String title,String Name,String Lastname,String Dob, String D
 	
 	
 }
+
 @Test(dataProvider="getData"  , priority=1)
 public void additive(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String outsiderName1,String PROVIDER, String MRNO1,String User , String Password , String site,String authoriser,String DocUserID , String DocPassword) throws InterruptedException, IOException, AWTException {
 			

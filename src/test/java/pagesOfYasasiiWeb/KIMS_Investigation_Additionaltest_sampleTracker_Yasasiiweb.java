@@ -419,37 +419,16 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(3000);
 
 		
-		js.executeScript("arguments[0].scrollIntoView();", signupload);
-		Thread.sleep(1000);
-		signupload.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")));
 		Thread.sleep(2000);
-		Actions builder = new Actions(driver);
-		Action drawAction = builder.moveToElement(driver.findElement(By.cssSelector(".upper-canvas"))) //start points x axis and y axis. 
-
-				.moveByOffset(-100,0)
-				.clickAndHold()
-				.moveByOffset(-50,0) // 2nd points (x1,y1)
-				.moveByOffset(20, 50)// 3rd points (x2,y2)
-				.moveByOffset(30,0) // 2nd points (x1,y1)
-				.moveByOffset(0,-50)// 3rd points (x2,y
-				.moveByOffset(100,10)
-				.moveByOffset(12,70)
-				.moveByOffset(50,6)
-				.release()
-				.build();
-		drawAction.perform();
-		Thread.sleep(2500);
-		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active ng-star-inserted']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(1000);
 
 		//////Encounter
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(clear));
 		Thread.sleep(3000);
 		clear.click();
@@ -467,6 +446,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(SAvesuccess));
 		Thread.sleep(1000);
 		SAvesuccess.click();
 
@@ -583,9 +563,16 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		//	caudatecheckbox.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
-
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
+		
 		ivstgnSave.click();
 		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
+		Thread.sleep(3000);
+		
 		SaveOK1.click();
 		Thread.sleep(3000);
 
@@ -664,29 +651,35 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		//		Thread.sleep(1000);   
 
 		/////despatch Pending 
-		Thread.sleep(1000);
-		ivstgnStatus.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Sample Collection-Despatch Pending']")).click();
-		Thread.sleep(1000);
-		Thread.sleep(1000);
-		SearchField.clear();
-		Thread.sleep(1000);
-		SearchField.sendKeys(MRNO , Keys.ENTER);
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
+//		ivstgnStatus.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//li[normalize-space()='Sample Collection-Despatch Pending']")).click();
+//		Thread.sleep(1000);
+//		Thread.sleep(1000);
+//		SearchField.clear();
+//		Thread.sleep(1000);
+//		SearchField.sendKeys(MRNO , Keys.ENTER);
+//		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
+		
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
+		
 		despatch.click();
 		Thread.sleep(2000);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Hamberger));
+		Thread.sleep(3000);
 		
 		//SampleProcessing
 
-		driver.findElement(By.xpath("//div[@class='menu-toggle change']//div[@class='bar2']")).click();
+		Hamberger.click();
 		Thread.sleep(1000);
 		
-		//hamberger.click();
-		//Thread.sleep(1000);
 		SampleProcessing.click();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
@@ -707,7 +700,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		Recieve.click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='ki ki-sample-check']")));
+		wait.until(ExpectedConditions.elementToBeClickable(Status));
 		Thread.sleep(1000);
 		
 		
@@ -715,6 +708,12 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		Samplerecieved.click();
 		Thread.sleep(1000);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
+		Thread.sleep(1000);
+		
 		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
@@ -727,12 +726,15 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		Accept.click();
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(Reject));
+		
+		Thread.sleep(1000);
 		Reject.click();
 		Thread.sleep(1000);
 		RejectRedoReason.sendKeys("Not a proper sample");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active ng-star-inserted']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		///	REDO-Request
 
@@ -767,8 +769,12 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 
 		Comments.sendKeys("OK");
 		Thread.sleep(1000);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
+		
 		ivstgnSave.click();
 		Thread.sleep(1000);
 		SaveOK1.click();
@@ -812,6 +818,8 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		Recieve.click();
 		Thread.sleep(2000);
+		wait1.until(ExpectedConditions.elementToBeClickable(Accept));
+		Thread.sleep(2000);	
 		Accept.click();
 		Thread.sleep(2000);
 
@@ -824,12 +832,12 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Result.sendKeys("135");
 		Thread.sleep(1000);
 		
-//		AdditionalTest.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm mt0 mb0 mr2 active']")).click();
-//		Thread.sleep(1000);
+		AdditionalTest.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@class='btn btn-primary sm mt0 mb0 mr2 active']")).click();
+		Thread.sleep(1000);
 		
 		
 		
@@ -902,8 +910,12 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
 		Thread.sleep(1000);
-		ivstgnSave.click();
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
 		Thread.sleep(1000);
+		ivstgnSave.click();
+	
+		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
+		Thread.sleep(2000);
 		SaveOK1.click();
 		Thread.sleep(2000);
 
@@ -920,7 +932,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
 		Despatch.click();
-		Thread.sleep(1000); 
+		Thread.sleep(2000); 
 
 
 		InvHamb.click();
@@ -944,13 +956,14 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		ServiceCheck.click();
 		Thread.sleep(1000);
 		Recieve.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		
 		Accept.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		Resultrepeat.click();
 		Thread.sleep(1000);
-		Resultrepeat.sendKeys("99");
+		Resultrepeat.sendKeys("136");
 		Thread.sleep(1000);
 		ivstgnSave.click();
 		Thread.sleep(1000);  

@@ -53,7 +53,7 @@ public void AdjustRefund(String title,String Name,String Lastname ,String Dob, S
      
 		KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb subs = new KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb(driver);
 		
-	subs.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE, id, docpassword, AdminID, AdminPassword);
+	    subs.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE, id, docpassword, AdminID, AdminPassword);
 		
 		subs.pharmacyBilling(AdminID, AdminPassword, MRNo);
 		

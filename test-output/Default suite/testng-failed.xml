@@ -3,20 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_AppointmentView_inEMR_TestcaseYW">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW">
         <methods>
-          <include name="Reg"/>
-          <include name="EMRapp"/>
           <include name="setup"/>
           <include name="startTest"/>
-          <include name="navigateemradt"/>
+          <include name="EMRtransfer" invocation-numbers="0"/>
           <include name="logout"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
+          <include name="navigateemradt"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_AppointmentView_inEMR_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

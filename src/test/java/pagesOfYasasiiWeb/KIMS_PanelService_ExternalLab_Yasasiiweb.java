@@ -166,6 +166,10 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 
 	@FindBy(xpath = "//input[@id='searchtext']")
 	public WebElement Searchfield;
+	
+	@FindBy(xpath = "//input[@id='mrno']")
+	public WebElement Searchfield1;
+	
 
 	@FindBy(xpath = "//button[@class='icon doctornote']")
 	public WebElement DoctorNote;
@@ -339,6 +343,13 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 	@FindBy(xpath="//button[normalize-space()='Signature']")
 	public WebElement Signature;
 
+	@FindBy(xpath="//div[contains(text(),'Result Print')]")
+	public WebElement resultPrint;
+	
+	
+	
+	
+
 	@FindBy(xpath="//div[contains(text(),'Result Authorization')]")
 	public WebElement ResultAuthorization;
 
@@ -362,6 +373,10 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 
 	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/label[5]/i[1]")
 	public WebElement Accept;
+	
+	@FindBy(xpath="//input[@id='status']")
+	public WebElement Status;
+	
 
 	@FindBy(xpath="//a[@title='Work Order (To view/print services)']")
 	public WebElement Workorder;
@@ -905,8 +920,14 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
 		ivstgnSave.click();
 		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
+		Thread.sleep(3000);		
 		SaveOK1.click();
 		Thread.sleep(3000);
 		ivstgnStatus.click();
@@ -922,6 +943,12 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(700);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
+		
+	    String sampleno =driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/inv-samplecollection[1]/div[2]/div[1]/form[1]/div[1]/div[2]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]")).getText();
+		Thread.sleep(1500);
+
+		System.out.println(sampleno +"= sampleno");
+		
 		despatch.click();
 		Thread.sleep(2000); 
 
@@ -954,28 +981,61 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		SampleProcessing.click();
 		Thread.sleep(1000);
 		
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
+//		Thread.sleep(1000);
+		
+		SearchField.clear();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
+		SearchField.sendKeys(sampleno , Keys.ENTER);
+		Thread.sleep(3000);
+		
+		
+		
+//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+//		Thread.sleep(1000);
+//		orderCheckbox.click();
+//		Thread.sleep(2000);
+//		Recieve.click();
+//		
+//		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		wait1.until(ExpectedConditions.elementToBeClickable(Status));		
+//		Thread.sleep(4000);
+
+		Status.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Sample Received']")).click();
 		Thread.sleep(1000);
 		
 		SearchField.clear();
 		Thread.sleep(1000);
-		SearchField.sendKeys(MRNO , Keys.ENTER);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		Thread.sleep(1000);
-		orderCheckbox.click();
-		Thread.sleep(2000);
-		Recieve.click();
-
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(Accept));		
+		SearchField.sendKeys(sampleno , Keys.ENTER);
+		Thread.sleep(3000);
+		t.keyPress(KeyEvent.VK_ENTER);
+		t.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(4000);
-
-		Accept.click();
+		t.keyPress(KeyEvent.VK_ENTER);
+		t.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(2000);
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
+//		Thread.sleep(1000);
+//		
+//		SearchField.clear();
+//		Thread.sleep(1000);
+//		SearchField.sendKeys(MRNO , Keys.ENTER);
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+//		Thread.sleep(1000);
+//		orderCheckbox.click();
+//		Thread.sleep(2000);
+//		
+//		Accept.click();
+//		Thread.sleep(2000);
 
 
 		////External Sample Processing
@@ -992,7 +1052,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(1000);
 		DespatchTo.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='DDRC Agilus']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DDRC']")).click();
 		Thread.sleep(1000);
 		ExternalMRNo.clear();
 		Thread.sleep(700);
@@ -1012,7 +1072,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 
 		PreparedBy.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Devika R']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Samplepreparedby+"']")).click();
 		Thread.sleep(1000);
 
 		PreparedTYm.click();
@@ -1061,7 +1121,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(700);
 		DespatchBy.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Priyanka P']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Sampledespatchby+"']")).click();
 		Thread.sleep(1000);
 		Signature.click();
 
@@ -1144,6 +1204,26 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		ivstgnSave.click();
 		Thread.sleep(5500);         
 
+		
+		
+		
+		
+		hamberger.click();
+		Thread.sleep(700);
+		resultPrint.click();
+		Thread.sleep(1000);
+		Searchfield1.click();//input[@id='mrno']
+		Thread.sleep(1000);
+		Searchfield1.sendKeys(MRNO, Keys.ENTER);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[contains(text(),'" + MRNO + "')]")).click();
+		Thread.sleep(2000);
+		
+		
+		Preview.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(2000);
 
 		///////////	ResultAuthorization
 

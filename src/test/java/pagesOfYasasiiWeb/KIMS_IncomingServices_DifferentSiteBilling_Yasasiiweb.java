@@ -132,10 +132,10 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 	@FindBy(xpath = "//div[@class='module-icon-wrap ng-star-inserted']//i[@class='ki ki-beaker']")
 	public WebElement investigation;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/inv-samplecollection[1]/div[1]/lib-searchlab[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/label[1]/i[1]")
+	@FindBy(xpath = "//*[@id=\"id0\"]/div[2]/div/div[2]/div[3]/label/i")
 	public WebElement incomingService;
 
-	@FindBy(xpath = "//div[@class='menu-toggle change']")
+	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='bar2']")
 	public WebElement InvHamb;
 
 	@FindBy(xpath = "//ki-select-control[@placeholder='Company Name']//input[@id='undefined']")
@@ -434,7 +434,10 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(3000);
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(3000);
+		
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -464,7 +467,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(billing));
 		Thread.sleep(3000);
 
@@ -490,6 +493,8 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(800);
 		billSave.click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
+		Thread.sleep(1000);	
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		
@@ -552,7 +557,23 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		
 		ExecutionlocOK.click();
 		Thread.sleep(1000);
-		confirmOK.click();
+		
+		Thread.sleep(800);
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		
+		
+		
+	//	confirmOK.click();
 		Thread.sleep(3000);
 
 		//Sample Collection
@@ -563,6 +584,10 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));		
+		wait.until(ExpectedConditions.elementToBeClickable(incomingService));
+		Thread.sleep(800);
 		incomingService.click();
 		Thread.sleep(3000);
 
@@ -601,7 +626,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(2000);
 		Scheme.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Default/DefaultPlan']")).click();
+		driver.findElement(By.xpath("//*[@id=\"droplistkey1\"]/li")).click();
 		Thread.sleep(1000);
 
 		encProvider.clear();

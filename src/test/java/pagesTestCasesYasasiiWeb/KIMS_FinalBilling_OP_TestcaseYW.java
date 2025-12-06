@@ -32,7 +32,7 @@ public class KIMS_FinalBilling_OP_TestcaseYW extends TestBaseYasasiiWeb  {
 
 	}
 
-    @Test(dataProvider="getData"  , priority=0)
+   @Test(dataProvider="getData"  , priority=0)
 	public void Reg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider, String service1,String service2,String service3) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);

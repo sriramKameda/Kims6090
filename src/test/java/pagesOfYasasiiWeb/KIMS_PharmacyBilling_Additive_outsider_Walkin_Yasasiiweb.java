@@ -238,7 +238,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 	@FindBy(xpath = "//i[@title='Outsider']")
 	public WebElement outsider;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-op-panel[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-op-panel[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement PatName;
 
 	@FindBy(xpath = "//input[@id='genderid']")
@@ -247,7 +247,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 	@FindBy(xpath = "//input[@id='genderage']")
 	public WebElement Age;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-op-panel[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-op-panel[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement MobileNo;
 
 	@FindBy(xpath = "//input[@id='medicinename']")
@@ -717,166 +717,171 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 
 
-//		////////logout
-//		Thread.sleep(3000);
-//		username.click();
-//		Thread.sleep(1000);
-//		logout1.click(); 
-//		Thread.sleep(1000);
-//		logoutConfirm.click();
-//
-//		///login
-//		Thread.sleep(2000);
-//		userid.click();
-//		Thread.sleep(1000);
-//		userid.sendKeys(ProviderID);
-//		Thread.sleep(1000);
-//		password.click();
-//		password.sendKeys(Password);
-//		site1.click();
-//		Thread.sleep(1000);
-//
-//		JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-//		Thread.sleep(3000);
-//
-//
-//		/////doctornote
-//		Thread.sleep(1000);
-//		Hamberger.click();
-//		Thread.sleep(1000);
-//		EMRhomescreen.click();
-//		Thread.sleep(2000);
-//
-//		Thread.sleep(500);
-//		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
-//
-//		if(dynamicElement1.size() !=0)
-//		{
-//			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		}
-//
-//
-//		else {
-//			System.out.println("sri");
-//		}
-//		Thread.sleep(1000);
-//
-//		Searchfield.click();
-//		Thread.sleep(1000);
-//		Searchfield.sendKeys(MRNo);
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath("//*[contains(text(),'" + MRNo + "')]")).click();
-//
-//		Thread.sleep(1000);
-//
-//		Thread.sleep(500);
-//		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
-//
-//		if(dynamicElement11.size() !=0)
-//		{
-//			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		}
-//
-//
-//		else {
-//			System.out.println("sri");
-//		}
-//		Thread.sleep(1000);
-//
-//		Thread.sleep(1000);
-//		DoctorNote.click();
-//		Thread.sleep(1000);
-//		Thread.sleep(1000);
-//		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
-//
-//		if(dynamicElement111.size() !=0)
-//		{
-//			driver.findElement(By.xpath("//button[normalize-space()='Create New Note']")).click();
-//		}
-//		Thread.sleep(800); 
-//
-//
-//		cheifComplaint.clear();
-//		cheifComplaint.sendKeys("Fever");
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//strong[normalize-space()='Fever']")).click();
-//		template.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
-//		Thread.sleep(1000);
-//		tempOk.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[contains(text(),'Diagnosis and Plan')]")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
-//		Thread.sleep(1000);
-//
-//		cpoePharmacy.click();
-//		Thread.sleep(1000);
-//		//uncheckStar.click();
-//		//Thread.sleep(2000);
-//		medicineSearch1.click();
-//		Thread.sleep(1000);
-//		medicineSearch1.sendKeys("DEXTROSE 5% 500ML ACULIFE", Keys.ENTER);
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[contains(@title,'by Intravenous')]")).click();
-//		Thread.sleep(1000);
-//
-//		///////////////////
-//		driver.findElement(By.xpath("//i[@class='ki ki-additive custom-additive']")).click();
-//		Thread.sleep(1000);
-//		medicinename.click();
-//		Thread.sleep(1000);
-//		medicinename.sendKeys("DIXIN 0.5MG/2ML INJ");
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[contains(text(),'DIXIN 0.5MG/2ML INJ')]")).click();
-//		Thread.sleep(1000);
-//		//driver.findElement(By.xpath("//li[normalize-space()='Dixin 0.5Mg/2Ml Inj']")).click();
-//		//Thread.sleep(500);
-//		Add.click();
-//		Thread.sleep(500);
-//		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
-//
-//		//	ok.click();
-//		Thread.sleep(500);
-//		frequency.click();
-//		driver.findElement(By.xpath("//li[normalize-space()='BD']")).click();
-//		Thread.sleep(1000);
-//		//rateadd.click();
-//		//	rateadd.sendKeys("5");
-//		Thread.sleep(500);
-//		addrate.click();
-//		addrate.sendKeys("100");
-//		Thread.sleep(500);
-//		idadd.click();
-//		driver.findElement(By.xpath("//li[normalize-space()='ml/Hr']")).click();
-//		Thread.sleep(500);
-//		//	driver.findElement(By.xpath("//input[@id='slotduration']")).sendKeys("5");
-//		Thread.sleep(1000);
-//		ADDMedicine.click();
-//		//	yesadd.click();
-//		Thread.sleep(3000);			    
-//		//Edit-Additivemedicine
-//		editpharmacy.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[normalize-space()='Edit']")).click();
-//		Thread.sleep(1000);
-//		remarkedit.click();
-//		Thread.sleep(1000);
-//		remarkedit.sendKeys("Adding Additive");
-//		Thread.sleep(1000);
-//		updatepharmacy.click();
-//		Thread.sleep(3000);
-//		EMRsave1.click();
+		////////logout
+		Thread.sleep(3000);
+		username.click();
+		Thread.sleep(1000);
+		logout1.click(); 
+		Thread.sleep(1000);
+		logoutConfirm.click();
+
+		///login
+		Thread.sleep(2000);
+		userid.click();
+		Thread.sleep(1000);
+		userid.sendKeys(ProviderID);
+		Thread.sleep(1000);
+		password.click();
+		password.sendKeys(Password);
+		site1.click();
+		Thread.sleep(1000);
+
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+		Thread.sleep(3000);
+
+
+		/////doctornote
+		Thread.sleep(1000);
+		Hamberger.click();
+		Thread.sleep(1000);
+		EMRhomescreen.click();
+		Thread.sleep(2000);
+
+		Thread.sleep(500);
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+		Searchfield.click();
+		Thread.sleep(1000);
+		Searchfield.sendKeys(MRNo);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[contains(text(),'" + MRNo + "')]")).click();
+
+		Thread.sleep(1000);
+
+		Thread.sleep(500);
+		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement11.size() !=0)
+		{
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+		Thread.sleep(1000);
+		DoctorNote.click();
+		Thread.sleep(1000);
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
+
+		if(dynamicElement111.size() !=0)
+		{
+			driver.findElement(By.xpath("//button[normalize-space()='Create New Note']")).click();
+		}
+		Thread.sleep(800); 
+
+
+		cheifComplaint.clear();
+		cheifComplaint.sendKeys("Fever");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//strong[normalize-space()='Fever']")).click();
+		template.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
+		Thread.sleep(1000);
+		tempOk.click();
+		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave1));
+
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[contains(text(),'Diagnosis and Plan')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
+		Thread.sleep(1000);
+
+		cpoePharmacy.click();
+		Thread.sleep(1000);
+		//uncheckStar.click();
+		//Thread.sleep(2000);
+		medicineSearch1.click();
+		Thread.sleep(1000);
+		medicineSearch1.sendKeys("DEXTROSE 5% 500ML ACULIFE", Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[contains(@title,'by Intravenous')]")).click();
+		Thread.sleep(1000);
+
+		///////////////////
+		driver.findElement(By.xpath("//i[@class='ki ki-additive custom-additive']")).click();
+		Thread.sleep(1000);
+		medicinename.click();
+		Thread.sleep(1000);
+		medicinename.sendKeys("DIXIN 0.5MG/2ML INJ");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='DIXIN 0.5MG/2ML INJ']")).click();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//li[normalize-space()='Dixin 0.5Mg/2Ml Inj']")).click();
+		//Thread.sleep(500);
+		Add.click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+
+		//	ok.click();
+		Thread.sleep(500);
+		frequency.click();
+		driver.findElement(By.xpath("//li[normalize-space()='BD']")).click();
+		Thread.sleep(1000);
+		//rateadd.click();
+		//	rateadd.sendKeys("5");
+		Thread.sleep(500);
+		addrate.click();
+		addrate.sendKeys("100");
+		Thread.sleep(500);
+		idadd.click();
+		driver.findElement(By.xpath("//li[normalize-space()='ml/Hr']")).click();
+		Thread.sleep(500);
+		//	driver.findElement(By.xpath("//input[@id='slotduration']")).sendKeys("5");
+		Thread.sleep(1000);
+		ADDMedicine.click();
+		//	yesadd.click();
+		Thread.sleep(3000);			    
+		//Edit-Additivemedicine
+		editpharmacy.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[normalize-space()='Edit']")).click();
+		Thread.sleep(1000);
+		remarkedit.click();
+		Thread.sleep(1000);
+		remarkedit.sendKeys("Adding Additive");
+		Thread.sleep(1000);
+		updatepharmacy.click();
+		Thread.sleep(3000);
+		EMRsave1.click();
 
 		////////logout
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link dropdown-toggle pro-pic tab-prof-wrap']")));
+	WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link dropdown-toggle pro-pic tab-prof-wrap']")));
 
 		Thread.sleep(3000);
 		username.click();
@@ -896,7 +901,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		site1.click();
 		Thread.sleep(1000);
 
-			JavascriptExecutor js= (JavascriptExecutor) driver;
+//			JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
@@ -919,7 +924,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		pharlocOK.click();
 		Thread.sleep(1000);
-		//driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
 
 
@@ -932,10 +937,10 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		// patientSearch2.click();
-		Thread.sleep(1000);
-
+		Thread.sleep(2500);
 		medicineCheck.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		
 		StockInformation.click();
 		Thread.sleep(2500);
 		driver.findElement(By.xpath("//button[contains(@class,'btn btn-danger sm clear')]")).click();
@@ -946,6 +951,10 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(1000);
+		medicineCheck.click();
+		Thread.sleep(2000);
+		medicineCheck.click();
+		Thread.sleep(2000);
 		Confirm.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
@@ -959,6 +968,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		medicineCheck.click();
 		Thread.sleep(3000);
 
+	//	JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",Additives );
 		Thread.sleep(1000);
 
@@ -1002,6 +1012,10 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
+		Thread.sleep(1000);
+		
+		
+		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(2000);
@@ -1048,8 +1062,8 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		//	driver.findElement(By.xpath("//li[normalize-space()='2nd Level Pharmacy-Caller 1']")).click();
 		pharlocOK.click();
 		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		Thread.sleep(1000);
+		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
 
 
 		daterange.click();
@@ -1060,6 +1074,10 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		outsider.click();
 		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//div[@class='closed-ads ng-star-inserted']//i[@class='ki ki-close']")).click();
+		Thread.sleep(1000);
+		
 		PatName.click();
 		Thread.sleep(1000);
 		PatName.sendKeys(outsiderName1);
@@ -1130,7 +1148,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		driver.findElement(By.xpath("//button[normalize-space()='Close']//i[@class='ki ki-close-circle']")).click();
 		Thread.sleep(1000);
 		Confirm.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		Status.click();
@@ -1180,9 +1198,18 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'"+outsiderName1+"')]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
+		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 
+		
+		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
+		Thread.sleep(1000);
+		
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
+		Thread.sleep(1000);
+		
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(2000);
 		Robot t=new Robot();
@@ -1412,7 +1439,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 		counterSearch.clear();
 		Thread.sleep(1000);
-		counterSearch.sendKeys(MRNo);
+		counterSearch.sendKeys(MRNo, Keys.ENTER);
 		Thread.sleep(1000);
 		//counterSearchicon.click();
 		Thread.sleep(1000);
@@ -1543,7 +1570,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
+		driver.findElement(By.xpath("(//i[@class='fa fa-close bydefault'])[1]")).click();
 		Thread.sleep(1000);
 
 

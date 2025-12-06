@@ -406,7 +406,7 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[@class='ki ki-files']")
 	public WebElement docmnt;
 
-	@FindBy(xpath = "//div[@class='multi-action']//i[@class='ki ki-ellipsis-v']")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-adt[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[2]/i[1]")
 	public WebElement dischargethreedot;
 
 	@FindBy(xpath = "//div[contains(text(),'Discharge Cancel')]")
@@ -1551,6 +1551,25 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	Visit.click();
 	Thread.sleep(5000);
 	
+	Thread.sleep(500);
+	List<WebElement> dynamicElement1=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+	if(dynamicElement1.size() !=0)
+	{
+		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+	}
+
+
+	else {
+		System.out.println("sri");
+	}
+	Thread.sleep(1000);	
+	
+	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+	wait.until(ExpectedConditions.elementToBeClickable(DOD));
+	Thread.sleep(2000);
+
+	
 	DOD.click();
 	Thread.sleep(1000);
 	Today.click();
@@ -1629,9 +1648,9 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	
 	
 	
-	List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='dl-body']//div[2]"));
+	List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='dl-body']//div[2]"));
 
-	if(dynamicElement1.size() ==0)
+	if(dynamicElement11.size() ==0)
 	{
 		driver.findElement(By.xpath("//button[@class='icon discharesum']")).click();
 		Thread.sleep(2000);	
@@ -1662,7 +1681,7 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	Robot t=new Robot();
 	t.keyPress(KeyEvent.VK_ESCAPE);
 	t.keyRelease(KeyEvent.VK_ESCAPE);
-	Thread.sleep(400);
+	Thread.sleep(4000);
 	t.keyPress(KeyEvent.VK_ESCAPE);
 	t.keyRelease(KeyEvent.VK_ESCAPE);
 
@@ -1813,7 +1832,12 @@ public void ADTAppoval(String MRNo ) throws InterruptedException, AWTException {
 	driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
 Thread.sleep(3500);
 	
-	
+WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")));
+Thread.sleep(2000);
+
+driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
+Thread.sleep(1500);
 
 }
 
@@ -1824,8 +1848,8 @@ public void homeleaveCancel() throws AWTException, InterruptedException {
 	JavascriptExecutor js= (JavascriptExecutor) driver;
 	js.executeScript("arguments[0].scrollIntoView();", dischargethreedot );
 
-
-	Thread.sleep(1000);
+	System.out.println("OK done1");
+	Thread.sleep(3000);
 	dischargethreedot.click();
 	Thread.sleep(1000);
 	dischargeCancel.click();

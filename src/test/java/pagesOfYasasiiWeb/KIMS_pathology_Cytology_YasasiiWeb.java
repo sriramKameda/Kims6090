@@ -27,7 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
 public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiWeb {
-	
+
 	public KIMS_pathology_Cytology_YasasiiWeb(WebDriver driver) {
 		super(driver);
 	}
@@ -259,18 +259,21 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 	@FindBy(xpath="//textarea[@id='clinicaldiagnosisrep']")
 	public WebElement clinicalDiagnosis;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='macroscopy']//div[@class='fr-wrapper show-placeholder']//p")
+	@FindBy(xpath="(//p)[1]")
 	public WebElement macroScopy;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='microscopy']//div[@class='fr-element fr-view']")
+	@FindBy(xpath="(//p)[2]")
 	public WebElement microscopy;
 
+	@FindBy(xpath="(//p)[3]")
+	public WebElement Diagnosis;
 
-	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]/p[1]")
-	public WebElement opinion;
-
-	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]")
+	@FindBy(xpath="(//p)[4]")
 	public WebElement FinalDiagnosis;
+
+
+	@FindBy(xpath="(//div[@role='textbox'])[3]")
+	public WebElement opinion;
 
 	@FindBy(xpath="//textarea[@id='commentsrep']")
 	public WebElement comment;
@@ -485,7 +488,7 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 	@FindBy(xpath = "//i[@id='capture']")
 	public WebElement signupload;	
 
-	
+
 	public void patReg(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE ) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(1000);
@@ -540,7 +543,7 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		Thread.sleep(700);
 		Organisation.sendKeys(ORGANISATION);
 		Thread.sleep(700);
-	//	driver.findElement(By.xpath("//li[normalize-space()='KIMS']")).click();
+		//	driver.findElement(By.xpath("//li[normalize-space()='KIMS']")).click();
 		Thread.sleep(700);
 		ContactInformation.click();
 		Thread.sleep(700);
@@ -586,8 +589,8 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		Thread.sleep(700);
 		RegSave.click();
 		Thread.sleep(3000);
-		
-		
+
+
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -616,8 +619,8 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
-		
-		
+
+
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
 		Thread.sleep(1000);
@@ -717,9 +720,9 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 			System.out.println("sri");
 		}
 		Thread.sleep(1000);
-		
-		
-		
+
+
+
 		List<WebElement> dynamicElement31=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']"));
 
 		if(dynamicElement31.size() !=0)
@@ -739,9 +742,9 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 			System.out.println("sri");
 		}
 		Thread.sleep(1000);
-		
-	
-		
+
+
+
 		///service Order
 
 
@@ -861,9 +864,12 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(5000);
 		//caudatecheckbox.click();
-		Thread.sleep(700);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
+
 		ivstgnSave.click();
 		Thread.sleep(1000);
 		SaveOK1.click();
@@ -888,13 +894,13 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		Thread.sleep(700);
 		SampleProcessing.click();
 		Thread.sleep(700);
-		
+
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
 		Thread.sleep(1000);
-		
+
 		SearchField.clear();
 		Thread.sleep(700);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
@@ -1172,7 +1178,9 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("//label[@class='data-info']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click();
-		Thread.sleep(1000);	}
+		Thread.sleep(1000);	
+
+	}
 
 
 	public void resultEnter(String MRNO, String User , String Password) throws InterruptedException {
@@ -1237,7 +1245,28 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		// close.click();
 		ReportSave.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+
+		List<WebElement> dynamicElement31=driver.findElements(By.xpath("//i[@class='ki ki-lock ki-lock-open']"));
+
+		if(dynamicElement31.size() !=0)
+		{
+			driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+			Thread.sleep(1000);
+
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+
+
+
+
+
+		//		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
 		/////critical informed
 		Range.click();
 		Thread.sleep(700);
@@ -1388,95 +1417,90 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		act.moveToElement(EMRcancerRegistry).build().perform();
 		Thread.sleep(3000);
 
-				Thread.sleep(700);
-				DoctorNote.click();
-				Thread.sleep(700);
-				List<WebElement> dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
-		
-				if(dynamicElement.size() !=0)
-				{
-					driver.findElement(By.xpath("//button[normalize-space()='Create New Note']")).click();
-				}
-				Thread.sleep(800); 
-		
-		
-				Thread.sleep(700);
-				reasonForVisit.clear();
-				Thread.sleep(700);
-				reasonForVisit.sendKeys("fever");
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//strong[normalize-space()='Fever']")).click();
-				Thread.sleep(700);
-				Template.click();
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
-				Thread.sleep(700);
-				TemplateOK.click();
-				Thread.sleep(700);
-				diagnosisandplan.click();
-				driver.findElement(By.xpath("//*[contains(text(),'normal pressure hydrocephalus')]")).click();
-				//SelectICD.click();
-				Thread.sleep(800);
-		
-				Thread.sleep(700);
-		
-				Thread.sleep(1000);
-				CPOEphar.click();
-				Thread.sleep(700);
-				medicineSearch.click();
-				Thread.sleep(700);
-				medicineSearch.sendKeys("DOLOPAR 650 TAB", Keys.ENTER);
-				Thread.sleep(700);
-				driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]")).click();
-				Thread.sleep(700);
-				//driver.findElement(By.xpath("//input[@id='reason0']")).click();
-				//Thread.sleep(700);
-				//Reason.click();
-				//Reason.sendKeys("needed for patient");
-				//Thread.sleep(700);
-				//driver.findElement(By.xpath("//button[@class='btn btn-dark-green active'][normalize-space()='Yes']")).click();
-				Ongoing.click();
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//li[normalize-space()='Discharge']")).click();
-				Thread.sleep(700);
-				frequency.click();
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
-				Thread.sleep(700);
-				driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
-		
-		
-		
-				///////Medicine REconciliation
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//label[normalize-space()='No Current Medication']")).click();
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//div[@class='mb10 btn-type-add ta-r']//button[@type='button'][normalize-space()='Add']")).click();
-				Thread.sleep(700);
-//				driver.findElement(By.xpath("//i[contains(@class,'ki ki-admission-reconciliation')]")).click();
-//				Thread.sleep(700);
-//				driver.findElement(By.xpath("//i[contains(@class,'ki ki-reconciliation')]")).click();
-//				Thread.sleep(700);
-//				driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//				Thread.sleep(700); 
-//				driver.findElement(By.xpath("//i[@class='ki ki-discharge-reconciliation']")).click();
-//				Thread.sleep(700);
-//				driver.findElement(By.xpath("//i[contains(@class,'ki ki-reconciliation')]")).click();
-//				Thread.sleep(700);
-//				driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//				Thread.sleep(700);
-		
-				//Diagnosischeckbox	
-				Thread.sleep(700);
-				driver.findElement(By.xpath("//div[@class='col-md-11']//span[@class='checkmark']")).click();
-				Thread.sleep(700);
-		
-				medicineAdd.click();
-				Thread.sleep(700);
-				EMRsave.click();
-				Thread.sleep(1000);  
+		Thread.sleep(700);
+		DoctorNote.click();
+		Thread.sleep(700);
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
+
+		if(dynamicElement.size() !=0)
+		{
+			driver.findElement(By.xpath("//button[normalize-space()='Create New Note']")).click();
+		}
+		Thread.sleep(800); 
+
+
+		Thread.sleep(700);
+		reasonForVisit.clear();
+		Thread.sleep(700);
+		reasonForVisit.sendKeys("fever");
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//strong[normalize-space()='Fever']")).click();
+		Thread.sleep(700);
+		Template.click();
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
+		Thread.sleep(700);
+		TemplateOK.click();
+		Thread.sleep(700);
+
+
 
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
+		Thread.sleep(3000);		
+		diagnosisandplan.click();
+		driver.findElement(By.xpath("//*[contains(text(),'normal pressure hydrocephalus')]")).click();
+		//SelectICD.click();
+		Thread.sleep(800);
+
+		Thread.sleep(700);
+
+		Thread.sleep(1000);
+		CPOEphar.click();
+		Thread.sleep(700);
+		medicineSearch.click();
+		Thread.sleep(700);
+		medicineSearch.sendKeys("DOLOPAR 650 TAB", Keys.ENTER);
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//div[contains(@title,'by Oral')]")).click();
+		Thread.sleep(700);
+		//driver.findElement(By.xpath("//input[@id='reason0']")).click();
+		//Thread.sleep(700);
+		//Reason.click();
+		//Reason.sendKeys("needed for patient");
+		//Thread.sleep(700);
+		//driver.findElement(By.xpath("//button[@class='btn btn-dark-green active'][normalize-space()='Yes']")).click();
+		Ongoing.click();
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//li[normalize-space()='Discharge']")).click();
+		Thread.sleep(700);
+		frequency.click();
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
+		Thread.sleep(700);
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
+
+
+
+		///////Medicine REconciliation
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//label[normalize-space()='No Current Medication']")).click();
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//div[@class='mb10 btn-type-add ta-r']//button[@type='button'][normalize-space()='Add']")).click();
+		Thread.sleep(700);
+
+
+		//Diagnosischeckbox	
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//div[@class='col-md-11']//span[@class='checkmark']")).click();
+		Thread.sleep(700);
+
+		medicineAdd.click();
+		Thread.sleep(700);
+		EMRsave.click();
+		Thread.sleep(1000);  
+
+		//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='icon discharesum']")));
 		Thread.sleep(1000);
 		visitsummary.click();
@@ -1576,14 +1600,29 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("//label[normalize-space()='With Header']")).click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//span[@class='btn btn-primary sm active ng-star-inserted']")).click();
-		
-		Thread.sleep(3000);
+
+		Thread.sleep(5000);
 		Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(700);
-		LOG.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+
+		try {
+			LOG.click();
+			Thread.sleep(1000);	
+		}
+		catch (Exception e) {
+			System.out.println(e +"- Exception");  
+
+			Thread.sleep(5000);
+			t.keyPress(KeyEvent.VK_ESCAPE);
+			t.keyRelease(KeyEvent.VK_ESCAPE);
+			Thread.sleep(2000);
+			LOG.click();
+			Thread.sleep(1000);
+		}
+
+
 		driver.findElement(By.xpath("//button[@class='btn btn-danger sm clear']")).click();
 		Thread.sleep(700);
 

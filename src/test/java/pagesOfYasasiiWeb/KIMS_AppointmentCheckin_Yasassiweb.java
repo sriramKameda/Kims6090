@@ -172,7 +172,7 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement ServiceName;
 
-	@FindBy(xpath = "//label[@title='Add']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement ServiceAdd;
 
 	@FindBy(xpath = "//div[@class='page-inner-btn-group']//button[1]")
@@ -355,22 +355,14 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 		Save.click();
 		Thread.sleep(3000);
 		
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-		System.out.println(dynamicElement11.size());
-		if(dynamicElement11.size() !=0)
-		{
-			driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-			Thread.sleep(600);
+		
+			
+			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")));
+			Thread.sleep(2000);
+			
 			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 			Thread.sleep(1600);
-
-		}
-		
 		
 		
 
@@ -397,7 +389,7 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 
 		Appointment.click();
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/lib-scheduler[1]/form[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]")));
 		Thread.sleep(2000);
 
@@ -426,6 +418,12 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		AppSave.click();
 		Thread.sleep(2000);
+		
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='OK']")));
+		Thread.sleep(2000);
+
+		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(3000);  
 		driver.findElement(By.xpath("//label[@title='Schedule View']")).click();
@@ -453,6 +451,8 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 		//BillPrintUncheck.click();
 		//Thread.sleep(1000);
 		EncSave.click();
+				
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));
 		Thread.sleep(2000);
 		EncSaveSuccess.click();
 		Thread.sleep(1000);
@@ -519,7 +519,7 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 		//print app
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//i[@class='ki ki-print'])[1]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		//Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
@@ -546,7 +546,7 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("//button[normalize-space()='Cancel']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-
+		Thread.sleep(2000);
 		Billing.click();
 
 		//		

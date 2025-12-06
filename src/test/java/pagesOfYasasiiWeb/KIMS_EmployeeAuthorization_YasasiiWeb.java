@@ -418,20 +418,20 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		Plan.click();
 		driver.findElement(By.xpath("//li[normalize-space()='MSD Full cover']")).click();
 		Thread.sleep(500);
-		validto.click();
-		Thread.sleep(1000);
-		for (int i = 0; i <=5; i++) {
-
-			t.keyPress(KeyEvent.VK_RIGHT);
-			Thread.sleep(300);
-			t.keyRelease(KeyEvent.VK_RIGHT);
-
-		}
-
-		t.keyPress(KeyEvent.VK_ENTER);
-		Thread.sleep(500);
-		t.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(500);
+//		validto.click();
+//		Thread.sleep(1000);
+//		for (int i = 0; i <=5; i++) {
+//
+//			t.keyPress(KeyEvent.VK_RIGHT);
+//			Thread.sleep(300);
+//			t.keyRelease(KeyEvent.VK_RIGHT);
+//
+//		}
+//
+//		t.keyPress(KeyEvent.VK_ENTER);
+//		Thread.sleep(500);
+//		t.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(500);
 
 		add.click();
 		Thread.sleep(500);
@@ -455,35 +455,12 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		Thread.sleep(3000);
 
 		
-		js.executeScript("arguments[0].scrollIntoView();", signupload);
-		Thread.sleep(1000);
-		signupload.click();
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")));
 		Thread.sleep(2000);
-		Actions builder = new Actions(driver);
-		Action drawAction = builder.moveToElement(driver.findElement(By.cssSelector(".upper-canvas"))) //start points x axis and y axis. 
-
-				.moveByOffset(-100,0)
-				.clickAndHold()
-				.moveByOffset(-50,0) // 2nd points (x1,y1)
-				.moveByOffset(20, 50)// 3rd points (x2,y2)
-				.moveByOffset(30,0) // 2nd points (x1,y1)
-				.moveByOffset(0,-50)// 3rd points (x2,y
-				.moveByOffset(100,10)
-				.moveByOffset(12,70)
-				.moveByOffset(50,6)
-				.release()
-				.build();
-		drawAction.perform();
-		Thread.sleep(2500);
-		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active ng-star-inserted']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-		Thread.sleep(3000);
-	
+		Thread.sleep(1600);
 		
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
@@ -508,7 +485,9 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 	public void encounter( ) throws AWTException, InterruptedException {
 
 
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Clear']")));
+		Thread.sleep(2000);
 		/////////Provider1		
 		Thread.sleep(1000);
 		clear.click();
@@ -520,7 +499,7 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		providerName.sendKeys(Provider);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(text(),'"+Provider+"')]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		Add.click();
 		Thread.sleep(2000);
 		referenceLetter.click();
@@ -545,8 +524,10 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		ADD.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		EncounterSave.click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
 		Thread.sleep(1000);
 		SAvesuccess.click();
 		Thread.sleep(1000);

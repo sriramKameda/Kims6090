@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -279,6 +282,8 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 	@FindBy(xpath = "//span[@class='icon-btn btn-dark-green inline']")
 	public WebElement Add4;
 
+	@FindBy(xpath = "//i[@id='capture']")
+	public WebElement signupload;	
 
 
 	public void patReg(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE ) throws InterruptedException, IOException, AWTException {
@@ -376,21 +381,12 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		RegSave.click();
 		Thread.sleep(3000);
 		
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-		System.out.println(dynamicElement11.size());
-		if(dynamicElement11.size() !=0)
-		{
-			driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-			Thread.sleep(3000);
-
-		}
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(3000);		
+		
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(3000);
 
 		//////Encounter
 
@@ -404,11 +400,15 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(text(),'"+Provider+"')]")).click();
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Add1.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(1000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
+		Thread.sleep(3000);	
+		
 		Thread.sleep(1000);
 		SAvesuccess.click(); 
 
@@ -474,7 +474,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		RoomType.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])")).click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		Bed.click();
 		Thread.sleep(500);
 		driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[1]")).click();
@@ -619,6 +619,9 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		Thread.sleep(1000);
 
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
+		Thread.sleep(3000);		
 		///Diagnosis	
 
 		Diagnosis.click();
@@ -638,12 +641,18 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 
 		EMRsave.click();
 		Thread.sleep(3000);
+		
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")));
+		Thread.sleep(3000);		
 
 	}
 
 
 	public void Diet_administration() throws InterruptedException {
 
+		
+		
 		Thread.sleep(700);
 		CPOEAdministration.click();
 		Thread.sleep(700);
@@ -668,6 +677,9 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		Save.click();
 		Thread.sleep(1500);
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(DietAdmin));
+		Thread.sleep(3000);		
 
 
 		DietAdmin.click();
@@ -688,11 +700,16 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		Thread.sleep(700);
 		AdminQTY.clear();
 		Thread.sleep(700);
-		AdminQTY.sendKeys("0.5");
+		AdminQTY.sendKeys("100");
 		Thread.sleep(700);
 		Save.click();
 		Thread.sleep(1000);
 
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(DietAdmin));
+		Thread.sleep(3000);		
+
+		
 		AdmindietStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Continue']")).click();
@@ -712,6 +729,11 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 		Thread.sleep(700);
 		Update.click();
 		Thread.sleep(2700);
+		
+		
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(DownArrow));
+		Thread.sleep(3000);	
 		DownArrow.click();
 		Thread.sleep(60000);
 
@@ -736,7 +758,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends  PageFactoryInitYasasii
 
 		AdminQTY.clear();
 		Thread.sleep(700);
-		AdminQTY.sendKeys("0.5");
+		AdminQTY.sendKeys("100");
 		Thread.sleep(700);
 		Save.click();
 		Thread.sleep(2000);

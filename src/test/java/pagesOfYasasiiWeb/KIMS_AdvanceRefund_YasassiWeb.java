@@ -139,7 +139,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servicename;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement plus;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
@@ -154,7 +154,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//span[normalize-space()='Advance View']")
 	public WebElement advanceview;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[4]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[2]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	@FindBy(xpath = "//label[@class='print-icon pl-1']//span[@class='checkmark']")
 	public WebElement selctcheckbox;
 
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-authoriser-request[1]/div[2]/div[1]/div[1]/div[2]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
@@ -166,7 +166,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//textarea[@id='undefined']")
 	public WebElement enterremark;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[4]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[3]/i[1]")
+	@FindBy(xpath = "//i[@title='Request for Advance Refund']")
 	public WebElement Advancerefund;
 
 	@FindBy(xpath = "//input[@id='loginemail']")
@@ -381,10 +381,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(600);
 		EnterMob.sendKeys(MobNo);
 		Thread.sleep(500);
-		maritialStatus.click();
-		Thread.sleep(500);
-		driver.findElement(By.xpath("//li[normalize-space()='Single']")).click();
-		Thread.sleep(500);
+		
 
 		ContactInformation.click();
 		Thread.sleep(1000);
@@ -509,12 +506,12 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 			driver.findElement(By.xpath("//li[normalize-space()='Advance']")).click();
 			//	driver.findElement(By.xpath("//*[contains(text(),'" + selectcategory + "')]")).click();	
 			Thread.sleep(800);             */
-		servicename.clear();
-		Thread.sleep(800);
-		servicename.sendKeys(service , Keys.ENTER);
-		Thread.sleep(800);
 		servicename.click();
-		Thread.sleep(2000);
+		Thread.sleep(800);
+		servicename.sendKeys(service);
+		Thread.sleep(1800);
+//		servicename.click();
+//		Thread.sleep(2000);
 
 		driver.findElement(By.xpath("//li[normalize-space()='General Advance']")).click();
 		//	driver.findElement(By.xpath("//li[normalize-space()='"+service+"']")).click();
@@ -600,6 +597,9 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 		Thread.sleep(1500);
+		
+		/*
+		 
 		selctcheckbox.click();
 		Thread.sleep(800);
 		AdvanceTransfer.click();
@@ -656,6 +656,9 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//i[@class='ki ki-check']")).click();
 		Thread.sleep(800);
+		
+		*/
+		
 		selctcheckbox.click();
 		Thread.sleep(800);
 		Advancerefund.click();

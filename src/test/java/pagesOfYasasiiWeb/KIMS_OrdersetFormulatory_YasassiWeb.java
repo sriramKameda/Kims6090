@@ -219,6 +219,10 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 
 	@FindBy(xpath = "//button[@id='saveregistrationbutton']")
 	public WebElement Savereg;
+	
+	@FindBy(xpath = "//i[@id='capture']")
+	public WebElement signupload;	
+
 
 	@FindBy(xpath = "//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")
 	public WebElement OK;
@@ -296,13 +300,13 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 	@FindBy(xpath = "//span[@class='close-select ng-star-inserted']//i[@class='fa fa-close']")
 	public WebElement close;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[3]/div[1]/div[5]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[3]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement servname;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[3]/div[1]/div[6]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[3]/div[1]/div[5]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement providername;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[3]/div[1]/div[7]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[3]/div[1]/div[6]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement billby;
 
 	@FindBy(xpath = "//span[normalize-space()='Emergency / Guardian / Other Contacts']")
@@ -423,22 +427,14 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		Thread.sleep(600);
 		Savereg.click();
 		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(3000);		
+		
+		
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(3000);
 
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-		System.out.println(dynamicElement11.size());
-		if(dynamicElement11.size() !=0)
-		{
-			driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-			Thread.sleep(3000);
-
-		}
 		
 	
 		String mrno = driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
@@ -469,6 +465,9 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		// Thread.sleep(1000);
 		billSave.click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
+		Thread.sleep(3000);		
+		
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -490,6 +489,8 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		Thread.sleep(1000);
 		Save.click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")));
+		Thread.sleep(3000);	
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -600,7 +601,7 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		servname.clear();
 		Thread.sleep(1000);
 		servname.sendKeys("2 Year Registration");
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@title='Print']")));
 		Thread.sleep(2000);
 		
@@ -617,7 +618,8 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		servname.sendKeys("Sodium (ISE Indirect)");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@title='Print']")));
 		Thread.sleep(2000);
-		providername.clear();
+		
+		servname.clear();
 		Thread.sleep(1000);
 		providername.sendKeys(Provider);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@title='Print']")));
@@ -677,7 +679,7 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		EMR.click();
 		Thread.sleep(700);
 		Orderset.click();
-		Thread.sleep(700);
+		Thread.sleep(1500);
 		OrdersetNAme.click();
 		Thread.sleep(700);
 		OrdersetNAme.sendKeys(ORDERNAME);

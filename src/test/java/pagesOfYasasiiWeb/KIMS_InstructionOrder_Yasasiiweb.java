@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -197,7 +200,7 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//label[normalize-space()='OP']//span[@class='checkmark']")
 	public WebElement OPCheckBox;
 
-	@FindBy(xpath = "(//i[@title=' IP (KIMSHEALTH Nagercoil)'])[1]")
+	@FindBy(xpath = "(//i[@title=' IP (KIMSHEALTH Trivandrum)'])[1]")
 	public WebElement visitType;
 
 
@@ -303,7 +306,7 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[1]/app-vitalsigns[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/cdk-virtual-scroll-viewport[1]/div[1]/div[4]/div[2]/div[2]/div[1]/div[1]/div[1]/app-vitalfields[1]/div[1]/div[1]/form[1]/span[1]/i[1]")
 	public WebElement AGPAR;
 
-	@FindBy(xpath = "//i[@class='ki ki-notes ng-star-inserted']")
+	@FindBy(xpath = "//div[3]//div[2]//div[2]//div[1]//div[1]//div[1]//app-vitalfields[1]//div[1]//div[1]//form[1]//span[1]//i[1]")
 	public WebElement FALLrisk;
 
 	@FindBy(xpath = "//input[@id='searchText']")
@@ -815,6 +818,12 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 		Thread.sleep(800);
 		tempOk.click();
 		Thread.sleep(3000);
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));		
+		wait.until(ExpectedConditions.elementToBeClickable(EMRSave));
+		Thread.sleep(800);
+		
 		driver.findElement(By.xpath("//div[contains(text(),'Diagnosis and Plan')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -859,10 +868,10 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 
 		//----------Fall Assesement
 
-		Searchvital.click();
-		Searchvital.sendKeys("Fall risk" , Keys.ENTER);
-		
-		
+//		Searchvital.click();
+//		Searchvital.sendKeys("Fall risk" , Keys.ENTER);
+//		
+//		
 		FALLrisk.click();
 		Thread.sleep(1000);
 		risk1.click();
@@ -918,6 +927,9 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 				EMRSave.click();
 		Thread.sleep(3000); 
 
+		wait.until(ExpectedConditions.elementToBeClickable(NoteAdvanceSearch));
+		Thread.sleep(800);
+		
 		NoteAdvanceSearch.click();
 		Thread.sleep(1000);
 		Filter.click();
@@ -983,7 +995,7 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 			Thread.sleep(1000);
 			Remarks.sendKeys("ok");
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-service-detail-modal[1]/div[3]/div[1]/form[1]/div[1]/div[3]/ki-calender-time-military[1]/div[1]/input[1]")).click();
+			driver.findElement(By.xpath("/html/body/modal-container/div/div/app-service-detail-modal/div[3]/div/form/div[1]/div[2]/ki-calender-time/div/input")).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//span[@class='owl-dt-control-content owl-dt-control-button-content'][normalize-space()='Today']")).click();
 			Thread.sleep(2000);

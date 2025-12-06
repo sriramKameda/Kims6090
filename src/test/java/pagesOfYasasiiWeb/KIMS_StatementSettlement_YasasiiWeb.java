@@ -137,7 +137,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement AddService;
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")
@@ -274,7 +274,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//div[normalize-space()='Generate Invoice']")
 	public WebElement GenerateInvoice;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-alternate-invoice-generation/div/tabset/div/tab[1]/form/div[1]/div/div/div/div[2]/div[3]/div[2]/ki-input-control/div/input")
 	public WebElement MRNoEnter;
 
 	@FindBy(xpath = "//div[@class='col-1 pl-0 col-md-1 ta-r']//i[@class='ki ki-search']")
@@ -298,7 +298,10 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//button[normalize-space()='Draft Generate']")
 	public WebElement DraftGenerate;
 
-	@FindBy(xpath = "//div[@class='form-group ki-dropdown']//input[@id='undefined']")
+	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-alternate-invoice-generation/div/tabset/div/tab[2]/form/div[1]/div[1]/div/div/div[2]/div[2]/div[1]/ki-input-control/div/input")
+	public WebElement MRNoenter1;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement invoiceMode;
 
 	@FindBy(xpath = "//div[normalize-space()='OP']")
@@ -313,7 +316,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//div[contains(@class,'col-12 col-md-3 ta-r')]//i[contains(@class,'ki ki-search')]")
 	public WebElement Search2;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]/i[1]")
+	@FindBy(xpath = "//*[@id=\"2\"]/form/div[1]/div[2]/div/table/tbody/tr[1]/td[2]/label/i")
 	public WebElement ThreeDot;
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
@@ -357,8 +360,8 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 
 	@FindBy(xpath = "//input[@id='cheqnoPayType']")
 	public WebElement TransactionNo;
-	
-	
+
+
 	@FindBy(xpath = "//label[contains(@title,'Add')]")
 	public WebElement Cardadd;
 
@@ -623,18 +626,18 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 
 
 
-		validto.click();
-		Thread.sleep(1000);
-		for (int i = 0; i <=20; i++) {
-
-			t.keyPress(KeyEvent.VK_DOWN);
-			t.keyRelease(KeyEvent.VK_DOWN);
-			Thread.sleep(400);
-
-		}
-
-		t.keyPress(KeyEvent.VK_ENTER);
-		t.keyRelease(KeyEvent.VK_ENTER);
+		//		validto.click();
+		//		Thread.sleep(1000);
+		//		for (int i = 0; i <=20; i++) {
+		//
+		//			t.keyPress(KeyEvent.VK_DOWN);
+		//			t.keyRelease(KeyEvent.VK_DOWN);
+		//			Thread.sleep(400);
+		//
+		//		}
+		//
+		//		t.keyPress(KeyEvent.VK_ENTER);
+		//		t.keyRelease(KeyEvent.VK_ENTER);
 
 		driver.findElement(By.xpath("//span[@class='icon-btn btn-dark-green inline ng-star-inserted']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(600);
@@ -676,7 +679,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
-	
+
 
 
 
@@ -849,14 +852,21 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Robot t=new Robot(); 
 		t.keyPress(KeyEvent.VK_ENTER);
 		t.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(400);
+		Thread.sleep(1000);
 		t.keyPress(KeyEvent.VK_ENTER);
 		t.keyRelease(KeyEvent.VK_ENTER);
 
 		Thread.sleep(1000);
-		//driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[1]/app-order-list-container[1]/lib-order-list[1]/div[4]/div[1]/lib-patientlist[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]")).click();
-		driver.findElement(By.xpath("//span[normalize-space()='"+MRNO+"']")).click();
+
+		t.keyPress(KeyEvent.VK_ENTER);
+		t.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(1000);
+		t.keyPress(KeyEvent.VK_ENTER);
+		t.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("//span[normalize-space()='"+MRNO+"']")).click();
+
 		//		OPprovider.click();
 		//		Thread.sleep(1000);
 		//		OPprovider.sendKeys(PROVIDER);
@@ -1053,8 +1063,8 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(2000);
 		EncounterAdd.click();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		//		Thread.sleep(1000);
 
 
 		Thread.sleep(2000);
@@ -1100,43 +1110,60 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+service1+"']")).click();
 		Thread.sleep(1000);
-
 		AddService.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
+
+
+
 		servName.clear();
 		Thread.sleep(1000);
 		servName.sendKeys(service2);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+service2+"']")).click();
-
 		AddService.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
+
 		servName.clear();
 		Thread.sleep(1000);
 		servName.sendKeys(service3);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+service3+"']")).click();
-
+		Thread.sleep(1000);
 		AddService.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
+
+
+
 		servName.clear();
 		Thread.sleep(1000);
 		servName.sendKeys("Bleeding Time");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Bleeding Time']")).click();
-
+		Thread.sleep(1000);
 		AddService.click();
 		Thread.sleep(1000);
+
+
+
 		servName.clear();
 		Thread.sleep(1000);
 		servName.sendKeys("Blood Urea Nitrogen (GLDH Urease kinetic method)");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Blood Urea Nitrogen (GLDH Urease kinetic method)']")).click();
-
-
+		Thread.sleep(1000);
 		AddService.click();
 		Thread.sleep(1000);
+
+
 		ServSave.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
 
 		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -1220,50 +1247,62 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(3000);
 		InvoiceView.click();
 		Thread.sleep(1000);
-		MRNoenter.click();
+		MRNoenter1.click();
 		Thread.sleep(1000);
-		MRNoenter.sendKeys(MRNO);
+		MRNoenter1.sendKeys(MRNO);
 		Thread.sleep(1000);
 		Search2.click();
 		Thread.sleep(2000);
 
 		ThreeDot.click();
 		Thread.sleep(1000);
-		Sendforclaim.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
-
-		invoiceMode.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Sent for Claim']")).click();
-		Thread.sleep(1000);
-		Search2.click();
-		Thread.sleep(2000);
-		ThreeDot.click();
-		Thread.sleep(1000);
-		ResponseRecieve.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
-
-
-		invoiceMode.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Response Received']")).click();
-		Thread.sleep(1000);
-		Search2.click();
-		Thread.sleep(2000);
-		ThreeDot.click();
+		//		Sendforclaim.click();
+		//		Thread.sleep(700);
+		//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("333");
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		//		Thread.sleep(1000);
+		//
+		//		invoiceMode.click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//li[normalize-space()='Sent for Claim']")).click();
+		//		Thread.sleep(1000);
+		//		Search2.click();
+		//		Thread.sleep(2000);
+		//		ThreeDot.click();
+		//		Thread.sleep(1000);
+		//		ResponseRecieve.click();
+		//		Thread.sleep(700);
+		//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("333");
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		//		Thread.sleep(1000);
+		//
+		//
+		//		invoiceMode.click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//li[normalize-space()='Response Received']")).click();
+		//		Thread.sleep(1000);
+		//		Search2.click();
+		//		Thread.sleep(2000);
+		//		ThreeDot.click();
 		Thread.sleep(1000);
 		DraftFinalization.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);	
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("333");
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		Thread.sleep(1000);	
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		invoiceMode.click();
@@ -1279,8 +1318,14 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("333");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
+
+
 		invoiceMode.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Generated']")).click();
@@ -1319,48 +1364,52 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Draft']")).click();
 		Thread.sleep(1000);	
-		MRNoenter.clear();
+		MRNoenter1.clear();
 		Thread.sleep(1000);
-		MRNoenter.sendKeys(MRNO);
+		MRNoenter1.sendKeys(MRNO);
 		Thread.sleep(1000);
 		Search2.click();
 		Thread.sleep(2000);
 
 		ThreeDot.click();
 		Thread.sleep(1000);
-		Sendforclaim.click();
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
-
-		invoiceMode.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Sent for Claim']")).click();
-		Thread.sleep(1000);
-		Search2.click();
-		Thread.sleep(1000);
-		ThreeDot.click();
-		Thread.sleep(1000);
-		ResponseRecieve.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
-
-
-		invoiceMode.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Response Received']")).click();
-		Thread.sleep(1000);
-		Search2.click();
-		Thread.sleep(1000);
-		ThreeDot.click();
-		Thread.sleep(1000);
+		//		Sendforclaim.click();
+		//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		//		Thread.sleep(1000);
+		//
+		//		invoiceMode.click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//li[normalize-space()='Sent for Claim']")).click();
+		//		Thread.sleep(1000);
+		//		Search2.click();
+		//		Thread.sleep(1000);
+		//		ThreeDot.click();
+		//		Thread.sleep(1000);
+		//		ResponseRecieve.click();
+		//		Thread.sleep(700);
+		//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		//		Thread.sleep(1000);
+		//
+		//
+		//		invoiceMode.click();
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//li[normalize-space()='Response Received']")).click();
+		//		Thread.sleep(1000);
+		//		Search2.click();
+		//		Thread.sleep(1000);
+		//		ThreeDot.click();
+		//		Thread.sleep(1000);
 		DraftFinalization.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("333");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
@@ -1376,6 +1425,10 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		GenerateInvoice1.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("333");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
@@ -1458,7 +1511,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		OK1.click();
 		Thread.sleep(1000);
-		
+
 		StatementStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Approved']")).click();
@@ -1483,6 +1536,10 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
 		Thread.sleep(1000);
+		StatementStatus.click();
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//li[normalize-space()='Approved']")).click();
+		Thread.sleep(1000);	
 		Searchicon.click();
 		Thread.sleep(700);
 		Settle.click();
@@ -1494,15 +1551,15 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		js.executeScript("arguments[0].scrollIntoView();", payment);
 		Thread.sleep(1000);
 		String AMOUNT = driver.findElement(By.xpath("(//label[@class='pay-style'])[2]")).getText();
-		
+
 		System.out.println(AMOUNT);
 
 		///	converting string into int 
 
 		double i = new Double(AMOUNT);
-		
-		
-	//	int i = Integer.parseInt(AMOUNT);
+
+
+		//	int i = Integer.parseInt(AMOUNT);
 
 		double DV =  (i/2); 
 		System.out.println(DV);
@@ -1533,6 +1590,10 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(5000);
 		cardok.click();
 		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("(//i[@class='fa fa-close'])[5]")).click();
+		Thread.sleep(1000);
+
 		settle.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']//i[@class='ki ki-check']")).click();
@@ -1544,24 +1605,24 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Partially Settled']")).click();
 		Thread.sleep(1000);
-//		Paytype.click();
-//		Thread.sleep(700);
-//		driver.findElement(By.xpath("//li[normalize-space()='Company']")).click();
-//		Thread.sleep(1000);
-//
-//		Companyname1.click();
-//		Thread.sleep(700);
-//		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
-//		Thread.sleep(1000);
+		//		Paytype.click();
+		//		Thread.sleep(700);
+		//		driver.findElement(By.xpath("//li[normalize-space()='Company']")).click();
+		//		Thread.sleep(1000);
+		//
+		//		Companyname1.click();
+		//		Thread.sleep(700);
+		//		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
+		//		Thread.sleep(1000);
 		Searchicon.click();
 		Thread.sleep(1000);
 		Settle.click();
 		Thread.sleep(1000);
-		
+
 		js.executeScript("arguments[0].scrollIntoView();", payment);
 		Thread.sleep(1000);
 		String AMOUNT1 = driver.findElement(By.xpath("(//label[@class='pay-style'])[2]")).getText();
-		
+
 		System.out.println(AMOUNT1);
 		Cheque.click();
 		Thread.sleep(1000);
@@ -1569,9 +1630,9 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='VMKC Bank']")).click();
 		Thread.sleep(1000);
-		Amount.clear();
-		Thread.sleep(1000);
-		Amount.sendKeys(amount);
+//		Amount.clear();
+//		Thread.sleep(1000);
+//		Amount.sendKeys(amount);
 		Thread.sleep(1000);
 		TransactionNo.sendKeys("9787564");
 		Thread.sleep(1000);

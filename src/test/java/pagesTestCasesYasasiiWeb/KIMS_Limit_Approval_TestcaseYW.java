@@ -30,7 +30,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void pricebyUser(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		

@@ -922,6 +922,10 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(2000);
 
 
+		WebDriverWait wait= new WebDriverWait(driver, java.time.Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(disgnosis));
+		Thread.sleep(1000);
+		
 		///Diagnosis
 		disgnosis.click();
 		Thread.sleep(1000);
@@ -1071,7 +1075,7 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		ServiceSearch1.sendKeys(SERVICE, Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='"+SERVICE+"']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		threeDot.click();
 		Thread.sleep(1000);
 		Edit.click();
@@ -1319,6 +1323,7 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		site.click();
 		Thread.sleep(1000);
 
+//		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);

@@ -55,11 +55,11 @@ public class KIMS_IPFinalbilling_TestcaseYW   extends TestBaseYasasiiWeb  {
 
     	IPfinal.doctoreNote(docid, docpassword, MRNO);
 
-//		IPfinal.PharmacyBilling(MRNO, ADTprovider, adminid, adminpassword);
+  // 	IPfinal.PharmacyBilling(MRNO, ADTprovider, adminid, adminpassword);
 
     	IPfinal.dischargeApproval(MRNO, nurseUser, NursePassword);
     	
-    	IPfinal.Discharge_Summary_Clearance(MRDUser, MRDPassword, MRNO, docid, docpassword, nurseUser);
+   	    IPfinal.Discharge_Summary_Clearance(MRDUser, MRDPassword, MRNO, docid, docpassword, nurseUser);
 
 		IPfinal.ADTAppoval(MRNO, adminid, adminpassword);
 

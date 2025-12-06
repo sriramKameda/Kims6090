@@ -156,7 +156,7 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 	@FindBy(xpath = "//textarea[@id='undefined']")
 	public WebElement remark;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/label[3]/span[2]/i[2]")
+	@FindBy(xpath = "//i[@class='ki ki-file-cancel ng-star-inserted']")
 	public WebElement cancel;
 
 	@FindBy(xpath = "//div[@class='form-group min-clear-bottom billing ki-dropdown']//input[@id='undefined']")
@@ -288,10 +288,10 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 	@FindBy(xpath = "//i[@title='Delete']")
 	public WebElement Delete;
 
-	@FindBy(xpath = "//i[@title='Payment Info']")
+	@FindBy(xpath = "//td[@class='full-width']//div[3]//label[1]")
 	public WebElement PaymentInfo;
 
-	@FindBy(xpath = "//td[@class='info-icon']//i[@title='Adjustment Log']")
+	@FindBy(xpath = "//label[normalize-space()='Adjustment Log']")
 	public WebElement adjInfo;
 
 	@FindBy(xpath = "//i[@class='ki ki-cheque icon-btn-billing btn-dark-green inline']")
@@ -459,22 +459,13 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 		Save.click();
 		Thread.sleep(3000);
 
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")));
+		Thread.sleep(2000);
 		
-		  List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-			System.out.println(dynamicElement11.size());
-			if(dynamicElement11.size() !=0)
-			{
-				driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-				Thread.sleep(600);
-				driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-				Thread.sleep(600);
-				driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-				Thread.sleep(600);
-				driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-				Thread.sleep(1600);
-
-	}
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1600);
 		
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
@@ -541,11 +532,9 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		//	driver.findElement(By.xpath("//tbody/tr["+k+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		// Checkbox.click();//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//label[@title='Request for Cancellation'])[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"1\"]/div/div/div/div/table/tbody/tr[1]/td[1]/label[5]/span/i")).click();
 		// request.click();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 		Thread.sleep(1000);
 		auth.click();
@@ -589,12 +578,10 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		// Checkbox.click();
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
-		// request.click();
+		driver.findElement(By.xpath("//*[@id=\"1\"]/div/div/div/div/table/tbody/tr[1]/td[1]/label[5]/span/i")).click();
+		// request.click();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 		Thread.sleep(2000);
 		auth.click();
 		Thread.sleep(1000);
@@ -628,6 +615,8 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(2000);
 		userid.click();
 		Thread.sleep(1000);
+//		userid.sendKeys("admin");
+//		Thread.sleep(1000);
 		userid.sendKeys(FinalbillUser);
 		Thread.sleep(1000);
 		password.click();
@@ -979,22 +968,26 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(1000);
 
 
+		driver.findElement(By.xpath("//tbody/tr[@class='ng-star-inserted']/td[@class='full-width']/label[4]/i[1]")).click();
+		Thread.sleep(1000);
+		
 		js.executeScript("arguments[0].scrollIntoView();", PaymentInfo);
 		Thread.sleep(1000);
 		PaymentInfo.click();
 		Thread.sleep(3000);
-		Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
+		driver.findElement(By.xpath("//button[@class='btn btn-danger sm clear']")).click();
+		Thread.sleep(1000);
+		
+		
+		driver.findElement(By.xpath("//tbody/tr[@class='ng-star-inserted']/td[@class='full-width']/label[4]/i[1]")).click();
+		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();", adjInfo);
 		Thread.sleep(1000);
 		adjInfo.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@class='btn btn-danger sm clear']")).click();
-		Thread.sleep(1000);
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-
+		
+	
 		Thread.sleep(2000);
 		droplist.click();
 		Thread.sleep(2000);

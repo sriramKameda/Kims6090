@@ -443,10 +443,12 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		//Thread.sleep(1000);
 		billSave.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
+		
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@type='button'][normalize-space()='OK'])[1]")));
 		Thread.sleep(2000);
-
-
+		driver.findElement(By.xpath("(//button[@type='button'][normalize-space()='OK'])[1]")).click();
+		Thread.sleep(2000);
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
 
@@ -471,6 +473,8 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		ADT.click();
 		Thread.sleep(1600);
 		
+		EnterProviderName.clear();
+		Thread.sleep(700);
 		EnterProviderName.sendKeys(ADTprovider);
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+ ADTprovider +"')])[1]")).click();
@@ -548,9 +552,15 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		EMRHomeScreen.click();
 		Thread.sleep(1200);
 
-
-		EnterPatientName.sendKeys(MRNo,Keys.ENTER);
+		
 		Thread.sleep(1500);
+		driver.findElement(By.xpath("//input[@id='maincategory']")).click();
+		Thread.sleep(1200);
+		driver.findElement(By.xpath("//li[normalize-space()='ER']")).click();
+		Thread.sleep(1200);
+		EnterPatientName.sendKeys(MRNo);
+		Thread.sleep(1500);
+
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(5000);
 		/*	UParrow.click();
@@ -635,7 +645,7 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 
 		Thread.sleep(3000);
 		Hamburger.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		EMR.click();
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);

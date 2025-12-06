@@ -31,6 +31,7 @@ public class KIMS_AppointmentView_inEMR_Yasasiiweb  extends PageFactoryInitYasas
 	public KIMS_AppointmentView_inEMR_Yasasiiweb(WebDriver driver) {
 		super(driver);
 	}
+	
 
 	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='menu-toggle']")
 	public WebElement Hamburger;
@@ -287,21 +288,13 @@ public class KIMS_AppointmentView_inEMR_Yasasiiweb  extends PageFactoryInitYasas
 		Thread.sleep(3000);
 
 
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-		System.out.println(dynamicElement11.size());
-		if(dynamicElement11.size() !=0)
-		{
-			driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-			Thread.sleep(1600);
-
-		}
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")));
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1600);
+	
 
 
 	}
@@ -354,6 +347,10 @@ public class KIMS_AppointmentView_inEMR_Yasasiiweb  extends PageFactoryInitYasas
 
 		AppSave.click();
 		Thread.sleep(2000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']")));
+		Thread.sleep(2000);
+		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(3000);
 
@@ -499,6 +496,9 @@ public class KIMS_AppointmentView_inEMR_Yasasiiweb  extends PageFactoryInitYasas
 
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/lib-scheduler[1]/form[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[2]/div[1]")).click();
 		Thread.sleep(800);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[@class='check-container m0']//span[@class='checkmark']")));
+		Thread.sleep(800);
 		driver.findElement(By.xpath("//label[@class='check-container m0']//span[@class='checkmark']")).click();
 		Thread.sleep(800);
 
@@ -570,7 +570,7 @@ public class KIMS_AppointmentView_inEMR_Yasasiiweb  extends PageFactoryInitYasas
 		Thread.sleep(1800);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//modal-container[@class='modal fade show']//button[@type='button'][normalize-space()='Close']")));
-		Thread.sleep(800);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//modal-container[@class='modal fade show']//button[@type='button'][normalize-space()='Close']")).click();
 		Thread.sleep(800);
 

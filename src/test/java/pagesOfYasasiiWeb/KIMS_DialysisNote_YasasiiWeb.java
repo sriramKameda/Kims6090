@@ -237,13 +237,13 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[@class='fa fa-caret-right']")
 	public WebElement Rightkey;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")
 	public WebElement dialysisnote;
 
-	@FindBy(xpath = "//div[@class='child-list-group']//div[1]//div[1]//div[2]//div[1]//div[4]//div[1]//div[6]//label[1]//i[1]")
+	@FindBy(xpath = "//div[@class='child-list-group']//i[@title='More']")
 	public WebElement more;
 
-	@FindBy(xpath = "//div[normalize-space()='Edit']")
+	@FindBy(xpath = "//div[@class='listitem ng-star-inserted']")
 	public WebElement edit;
 
 	@FindBy(xpath = "//label[@class='table-action-icons']//i[@class='ki ki-edit-log']")

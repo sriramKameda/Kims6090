@@ -33,119 +33,143 @@ import pagesOfYasasiiWeb.HomePageYasasiiWeb;
 import pagesOfYasasiiWeb.KIMS_PatientJourney_IP_Yasasiiweb;
 import pagesOfYasasiiWeb.LoginPageYasasiiWeb;
 
-public class KIMS_PatientJourney_IP_TestcaseYW  extends TestBaseYasasiiWeb  {
+public class KIMS_PatientJourney_IP_TestcaseYW extends TestBaseYasasiiWeb {
 	public static LoginPageYasasiiWeb login;
-public static HomePageYasasiiWeb hm;
+	public static HomePageYasasiiWeb hm;
 
+	@BeforeClass
+	public void navigateemradt() throws InterruptedException {
 
-@BeforeClass
-public void navigateemradt() throws InterruptedException {
-	
-	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "KAmeda123$", Site);
-	Thread.sleep(3000);
-	
-}
+		this.login = new LoginPageYasasiiWeb(driver);
+		this.hm = login.enterloginDetails("admin", "KAmeda123$", Site);
+		Thread.sleep(3000);
 
+	}
 
 @Test(dataProvider="getData"  , priority=0)
-public void BirthReg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider,String  ADTprovider,String docid,String docpassword,String OrdersetName,String FoUser, String Password,String NurseID, String Pharmacist_Id, String	Pharmacist_password, String	MRDUser, String	MRDPassword, String authoriser  ) throws InterruptedException, IOException, AWTException {
+	public void BirthReg(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
+			String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
+			String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
+			String Pharmacist_password, String MRDUser, String MRDPassword, String authoriser)
+			throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
-		
-		    
-		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
-		
-     bill.Patreg(title,Name, Lastname, Dob, DocID, MobNo, Address, MRNo, ADTprovider);
 
-     bill.ADT();
-		
-		
-			
-		}
+		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
+
+		bill.Patreg(title, Name, Lastname, Dob, DocID, MobNo, Address, MRNo, ADTprovider);
+
+		bill.ADT();
+
+	}
 
 @Test(dataProvider="getData"  , priority=1)
-public void IPMEdication(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider,String  ADTprovider,String docid,String docpassword,String OrdersetName,String FoUser, String Password,String NurseID, String Pharmacist_Id, String	Pharmacist_password, String	MRDUser, String	MRDPassword , String authoriser ) throws InterruptedException, IOException, AWTException {
+	public void IPMEdication(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
+			String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
+			String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
+			String Pharmacist_password, String MRDUser, String MRDPassword, String authoriser)
+			throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
-		
+
 		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
 
-		bill.doctoreNote(docid, docpassword, MRNo, OrdersetName);
-		
+	   bill.doctoreNote(docid, docpassword, MRNo, OrdersetName);
+
 		bill.serviceExecution();
 		
-		bill.IPpanel( Password, MRNo);
-		
+		bill.OrderBilling( MRNo);
+
+		bill.IPpanel(Password, MRNo);
+
 		bill.Stockreceive(MRNo);
-		
-		bill.IPMedicineAdministration( MRNo);
-		
-		bill.BackendBillgeneration( MRNo);	
-		
-		bill.doctoreNote_discharge(docid, docpassword, MRNo);
-		
-		bill.IPpanel_DischargeMedicine( MRNo);
-		
-		}
 
+		bill.IPMedicineAdministration(MRNo);
 
-@Test(dataProvider="getData"  , priority=2)
-public void Discharge(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider,String  ADTprovider,String docid,String docpassword,String OrdersetName,String FoUser, String Password,String NurseID, String Pharmacist_Id, String	Pharmacist_password, String	MRDUser, String	MRDPassword, String authoriser  ) throws InterruptedException, IOException, AWTException {
-		Thread.sleep(2000);
-		
-		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
-		
-       
-       bill.patient_stockreturn(MRNo);
-        
-        bill.doctoreNote1(docid, docpassword, MRNo);
-        
-        bill.dischargeApproval(MRNo, NurseID, Password , Pharmacist_Id, Pharmacist_password);
+		bill.BackendBillgeneration(MRNo);
 
-        bill.Discharge_Summary_Clearance(MRDUser, MRDPassword, MRNo, docid, docpassword);
+	}
+@Test(dataProvider="getData", priority=2)
+public void medicine_discontinue(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
+		String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
+		String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
+		String Pharmacist_password, String MRDUser, String MRDPassword, String authoriser)
+		throws InterruptedException, IOException, AWTException {
+	Thread.sleep(2000);
+	
+	
+	KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
+	
 
-        bill.PharmacyClearance(MRNo);
+	bill.doctoreNote_discharge(docid, docpassword, MRNo);
 
-        bill.ADTAppoval(MRNo);
+	bill.IPpanel_DischargeMedicine(MRNo);
 
-
+	bill.patient_stockreturn(MRNo);
+	
+	
+	
+	
 }
-
 
 @Test(dataProvider="getData"  , priority=3)
-public void finalbilling (String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider,String  ADTprovider,String docid,String docpassword,String OrdersetName,String FoUser, String Password,String NurseID, String Pharmacist_Id, String	Pharmacist_password, String	MRDUser, String	MRDPassword, String authoriser ) throws InterruptedException, IOException, AWTException {
+	public void Discharge(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
+			String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
+			String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
+			String Pharmacist_password, String MRDUser, String MRDPassword, String authoriser)
+			throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
-		
+
 		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
 		
-       bill.FinalBilling( MRNo);
-   
-        bill.PhysicalClearance(MRNo, NurseID, Password);
 
-}
-
-
-
-
-@AfterClass
-public void logout() throws Exception
-{
-	Robot t=new Robot();
-	t.keyPress(KeyEvent.VK_ESCAPE);
-	t.keyRelease(KeyEvent.VK_ESCAPE);
-	Thread.sleep(400);
-	t.keyPress(KeyEvent.VK_ESCAPE); 
-	t.keyRelease(KeyEvent.VK_ESCAPE);
+		bill.doctoreNote1(docid, docpassword, MRNo);
 	
-	this.hm.clickLogout();
-}
+		bill.clinicalPharmasistclearance(MRNo, NurseID, Pharmacist_password);
 
-@DataProvider
-public Object[][] getData() throws Exception{
+		bill.readyForDischarge(MRNo, Pharmacist_Id, Pharmacist_password);
 
-	Object[][] data =readExcel("IP_Journey");
-	return data;	
-}
-	
-	
+		// swa bill.dischargeApproval(MRNo, NurseID, Password , Pharmacist_Id,Pharmacist_password);
+
+		bill.Discharge_Summary_Clearance(MRDUser, MRDPassword, MRNo, docid, docpassword);
+
+		// swa bill.PharmacyClearance(MRNo);
+
+		bill.ADTAppoval(MRNo);
+
+	}
+
+	@Test(dataProvider = "getData", priority = 4)
+	public void finalbilling(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
+			String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
+			String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
+			String Pharmacist_password, String MRDUser, String MRDPassword, String authoriser)
+			throws InterruptedException, IOException, AWTException {
+		Thread.sleep(2000);
+
+		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
+
+		bill.FinalBilling(MRNo);
+
+		bill.PhysicalClearance(MRNo, NurseID, Password);
+
+	}
+
+	@AfterClass
+	public void logout() throws Exception {
+		Robot t = new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+
+		this.hm.clickLogout();
+	}
+
+	@DataProvider
+	public Object[][] getData() throws Exception {
+
+		Object[][] data = readExcel("IP_Journey");
+		return data;
+	}
 
 }

@@ -105,6 +105,9 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 
 	@FindBy(xpath = "//input[@id='maritalstatusid']")
 	public WebElement maritialStatus;	
+	
+	@FindBy(xpath = "//input[@id='division']")
+	public WebElement Organisation;
 
 	@FindBy(xpath = "//i[@id='capture']")
 	public WebElement signupload;	
@@ -286,7 +289,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//input[@id='searchText']")
 	public WebElement counterSearch;
 
-	@FindBy(xpath = "//div[@class='plt-prt-5 col-md-8']//i[@class='ki ki-search']")
+	@FindBy(xpath = "//i[@title='Search']")
 	public WebElement counterSearchicon;
 
 
@@ -599,6 +602,46 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//input[@id='cheqnoPayType']")
 	public WebElement TransactionNO;
 	
+	@FindBy(xpath = "//i[@class='ki ki-patient-fill']")
+	public WebElement patientinfo;
+	
+	@FindBy(xpath = "//i[@class='ki ki-pencil']")
+	public WebElement EditInfo;
+	
+	@FindBy(xpath = "//span[normalize-space()='Insurance and Other Information']")
+	public WebElement Insurance_otherinformation;
+	
+	@FindBy(xpath = "//ki-select-control[contains(@placeholder,'Insurance')]//input[@id='undefined']")
+	public WebElement Insurance;
+	
+	@FindBy(xpath = "//ki-select-control[@class='ng-untouched ng-pristine ng-invalid']//input[@id='undefined']")
+	public WebElement Plan;
+
+	@FindBy(xpath = "//input[@class='form-control ng-untouched ng-pristine ng-star-inserted ng-valid']")
+	public WebElement validto;
+	
+	@FindBy(xpath = "//button[@id='updateregistrationbutton']")
+	public WebElement UpdateReg;
+	
+	@FindBy(xpath = "//div[contains(text(),'Scheme Change')]")
+	public WebElement SchemeChange;
+	
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-scheme-change[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement Searchmrno;
+	
+	@FindBy(xpath = "//ki-checkbox-control[@class='ng-untouched ng-dirty ng-valid']//span[@class='checkmark']")
+	public WebElement Selectallbill;
+	
+	@FindBy(xpath = "//button[@id='schemechange']")
+	public WebElement GO;
+	
+	@FindBy(xpath = "//div[normalize-space()='Patient Share']")
+	public WebElement patientShare;
+	
+	@FindBy(xpath = "//div[@class='form-group min-clear-bottom ki-dropdown']//input[@id='undefined']")
+	public WebElement Planname;
+
+	
 	public void Patreg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider) throws InterruptedException, IOException, AWTException {
 
 		///////////////////Register a female patient
@@ -661,6 +704,13 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//li[normalize-space()='Single']")).click();
 		Thread.sleep(500);
 
+		Organisation.click();
+		Thread.sleep(1000);
+		Organisation.sendKeys("Self employment");
+		Thread.sleep(1000);
+		
+		
+		
 		ContactInformation.click();
 		Thread.sleep(1000);
 		EnterAddress.sendKeys(Address);
@@ -691,10 +741,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		js.executeScript("arguments[0].scrollIntoView();",Add1 );
 		Add1.click();
 		Thread.sleep(600);
-
-
-
-
+		
 		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//*[@class='required ng-star-inserted']"));
 
 		System.out.println(dynamicElement1.size());
@@ -714,7 +761,11 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(3000);
-
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(2000);
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -760,10 +811,6 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(2000);
 
 
-
-
-
-
 	}
 
 	public void ADT( ) throws InterruptedException, AWTException {
@@ -780,11 +827,16 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		providerName.sendKeys(Provider);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(text(),'"+Provider+"')]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		EncounterAdd.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		EncounterSave.click();
 		Thread.sleep(1000);
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SAvesuccess));
+		Thread.sleep(2000);
 		SAvesuccess.click();
 		Thread.sleep(3000);
 
@@ -1143,7 +1195,12 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		//		Thread.sleep(2000);
 		EMRsave.click();
 		Thread.sleep(3000);
+		
+		
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(username));
+		Thread.sleep(2000);
 
 	}
 
@@ -1225,7 +1282,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		counterSearch.sendKeys(MRNO);
 		Thread.sleep(1000);
-		//counterSearchicon.click();
+		counterSearchicon.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(text(),'"+MRNO+"')]")).click();
 		Thread.sleep(1000);
@@ -1305,7 +1362,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		counterSearch.sendKeys(MRNO);
 		Thread.sleep(1000);
-		//counterSearchicon.click();
+		counterSearchicon.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'"+MRNO+"')]")).click();
 		Thread.sleep(3000);
@@ -1327,14 +1384,18 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		counterSearch.sendKeys(MRNO);
 		Thread.sleep(1000);
-		//counterSearchicon.click();
+		counterSearchicon.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'"+MRNO+"')]")).click();
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
+		driver.findElement(By.xpath("//button[@id='billingsave']//i[@class='ki ki-save']")).click();
+		Thread.sleep(2000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(OK1));
 		Thread.sleep(2000);
 		OK1.click();
 		Thread.sleep(1000);
@@ -1345,7 +1406,82 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
 		Thread.sleep(1000);
+		
+		
+		toggle.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='link-value'][normalize-space()='FO']")).click();
+		Thread.sleep(2000);
+		Registration.click();
+		Thread.sleep(2000);
+		
+		Searchfield.click();
+		Thread.sleep(1000);
+		Searchfield.sendKeys(MRNO);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[@class='search-icon']//i[@class='ki ki-search']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[contains(text(),'" + MRNO + "')]")).click();
+		Thread.sleep(2000);
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
+		if(dynamicElement11.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+		patientinfo.click();
+		Thread.sleep(1000);
+		EditInfo.click();
+		Thread.sleep(1000);
+//		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", Insurance_otherinformation);	
+		
+		Insurance_otherinformation.click();
+		Thread.sleep(1000);
+		Insurance.click();
+		Thread.sleep(1000);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
+		Thread.sleep(2000);
+		Thread.sleep(600);
+		Plan.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='MSD Full cover']")).click();
+		Thread.sleep(600);
+//		Robot t=new Robot();
+
+
+//		validto.click();
+//		Thread.sleep(1000);
+//		for (int i = 0; i <=20; i++) {
+//
+//			t.keyPress(KeyEvent.VK_DOWN);
+//			t.keyRelease(KeyEvent.VK_DOWN);
+//			Thread.sleep(400);
+//
+//		}
+//		
+//		
+//		t.keyPress(KeyEvent.VK_ENTER);
+//		t.keyRelease(KeyEvent.VK_ENTER);
+
+		driver.findElement(By.xpath("//span[@class='icon-btn btn-dark-green inline ng-star-inserted']//i[@class='ki ki-plus']")).click();
+		Thread.sleep(600);
+		
+		UpdateReg.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		Thread.sleep(2000);
+		
+		
 
 	}
 
@@ -1358,11 +1494,52 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		//	module.click();
 		Thread.sleep(1000);
 		finalBilling.click();
+		
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
 	    IP.click();
 		Thread.sleep(1000);
+		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement11.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+		
+		
 		driver.findElement(By.xpath("//div[normalize-space()='Interim Bill']")).click();
 		Thread.sleep(2000);
+		
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement211=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement211.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
 		
 		Thread.sleep(1000);
 		MRNoEnter.click();
@@ -1373,6 +1550,12 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		search1.click();
 		Thread.sleep(1000);
+		
+	String SchemeA=	driver.findElement(By.xpath("//tr[@class='total-row']//td[@class='common max ng-star-inserted']")).getText();
+	
+	System.out.println(SchemeA + "Scheme A Amount");
+	Thread.sleep(2000);
+	
 		
 		
 		driver.findElement(By.xpath("//td[2]")).click();
@@ -1408,24 +1591,127 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 
+		///////////Scheme change
 		
+		toggle.click();
+		Thread.sleep(1000);
+		SchemeChange.click();
+		Thread.sleep(1000);
+		Searchmrno.click();
+		Thread.sleep(1000);
+		Searchmrno.sendKeys(MRNO, Keys.ENTER);
+		Thread.sleep(1000);
+		search1.click();
+		Thread.sleep(1000);
+		Selectallbill.click();
+		Thread.sleep(1000);
+		GO.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+		Thread.sleep(1500);
+		
+		
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", patientShare);	
+		
+		
+		String SchemeB=	driver.findElement(By.xpath("//div[@class='row ng-star-inserted']//div[4]//div[2]")).getText();
+		
+		System.out.println(SchemeB + "Scheme B Amount");
+		Thread.sleep(2000);
+		
+	
+        try {
+        	int m = Integer.parseInt(SchemeA);
+    	    int n = Integer.parseInt(SchemeB);
+    	    
+    		int AmountDiff =n-m;
+    		System.out.println(AmountDiff + "AmountDiff");
+    		
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format");
+            System.out.println(e);
+        }
+    
+
+	   
+	    
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		Thread.sleep(3000);
+		OK1.click();
+		Thread.sleep(2000);
+		
+		
+		///after scheme change
+		
+		toggle.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[normalize-space()='Interim Bill']")).click();
+		Thread.sleep(2000);
+		
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement1121=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement1121.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+		
+		Thread.sleep(1000);
+		MRNoEnter.click();
+		Thread.sleep(1000);
+		MRNoEnter.sendKeys(MRNO, Keys.ENTER);
+		Thread.sleep(2000);
+		
+		Planname.click();  
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD/MSD Full cover']")).click();
+		Thread.sleep(2000);
+	
+		search1.click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//td[2]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//tr[@class='ng-star-inserted']//td[2]")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//i[@title='Advance Log']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//button[@title='Print']")).click();
+		Thread.sleep(5000);
+		
+
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		
+		driver.findElement(By.xpath("//ki-checkbox-control[@class='ng-untouched ng-dirty ng-valid']//span[@class='checkmark']")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//button[@title='Print']")).click();
+		Thread.sleep(5000);
+		
+	
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
 		
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

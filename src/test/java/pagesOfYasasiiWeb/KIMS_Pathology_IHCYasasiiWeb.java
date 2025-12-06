@@ -256,19 +256,19 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 	@FindBy(xpath="//textarea[@id='clinicaldiagnosisrep']")
 	public WebElement clinicalDiagnosis;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='macroscopy']//div[@class='fr-element fr-view']")
+	@FindBy(xpath="(//div[@role='textbox'])[1]")
 	public WebElement macroScopy;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='microscopy']//div[@class='fr-wrapper show-placeholder']//p")
+	@FindBy(xpath="(//div[@role='textbox'])[2]")
 	public WebElement microscopy;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='diagnosis']//div[@class='fr-element fr-view']")
+	@FindBy(xpath="(//div[@role='textbox'])[3]")
 	public WebElement Diagnosis;
 
-	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]")
+	@FindBy(xpath="(//div[@role='textbox'])[4]")
 	public WebElement FinalDiagnosis;
 
-	@FindBy(xpath="//textarea[@id='commentsrep']")
+	@FindBy(xpath="(//textarea[@id='commentsrep'])[1]")
 	public WebElement comment;
 
 	@FindBy(xpath="//label[@class='check-container list-report']//span[@class='checkmark']")
@@ -496,7 +496,35 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(700);
 		Add.click();
 		Thread.sleep(700); 
+
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+		if(dynamicElement.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+		else
+		{
+			
+		}
+		Thread.sleep(700);
 		Saveservice.click();
+		Thread.sleep(700);
+		
+		Thread.sleep(700);
+
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+		else
+		{
+			
+		}
 		Thread.sleep(700);
 		SaveOK.click();
 
@@ -555,17 +583,20 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		investHAmb.click();
 		Thread.sleep(700);
 		SampleProcessing.click();
+		Thread.sleep(1000);
+		
+		ivstgnStatus.click();
 		Thread.sleep(700);
+		driver.findElement(By.xpath("//li[normalize-space()='Sample Received']")).click();
+		Thread.sleep(700);
+		
 		
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
 		Thread.sleep(1000);
-		ivstgnStatus.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Sample Received']")).click();
-		Thread.sleep(700);
+		
 		
 		
 		SearchField.clear();

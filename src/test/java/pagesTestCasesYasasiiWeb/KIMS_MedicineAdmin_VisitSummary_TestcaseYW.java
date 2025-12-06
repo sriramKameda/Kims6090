@@ -51,13 +51,12 @@ public void CPOE(String title,String Name,String lastname,String Dob, String Doc
 		
 		
 		}
-//@Test(dataProvider="getData"  , priority=2)
+@Test(dataProvider="getData"  , priority=2)
 public void MIS(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String ADTprovider,String DOCuser ,String DOCpassword,String Site,String servicecountInEMR) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
 		KIMS_MedicineAdmin_VisitSummary_YasasiWeb cpoe = new KIMS_MedicineAdmin_VisitSummary_YasasiWeb(driver);
 		
-	//	cpoe.CPOEAdministration();
 		
 		cpoe.MIS( DOCuser, DOCpassword, MRNo, servicecountInEMR);
 		

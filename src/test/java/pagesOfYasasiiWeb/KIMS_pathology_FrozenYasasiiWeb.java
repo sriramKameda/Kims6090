@@ -262,10 +262,10 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 	@FindBy(xpath="//textarea[@id='clinicaldiagnosisrep']")
 	public WebElement clinicalDiagnosis;
 
-	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")
+	@FindBy(xpath="(//p)[1]")
 	public WebElement macroScopy;
 
-	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")
+	@FindBy(xpath="(//p)[2]")
 	public WebElement microscopy;
 
 	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]/p[1]")
@@ -343,7 +343,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 	@FindBy(xpath="//input[@id='status']")
 	public WebElement status;
 
-	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]")
+	@FindBy(xpath="(//div[@role='textbox'])[3]")
 	public WebElement frozenreport;
 
 	@FindBy(xpath="//label[normalize-space()='Final Report']//span[@class='checkmark']")
@@ -630,10 +630,11 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(5000);
 		//	caudatecheckbox.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
-
-
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
 		ivstgnSave.click();
 		Thread.sleep(2000);
 		SaveOK1.click();
@@ -719,7 +720,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		Donebydoc.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Arya S']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Samitha Nair']")).click();
 		Thread.sleep(1000);
 		PathSave.click();
 		Thread.sleep(1000); 
@@ -969,51 +970,16 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		comment.sendKeys("comment");
 		Thread.sleep(1000);
-	//	finalreport.click();
-		Thread.sleep(1000);
-		FinalDiagnosis.sendKeys("FinalDiagnosis");
-		Thread.sleep(1000);
+		finalreport.click();
+//		Thread.sleep(1000);
+//		FinalDiagnosis.sendKeys("FinalDiagnosis");
+//		Thread.sleep(1000);
 		ReportSave.click();
 		Thread.sleep(5000);
 		Range.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
-		//		Thread.sleep(1000);
-		//	//	driver.findElement(By.xpath("//li[normalize-space()='Critical']")).click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
-		//		Thread.sleep(3000);
-		//		ivstgnStatus.click();
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//li[normalize-space()='Critical Result not informed']")).click();
-		//		Thread.sleep(1000);
-		//		SearchField.clear();
-		//		Thread.sleep(1000);
-		//		Thread.sleep(1000);
-		//		SearchField.sendKeys(MRNO , Keys.ENTER);
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		//		Thread.sleep(2000);
-		//		
-		//		
-		//		criticalCall.click();
-		//		Thread.sleep(2000);
-		//		callStatus.click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("//li[normalize-space()='Got the feed back']")).click();
-		//		Thread.sleep(2000);
-		//		feedback.click();
-		//		Thread.sleep(2000);
-		//		feedback.sendKeys("patient should be under observation");
-		//		Thread.sleep(2000);
-		//		callSave.click();
-		//		Thread.sleep(2000);
-		//		criticalInformed.click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("//span[@class='btn btn-link ng-star-inserted']")).click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("//button[normalize-space()='Close']//i[@class='ki ki-close-circle']")).click();
-		//		Thread.sleep(2000);
+		
 
 		///firstlevel Authorize
 
@@ -1026,7 +992,21 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 
 		//ivstgnSave.click();//button[@id='onSaveid']
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+		
+		
+		List<WebElement> dynamicElement31=driver.findElements(By.xpath("//i[@class='ki ki-lock ki-lock-open']"));
+
+		if(dynamicElement31.size() !=0)
+		{
+			driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+			Thread.sleep(1000);
+
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
 
 		ivstgnStatus.click();

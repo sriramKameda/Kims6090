@@ -275,11 +275,15 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 
 	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement ChequeAdd;
+	
+	@FindBy(xpath = "(//i[@class='fa fa-1 fa-ellipsis-v custom-color'])[1]")
+	public WebElement Threedot;
+	
 
-	@FindBy(xpath = "//i[@title='Payment Info']")
+	@FindBy(xpath = "(//label[contains(text(),'Payment Info')])[1]")
 	public WebElement PaymentInfo;
 
-	@FindBy(xpath = "//td[@class='info-icon']//i[@title='Adjustment Log']")
+	@FindBy(xpath = "(//label[contains(text(),'Adjustment Log')])[1]")
 	public WebElement adjInfo;
 
 	@FindBy(xpath = "//i[@class='ki ki-cheque icon-btn-billing btn-dark-green inline']")
@@ -1099,6 +1103,8 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 		Thread.sleep(1000);
 
+		Threedot.click();
+		Thread.sleep(1000);
 
 		js.executeScript("arguments[0].scrollIntoView();", PaymentInfo);
 		Thread.sleep(1000);
@@ -1107,6 +1113,10 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
+		
+		Threedot.click();
+		Thread.sleep(1000);
+		
 		js.executeScript("arguments[0].scrollIntoView();", adjInfo);
 		Thread.sleep(1000);
 		adjInfo.click();

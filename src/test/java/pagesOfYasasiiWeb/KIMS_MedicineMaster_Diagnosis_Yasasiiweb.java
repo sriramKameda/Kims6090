@@ -575,12 +575,18 @@ public class KIMS_MedicineMaster_Diagnosis_Yasasiiweb extends PageFactoryInitYas
 			Thread.sleep(1000);
 			TemplateOK.click();
 			Thread.sleep(1000);
+			
+			WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='icon refresh']")));
+		    Thread.sleep(2000);
+			
+			
 
 			disgnosis.click();
 			Thread.sleep(1000);
 			//		DiagnosisSearch.sendKeys("(Idiopathic) normal pressure hydrocephalus");
 			//		Thread.sleep(1000);
-			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+			//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 			//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")));
 			//		Thread.sleep(2000);
 			driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -652,7 +658,7 @@ public class KIMS_MedicineMaster_Diagnosis_Yasasiiweb extends PageFactoryInitYas
 			Thread.sleep(2000);
 
 			//   WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='icon cpoeadmin']")));
 			Thread.sleep(2000);
 
 			CpoeAdministration.click();

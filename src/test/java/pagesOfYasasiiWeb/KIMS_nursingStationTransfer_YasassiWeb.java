@@ -402,24 +402,16 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(3000);
-
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']"));
-
-		System.out.println(dynamicElement11.size());
-		if(dynamicElement11.size() !=0)
-		{
-			driver.findElement(By.xpath("//label[@class='check-container mr0']//span[@class='checkmark']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[@id='consentsave']//i[@class='ki ki-save']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']//i[@class='ki ki-check']")).click();
-			Thread.sleep(600);
-			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-			Thread.sleep(1600);
-
-		}
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(3000);		
 		
-
+		
+		js.executeScript("arguments[0].scrollIntoView();", signupload);
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(3000);
 
 		///////////////encounter
 
@@ -438,6 +430,10 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		//Thread.sleep(1000);
 		billSave.click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
+		Thread.sleep(3000);		
+		
+		
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -514,10 +510,10 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])")).click();
 		Thread.sleep(1000);
+		
+		
 		Bed.click();
-		Thread.sleep(500);
-
-
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[1]")).click();
 		//SelectBed.click();
 		Thread.sleep(500);
@@ -539,7 +535,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 
 		
 
-		List<WebElement> dynamicElement2=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']"));
+		List<WebElement> dynamicElement2=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
 
 		if(dynamicElement2.size() !=0)
 		{
@@ -779,7 +775,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(1000);
 		Hamburger.click();
 		Thread.sleep(800);
-		//driver.findElement(By.xpath("//label[normalize-space()='Modules']")).click();
+		driver.findElement(By.xpath("//label[normalize-space()='Modules']")).click();
 		Thread.sleep(800);
 		FO.click();
 		Thread.sleep(1000);
@@ -818,7 +814,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Searchfield.sendKeys(MRNo , Keys.ENTER);
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		PatientInfo.click();
 		Thread.sleep(1000);

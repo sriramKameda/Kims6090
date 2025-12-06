@@ -220,7 +220,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[10]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/ki-textarea-control[1]/div[1]/textarea[1]")
 	public WebElement PlanText;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")
+	@FindBy(xpath = "//label[contains(@title,'Reason for Visit : Fever')]")
 	public WebElement EnteredNote;
 
 	@FindBy(xpath = "//i[@class='fa fa-pencil']")
@@ -379,13 +379,13 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 	@FindBy(xpath = "//div[normalize-space()='Reports']")
 	public WebElement Reports;	
 
-	@FindBy(xpath = "//span[normalize-space()='EMR']")
-	public WebElement EMR;	
+	@FindBy(xpath = "//span[normalize-space()='Billing']")
+	public WebElement Billing;	
 
 	@FindBy(xpath = "//span[normalize-space()='Adjustment Audit']")
 	public WebElement ADjAudit;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-mis-landing[1]/lib-reportviewverlanding[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]/span[1]")
+	@FindBy(xpath = "//span[normalize-space()='Unbilled CPOE Orders']")
 	public WebElement UnbilledCPOE;
 
 	@FindBy(xpath = "//button[@id='misreportfetch']")
@@ -545,8 +545,12 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Ok.click();
 		Thread.sleep(600);
 		Save.click();
-		Thread.sleep(3000);
-
+		Thread.sleep(600);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));	
+		Thread.sleep(600);
+		
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -592,6 +596,10 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		//	printUnckeck.click();
 		//	Thread.sleep(1000);
 		billSave.click();
+		Thread.sleep(1000);
+		
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
@@ -704,8 +712,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		site.click();
 		Thread.sleep(1000);
 
-		JavascriptExecutor js= (JavascriptExecutor) driver;//li[normalize-space()='Naufar Center']
-		//js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		JavascriptExecutor js= (JavascriptExecutor) driver;
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
@@ -720,40 +727,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		//Lock.click();
 		Thread.sleep(1500);
 
-		///ADT
-
-		/*	ADT.click();
-	Thread.sleep(1000);
-	//driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-	Thread.sleep(1000);
-	AdmissionType.click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("//li[normalize-space()='Day Case Admission']")).click();
-	Thread.sleep(2000);
-	providername.click();//input[@id='admittedproviderdisplayname']
-	Thread.sleep(1000);
-	providername.sendKeys(ADTProvider);
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//*[contains(text(),'"+ADTProvider+"')])[1]")).click();
-	Thread.sleep(1000);
-	Priority.click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("//li[normalize-space()='Elective']")).click();
-	Thread.sleep(1000);
-	BedCategory.click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("//li[normalize-space()='ROOM']")).click();
-	Thread.sleep(1000);
-	RoomType.click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//*[contains(text(),'Deluxe')])")).click();
-	Thread.sleep(1000);
-	Bed.click();
-	Thread.sleep(500);
-	driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[1]")).click();
-	Thread.sleep(500);
-	SAve.click();
-	Thread.sleep(2500);     */
+	
 
 		SubCategory.click();
 		Thread.sleep(1000);
@@ -795,6 +769,10 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(1000);
 		TemplateOK.click();
 		Thread.sleep(3000);
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));	
+		Thread.sleep(1000);
 
 		disgnosis.click();
 		Thread.sleep(1000);
@@ -1024,9 +1002,8 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(1000);
 		EmrSave.click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")));
-		Thread.sleep(4000);
-
+		wait.until(ExpectedConditions.elementToBeClickable(EnteredNote));
+		Thread.sleep(3000);
 
 		EnteredNote.click();
 		Thread.sleep(3000);
@@ -1037,8 +1014,8 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Medicine.click();
 		Thread.sleep(1000);
 		cpoePrescriptionPrint.click();
-		Thread.sleep(2000);
-	//		Robot t=new Robot();
+		Thread.sleep(5000);
+//			Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
@@ -1066,154 +1043,6 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(3000); 
 	}
 
-
-//
-//	public void CPOEAdministration() throws InterruptedException, AWTException {
-//		Thread.sleep(1000);
-//		CpoeAdministration.click();
-//		Thread.sleep(1000);
-//		MedicineAdministration.click();
-//		Thread.sleep(1000);
-//		AdminIcon.click();
-//		Thread.sleep(1000);
-//		Remarks.click();
-//		Thread.sleep(1000);
-//		Remarks.sendKeys("Medicine Administered");
-//		Thread.sleep(1000);
-//		Plus.click();
-//
-//		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
-//
-//		if(dynamicElement.size() !=0)
-//		{
-//			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		}
-//
-//
-//		else {
-//			System.out.println("sri");
-//		}
-//
-//		Thread.sleep(1000);
-//		AdminInfo.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[contains(@class,'modal-content-area')]//button[contains(@type,'button')][normalize-space()='Close']")).click();
-//		Thread.sleep(1000);
-//		Save1.click();
-//		Thread.sleep(3000);
-//
-//		/////SecondNurse verification
-//
-//		VerifiedBy.click();
-//		Thread.sleep(1000);
-//		VerifiedBy.sendKeys("Athira M R(NGL17895)");
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='Athira M R(NGL17895)']")).click();
-//		Thread.sleep(1000);
-//		Passsword.click();
-//		Thread.sleep(1000);
-//		Passsword.sendKeys("KAmeda123$");
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
-//		Thread.sleep(3000);    
-//
-//
-//		Range.click();
-//		Thread.sleep(1000);
-//		Range.click();
-//		Thread.sleep(1000);
-//
-//
-//		///ServiceAdministration 
-//
-//		Serviceadmin.click();
-//		Thread.sleep(1000);
-//		serviceadmin1.click();
-//		Thread.sleep(1000);
-//		AdminStatus.click();
-//		Thread.sleep(1000);
-//		JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//li[normalize-space()='Acknowledged']")));
-//		Thread.sleep(1000);		
-//
-//		driver.findElement(By.xpath("//li[normalize-space()='Acknowledged']")).click();
-//		Thread.sleep(1000);
-//		ServiceRemarks.click();
-//		Thread.sleep(1000);
-//		ServiceRemarks.sendKeys("Text files can store large amount of data as there is no limitation on the size of contents. However, text editors opening such large files need to be smart for loading and displaying these. Almost all operating systems come with text editors that allow you to create and edit text files. For example, Windows OS comes with Notepad and Wordpad for this purpose. Similarly, MacOS comes with TextEdit for creating and editing Text Documents. There are, however, other free text editors available as well over the internet that provide you the capability to work with Text Documents like Notepad++ which is far more advanced in terms of functionality.");
-//		Thread.sleep(1000);
-//		Save1.click();
-//		Thread.sleep(2000);
-//		serviceadmin2.click();
-//		Thread.sleep(1000);
-//		//AdminStatus.click();
-//		//driver.findElement(By.xpath("")).click();
-//		ServiceRemarks.click();
-//		Thread.sleep(1000);
-//		ServiceRemarks.sendKeys("Text files can store large amount of data as there is no limitation on the size of contents. However, text editors opening such large files need to be smart for loading and displaying these. Almost all operating systems come with text editors that allow you to create and edit text files. For example, Windows OS comes with Notepad and Wordpad for this purpose. Similarly, MacOS comes with TextEdit for creating and editing Text Documents. There are, however, other free text editors available as well over the internet that provide you the capability to work with Text Documents like Notepad++ which is far more advanced in terms of functionality.");
-//		Thread.sleep(1000);
-//		Save1.click();
-//		Thread.sleep(1000);
-//		//JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();", log);
-//		Thread.sleep(1000);
-//		orderdetails.click();
-//		Thread.sleep(1000);
-//		Close.click();
-//		Thread.sleep(1000);
-//		ServiceDetails.click();
-//		Thread.sleep(1000);
-//		Close.click();
-//		Thread.sleep(1000);
-//		log.click();
-//		Thread.sleep(1000);
-//		Close.click(); 
-//		Thread.sleep(1000);
-//		Status.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='Completed']")).click();
-//		Thread.sleep(1000);
-//		Status.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='Pending']")).click();
-//		Thread.sleep(1000);
-//		Reset.click();
-//		Thread.sleep(1000);
-//		serviceadmin1.click();
-//		Thread.sleep(1000);
-//		Save1.click();
-//		Thread.sleep(2000);
-//		//	JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();", log);
-//		Thread.sleep(1000);
-//		log.click();
-//		Thread.sleep(1000);
-//		Close.click();
-//		Thread.sleep(1000);
-//
-//		//		serviceadmin1.click();
-//		//		Thread.sleep(1000);
-//		//		Report.click();
-//		//		Thread.sleep(1000);
-//		//		driver.findElement(By.xpath("//label[normalize-space()='Authorize']//span[@class='checkmark']")).click();
-//		//		Thread.sleep(1000);
-//		//		Save1.click();
-//		//		Thread.sleep(2000);
-//		//
-//		//
-//		//		Refresh.click();
-//		//		Thread.sleep(2000);
-//		//		others.click();
-//		//		Thread.sleep(1000);
-//		//		driver.findElement(By.xpath("//i[@title='Document View']")).click();
-//		//		Thread.sleep(2000);
-//		//		driver.findElement(By.xpath("//button[@class='btn btn-danger sm ml10'][normalize-space()='Close']")).click();
-//		//		Thread.sleep(1000);
-//
-//
-//
-//
-//	}
 
 
 
@@ -1260,7 +1089,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Reports.click();
 		Thread.sleep(1000);
 
-		EMR.click();
+		Billing.click();
 		Thread.sleep(1000);
 		UnbilledCPOE.click();
 		Thread.sleep(1000);

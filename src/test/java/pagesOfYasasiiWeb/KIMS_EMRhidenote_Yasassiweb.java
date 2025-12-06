@@ -119,7 +119,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//button[@aria-label='Ok'][normalize-space()='OK']")
 	public WebElement TemplateOK;
 
-	@FindBy(xpath = "//div[contains(text(),'Diagnosis and Plan')]")
+	@FindBy(xpath = "//div[@class='item-name'][normalize-space()='Diagnosis and Plan']")
 	public WebElement disgnosis;
 
 	@FindBy(xpath = "//label[normalize-space()='CPOE Pharmacy']")
@@ -713,7 +713,9 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		TemplateOK.click();
 		Thread.sleep(1000);
-
+		
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));	
+		Thread.sleep(1000);
 		disgnosis.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -907,8 +909,67 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 	}
 
 
-	public void CPOE(String SecondNurse) throws InterruptedException, AWTException {
+	public void CPOE(String SecondNurse,String MRNo) throws InterruptedException, AWTException {
 
+		
+		Thread.sleep(3000);
+		((JavascriptExecutor)driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		int Windowsize =driver.getWindowHandles().size();
+		int windowopen= Windowsize-1;
+
+		driver.switchTo().window(tabs.get(windowopen));
+		driver.switchTo().window(tabs.get(windowopen));
+		Thread.sleep(3000);
+
+		//Clearing Browser cache
+
+		driver.get("chrome://settings/clearBrowserData");
+		Thread.sleep(2000);
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ENTER);
+		t.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+
+		//Application Url
+
+		driver.get(URL);
+		Thread.sleep(2000);
+		userid.click();
+		Thread.sleep(1000);
+		userid.sendKeys(NurseID);
+		password.click();
+		Thread.sleep(1000);
+		password.sendKeys(Password);
+		Thread.sleep(1000);
+		site.click();
+		Thread.sleep(1000);
+
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		//js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+		Thread.sleep(3000);
+		MenuToggle.click();
+		Thread.sleep(1000);
+		EMRHomeScreen.click();
+
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//input[@id='maincategory']")).click();
+		Thread.sleep(1200);
+		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
+		Thread.sleep(1200);
+		EnterPatientName.sendKeys(MRNo);
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
+		Thread.sleep(1000);
+		
+		
+		
 		Thread.sleep(700);
 		CpoeAdmin.click();
 		Thread.sleep(700);

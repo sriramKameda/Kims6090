@@ -413,7 +413,7 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
 		Thread.sleep(1000);
 		TemplateOK.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		Diagnosis.click();
 		Thread.sleep(700);

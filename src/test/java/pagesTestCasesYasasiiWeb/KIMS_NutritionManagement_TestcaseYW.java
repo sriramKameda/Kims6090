@@ -33,7 +33,7 @@ public class KIMS_NutritionManagement_TestcaseYW extends TestBaseYasasiiWeb   {
 	}
 
 	
-	@Test (dataProvider = "getData" , priority=0)
+ @Test (dataProvider = "getData" , priority=0)
 	public void Patreg(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE ,String docid,String docpassword,String User , String Password , String site,String ADTprovider ) throws InterruptedException, IOException, AWTException {
 		
 		

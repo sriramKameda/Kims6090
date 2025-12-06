@@ -137,9 +137,10 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement AddService;
-
+	
 	@FindBy(xpath = "//i[@class='ki ki-save']")
 	public WebElement ServSave;
 
@@ -175,7 +176,7 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "(//i[@class='fa fa-ellipsis-v'])[1]")
 	public WebElement threeDot;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-op-panel[1]/div[2]/div[2]/lib-pharmacy-card[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]/div[1]/div[2]")
+	@FindBy(xpath = "//div[@class='form-container pt-1 billing-card card mb-0 ng-star-inserted']//div[2]//div[1]//div[1]//div[1]//div[1]//div[2]//span[1]//div[1]//div[2]")
 	public WebElement PharmistRemarks;
 
 	@FindBy(xpath = "//textarea[@id='remarks']")
@@ -274,7 +275,7 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[normalize-space()='Generate Invoice']")
 	public WebElement GenerateInvoice;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-alternate-invoice-generation/div/tabset/div/tab[1]/form/div[1]/div/div/div/div[2]/div[3]/div[2]/ki-input-control/div/input")
 	public WebElement MRNoEnter;
 
 	@FindBy(xpath = "//div[@class='col-1 pl-0 col-md-1 ta-r']//i[@class='ki ki-search']")
@@ -310,6 +311,10 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement MRNoenter;
 
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement MRNoenter1;
+	
 	@FindBy(xpath = "//div[contains(@class,'col-12 col-md-3 ta-r')]//i[contains(@class,'ki ki-search')]")
 	public WebElement Search2;
 
@@ -394,7 +399,7 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//label[@class='check-container zero-label']//span[@class='checkmark']")
 	public WebElement InvoicePrintUncheck;
 
-	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-ip-invoice-generation/div/tabset/div/tab[1]/form/div[1]/tabset/div/tab[1]/div/div/table/tbody/tr/td[1]/i")
+	@FindBy(xpath = "//i[@title='Generate Invoice']")
 	public WebElement eye;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[1]/app-order-list-container[1]/lib-order-list[1]/div[1]/div[1]/div[1]/label[1]")
@@ -578,16 +583,6 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 
 
-
-		validto.click();
-		Thread.sleep(1000);
-		for (int i = 0; i <=20; i++) {
-
-			t.keyPress(KeyEvent.VK_DOWN);
-			t.keyRelease(KeyEvent.VK_DOWN);
-			Thread.sleep(400);
-
-		}
 
 		t.keyPress(KeyEvent.VK_ENTER);
 		t.keyRelease(KeyEvent.VK_ENTER);
@@ -790,6 +785,8 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 			System.out.println("sri");
 		}
 
+		
+		Thread.sleep(2000);
 		OPOrder.click();
 		Thread.sleep(2000);
 		walkin.click();
@@ -917,12 +914,16 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		//counterSearchicon.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'"+MRNO+"')]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
 		Thread.sleep(2000);
+
+		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']")));
+		Thread.sleep(1000);		
 		OK1.click();
 		Thread.sleep(1000);
 
@@ -1115,9 +1116,9 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		InvoiceView.click();
 		Thread.sleep(1000);
-		MRNoenter.click();
+		MRNoenter1.click();
 		Thread.sleep(1000);
-		MRNoenter.sendKeys(MRNO);
+		MRNoenter1.sendKeys(MRNO);
 		Thread.sleep(1000);
 		Search2.click();
 		Thread.sleep(1000);
@@ -1130,8 +1131,16 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("909");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		Thread.sleep(1000);	
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
+		
+		
+		
 		invoiceMode.click();
 		driver.findElement(By.xpath("//li[normalize-space()='Draft Finalized']")).click();
 		Thread.sleep(1000);
@@ -1144,6 +1153,12 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("909");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		Thread.sleep(1000);	
+		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		invoiceMode.click();
@@ -1162,11 +1177,11 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		SettleInvoice.click();
 		Thread.sleep(1000);
-		Mrnoenter3.click();
+		MRNoenter1.click();
 		Thread.sleep(1000);
-		Mrnoenter3.sendKeys(MRNO , Keys.ENTER);
+		MRNoenter1.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/label[1]/button[1]/i[1]")).click();
+		driver.findElement(By.xpath("//div[@class='col-12 col-md-3 ta-r']//i[@class='ki ki-search']")).click();
 		Thread.sleep(1000);
 
 		///settlement1
@@ -1212,6 +1227,9 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
+		
+		
+		
 
 
 
@@ -1255,9 +1273,9 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Settled']")).click();
 		Thread.sleep(1000);
-		MRNoenter.clear();
+		MRNoenter1.clear();
 		Thread.sleep(1000);
-		MRNoenter.sendKeys(MRNO);
+		MRNoenter1.sendKeys(MRNO);
 		Thread.sleep(1000);
 		Search4.click();
 		Thread.sleep(1000);

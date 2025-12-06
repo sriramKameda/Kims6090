@@ -258,16 +258,16 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 	@FindBy(xpath="//textarea[@id='clinicaldiagnosisrep']")
 	public WebElement clinicalDiagnosis;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='macroscopy']//div[@class='fr-wrapper show-placeholder']//p")
+	@FindBy(xpath="(//p)[1]")
 	public WebElement macroScopy;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='microscopy']//div[@class='fr-element fr-view']")
+	@FindBy(xpath="(//p)[2]")
 	public WebElement microscopy;
 
-	@FindBy(xpath="//ki-editor[@formcontrolname='diagnosis']//div[@class='fr-element fr-view']")
+	@FindBy(xpath="(//p)[3]")
 	public WebElement Diagnosis;
 
-	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]")
+	@FindBy(xpath="(//p)[4]")
 	public WebElement FinalDiagnosis;
 
 	@FindBy(xpath="//textarea[@id='commentsrep']")
@@ -607,9 +607,10 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 //		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
 //		Thread.sleep(1000);
 
-
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
 		Thread.sleep(1000);
 		ivstgnSave.click();
 		Thread.sleep(1000);
@@ -928,8 +929,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		clinicalDiagnosis.sendKeys("Clinical diagnosis");
 		Thread.sleep(1000);
-		macroScopy.clear();
-		Thread.sleep(1000);
+//		macroScopy.clear();
+//		Thread.sleep(1000);
 		//	macroScopy.sendKeys("Macroscopy");
 		Thread.sleep(1000);
 		//	microscopy.clear();
@@ -994,8 +995,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 
 
 
-		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
-		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+//		Thread.sleep(1000);
 		/////critical informed
 		Range.click();
 		Thread.sleep(1000);

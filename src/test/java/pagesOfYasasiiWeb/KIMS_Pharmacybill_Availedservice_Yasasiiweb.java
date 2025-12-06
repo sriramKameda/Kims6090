@@ -325,7 +325,7 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 	@FindBy(xpath = "//textarea[@id='undefined']")
 	public WebElement remark;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/label[3]/span[2]/i[2]")
+	@FindBy(xpath = "//i[@class='ki ki-file-cancel ng-star-inserted']")
 	public WebElement cancel;
 
 	@FindBy(xpath = "//div[@class='form-group min-clear-bottom billing ki-dropdown']//input[@id='undefined']")
@@ -392,15 +392,15 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		Thread.sleep(500);
 		pharloc.click(); 
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
 		Thread.sleep(1000);
 		//	callerID.click();
 		Thread.sleep(1000);
 		//	driver.findElement(By.xpath("//li[normalize-space()='2nd Level Pharmacy-Caller 1']")).click();
 		pharlocOK.click();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		Thread.sleep(1000);
+		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		Thread.sleep(1000);
 
 
 		Thread.sleep(1000);
@@ -439,9 +439,9 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		Thread.sleep(1000);
 		ItemName.clear();
 		Thread.sleep(1000);
-		ItemName.sendKeys("CROCIN 650MG TAB");
+		ItemName.sendKeys("MORPHINE 50MG TAB");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='CROCIN 650MG TAB']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='MORPHINE 50MG TAB']")).click();
 		Thread.sleep(1000);
 		Qty.click();
 		Thread.sleep(1000);
@@ -783,11 +783,10 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		//WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		//	driver.findElement(By.xpath("//tbody/tr["+k+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		// Checkbox.click();//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]
+		driver.findElement(By.xpath("//*[@id=\"1\"]/div/div/div/div/table/tbody/tr[1]/td[1]/label[3]/ki-checkbox-control/label/label/span")).click();
+		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//label[@title='Request for Cancellation'])[1]")).click();
+		driver.findElement(By.xpath("(//span[@title='Request for Cancellation'])[1]")).click();
 		// request.click();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 		Thread.sleep(1000);
 		auth.click();
@@ -831,11 +830,11 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		driver.findElement(By.xpath("//*[@id=\"1\"]/div/div/div/div/table/tbody/tr[1]/td[1]/label[3]/ki-checkbox-control/label/label/span")).click();
 		// Checkbox.click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
+		driver.findElement(By.xpath("(//span[@title='Request for Cancellation'])[1]")).click();
 		// request.click();
 		Thread.sleep(2000);
 		auth.click();
@@ -1077,9 +1076,25 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 //		Thread.sleep(500);
 //		t.keyRelease(KeyEvent.VK_ESCAPE);
 //		Thread.sleep(1000);
+		
+		Thread.sleep(500);
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']//label[@class='dialog-title'][normalize-space()='Success']"));
 
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		if(dynamicElement111.size() !=0)
+		{
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
+
+		
+
+//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+//		Thread.sleep(1000);
 
 		/*		Thread.sleep(1000);
 		int n =driver.getWindowHandles().size();

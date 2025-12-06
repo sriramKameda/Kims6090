@@ -226,7 +226,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@id='vital040']")
 	public WebElement Temperature;
 
-	@FindBy(xpath = "//input[@id='vital060']")
+	@FindBy(xpath = "//input[@id='vital050']")
 	public WebElement pulse;
 
 
@@ -236,7 +236,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//textarea[@id='modalremarks']")
 	public WebElement pulseRemarkstext;
 
-	@FindBy(xpath = "//div[@class='item-name'][normalize-space()='Referral']")
+	@FindBy(xpath = "(//div[@class='item-name'][normalize-space()='Referral/Handover/Handoff'])[1]")
 	public WebElement Referral;
 
 	@FindBy(xpath = "//input[@id='rhtonamewithid']")
@@ -254,7 +254,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='col-md-12 ta-r rtl-right pr-0']//button[@type='button'][normalize-space()='Add']")
 	public WebElement ReferralAdd;
 
-	@FindBy(xpath = "//div[normalize-space()='File Request Approval']")
+	@FindBy(xpath = "//div[contains(text(),'File Request Approval')]")
 	public WebElement Filerequestapprove;
 
 	@FindBy(xpath = "//input[@id='mrno']")
@@ -570,8 +570,8 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("//span[@title='Show Favorites Only']//i[@class='ki ki-favourite-fill']")).click();
 //		Thread.sleep(1000);
-		//	driver.findElement(By.xpath("//span[normalize-space()='Add new']")).click();
-		//	Thread.sleep(1000);
+			driver.findElement(By.xpath("//span[normalize-space()='Add new']")).click();
+			Thread.sleep(1000);
 
 
 		height.sendKeys("170");
@@ -580,7 +580,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		Temperature.sendKeys("96");
 		Thread.sleep(600);
-		pulse.sendKeys("120");
+		pulse.sendKeys("100");
 		Thread.sleep(600);
 //		pulseRemarks.click();
 //		Thread.sleep(600);
@@ -733,7 +733,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//	Thread.sleep(500);
 		secondOpinionRequest.click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")).click();
+		driver.findElement(By.xpath("//label[@title='Reason for Visit : Fever ']")).click();
 		Thread.sleep(5000);
 		//		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		//		Thread.sleep(2000);
@@ -826,7 +826,9 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		EMR.click();
 		Thread.sleep(1000);
-		Filerequestapprove.click();
+		
+		js.executeScript("arguments[0].scrollIntoView();", Filerequestapprove  );
+				Filerequestapprove.click();
 		Thread.sleep(1000);
 		MRNOSearch.click();
 		Thread.sleep(1000);
@@ -907,9 +909,10 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//	Thread.sleep(500);
 		secondOpinionRequest.click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")).click();
+		driver.findElement(By.xpath("//i[@title='More']")).click();
 		Thread.sleep(2000);
-
+		driver.findElement(By.xpath("//div[normalize-space()='Second Opinion']")).click();
+		Thread.sleep(2000);
 
 		SecondOpinionText.click();
 		Thread.sleep(500);
@@ -977,9 +980,11 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//	Thread.sleep(500);
 		secondOpinionRequest.click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//i[@title='More']")).click();
 		Thread.sleep(2000);
-
+		driver.findElement(By.xpath("//div[normalize-space()='Second Opinion']")).click();
+		Thread.sleep(2000);		
 		js.executeScript("arguments[0].scrollIntoView();",Doclist);
 		Thread.sleep(3500);
 

@@ -262,7 +262,7 @@ public class KIMS_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYas
 	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement microscopy;
 
-	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[4]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]/p[1]")
+	@FindBy(xpath="(//div[@role='textbox'])[3]")
 	public WebElement opinion;
 
 	@FindBy(xpath="/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/div[1]/div[2]/ki-editor[1]/div[1]/div[2]/div[1]")
@@ -604,7 +604,9 @@ public class KIMS_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYas
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
+		Thread.sleep(1000);
 		ivstgnSave.click();
 		Thread.sleep(2000);
 		SaveOK1.click();
@@ -919,21 +921,55 @@ public class KIMS_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYas
 		ResultEnter.click();
 		Thread.sleep(2000);
 		///cytologysmear
-		specimentype.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='Vault smear']")).click();
-		Thread.sleep(2000);
-		source.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='Cervix']")).click();
-		Thread.sleep(2000);
-		acq.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='specsatisfactoryid']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='Absent']")).click();
-		Thread.sleep(2000);
-		//Preview
+		clinicalDetails.clear();	
+		Thread.sleep(700);
+		clinicalDetails.sendKeys("clinical details");
+		Thread.sleep(700);
+		clinicalDiagnosis.clear();
+		Thread.sleep(700);
+		clinicalDiagnosis.sendKeys("Clinical diagnosis");
+		Thread.sleep(700);
+//		macroScopy.clear();
+//		Thread.sleep(700);
+//		macroScopy.sendKeys("Macroscopy");
+//		Thread.sleep(700);
+//		microscopy.clear();
+//		Thread.sleep(700);
+//		microscopy.sendKeys("microscopy");
+//		Thread.sleep(700);
+		opinion.clear();
+		Thread.sleep(700);
+		opinion.sendKeys("builder.keyDown(Keys.CONTROL) .click(someElement) .click(someOtherElement) .keyUp(Keys.CONTROL); // Then get the action: Action selectMultiple = builder.build(); // And execute it: selectMultiple.perform(); Is this code for drag and drop? I think, it's for multiple selection. – \r\n"
+				+ "Ripon Al Wasim\r\n"
+				+ " Apr 6, 2017 at 13:21\r\n"
+				+ "when i try to run this i get :- Exception in thread \"main\" org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: move target out of bounds, any idea how to solve it – \r\n"
+				+ "Anurag Sharma\r\n"
+				+ " Jun 3, 2021 at 8:39 ");
+		Thread.sleep(1000);
+		comment.clear();
+		Thread.sleep(700);
+		comment.sendKeys("comment");
+		Thread.sleep(700);
+		cancerRegistry.click();
+		Thread.sleep(700);
+		topograghy.click();
+		Thread.sleep(700);
+		topograghy.sendKeys("Spec");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/app-autocompletelist-item[1]/li[1]")).click();
+		Thread.sleep(3000);
+		morphology.click();
+		Thread.sleep(3000);
+		morphology.sendKeys("diag");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[2]/div[2]/ul[1]/app-autocompletelist-item[1]/li[1]")).click();
+		Thread.sleep(3000);
+		ICD.click();
+		Thread.sleep(3000);
+		ICD.sendKeys("Malignant neoplasm of small intestine, unspecified");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-reportgeneration[1]/div[1]/div[1]/form[1]/div[1]/div[7]/div[1]/div[1]/div[1]/div[2]/div[3]/ul[1]/app-autocompletelist-item[1]/li[1]")).click();
+		Thread.sleep(3000);
 		Preview.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@class='btn btn-red clear mr-2 btnrprt']")).click();
@@ -941,48 +977,26 @@ public class KIMS_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYas
 		// close.click();
 		ReportSave.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+
+		List<WebElement> dynamicElement31=driver.findElements(By.xpath("//i[@class='ki ki-lock ki-lock-open']"));
+
+		if(dynamicElement31.size() !=0)
+		{
+			driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+			Thread.sleep(1000);
+
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
 		/////critical informed
 		Range.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
-		//		Thread.sleep(700);
-		//	//	driver.findElement(By.xpath("//li[normalize-space()='Critical']")).click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
-		//		Thread.sleep(3000);
-		//		ivstgnStatus.click();
-		//		Thread.sleep(700);
-		//		driver.findElement(By.xpath("//li[normalize-space()='Critical Result not informed']")).click();
-		//		Thread.sleep(700);
-		//		SearchField.clear();
-		//		Thread.sleep(700);
-		//		Thread.sleep(700);
-		//		SearchField.sendKeys(MRNO , Keys.ENTER);
-		//		Thread.sleep(700);
-		//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		//		Thread.sleep(2000);
-		//		
-		//		
-		//		criticalCall.click();
-		//		Thread.sleep(2000);
-		//		callStatus.click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("//li[normalize-space()='Got the feed back']")).click();
-		//		Thread.sleep(2000);
-		//		feedback.click();
-		//		Thread.sleep(2000);
-		//		feedback.sendKeys("patient should be under observation");
-		//		Thread.sleep(2000);
-		//		callSave.click();
-		//		Thread.sleep(2000);
-		//		criticalInformed.click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("//span[@class='btn btn-link ng-star-inserted']")).click();
-		//		Thread.sleep(2000);
-		//		driver.findElement(By.xpath("//button[normalize-space()='Close']//i[@class='ki ki-close-circle']")).click();
-		//		Thread.sleep(2000);
-
+		
 		///firstlevel Authorize
 
 		Thread.sleep(700);

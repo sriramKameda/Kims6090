@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -234,8 +235,12 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@placeholder='Item Name']")
 	public WebElement IndgrpItemSearch;
 
-	@FindBy(xpath = "//i[@class='ki ki-pencil']")
+	@FindBy(xpath = "//button[normalize-space()='Change']")
 	public WebElement Pencil;
+	
+	@FindBy(xpath = "//i[@class='ki ki-pencil']")
+	public WebElement Pencil1;
+	
 
 	@FindBy(xpath = "//i[@class='ki ki-trash']")
 	public WebElement trash;
@@ -249,6 +254,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='Stock']")
 	public WebElement Stock;
+	
+	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='GRN']")
+	public WebElement GRN1;
+	
+	
 
 	@FindBy(xpath = "//div[contains(text(),'Goods Received Note')]")
 	public WebElement GRN;
@@ -334,16 +344,16 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[contains(text(),'Inventory Home')]")
 	public WebElement InventoryHome;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-inventory-landing[1]/app-inentory-home[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/ki-calender-time-range[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-inventory-landing/app-inentory-home/div/div/div/div/div[3]/div/form/div/div[3]/ki-calender-time-range/div/input")
 	public WebElement IndentDateRange;
 
 	@FindBy(xpath = "//span[normalize-space()='Today']")
 	public WebElement Today;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-inventory-landing[1]/app-inentory-home[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/form[1]/div[1]/div[3]/ki-calender-time-range[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[3]//div[1]//div[2]//div[2]//div[1]//button[1]")
 	public WebElement TransferStatusinfo; 
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-inventory-landing[1]/app-inentory-home[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/div[4]/button[1]/i[1]")
+	@FindBy(xpath = "//div[3]//div[1]//form[1]//div[1]//div[4]//button[1]//i[1]")
 	public WebElement IndentRefresh;
 
 	@FindBy(xpath = "//span[normalize-space()='Today']")
@@ -394,10 +404,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		IndentRefresh.click();
 		Thread.sleep(3000);
-		TransferStatusinfo.click();
-		Thread.sleep(800);
-		TransferStatusRefresh.click();
-		Thread.sleep(3000);
+		
 
 		LocationIcon.click();
 
@@ -529,7 +536,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		searchlocation.click();
 		Thread.sleep(800);
-		searchlocation.sendKeys(Sublocation , Keys.ENTER);
+		searchlocation.sendKeys(PharmacyLocation , Keys.ENTER);
 		Thread.sleep(800);
 
 		SublocationEdit.click();
@@ -537,46 +544,65 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		//delete med 1	
 
-		List<WebElement> dynamicElement=driver.findElements(By.xpath("//tbody/tr[1]/td[1]/label[2]/a[1]/i[1]"));
-
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("(//i[@title='Delete'])"));
+		
+	    int size = dynamicElement.size();
+		
 		if(dynamicElement.size() !=0)
 		{
-			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[2]/a[1]/i[1]")).click();
+		
+	    for (int i = 1; i < size; i++) {
+		
+		   
+		    driver.findElement(By.xpath("(//i[@title='Delete'])[1]")).click();
 			Thread.sleep(800);
 			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 			Thread.sleep(800);
 			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 			Thread.sleep(800);
+		   
+		   
+	}
+	   
 		}
-
-		else {
-
-			System.out.println("sri");
-		}
-
-
-
-		//delete med 2
-
-
-		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//tbody/tr[2]/td[1]/label[2]/a[1]/i[1]"));
-
-		if(dynamicElement1.size() !=0)
-		{
-
-			driver.findElement(By.xpath("//tbody/tr[2]/td[1]/label[2]/a[1]/i[1]")).click();
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-			Thread.sleep(800);
-
-		}
-
-		else {
-
-			System.out.println("sri");
-		}
+//		if(dynamicElement.size() !=0)
+//		{
+//			driver.findElement(By.xpath("//tbody/tr[1]/td[1]/label[2]/a[1]/i[1]")).click();
+//			Thread.sleep(800);
+//			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+//			Thread.sleep(800);
+//			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+//			Thread.sleep(800);
+//		}
+//
+//		else {
+//
+//			System.out.println("sri");
+//		}
+//
+//
+//
+//		//delete med 2
+//
+//
+//		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//tbody/tr[2]/td[1]/label[2]/a[1]/i[1]"));
+//
+//		if(dynamicElement1.size() !=0)
+//		{
+//
+//			driver.findElement(By.xpath("//tbody/tr[2]/td[1]/label[2]/a[1]/i[1]")).click();
+//			Thread.sleep(800);
+//			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+//			Thread.sleep(800);
+//			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+//			Thread.sleep(800);
+//
+//		}
+//
+//		else {
+//
+//			System.out.println("sri");
+//		}
 
 
 
@@ -721,21 +747,22 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Save.click();
 
 
-		Thread.sleep(2000);
-		String IndNo= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/ki-dialog[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]")).getText();
-		System.out.println(IndNo);
+//		Thread.sleep(2000);
+//		String IndNo= driver.findElement(By.xpath("/html/body/app-root/ki-dialog/div[2]/div/div/div/div[2]/div[1]")).getText();
+//		System.out.println(IndNo);
+//
+//		String word[]=IndNo.split("[ :] ");
+//		System.out.println("number of words: "+word.length);
+//		for(int i=0;i<word.length;i++)
+//		{
+//			System.out.println("word["+i+"]="+word[i]);
+//		}
+//		System.out.println(word[1]);
+//		System.out.println(word[0]);
+//
+//		String IndentNO = word[1];
 
-		String word[]=IndNo.split("[ :] ");
-		System.out.println("number of words: "+word.length);
-		for(int i=0;i<word.length;i++)
-		{
-			System.out.println("word["+i+"]="+word[i]);
-		}
-		System.out.println(word[1]);
-
-		String IndentNO = word[1];
-
-
+	
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 
@@ -746,6 +773,17 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Created']")).click();
 		Thread.sleep(800);
+		driver.findElement(By.xpath("/html/body/app-root/app-layout/main/app-inventory-landing/app-pharmacy-indent/div[1]/lib-pharmacyindentsearch/div/div[3]/form/div[2]/div/ki-calender-time-range/div/input")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//i[@title='Search with Indent No']")).click();
+		Thread.sleep(800);
+		
+		
+		String IndentNO= driver.findElement(By.xpath("(//div[@title='Indent No'])[1]")).getText();
+		System.out.println(IndentNO);
+		
 		IndentSearch.clear();
 		Thread.sleep(800);
 		IndentSearch.sendKeys(IndentNO , Keys.ENTER);
@@ -1232,7 +1270,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Search.click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//div[contains(text(),'"+closeIndentNO+"')]")).click();
+		driver.findElement(By.xpath("(//span[@class='pr-2'][normalize-space()='"+closeIndentNO+"'])[1]")).click();
 		Thread.sleep(800);
 		CloseIndent.click();
 		Thread.sleep(800);
@@ -1244,7 +1282,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Search.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[contains(text(),'"+closeIndentNO+"')]")).click();
+		driver.findElement(By.xpath("(//span[@class='pr-2'][normalize-space()='"+closeIndentNO+"'])[1]")).click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//i[@class='ki ki-reset']")).click();
 		Thread.sleep(800);
@@ -1369,7 +1407,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Search.click();
 		Thread.sleep(2000);
-		Pencil.click();
+		Pencil1.click();
 		Thread.sleep(1500);
 
 		Print.click();
@@ -1414,7 +1452,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Hamburger.click();
 		Thread.sleep(800);
 		Thread.sleep(2000);
-		Stock.click();
+		GRN1.click();
 		Thread.sleep(800);
 		GRN.click();
 		Thread.sleep(2000);
@@ -1435,7 +1473,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 //		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//li[normalize-space()='Mansoor Med pharms']")));
 
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='Mansoor Med pharms']")).click();
+		driver.findElement(By.xpath("//*[@id=\"droplistkey0\"]/li")).click();
 		Thread.sleep(800);
 		GRNno.click();
 		Thread.sleep(800);
@@ -1472,26 +1510,26 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
 
-		ExpiryDate.clear();
-		Thread.sleep(800);
+//		ExpiryDate.clear();
+//		Thread.sleep(800);
 		ExpiryDate.click();
 		Thread.sleep(800);
 
 		//Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		Thread.sleep(500);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(500);
-
-		ExpiryDate.sendKeys(DOB);
-		Thread.sleep(600);
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		Thread.sleep(500);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(500);
-
-		ExpiryDate.click();
-		Thread.sleep(800);
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(500);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(500);
+//
+//		ExpiryDate.sendKeys(DOB);
+//		Thread.sleep(600);
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(500);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(500);
+//
+//		ExpiryDate.click();
+//		Thread.sleep(800);
 
 		for (int i = 0;i<=15; i++) {
 
@@ -1522,7 +1560,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		ItemName.clear();
 		Thread.sleep(800);
-		ItemName.sendKeys("JUSTIN 100MG SUPP" , Keys.ENTER);
+		ItemName.sendKeys("ACCENTRIX 10MG/ML INJ" , Keys.ENTER);
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
@@ -1596,10 +1634,10 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		unitcost.sendKeys("16");
 		Thread.sleep(800);
-		UnitSell.clear();
-		Thread.sleep(800);
-		UnitSell.sendKeys("16");
-		Thread.sleep(800);
+//		UnitSell.clear();
+//		Thread.sleep(800);
+//		UnitSell.sendKeys("16");
+//		Thread.sleep(800);
 		ADDCollapse.click();
 		Thread.sleep(1200);
 
@@ -1645,9 +1683,8 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Supplier.click();
 		Thread.sleep(800);
-		//js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//li[normalize-space()='Mansoor Med pharms']")));		
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='Mansoor Med pharms']")).click();
+		driver.findElement(By.xpath("//*[@id=\"droplistkey0\"]/li")).click();
 		Thread.sleep(800);
 		GRNno.click();
 		Thread.sleep(800);
@@ -1689,18 +1726,30 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		unitcost.sendKeys("12");
 		Thread.sleep(800);
-		UnitSell.clear();
-		Thread.sleep(800);
-		UnitSell.sendKeys("12");
-		Thread.sleep(800);
+//		UnitSell.clear();
+//		Thread.sleep(800);
+//		UnitSell.sendKeys("12");
+//		Thread.sleep(800);
 		AddContinue.click();
 		Thread.sleep(2000);
 
 		Save.click(); 
 		Thread.sleep(2000);
-
-		driver.findElement(By.xpath("(//i[@class='ki ki-check'])[1]")).click();
-		Thread.sleep(800);
+		Thread.sleep(500);
+//		List<WebElement> dynamicElement=driver.findElements(By.xpath("(//i[@class='ki ki-check'])[1]"));
+//
+//		if(dynamicElement.size() !=0)
+//		{
+//			driver.findElement(By.xpath("(//i[@class='ki ki-check'])[1]")).click();
+//			Thread.sleep(800);
+//		}
+//
+//
+//		else {
+//			System.out.println("sri");
+//		}
+//		Thread.sleep(1000);
+		
 		
 		
 		t.keyPress(KeyEvent.VK_ESCAPE);
@@ -1708,11 +1757,6 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(400);
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
-		
-		
-		
-		
-		
 		
 
 		driver.findElement(By.xpath("//i[@class='ki ki-reset']")).click();
@@ -1727,6 +1771,8 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000);
 		Hamburger.click();
 		Thread.sleep(2000);
+		Stock.click();
+		Thread.sleep(800);
 		StockUpdate.click();
 		Thread.sleep(800);
 		ItemName.click();
@@ -1748,10 +1794,10 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Pencil.click();
 		Thread.sleep(800);
-		Vat.clear();
-		Thread.sleep(800);
-		Vat.sendKeys("1.5");
-		Thread.sleep(800);
+//		Vat.clear();
+//		Thread.sleep(800);
+//		Vat.sendKeys("1.5");
+//		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(800);
 		Thread.sleep(800);
