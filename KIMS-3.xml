@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-  <!--   -->   
+  <!--  Sriram commit -->   
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_FrozenTestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_OutsiderPatientFlow_TestcaseYW"/> 
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_CytologysmearTestcaseYW"/>  
@@ -24,13 +24,6 @@
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_biopsy_TestcaseYW"/>
         <class name="pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases"/>   
         
-        
-        
-        
-        
-        
-        
-	
         
     </classes>
   </test> <!-- Test -->
