@@ -3,19 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases">
         <methods>
+          <include name="navigateFOPage"/>
+          <include name="doc"/>
           <include name="setup"/>
           <include name="startTest"/>
-          <include name="EMRtransfer" invocation-numbers="0"/>
           <include name="logout"/>
+          <include name="or"/>
+          <include name="OR_ROOm"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="navigateemradt"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
+          <include name="foReg" invocation-numbers="0"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

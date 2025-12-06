@@ -34,7 +34,7 @@ public class KIMS_ORFlowTestCases extends TestBaseYasasiiWeb{
 
 
 	//	@Test(dataProvider="getData",priority=0)
-	public void ORMASTER(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword) throws InterruptedException, IOException, AWTException {
+	public void ORMASTER(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword,String Indent_1,String Indent_2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
 		KIMS_ORFlow_Yasasiiweb OR = new KIMS_ORFlow_Yasasiiweb(driver) ;
@@ -52,7 +52,7 @@ public class KIMS_ORFlowTestCases extends TestBaseYasasiiWeb{
 
 
 	@Test(dataProvider="getData",priority=1)
-	public void foReg(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword) throws InterruptedException, IOException, AWTException {
+	public void foReg(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword,String Indent_1,String Indent_2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
 		KIMS_ORFlow_Yasasiiweb reb = new KIMS_ORFlow_Yasasiiweb(driver) ;
@@ -64,7 +64,7 @@ public class KIMS_ORFlowTestCases extends TestBaseYasasiiWeb{
 	}
 
 	@Test(dataProvider="getData",priority=2)
-	public void doc(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword) throws InterruptedException, IOException, AWTException {
+	public void doc(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword,String Indent_1,String Indent_2) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
 		KIMS_ORFlow_Yasasiiweb docnote= new KIMS_ORFlow_Yasasiiweb(driver);
@@ -74,26 +74,28 @@ public class KIMS_ORFlowTestCases extends TestBaseYasasiiWeb{
 		docnote.anesthesiafitness(MRNO, anesthesiaID, anesthesiapassword);
 
 	}
-
-	@Test(dataProvider="getData",priority=3)
-	public void or(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword) throws InterruptedException, IOException, AWTException {
+ 
+   @Test(dataProvider="getData",priority=3)
+	public void or(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword,String Indent_1,String Indent_2) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
 		KIMS_ORFlow_Yasasiiweb orsch= new KIMS_ORFlow_Yasasiiweb(driver);
 
 		orsch.ORSchedule(ORAdmin, ORpassword, MRNO);
 
-		orsch.StockTransfer(User, Password, MRNO);
+		
 
 	}
 
 
 
 	@Test(dataProvider="getData",priority=4)
-	public void OR_ROOm(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword) throws InterruptedException, IOException, AWTException {
+	public void OR_ROOm(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword,String Indent_1,String Indent_2) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
 		KIMS_ORFlow_Yasasiiweb orsch= new KIMS_ORFlow_Yasasiiweb(driver);
+		
+		orsch.StockTransfer(User, Password, MRNO);
 
 		orsch.operationroomprocess(MRNO, Nuruser, Nurpassword);
 		

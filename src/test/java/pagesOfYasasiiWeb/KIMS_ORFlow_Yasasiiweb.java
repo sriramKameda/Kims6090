@@ -707,7 +707,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-inventory-landing/app-transfer/div[2]/div[1]/div/div[2]/div/div/div/tabset/div/tab/table/tbody/tr[1]/td[3]/label/input")
 	public WebElement Item1;
-
+	
 	@FindBy(xpath = "/html/body/app-root/app-layout/main/app-inventory-landing/app-transfer/div[2]/div[1]/div/div[2]/div/div/div/tabset/div/tab/table/tbody/tr[2]/td[3]/label/input")
 	public WebElement Item2;
 
@@ -804,7 +804,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-back-end-billing[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[5]/label[1]/button[1]/i[1]")
 	public WebElement Searchbill1;
 
-	@FindBy(xpath = "//form[contains(@class,'ng-untouched ng-valid ng-dirty')]//button[@type='button'][normalize-space()='Generate']")
+	@FindBy(xpath = "//tab[@id='1']//div[@class='page-btn-group height-wrapper']//button[1]")
 	public WebElement Generate;
 
 	@FindBy(xpath="	//span[normalize-space()='Pharmacy']")
@@ -819,13 +819,78 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-interim-bill[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement MRNO;
 
-	@FindBy(xpath="//span[2]//ki-checkbox-control[1]//label[1]//label[1]//span[1]")
+	@FindBy(xpath="//label[normalize-space()='Statement']//span[contains(@class,'checkmark')]")
 	public WebElement Statement;
 
-	@FindBy(xpath="//i[@class='ki ki-print']")
+	@FindBy(xpath="//i[@class='ki ki-print']") 
 	public WebElement Print;
+	
+	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='bar2']")
+	public WebElement Hamburger;
+	
+	@FindBy(xpath="//i[@class='ki ki-surgery-fill']") 
+	public WebElement orModule;
+	
+	@FindBy(xpath="//div[normalize-space()='OR View']")
+	public WebElement orView;
+	
+	@FindBy(xpath="//ki-select-control[@formcontrolname='statusid']//input[@type='text']") 
+	public WebElement status1;
+	
+	@FindBy(xpath="//li[normalize-space()='Submitted']")
+	public WebElement submitted ;
+	
+	@FindBy(xpath="//input[@id='searchmrno']")
+	public WebElement searchMrno;
+	
+	@FindBy(xpath="//label[@class='intent-info-label ng-star-inserted']//i[@class='ki ki-info-circle-fill']")
+	public WebElement indentInfo;
+	
+	@FindBy(xpath="//*[@id=\"orSheduleauthid\"]/table/tbody/tr[5]/td[12]/div/label/div/div/div[1]/label[2]")
+	public WebElement indent11;
+	
+	@FindBy(xpath="//*[@id=\"orSheduleauthid\"]/table/tbody/tr[5]/td[12]/div/label/div/div/div[2]/label[2]")
+	public WebElement indent12;
+	
+	@FindBy(xpath = "//div[@class='module-icon-wrap active ng-star-inserted']//i[@class='ki ki-reception-fill']")
+	public WebElement FOModule;
+	
+	@FindBy(xpath = "//div[normalize-space()='Pharmacy Panel']")
+	public WebElement PharmacyPanel;
 
+	@FindBy(xpath = "//div[normalize-space()='IP Panel']")
+	public WebElement Ip_panel;
+	
+	@FindBy(xpath = "//input[@id='locationid']")
+	public WebElement pharmacyLocation;
 
+	@FindBy(xpath = "//button[@id='btnsearch']")
+	public WebElement OK1;
+
+	@FindBy(xpath = "//input[@id='searchText']")
+	public WebElement Search3;
+
+	@FindBy(xpath = "//i[@title='Search']")
+	public WebElement SearchIcon;
+	
+	@FindBy(xpath = "//label[normalize-space()='Label print']//span[@class='checkmark']")
+	public WebElement LabelPrint;
+	
+	@FindBy(xpath = "//i[@class='ki ki-inventory']")
+	public WebElement Inventory;
+
+	
+
+	
+	//@FindBy(xpath="/html/body/app-root/app-layout/main/lib-global-modal-shell/div[2]/div/div/div[2]/app-ot-authorization/form/div[1]/div/div[2]/div/div/table/tbody/tr[2]/td[12]/div/label/div/div/div[1]/label[2]") public WebElement indent11 ;
+	//@FindBy(xpath="/html/body/app-root/app-layout/main/lib-global-modal-shell/div[2]/div/div/div[2]/app-ot-authorization/form/div[1]/div/div[2]/div/div/table/tbody/tr[2]/td[12]/div/label/div/div/div[2]/label[2]") public WebElement indent12;
+	//@FindBy(xpath="") public WebElement ;
+	//@FindBy(xpath="") public WebElement ;
+	//@FindBy(xpath="") public WebElement ;
+	//@FindBy(xpath="") public WebElement ;
+	//@FindBy(xpath="") public WebElement ;
+	
+	
 
 	public void serviceMasterOR(String ServiceName) throws InterruptedException, AWTException {
 
@@ -1879,7 +1944,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 		//////Encounter
-
+		Thread.sleep(2000);
 		clear.click();
 		Thread.sleep(1000);
 		//	billprint.click();
@@ -1923,7 +1988,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public void ADT() throws InterruptedException{
 
 
-
+		Thread.sleep(2000);
 		ADT.click();
 		Thread.sleep(1000);
 		Thread.sleep(500);
@@ -1958,7 +2023,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Bed.click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("(//*[contains(text(),'Transfer nursing station')])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[1]")).click();
 		//SelectBed.click();
 		Thread.sleep(500);
 		SAve.click();
@@ -2336,7 +2401,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Remarks.sendKeys("Anesthesia note");
 		Thread.sleep(500);
 		Save.click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 
 
 		DoctorNote.click();
@@ -2384,7 +2449,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	}
 
 
-	public void ORSchedule(String ORAdmin, String ORpassword,String MRNo) throws InterruptedException, AWTException
+	public void ORSchedule(String ORAdmin, String ORpassword,String MRNo) throws InterruptedException, AWTException, IOException
 	{
 
 
@@ -2403,7 +2468,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		////////login
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys(ORAdmin);    
+		userid.sendKeys("admin");    
 		Thread.sleep(1000);
 		password.click();
 		Thread.sleep(1000);
@@ -2419,6 +2484,12 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(2000);
 
+		Thread.sleep(1000);
+		Hamburger.click();
+		Thread.sleep(800);
+		orModule.click();
+		Thread.sleep(800);
+	   orView.click();
 
 
 		Thread.sleep(2000);
@@ -2432,7 +2503,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		searchOR.clear();
 		Thread.sleep(800);
-		searchOR.sendKeys("OR Sri");
+		searchOR.sendKeys("OR-Sri");
 		Thread.sleep(800);
 		selectslot.click();
 		Thread.sleep(800);
@@ -2524,7 +2595,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		searchMRNo.sendKeys(MRNo);
 		Thread.sleep(800);
-		authorizedcheckbox.click();
+		 authorizedcheckbox.click();
 		Thread.sleep(800);
 
 		driver.findElement(By.xpath("//span[@title='Preanesthesia Details']//i[@class='ki ki-info-circle-fill']")).click();
@@ -2532,25 +2603,152 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//button[@id='otauthdata']")).click();
-		Thread.sleep(2500);
+		Thread.sleep(2500); 
 		driver.findElement(By.xpath("//span[@id='global_modal_close_button']")).click();
 		Thread.sleep(1500);
+		
+		//indent code
+//		searchMRNo.sendKeys(MRNo);
+//		Thread.sleep(800);
+//		indentInfo.click();
+//		Thread.sleep(1000);
+//		//String mrno= indent11.getText();/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-global-modal-shell[1]/div[2]/div[1]/div[1]/div[2]/app-ot-authorization[1]/form[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[12]/div[1]/label[1]/div[1]/div[1]/div[1]/label[2]
+//		String mrno= driver.findElement(By.xpath("(//label[contains(text(),'10IND')])[1]")).getText();
+//		System.out.println("indent1 is :" +mrno);
+//
+//
+//		File src=new File(Excelfilepath);
+//		FileInputStream fis=new FileInputStream(src);
+//		HSSFWorkbook wb=new HSSFWorkbook(fis);
+//		HSSFSheet FOFullRegTest=wb.getSheetAt(44);	
+//		int i=FOFullRegTest.getLastRowNum();
+//		System.out.println("Number of rows: " + i);		
+//		FOFullRegTest.getRow(i).createCell(29).setCellValue(mrno);	
+//		FileOutputStream fout=new FileOutputStream(src);	
+//		wb.write(fout);
+//
+//		Thread.sleep(1000);
+//		//String mrno1= indent12.getText();
+//		String mrno1= driver.findElement(By.xpath("(//label[contains(text(),'10IND')])[last()]")).getText();
+//		System.out.println("indent1 is :" +mrno1);
+//
+//
+//		File src1=new File(Excelfilepath);
+//		FileInputStream fis1=new FileInputStream(src1);
+//		HSSFWorkbook wb1=new HSSFWorkbook(fis1);
+//		HSSFSheet FOFullRegTest1=wb1.getSheetAt(44);	
+//		int i1=FOFullRegTest1.getLastRowNum();
+//		System.out.println("Number of rows: " + i1);		
+//		FOFullRegTest1.getRow(i1).createCell(30).setCellValue(mrno1);	
+//		FileOutputStream fout1=new FileOutputStream(src1);	
+//		wb1.write(fout1);
+//
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//span[@id='global_modal_close_button']")).click();
+//		Thread.sleep(1000);
+		
 		togglebar.click();
 		Thread.sleep(800);
-
-
 		ORTrackingboard.click();
 		Thread.sleep(1000);
 		JavascriptExecutor jss = (JavascriptExecutor) driver;
 		jss.executeScript("arguments[0].scrollIntoView();" , status);
 		Thread.sleep(2000);
 
+		
+		Thread.sleep(1000);
+		Hamburger.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[normalize-space()='Modules']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//i[@class='ki ki-reception-fill']")).click();
+		//FOModule.click();
+		Thread.sleep(1000);
+		Thread.sleep(500);
+		List<WebElement> dynamicElement5=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement5.size() !=0)
+		{
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+		PharmacyPanel.click();
+		Thread.sleep(800);
+		Ip_panel.click();
+		Thread.sleep(500);
+		List<WebElement> dynamicElement61=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement61.size() !=0)
+		{
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+		
+		pharmacyLocation.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+		Thread.sleep(800);
+		OK1.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[@class='check-container dark-bg']//span[@class='checkmark']")).click();
+		
+		Thread.sleep(1000);
+
+		Search3.clear();
+		Thread.sleep(800);
+		Search3.sendKeys(MRNo , Keys.ENTER);
+		Thread.sleep(800);
+		SearchIcon.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//div[@title='"+MRNo+"']")).click();
+		Thread.sleep(1800);
+		driver.findElement(By.xpath("//label[@class='check-container zero-label mt0 mr0']//span[@class='checkmark']")).click();
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//label[normalize-space()='Label print']//span[@class='checkmark']")).click();
+		Thread.sleep(800);
+
+		driver.findElement(By.xpath("//label[normalize-space()='Transfer Summary Print']//span[@class='checkmark']")).click();
+		
+		Thread.sleep(800);
+		//Transfer.click();
+		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
+		Thread.sleep(1500);
+		Thread.sleep(3000);
+		
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+
 	}
+////IP panel transfer
+	
+	
+	
+	
+	
 
+	public void StockTransfer(String User , String Password,String MRNo ) throws InterruptedException, AWTException {
 
-	public void StockTransfer(String User , String Password,String MRNo ) throws InterruptedException {
-
-
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		
 		Thread.sleep(2000);
 		username.click();
 		Thread.sleep(1000);
@@ -2583,7 +2781,9 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		location.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+		//driver.findElement(By.xpath("//li[normalize-space()='OT-main']")).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", driver.findElement(By.xpath("//li[normalize-space()='OT main']")));
+
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(3000);
@@ -2591,7 +2791,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//indent	
 
 
-		indent.click();
+	     indent.click();
 		Thread.sleep(1000);
 		Patient_Indent.click();
 		Thread.sleep(1000);
@@ -2603,6 +2803,14 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		indentSearch.click();
 		Thread.sleep(2000);
+		
+		String Indent_1=driver.findElement(By.xpath("(//div[@title='Indent No'])[1]")).getText();
+		Thread.sleep(1000);
+		System.out.println(Indent_1);
+		String Indent_2=driver.findElement(By.xpath("(//div[@title='Indent No'])[2]")).getText();
+		Thread.sleep(1000);
+		System.out.println(Indent_2);
+		
 
 
 		/////verify	
@@ -2692,17 +2900,17 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		fromLOC.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='OT main']")).click();
 		Thread.sleep(1000);
 
 		ToLoc.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='North Central pharmacy']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
 		Thread.sleep(1000);
 
 		indentSearch1.clear();
 		Thread.sleep(500);
-		indentSearch1.sendKeys(MRNo);
+		 indentSearch1.sendKeys(Indent_1);  ///Indent_1
 		Thread.sleep(1000);
 		Search2.click();
 		Thread.sleep(2000);
@@ -2734,9 +2942,28 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
 		Thread.sleep(1500);
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+		if(dynamicElement.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
 		saveok.click();
 		Thread.sleep(1000);
 
+		
+		indentSearch1.clear();
+		Thread.sleep(500);
+		indentSearch1.sendKeys(Indent_2); ///Indent_2
+		Thread.sleep(1000);
+		Search2.click();
+		Thread.sleep(2000);
 		///indent 2		
 
 		indent1.click();
@@ -2748,7 +2975,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 		Item2.click();
-		Thread.sleep(2000);
+		Thread.sleep(2000); 
 		Add2.click();
 		Thread.sleep(2000);
 
@@ -2764,12 +2991,23 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
 		Thread.sleep(1500);
+			
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
 		saveok.click();
-		Thread.sleep(1000);	
-
-
+		Thread.sleep(1000);
 		////Transfer
-
+		Thread.sleep(2000);
 		Transfer1.click();
 		Thread.sleep(800);
 		status2.click();
@@ -2779,20 +3017,23 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		fromLOCtransfer.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='North Central pharmacy']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
 		Thread.sleep(800);
 		ToLocTransfer.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='OT main']")).click();
 		Thread.sleep(800);
-
+		status1.click();
+		Thread.sleep(800);
+		submitted.click();
+		Thread.sleep(800);
 		searchMRNO.clear();
 		Thread.sleep(800);
 		searchMRNO.sendKeys(MRNo , Keys.ENTER);
 		Thread.sleep(800);
 		indent1.click();
 		Thread.sleep(1800);
-		Submit.click();
+		StatusCheck.click();
 		Thread.sleep(800);
 		UpdateINV.click();
 		Thread.sleep(1500);
@@ -2802,7 +3043,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		indent1.click();
 		Thread.sleep(1800);
-		Submit.click();
+		StatusCheck.click();
 		Thread.sleep(800);
 		UpdateINV.click();
 		Thread.sleep(1500);
@@ -2812,10 +3053,10 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		////Verify
 
-		Thread.sleep(800);
+		/*repeatThread.sleep(800);
 		TransferDetails.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='Submitted']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Verified']")).click();
 		Thread.sleep(800);
 
 		searchMRNO.clear();
@@ -2840,13 +3081,13 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		UpdateINV.click();
 		Thread.sleep(1500);
 		saveok.click();
-		Thread.sleep(800);
+		Thread.sleep(800);repeat*/
 
 
 		////Approve		
 
 
-		Thread.sleep(800);
+	    Thread.sleep(800);
 		TransferDetails.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Verified']")).click();
@@ -2909,9 +3150,9 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		receiveStockSave.click();
 		Thread.sleep(1000);
 
-		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
 
-		if(dynamicElement.size() !=0)
+		if(dynamicElement111.size() !=0)
 		{
 			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		}
@@ -2933,9 +3174,9 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		receiveStockSave.click();
 		Thread.sleep(1000);
 
-		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
 
-		if(dynamicElement1.size() !=0)
+		if(dynamicElement11.size() !=0)
 		{
 			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		}
@@ -2943,8 +3184,32 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		saveok.click();
 		Thread.sleep(1000);
+		
+	//////Item3	
 
+			Thread.sleep(1000);
+			MRNOSearch.clear();
+			Thread.sleep(800);
+			MRNOSearch.sendKeys(MRNo, Keys.ENTER);
+			Thread.sleep(1000);
+			Receiveindent1.click();
+			Thread.sleep(1000);
+			recieveCheck.click();
+			Thread.sleep(1000);
+			receiveStockSave.click();
+			Thread.sleep(1000);
 
+			List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+			if(dynamicElement1111.size() !=0)
+			{
+				driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+			}
+			Thread.sleep(800);
+
+			saveok.click();
+			Thread.sleep(1000);
+			
 	}
 
 
@@ -3008,7 +3273,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		/////////////Checklist ward nurse
 
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-or-administration[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-or-checklist[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[2]/div[1]/label[1]")).click();
+		 driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-or-administration[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-or-checklist[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[2]/div[1]/label[1]")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-or-administration[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-or-checklist[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[1]/div[2]/div[1]/label[1]")).click();
 		Thread.sleep(600);
@@ -3018,8 +3283,9 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 
 		VerifiedBy.sendKeys(Nuruser , Keys.ENTER);
-		Thread.sleep(600);
+		Thread.sleep(600);//strong[normalize-space()='001']
 		driver.findElement(By.xpath("(//*[contains(text(),'"+Nuruser+"')])")).click();
+		//strong[normalize-space()='(nurse001)']
 		Thread.sleep(1000);
 		ORSave.click();
 		Thread.sleep(600);
@@ -3080,42 +3346,43 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
 		Thread.sleep(600);
 		ORSave.click();
-		Thread.sleep(1500);
-		//		//////////////////OR Medicine Admin			
-		//		driver.findElement(By.xpath("//label[normalize-space()='OR Medicine Admin']")).click();
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//i[@title='Encounter']")).click();
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("(//label[text()='All '])[2]")).click();
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//i[@class='ki-user-drug ki']")).click();
-		//		Thread.sleep(1000);
-		//		//		rejectedQua.sendKeys("0");
-		//		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//i[@class='ki ki-plus']")).click();
-		//		Thread.sleep(1000);
-		//
-		//		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
-		//
-		//		if(dynamicElement.size() !=0)
-		//		{
-		//			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		//		}
-		//		Thread.sleep(800); 
-		//
-		//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']//i[@class='ki ki-save']")).click();
-		//		Thread.sleep(2500);
-		//		//		Nurseverifiesby.sendKeys(Nuruser);
-		//		//		Thread.sleep(1000);
-		//		//		driver.findElement(By.xpath("(//*[contains(text(),'"+Nuruser+"')])")).click();
-		//		//		Thread.sleep(1000);
-		//		//		verifiedPass.sendKeys("KAmeda123$");
-		//		//		Thread.sleep(600);
-		//		//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
-		//		//		Thread.sleep(1500); 
+		Thread.sleep(2000);
+		//	SRIRAM	//////////////////OR Medicine Admin			
+			driver.findElement(By.xpath("//label[normalize-space()='OR Medicine Admin']")).click();
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//i[@title='Encounter']")).click();
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("(//label[text()='All '])[2]")).click();
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//i[@class='ki-user-drug ki']")).click();
+				Thread.sleep(1000);
+				//		rejectedQua.sendKeys("0");
+				//		Thread.sleep(1000);
+				driver.findElement(By.xpath("//i[@class='ki ki-plus']")).click();
+				Thread.sleep(1000);
+		
+				List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+		
+				if(dynamicElement.size() !=0)
+				{
+					driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+				}
+				Thread.sleep(1000); 
+		
+				driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']//i[@class='ki ki-save']")).click();
+				Thread.sleep(2500);
+				//		Nurseverifiesby.sendKeys(Nuruser);
+				//		Thread.sleep(1000);
+				//		driver.findElement(By.xpath("(//*[contains(text(),'"+Nuruser+"')])")).click();
+				//		Thread.sleep(1000);
+				//		verifiedPass.sendKeys("KAmeda123$");
+				//		Thread.sleep(600);
+				//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
+				//		Thread.sleep(1500); 
 
-		////////////////////Time out			
-		driver.findElement(By.xpath("//button[@title='Time Out']//div[@class='btn-name']")).click();
+		////////////////////Time out	SRI	
+		Thread.sleep(600);	
+	    driver.findElement(By.xpath("//button[@title='Time Out']//div[@class='btn-name']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[@title='Confirm all team members have Introduced themselfs by name and role']//span[@class='checkmark']")).click();
 		Thread.sleep(600);
@@ -3125,7 +3392,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		Thread.sleep(1000);
 		ORSave.click();
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 
 		/////////////Intra Operative notes/Vitals
 		driver.findElement(By.xpath("//label[normalize-space()='Intra-Operative Notes / Vitals']")).click();
@@ -3133,13 +3400,16 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@title='Add']")).click();  
 		ORSave.click();
 		Thread.sleep(2000);
+		saveok.click(); 
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//span[normalize-space()='Intra-Operative Procedure']")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//button[@title='Add']")).click();
 		Thread.sleep(600);
 		ORSave.click();
 		Thread.sleep(1500);   
-
+		saveok.click();
+		Thread.sleep(1500);
 		/////////////After Procedure
 		driver.findElement(By.xpath("//label[normalize-space()='After Procedure']")).click();
 		Thread.sleep(1500);
@@ -3169,7 +3439,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		ORSave.click();
 		Thread.sleep(1500);  
-
+		
 
 		/////////////Coming back to Intra Operative notes/Vitals to enter end date
 		//////Adding end date in intra operative procedure
@@ -3177,7 +3447,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//label[normalize-space()='After Procedure']")).click();  ///////Just clicking on After Procedure
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[normalize-space()='Intra-Operative Notes / Vitals']")).click();
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[normalize-space()='Intra-Operative Procedure']")).click();
 		Thread.sleep(1500);
 
@@ -3218,7 +3488,9 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("(//span[@class='owl-dt-control-button-content'])[4]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+		//driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='Set']")).click();
+	
 		//	driver.findElement(By.xpath("(//span[@class='owl-dt-control-content owl-dt-control-button-content'])[4]")).click();
 		//	act.moveToElement(today).click().build().perform();
 		Thread.sleep(1000);
@@ -3226,16 +3498,18 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		ORSave.click();
 		Thread.sleep(1500);
+		saveok.click();
 		////////Adding end date in anesthesia notes
 		driver.findElement(By.xpath("//span[@class='rep-head-daily']")).click();
 		Thread.sleep(60000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-or-administration[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-or-surgerydetails[1]/form[1]/div[2]/div[1]/div[2]/div[2]/ki-calender-time[1]/div[1]/input[1]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+		//driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='Set']")).click();
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//button[@title='Add']")).click();  
 		Thread.sleep(1000);
-
+		//saveok.click();
 		Thread.sleep(500);
 		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
@@ -3253,7 +3527,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		ORSave.click();
 		Thread.sleep(10000);  
-
+		saveok.click();
 		////Preference card usage
 
 		PrefcardUsage1.click();
@@ -3277,9 +3551,23 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		UpdateINV.click();
 		Thread.sleep(3000);
 
+		List<WebElement> dynamicElement131=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//label[@class='dialog-title'][normalize-space()='Confirmation']"));
+
+		if(dynamicElement131.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+		}
 
 
-		//////////////Resource Allocation			
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+
+
+		//////////////Resource Allocation	
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[normalize-space()='Resource Allocation']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='form-group close-active ki-dropdown']//input[@id='typeId']")).click();
@@ -3297,7 +3585,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//input[@id='attendeeSplitId']")).click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Surgeon)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR SURGEON']")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//button[@id='ordlsaddid']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(600);
@@ -3307,7 +3595,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//input[@id='attendeeSplitId']")).click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Senior Alone(Anesthetist)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='1 SENIOR(ANAESTHESIA)']")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//button[@id='ordlsaddid']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(600);
@@ -3319,12 +3607,12 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("//div[@class='form-group ki-dropdown']//input[@id='typeId']")).click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Dietitian']")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//input[@id='resourcemasterorid']")).sendKeys("Nawara Beevi A(NGL18110)");
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Nawara Beevi A(NGL18110)']")).click();
-		Thread.sleep(600);
+//		driver.findElement(By.xpath("//li[normalize-space()='Dietitian']")).click();
+//		Thread.sleep(600);
+//		driver.findElement(By.xpath("//input[@id='resourcemasterorid']")).sendKeys("Nawara Beevi A(NGL18110)");
+//		Thread.sleep(600);
+//		driver.findElement(By.xpath("//li[normalize-space()='Nawara Beevi A(NGL18110)']")).click();
+//		Thread.sleep(600);
 		driver.findElement(By.xpath("//button[@id='ordlsaddid']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//textarea[@id='remarksId']")).sendKeys("Remarks added");
@@ -3333,6 +3621,11 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1600);
 		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
 		Thread.sleep(1500);
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
 
 
 		////////////Sign Out		
@@ -3426,7 +3719,9 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		tempOk.click();
 		Thread.sleep(3000);
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='icon emrsave']")));
+		Thread.sleep(2000);	
 		Diagnosis.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[contains(text(),'Mark as Final')]")).click();
@@ -3436,7 +3731,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	}
 
-	public void OR_billing(String User, String Password,String MRNo) throws InterruptedException
+	public void OR_billing(String User, String Password,String MRNo) throws InterruptedException, AWTException
 
 	{
 
@@ -3524,7 +3819,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(1000);
 		hamberger.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		RCM.click();
 		Thread.sleep(1000);
 		Backendbilling.click();
@@ -3549,7 +3844,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Generate.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(3000);
+		
 		Thread.sleep(1000);
 		Pharmacy.click();
 		Thread.sleep(2000);
@@ -3573,8 +3868,11 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		}
 
 		Thread.sleep(2000);
-		Generate.click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("//tab[@id='2']//button[contains(@type,'button')][normalize-space()='Generate']")).click();
+		Thread.sleep(6000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']")));
+		Thread.sleep(500);	
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(3000);
 
@@ -3600,13 +3898,18 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		MRNO.sendKeys(MRNo,Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@title='Search']//i[@class='ki ki-search']")).click();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 
 		Statement.click();
 		Thread.sleep(800);
 		Print.click();
 		Thread.sleep(7000);
 
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
 
 
 

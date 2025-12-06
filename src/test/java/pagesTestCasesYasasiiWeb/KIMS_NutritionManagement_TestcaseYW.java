@@ -34,7 +34,7 @@ public class KIMS_NutritionManagement_TestcaseYW extends TestBaseYasasiiWeb   {
 
 	
  @Test (dataProvider = "getData" , priority=0)
-	public void Patreg(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE ,String docid,String docpassword,String User , String Password , String site,String ADTprovider ) throws InterruptedException, IOException, AWTException {
+	public void Patreg(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE ,String docid,String docpassword,String User , String Password , String site,String ADTprovider,String SERVICE1 ) throws InterruptedException, IOException, AWTException {
 		
 		
 		KIMS_NutritionManagement_Yasasiiweb NM =new KIMS_NutritionManagement_Yasasiiweb(driver);
@@ -47,15 +47,17 @@ public class KIMS_NutritionManagement_TestcaseYW extends TestBaseYasasiiWeb   {
 		}
 	
 	@Test (dataProvider = "getData" , priority=1)
-	public void investigation(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String docid,String docpassword,String User , String Password , String site,String ADTprovider  ) throws InterruptedException, IOException, AWTException {
+	public void investigation(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String docid,String docpassword,String User , String Password , String site,String ADTprovider,String SERVICE1  ) throws InterruptedException, IOException, AWTException {
 		
 		
 		KIMS_NutritionManagement_Yasasiiweb NM =new KIMS_NutritionManagement_Yasasiiweb(driver);
 		
 		
-		NM.doctoreNote(docid, docpassword, MRNO, SERVICE);
+		NM.doctoreNote(docid, docpassword, MRNO, SERVICE,SERVICE1);
 		
 		NM.Diet_administration();
+		
+		NM.BackendBillgeneration(MRNO, SERVICE1);
 		
 		
 		}
