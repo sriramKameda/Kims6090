@@ -7,9 +7,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -25,6 +28,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_CpoePendingOrder_Billing_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public KIMS_CpoePendingOrder_Billing_Yasasiiweb(WebDriver driver) {
@@ -268,9 +272,14 @@ public class KIMS_CpoePendingOrder_Billing_Yasasiiweb extends PageFactoryInitYas
 		Thread.sleep(500);
 		EnterFirstNME.sendKeys(Name);
 		Thread.sleep(500);
+		
+	
+	    String lastName =RandomString.lastName();
+	
+		System.out.println(lastName + "LastName" );
 		Lastname.click();
 		Thread.sleep(500);
-		Lastname.sendKeys(lastname);
+		Lastname.sendKeys(lastName);
 		Thread.sleep(500);
 
 		EnterAge.click();
@@ -309,12 +318,13 @@ public class KIMS_CpoePendingOrder_Billing_Yasasiiweb extends PageFactoryInitYas
 			EnterAadhar.sendKeys( Keys.BACK_SPACE);
 		}
 		Thread.sleep(1000);
-		EnterAadhar.sendKeys(DocID );
+		
+	    String DOCID = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID );
 		Thread.sleep(600);
 		Clickadd.click();
 		Thread.sleep(800);
-
-
 		Thread.sleep(600);
 		emergencyContact.click();
 		Thread.sleep(600);
