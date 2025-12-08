@@ -24,6 +24,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 
@@ -495,9 +496,12 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(500);
 		EnterFirstNME.sendKeys(NAME);
 		Thread.sleep(500);
+		String lastName1 =RandomString.lastName();
+			
+		System.out.println(lastName1 + "LastName" );
 		Lastname.click();
 		Thread.sleep(500);
-		Lastname.sendKeys(lastName);
+		Lastname.sendKeys(lastName1);
 		Thread.sleep(500);
 
 		EnterAge.click();
@@ -536,7 +540,9 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 			EnterAadhar.sendKeys( Keys.BACK_SPACE);
 		}
 		Thread.sleep(1000);
-		EnterAadhar.sendKeys(DOCno );
+        String DOCID = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID );
 		Thread.sleep(600);
 		Clickadd.click();
 		Thread.sleep(800);
@@ -695,9 +701,12 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(500);
 		EnterFirstNME.sendKeys(NAme2);
 		Thread.sleep(500);
+		String lastName21 =RandomString.lastName();
+		
+		System.out.println(lastName21 + "LastName" );
 		Lastname.click();
 		Thread.sleep(500);
-		Lastname.sendKeys(lastName2);
+		Lastname.sendKeys(lastName21);
 		Thread.sleep(500);
 
 		EnterAge.click();
@@ -735,7 +744,9 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 			EnterAadhar.sendKeys( Keys.BACK_SPACE);
 		}
 		Thread.sleep(1000);
-		EnterAadhar.sendKeys(DOCno2 );
+        String DOCID1 = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID1 );
 		Thread.sleep(600);
 		Clickadd.click();
 		Thread.sleep(800);

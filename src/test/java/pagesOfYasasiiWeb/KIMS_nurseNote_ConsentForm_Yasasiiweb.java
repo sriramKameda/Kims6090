@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
@@ -520,7 +521,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Thread.sleep(1000);
 		Hamburger.click();
 		Thread.sleep(800);
-		FOModule.click();
+		FOModule.click(); 
 		Thread.sleep(1000);
 		Thread.sleep(500);
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
@@ -560,9 +561,12 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		EnterFirstNME.sendKeys(Name);
 		Thread.sleep(500);
 		Thread.sleep(500);
+		String lastName =RandomString.lastName();
+		
+		System.out.println(lastName + "LastName" );
 		lastname.click();
 		Thread.sleep(500);
-		lastname.sendKeys(Lastname);
+		lastname.sendKeys(lastName);
 		Thread.sleep(500);
 		EnterAge.click();
 		Thread.sleep(500);
@@ -596,7 +600,9 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 			EnterAadhar.sendKeys( Keys.BACK_SPACE);
 		}
 		Thread.sleep(1000);
-		EnterAadhar.sendKeys(DocID );
+        String DOCID = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID );
 		Thread.sleep(600);
 		Clickadd.click();
 		Thread.sleep(800);

@@ -3,19 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW">
         <methods>
-          <include name="setup"/>
-          <include name="startTest"/>
+          <include name="navigateFOPage"/>
           <include name="logout"/>
-          <include name="navigateemradt"/>
+          <include name="setup"/>
+          <include name="Patreg" invocation-numbers="0"/>
+          <include name="startTest"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="CpoePending" invocation-numbers="0"/>
+          <include name="investigation" invocation-numbers="0"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -18,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 
@@ -594,9 +595,12 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(800);
 		middleName.sendKeys("k");
 		Thread.sleep(800);
+		String lastName1 =RandomString.lastName();
+		
+		System.out.println(lastName1 + "LastName" );
 		LastName.click();
-		Thread.sleep(800);
-		LastName.sendKeys("L");
+		Thread.sleep(500);
+		LastName.sendKeys(lastName1);;
 		Thread.sleep(800);
 
 
@@ -723,7 +727,9 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 
 
-		EnterAadhar.sendKeys(Keys.HOME + DocID );
+      String DOCID = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID );
 		Thread.sleep(600);
 		issuedPlace.sendKeys("Chennai");
 		Thread.sleep(600); 
