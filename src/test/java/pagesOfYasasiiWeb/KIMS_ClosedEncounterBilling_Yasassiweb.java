@@ -242,7 +242,7 @@ public class KIMS_ClosedEncounterBilling_Yasassiweb extends PageFactoryInitYasas
 		Thread.sleep(500);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
-
+ 
 
 		Thread.sleep(600);
 		EnterMob.sendKeys(MobNo);

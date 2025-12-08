@@ -22,6 +22,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 
@@ -472,7 +473,12 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(600);
 		LastName.clear();
 		Thread.sleep(500);
-		lastname.sendKeys(lastName);
+		String lastName1 =RandomString.lastName();
+		
+		System.out.println(lastName1 + "LastName" );
+		LastName.click();
+		Thread.sleep(500);
+		LastName.sendKeys(lastName1);
 		Thread.sleep(600);
 		maritialStatus.click();
 		Thread.sleep(500);
@@ -505,7 +511,9 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(1000);
 
 		Thread.sleep(600);
-		EnterAadhar.sendKeys(Keys.HOME + DOCno );
+       String DOCID = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID );
 		Thread.sleep(600);
 		issuedPlace.sendKeys("Chennai");
 		Thread.sleep(600);

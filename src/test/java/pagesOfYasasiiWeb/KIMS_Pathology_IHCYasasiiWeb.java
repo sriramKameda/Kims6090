@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 	public KIMS_Pathology_IHCYasasiiWeb(WebDriver driver) {
@@ -396,7 +397,11 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 			aadharNo.sendKeys( Keys.BACK_SPACE);
 		}
 		//aadharNo.click();
-		aadharNo.sendKeys(Keys.HOME + AADHAAR);
+		 
+		 String DOCID = RandomString.DOCID();
+		
+		aadharNo.sendKeys(DOCID );
+		
 		Thread.sleep(700);
 		docAdd.click();
 		Thread.sleep(700);

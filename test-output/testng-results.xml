@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -20,80 +21,116 @@
           </reporter-output>
         </test-method> <!-- navigateemradt -->
         <test-method is-config="true" signature="getTestMethodProperties(java.lang.reflect.Method)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW@619bfe29]" started-at="2025-12-08T10:11:43 IST" name="getTestMethodProperties" finished-at="2025-12-08T10:11:43 IST" duration-ms="12" status="PASS">
+=======
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-08T10:01:35 IST" name="Default suite" finished-at="2025-12-08T10:02:27 IST" duration-ms="52102">
+    <groups>
+    </groups>
+    <test started-at="2025-12-08T10:01:35 IST" name="Default test" finished-at="2025-12-08T10:02:27 IST" duration-ms="52102">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:01:27 IST" name="setup" finished-at="2025-12-08T10:01:35 IST" duration-ms="7748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="startTest()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:01:35 IST" name="startTest" finished-at="2025-12-08T10:01:35 IST" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method is-config="true" signature="navigateFOPage()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:01:35 IST" name="navigateFOPage" finished-at="2025-12-08T10:01:47 IST" duration-ms="11993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateFOPage -->
+        <test-method is-config="true" signature="getTestMethodProperties(java.lang.reflect.Method)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:01:47 IST" name="getTestMethodProperties" finished-at="2025-12-08T10:01:47 IST" duration-ms="9" status="PASS">
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW.PatientReg(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException,java.io.IOException,java.awt.AWTException]]>
+                <![CDATA[public void pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.Patreg(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException,java.io.IOException,java.awt.AWTException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTestMethodProperties -->
+<<<<<<< HEAD
         <test-method signature="PatientReg(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW@619bfe29]" started-at="2025-12-08T10:11:43 IST" name="PatientReg" data-provider="getData" finished-at="2025-12-08T10:12:56 IST" duration-ms="73210" status="PASS">
+=======
+        <test-method signature="Patreg(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:01:47 IST" name="Patreg" data-provider="getData" finished-at="2025-12-08T10:02:14 IST" duration-ms="27311" status="FAIL">
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
           <params>
             <param index="0">
               <value>
-                <![CDATA[Mrs]]>
+                <![CDATA[Sindhu]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Parvathy]]>
+                <![CDATA[M]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[I]]>
+                <![CDATA[50]]>
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[14/12/1998]]>
+=======
+                <![CDATA[2023567589]]>
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[789950070147]]>
+                <![CDATA[KIMS]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[8987670290]]>
+                <![CDATA[24, Rajiv  NAGAR]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Kandhan dargen]]>
+                <![CDATA[117257610611]]>
               </value>
             </param>
             <param index="7">
               <value>
+<<<<<<< HEAD
                 <![CDATA[G0000001683025]]>
+=======
+                <![CDATA[G0000001608025]]>
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Radhakrishnan Marimuthu]]>
+                <![CDATA[Raina S]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[NGL18286]]>
+                <![CDATA[Sodium (ISE Indirect)]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[KAmeda123$]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[KIMSHEALTH Nagarcoil]]>
+                <![CDATA[KAmeda123$]]>
               </value>
             </param>
             <param index="12">
               <value>
+<<<<<<< HEAD
                 <![CDATA[admin]]>
               </value>
             </param>
@@ -187,20 +224,13 @@
             </param>
             <param index="11">
               <value>
+=======
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
                 <![CDATA[KIMSHEALTH Nagarcoil]]>
               </value>
             </param>
-            <param index="12">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[KAmeda123$]]>
-              </value>
-            </param>
           </params>
+<<<<<<< HEAD
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CpoePending -->
@@ -209,12 +239,265 @@
             <param index="0">
               <value>
                 <![CDATA[[TestResult name=CpoePending status=SUCCESS method=KIMS_CpoePendingOrder_Billing_TestcaseYW.CpoePending(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW@619bfe29] output={null}]]]>
+=======
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <span class="btn btn-link ng-star-inserted">...</span> is not clickable at point (698, 540). Other element would receive the click: <div _ngcontent-gpg-c2="" aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal ki-dialog fade blockoutside in show" kidialog="" role="dialog" tabindex="-1" aria-modal="true" style="display: block;">...</div>
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [87998780072394863cec7f0d8bcb046f, clickElement {id=f.F1160B0DDEFC587AA4537294DB0C5E00.d.5AD51B4DBD64382200A52E1313F88EF9.e.729}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\swathy\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60691}, goog:processID: 6640, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60691/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (87998780072394863cec7f0d8bcb046f)] -> xpath: //span[normalize-space()='Emergency / Guardian / Other Contacts']]
+Session ID: 87998780072394863cec7f0d8bcb046f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="btn btn-link ng-star-inserted">...</span> is not clickable at point (698, 540). Other element would receive the click: <div _ngcontent-gpg-c2="" aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal ki-dialog fade blockoutside in show" kidialog="" role="dialog" tabindex="-1" aria-modal="true" style="display: block;">...</div>
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [87998780072394863cec7f0d8bcb046f, clickElement {id=f.F1160B0DDEFC587AA4537294DB0C5E00.d.5AD51B4DBD64382200A52E1313F88EF9.e.729}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\swathy\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60691}, goog:processID: 6640, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60691/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (87998780072394863cec7f0d8bcb046f)] -> xpath: //span[normalize-space()='Emergency / Guardian / Other Contacts']]
+Session ID: 87998780072394863cec7f0d8bcb046f
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy39.click(Unknown Source)
+at pagesOfYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb.patReg(KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb.java:401)
+at pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.Patreg(KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Patreg -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:14 IST" name="getResult" finished-at="2025-12-08T10:02:15 IST" duration-ms="263" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Patreg status=FAILURE method=KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.Patreg(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="getTestMethodProperties(java.lang.reflect.Method)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:15 IST" name="getTestMethodProperties" finished-at="2025-12-08T10:02:15 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.investigation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException,java.io.IOException,java.awt.AWTException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTestMethodProperties -->
+        <test-method signature="investigation(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:15 IST" name="investigation" data-provider="getData" finished-at="2025-12-08T10:02:27 IST" duration-ms="12083" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sindhu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[M]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[50]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2023567589]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[KIMS]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[24, Rajiv  NAGAR]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[117257610611]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[G0000001608025]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Raina S]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sodium (ISE Indirect)]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[KAmeda123$]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[KIMSHEALTH Nagarcoil]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [87998780072394863cec7f0d8bcb046f, findElement {using=xpath, value=//input[@id='loginemail']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\swathy\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60691}, goog:processID: 6640, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60691/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 87998780072394863cec7f0d8bcb046f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [87998780072394863cec7f0d8bcb046f, findElement {using=xpath, value=//input[@id='loginemail']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\swathy\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60691}, goog:processID: 6640, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60691/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 87998780072394863cec7f0d8bcb046f
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy39.click(Unknown Source)
+at pagesOfYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb.investigtion(KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb.java:525)
+at pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.investigation(KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.java:53)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- investigation -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:27 IST" name="getResult" finished-at="2025-12-08T10:02:27 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=investigation status=FAILURE method=KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW.investigation(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d] output={null}]]]>
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="logout()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW@619bfe29]" started-at="2025-12-08T10:17:21 IST" name="logout" finished-at="2025-12-08T10:17:36 IST" duration-ms="15764" status="PASS">
           <reporter-output>
           </reporter-output>
@@ -224,10 +507,21 @@
           </reporter-output>
         </test-method> <!-- extentReportEnd -->
         <test-method is-config="true" signature="teardown()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW@619bfe29]" started-at="2025-12-08T10:17:37 IST" name="teardown" finished-at="2025-12-08T10:17:37 IST" duration-ms="460" status="PASS">
+=======
+        <test-method is-config="true" signature="logout()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:27 IST" name="logout" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1765168347147" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="extentReportEnd()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:27 IST" name="extentReportEnd" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1765168347681" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportEnd -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW@5b7ea70d]" started-at="2025-12-08T10:02:27 IST" name="teardown" finished-at="2025-12-08T10:02:27 IST" duration-ms="190" status="PASS">
+>>>>>>> 29f32e9c0a2118d834460452f3bd334fbabb7995
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_CpoePendingOrder_Billing_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

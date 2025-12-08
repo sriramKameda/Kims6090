@@ -26,6 +26,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class RegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
@@ -179,8 +180,12 @@ public class RegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		EnterFirstNME.sendKeys(Name);
 		Thread.sleep(500);
+	    String lastName =RandomString.lastName();
+		
+		System.out.println(lastName + "LastName" );
 		Lastname.click();
-		Lastname.sendKeys(LastName);
+		Thread.sleep(500);
+		Lastname.sendKeys(lastName);
 		
 		
 		EnterAge.click();
@@ -218,7 +223,9 @@ public class RegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		
         ContactInformation.click();
 		Thread.sleep(1000);
-		EnterAddress.sendKeys(Address);
+	    String DOCID = RandomString.DOCID();
+		
+		EnterAadhar.sendKeys(DOCID );
 		Thread.sleep(1000);
 		DocumentIdentification.click();
 		Thread.sleep(1000);

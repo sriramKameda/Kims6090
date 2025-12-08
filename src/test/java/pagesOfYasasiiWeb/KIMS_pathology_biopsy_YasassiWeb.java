@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb {
 	public KIMS_pathology_biopsy_YasassiWeb(WebDriver driver) {
@@ -385,9 +386,12 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		FirstName.sendKeys(NAME);
 		Thread.sleep(1000);
 		Thread.sleep(500);
+		String lastName =RandomString.lastName();
+		
+		System.out.println(lastName + "LastName" );
 		Lastname.click();
 		Thread.sleep(500);
-		Lastname.sendKeys(lastname);
+		Lastname.sendKeys(lastName);
 		Thread.sleep(500);
 
 
@@ -417,7 +421,9 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 			aadharNo.sendKeys( Keys.BACK_SPACE);
 		}
 		//aadharNo.click();
-		aadharNo.sendKeys(Keys.HOME + AADHAAR);
+		String DOCID = RandomString.DOCID();
+			
+		aadharNo.sendKeys(DOCID );
 		Thread.sleep(1000);
 		docAdd.click();
 		Thread.sleep(1000);

@@ -25,6 +25,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYasasiiWeb {
 	public KIMS_PanelService_ExternalLab_Yasasiiweb(WebDriver driver) {
@@ -437,9 +438,12 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(1000);
 		FirstName.sendKeys(NAME);
 		Thread.sleep(1000);
+		String lastName =RandomString.lastName();
+		
+		System.out.println(lastName + "LastName" );
 		Lastname.click();
 		Thread.sleep(500);
-		Lastname.sendKeys(lastname);
+		Lastname.sendKeys(lastName);
 		Thread.sleep(500);
 		age.click();
 		Thread.sleep(1000);
@@ -467,7 +471,9 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 			aadharNo.sendKeys( Keys.BACK_SPACE);
 		}
 		//aadharNo.click();
-		aadharNo.sendKeys(Keys.HOME + AADHAAR);
+        String DOCID = RandomString.DOCID();
+		
+        aadharNo.sendKeys(DOCID );
 		Thread.sleep(1000);
 		docAdd.click();
 		Thread.sleep(1000);
