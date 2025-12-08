@@ -192,7 +192,7 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 	@FindBy(xpath = "//input[@id='approvalamount0']")
 	public WebElement Amount1;
 
-	@FindBy(xpath = "//textarea[@id='undefined']")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
 	public WebElement remark1;
 
 	@FindBy(xpath = "//button[normalize-space()='Approve']")
@@ -240,7 +240,7 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[9]/label[1]/button[1]")
 	public WebElement SearchIcon1;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/span[1]/i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/span[1]/i[1]")
 	public WebElement CancelReq;
 
 
@@ -273,7 +273,7 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 	public WebElement  checkbox1;
 
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
 	public WebElement RemarksIcon2;
 
 	@FindBy(xpath = "//i[@class='ki ki-search']")
@@ -583,7 +583,10 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 
 
 		// copying File path to Clipboard
-		StringSelection str = new StringSelection("C:\\Users\\sriram\\Pictures\\Screenshots\\prescription.pdf");
+		String filePath = System.getProperty("user.dir")
+                + "\\src\\test\\resources\\uploads\\userCreation_passed140.PNG";
+		StringSelection str = new StringSelection(filePath);
+		//StringSelection str = new StringSelection("C:\\Users\\sriram\\Pictures\\Screenshots\\prescription.pdf");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 		Thread.sleep(2500);
 		// press Contol+V for pasting
@@ -637,12 +640,12 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		//	zoomout.click();
 		Thread.sleep(1000);
 
-		for (int i = 0; i <2; i++) {
+		/* swa for (int i = 0; i <2; i++) {
 
 			nextpage.click();
 			Thread.sleep(800);
 
-		}
+		}swa*/
 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='btn btn-danger sm ml10'][normalize-space()='Close']")).click();
@@ -928,12 +931,12 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();	
 		//CHECK.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")).click();	
+		//driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")).click();	
 
 		Thread.sleep(1000);
 		remark1.click();
 		Thread.sleep(1000);
-		remark1.sendKeys("approved");
+		driver.findElement(By.xpath("//textarea[@id='undefined']")).sendKeys("approved");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
 		Thread.sleep(1000);
@@ -982,7 +985,7 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		Thread.sleep(1000);
 		RemarksIcon2.click();
 		Thread.sleep(800);
-		Remarks1.click();
+		Remarks1.click();//textarea[@id='undefined']
 		Thread.sleep(1000);
 		Remarks1.sendKeys("ok");
 		Thread.sleep(800);

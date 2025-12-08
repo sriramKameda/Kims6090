@@ -2071,61 +2071,63 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 //
 //		//////////Agotin
 //
-//		Thread.sleep(1000);
-//		admin1.click();
-//		Thread.sleep(1000);
-//
-//		MedicineSource.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='Location/Patient Medicine']")).click();
-//		Thread.sleep(1000);
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//input[@id='locmedbrnadid']")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("(//li[@class='uparrow-yellow'])[1]")).click();
-//		Thread.sleep(1000);
-//		Batch.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-mar-admin[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[3]/ul[1]/app-list-item[1]/li[1]")).click();
-//		Thread.sleep(1000);
-//		Add.click();
-//
-//		Thread.sleep(500);
-//		List<WebElement> dynamicElement4=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
-//
-//		if(dynamicElement4.size() !=0)
-//		{
-//			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-//		}
-//
-//
-//		else {
-//			System.out.println("sri");
-//		}
-//		Thread.sleep(2000);
-//
-//		Save1.click();
-//		Thread.sleep(3000);
-//		List<WebElement> dynamicElement0111=driver.findElements(By.xpath("//input[@id='verifiedbyname']"));
-//
-//		if(dynamicElement0111.size() !=0)
-//		{
-//			VerifiedBy.sendKeys("Anitha R (NGL17697)");
-//			Thread.sleep(1000);
-//			driver.findElement(By.xpath("//li[normalize-space()='Anitha R (NGL17697)']")).click();
-//			Thread.sleep(1000);
-//			Verifypassword.click();
-//			Thread.sleep(1000);
-//			Verifypassword.sendKeys(Password);
-//			Thread.sleep(2000);
-//			driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
-//			Thread.sleep(1000);
-//		}
-//		else {
-//			System.out.println("NO second nurse verification");
-//		}
-//		Thread.sleep(2000);
-//
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(admin1));
+		Thread.sleep(1000);
+		admin1.click();
+		Thread.sleep(1000);
+
+		MedicineSource.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Location/Patient Medicine']")).click();
+		Thread.sleep(1000);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='locmedbrnadid']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//li[@class='uparrow-yellow'])[1]")).click();
+		Thread.sleep(1000);
+		Batch.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-mar-admin[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[3]/ul[1]/app-list-item[1]/li[1]")).click();
+		Thread.sleep(1000);
+		Add.click();
+
+		Thread.sleep(500);
+		List<WebElement> dynamicElement4=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement4.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(2000);
+
+		Save1.click();
+		Thread.sleep(3000);
+		List<WebElement> dynamicElement0111=driver.findElements(By.xpath("//input[@id='verifiedbyname']"));
+
+		if(dynamicElement0111.size() !=0)
+		{
+			VerifiedBy.sendKeys("Anitha R (NGL17697)");
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='Anitha R (NGL17697)']")).click();
+			Thread.sleep(1000);
+			Verifypassword.click();
+			Thread.sleep(1000);
+			Verifypassword.sendKeys(Password);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
+			Thread.sleep(1000);
+		}
+		else {
+			System.out.println("NO second nurse verification");
+		}
+		Thread.sleep(2000);
+
 //		///Ahaglow	
 //		
 //		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -2418,7 +2420,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 			
 			Thread.sleep(2000);
 			
-			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+			//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(admin6));
 		    Thread.sleep(2000);
 		    admin6.click();
@@ -2493,7 +2495,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 		if(dynamicElement611.size() !=0)
 		{
-			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+			//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(Admin7));
 		    Thread.sleep(2000);
 		    Admin7.click();
@@ -4086,8 +4088,10 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 	public void ADTAppoval(String MRNo ) throws InterruptedException, AWTException {
 
-
+		
 		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Logoutarw));
 		Logoutarw.click();
 		Thread.sleep(1000);
 		Logoutbutton.click();
@@ -4302,8 +4306,8 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(2000);
 
-//		driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@class='row justify-content-between']")).click();
-//		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@class='row justify-content-between']")).click();
+		Thread.sleep(2000);
 		
 		Invoicemode.click();
 		Thread.sleep(1000);

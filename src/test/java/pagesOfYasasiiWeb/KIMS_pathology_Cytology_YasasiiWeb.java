@@ -1321,7 +1321,7 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
+		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click(); 
 
 		//ivstgnSave.click();//button[@id='onSaveid']
 		Thread.sleep(3000);
@@ -1527,6 +1527,9 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 
 		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//ki-checkbox-control[@id='isdiagnosischk']//span[@class='checkmark']")));
 		Thread.sleep(2000);
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ki-checkbox-control[@id='isdiagnosischk']//span[@class='checkmark']")));
+		Thread.sleep(700);
 		driver.findElement(By.xpath("//ki-checkbox-control[@id='isdiagnosischk']//span[@class='checkmark']")).click();
 		Thread.sleep(700);
 		js.executeScript("arguments[0].scrollIntoView();", historyandfindings);

@@ -3,20 +3,22 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PatientJourney_IP_TestcaseYW">
         <methods>
-          <include name="navigateFOPage"/>
-          <include name="logout"/>
+          <include name="medicine_discontinue" invocation-numbers="0"/>
           <include name="setup"/>
-          <include name="Patreg" invocation-numbers="0"/>
+          <include name="logout"/>
           <include name="startTest"/>
-          <include name="teardown"/>
+          <include name="IPMEdication" invocation-numbers="0"/>
           <include name="getTestMethodProperties"/>
-          <include name="investigation" invocation-numbers="0"/>
           <include name="extentReportEnd"/>
+          <include name="BirthReg" invocation-numbers="0"/>
           <include name="getResult"/>
+          <include name="navigateemradt"/>
+          <include name="finalbilling" invocation-numbers="0"/>
+          <include name="Discharge" invocation-numbers="0"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_PatientJourney_IP_TestcaseYW -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
