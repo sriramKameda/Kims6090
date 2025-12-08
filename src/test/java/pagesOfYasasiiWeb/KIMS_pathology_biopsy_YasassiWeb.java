@@ -610,7 +610,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
+		driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
 //		Thread.sleep(1000);
 
 		Thread.sleep(2000);
@@ -1076,7 +1076,10 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 
 		/////////unAuthorize
 
-
+			
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='v-action-bar ng-star-inserted']")).click();
+		Thread.sleep(1000);
 		ivstgnStatus.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
@@ -1186,7 +1189,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
 		HeaderCheckmark.click();
-		Thread.sleep(1000);
+		Thread.sleep(1000); 
 		print.click();
 		Thread.sleep(4000);
 

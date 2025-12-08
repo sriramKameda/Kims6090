@@ -140,7 +140,7 @@ public class KIMS_PayerSplitUp_YasassiWeb extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")//i[@class='ki ki-plus']
 	public WebElement AddService;
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")

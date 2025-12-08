@@ -36,7 +36,7 @@ public void walkin(String PROVIDER, String MRNO , String filepath, String User ,
 		
 	KIMS_Pharmacybill_Availedservice_Yasasiiweb avail = new KIMS_Pharmacybill_Availedservice_Yasasiiweb(driver);
 		
-		avail.walkin(PROVIDER, MRNO, filepath);
+	avail.walkin(PROVIDER, MRNO, filepath);
 		
 		
 
@@ -50,7 +50,7 @@ public void walkin1(String PROVIDER, String MRNO , String filepath, String User 
 		
 	avail.Availed(User, Password, MRNO);
 		
-		avail.AuthorisingRequest(User, Password, MRNO);
+	avail.AuthorisingRequest(User, Password, MRNO);
 
 }
 

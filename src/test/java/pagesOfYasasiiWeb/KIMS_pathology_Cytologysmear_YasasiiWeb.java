@@ -884,7 +884,7 @@ public class KIMS_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYas
 		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyDoctor+"']")).click();
 		Remarks.click();
 		Thread.sleep(700);
-		Remarks.sendKeys(" done successfully");
+		Remarks.sendKeys(" done successfully..");
 		Thread.sleep(700);
 		PathSave.click();
 		Thread.sleep(1700);
