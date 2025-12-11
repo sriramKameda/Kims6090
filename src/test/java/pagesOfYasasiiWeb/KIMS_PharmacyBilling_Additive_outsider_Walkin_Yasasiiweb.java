@@ -1091,7 +1091,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		System.out.println(lastName + "LastName" );
 		PatName.sendKeys(outsiderName1 + lastName);
 		Thread.sleep(1000);
-		Gender.click();
+		Gender.click(); 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Male']")).click();
 		Thread.sleep(1000);
