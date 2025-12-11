@@ -3,28 +3,26 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
- 
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_FrozenTestcaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_OutsiderPatientFlow_TestcaseYW"/> 
-      <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_CytologysmearTestcaseYW"/>  
       <class name="pagesTestCasesYasasiiWeb.KIMS_SecondOpinion_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_PatientFullReg_TestCaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_WhiteboardStat_TestCaseYW"/> 
-      <class name="pagesTestCasesYasasiiWeb.KIMS_UserCreation_TestcaseYW"/> 
-      <class name="pagesTestCasesYasasiiWeb.KIMS_Pathology_Cytology_TestCaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_StatementSettlement_TestcaseYW"/> 
-      <class name="pagesTestCasesYasasiiWeb.KIMS_PackageBilling_TestcaseYW"/>    
       <class name="pagesTestCasesYasasiiWeb.KIMS_PanelService_ExternalLab_TestcaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_Pathology_IHCTestCaseYW"/>  
-      <class name="pagesTestCasesYasasiiWeb.KIMS_PharmacyBilling_Additive_outsider_Walkin_TestcaseYW"/>     
-      <class name="pagesTestCasesYasasiiWeb.KIMS_PharmacyBilling_RecomennedDose_Substitute_TestcaseYW"/>  
-      <class name="pagesTestCasesYasasiiWeb.KIMS_StockMovement_TestcaseYW"/> 
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PackageCreation_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_StatementSettlement_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_WhiteboardStat_TestCaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_UserCreation_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_CytologysmearTestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PatientJourney_IP_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Pathology_Cytology_TestCaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Pathology_IHCTestCaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PatientJourney_OP_TestcasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PayerSplitUp_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PharmacyBilling_Additive_outsider_Walkin_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PharmacyBilling_RecomennedDose_Substitute_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_StockMovement_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_StockTransfer_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_Pharmacybill_Availedservice_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_biopsy_TestcaseYW"/>
-        <class name="pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases"/>   
-        
-        
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
