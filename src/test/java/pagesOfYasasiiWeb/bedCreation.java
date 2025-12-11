@@ -694,7 +694,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 	public void bed() throws InterruptedException {
 
-		String  a="A1";
+		String  a="A2";
 		char b=67;
 
 

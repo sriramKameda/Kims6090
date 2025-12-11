@@ -79,7 +79,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 	public WebElement card;
 
 	//button[normalize-space()='OK']
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
 	public WebElement remarks;
 
 	@FindBy(xpath = "//button[normalize-space()='OK']")
@@ -681,7 +681,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 			Thread.sleep(1000);
 
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+			//driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 			Thread.sleep(2000);
@@ -762,7 +762,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 			//AdvanceView.click();
 
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+			//driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 			Thread.sleep(1000);
@@ -785,7 +785,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 
 	}
 
-	public void RcmRefund(String MRNo , String REMARK2,String AUTHUser,String AUTHpassword,String DebitCard) throws InterruptedException, AWTException 
+	public void RcmRefund(String MRNo , String REMARK2,String AUTHUser,String AUTHpassword,String DebitCard,String ADJAMOUNT) throws InterruptedException, AWTException 
 	{
 
 
@@ -887,6 +887,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		checkrequest.click();
 		Thread.sleep(1000);    
 		remarks.click();
+		Thread.sleep(1000);
 		EnterRemarks.sendKeys(REMARK2);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
@@ -931,7 +932,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		checkbox.click();
 		Thread.sleep(1000);
-		RemarksIcon1.click();
+		remarks.click();
 		Thread.sleep(800);
 		Remarks1.click();
 		Thread.sleep(1000);
@@ -962,7 +963,8 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		Thread.sleep(1000);
-		String Returnamount =driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/table[1]/tbody[1]/tr[1]/td[9]")).getText();
+		
+		String Returnamount =driver.findElement(By.xpath("//input[@id='cash']")).getText();
 		Thread.sleep(1000);
 		System.out.println("returnAmount"+Returnamount);
 		Thread.sleep(1000);
@@ -995,7 +997,8 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(600);
 		Amount.click();
 		Thread.sleep(600);
-		Amount.sendKeys(Returnamount);
+		//Amount.sendKeys(Returnamount);
+		Amount.sendKeys(ADJAMOUNT);
 		Thread.sleep(600);
 		ChequeAdd.click();
 		Thread.sleep(600);
@@ -1104,7 +1107,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		//AdvanceView.click();
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+		//driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 		Thread.sleep(1000);

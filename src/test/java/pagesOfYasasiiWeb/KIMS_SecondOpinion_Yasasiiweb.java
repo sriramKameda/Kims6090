@@ -576,7 +576,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("//span[@title='Show Favorites Only']//i[@class='ki ki-favourite-fill']")).click();
 //		Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[normalize-space()='Add new']")).click();
+			//driver.findElement(By.xpath("//span[normalize-space()='Add new']")).click();
 			Thread.sleep(1000);
 
 

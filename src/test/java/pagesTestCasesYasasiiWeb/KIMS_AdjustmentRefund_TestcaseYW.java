@@ -54,7 +54,7 @@ public class KIMS_AdjustmentRefund_TestcaseYW  extends TestBaseYasasiiWeb  {
 
 		KIMS_AdjustmentRefund_Yasassiweb Adv = new KIMS_AdjustmentRefund_Yasassiweb(driver);
 
-		Adv.RcmRefund(MRNo, REMARK2,  AUTHUser, AUTHpassword, DebitCard);
+		Adv.RcmRefund(MRNo, REMARK2,  AUTHUser, AUTHpassword, DebitCard,ADJAMOUNT);
 
 		Adv.cardmaster(MRNo, AUTHUser, AUTHpassword, DebitCard);   
 

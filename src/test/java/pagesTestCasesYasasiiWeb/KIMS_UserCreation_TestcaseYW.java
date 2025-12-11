@@ -37,11 +37,11 @@ public class KIMS_UserCreation_TestcaseYW   extends TestBaseYasasiiWeb  {
 
 		KIMS_UserCreation_Yasasiiweb User = new KIMS_UserCreation_Yasasiiweb(driver);
 
-		User.userCreation(FirstName, MiddleName, LastName, Gender, PhoneNumber, userId, UserType, Department, Designation, allowedSites, Userprofile, Passsword, DOJ, emailid, DOB, encounterCreation, modules1, modules2, modules3, modules4, modules5, modules6, modules7, modules8, deafultmodule, RegistrationNO, Country);
+	//	User.userCreation(FirstName, MiddleName, LastName, Gender, PhoneNumber, userId, UserType, Department, Designation, allowedSites, Userprofile, Passsword, DOJ, emailid, DOB, encounterCreation, modules1, modules2, modules3, modules4, modules5, modules6, modules7, modules8, deafultmodule, RegistrationNO, Country);
 
-		User.Caller(FirstName,userId, MRNo, Queue_Name);
+	//	User.Caller(FirstName,userId, MRNo, Queue_Name);
 
-		User.tariffSetting(FirstName , userId, Department);
+	//	User.tariffSetting(FirstName , userId, Department);
 
 		User.ScheduleSetting(FirstName, allowedSites);
 

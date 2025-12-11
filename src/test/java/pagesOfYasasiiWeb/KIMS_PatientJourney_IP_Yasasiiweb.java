@@ -1392,7 +1392,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		//		driver.findElement(By.xpath("//div[@class='col-md-12 pr0 ta-r']//button[@type='button'][normalize-space()='Add']")).click();
 		//		Thread.sleep(2000);
 
-		EMRsave.click();
+		EMRsave.click(); 
 		Thread.sleep(3000);
 
 
