@@ -909,6 +909,9 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(500);
 		Lock.click(); */
 		///////Create the doctor note and select pregnant
+		WebDriverWait wait= new WebDriverWait(driver, java.time.Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(DoctorNote));
+		Thread.sleep(1000);
 		DoctorNote.click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
@@ -933,8 +936,8 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(2000);
 
 
-		WebDriverWait wait= new WebDriverWait(driver, java.time.Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(disgnosis));
+	//	WebDriverWait wait= new WebDriverWait(driver, java.time.Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
 		Thread.sleep(1000);
 		
 		///Diagnosis

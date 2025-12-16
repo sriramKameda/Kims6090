@@ -577,7 +577,7 @@ public class KIMS_MedicineMaster_Diagnosis_Yasasiiweb extends PageFactoryInitYas
 			Thread.sleep(1000);
 			
 			WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(30));
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='icon refresh']")));
+			wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
 		    Thread.sleep(2000);
 			
 			

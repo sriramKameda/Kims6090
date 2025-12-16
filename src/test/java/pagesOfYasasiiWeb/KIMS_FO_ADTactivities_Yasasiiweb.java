@@ -325,7 +325,7 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[normalize-space()='White Board']")
 	public WebElement WhiteBoard;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[8]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement NameSearch;
 
 	@FindBy(xpath = "//i[@class='ki ki-search']")
@@ -582,13 +582,13 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[contains(text(),'Invoice Generation')]")
 	public WebElement InvoiceGeneration;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ki-calendar[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ki-calendar[1]/div[1]/input[1]")
 	public WebElement fromdate;
 
 	@FindBy(xpath = "//button[normalize-space()='Draft Generate']")
 	public WebElement DraftGenerate;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement MRNOsearch;
 
 	@FindBy(xpath = "//div[@class='col-1 pl-0 col-md-1 ta-r']//i[@class='ki ki-search']")
@@ -1257,7 +1257,9 @@ public void	DoctorNote(String DOCuser ,String DOCpassword , String MRNo,String D
 	Thread.sleep(1000);
 	TemplateOK.click();
 	Thread.sleep(1000);
-
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
+	Thread.sleep(2000);
 	disgnosis.click();
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -1493,7 +1495,7 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 
 
 
-	//openNewTab
+	//openNewTab //mrd
 
 	Thread.sleep(3000);
 	((JavascriptExecutor)driver).executeScript("window.open()");
@@ -1524,7 +1526,7 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 	Thread.sleep(3000);	
 
-	Menu.click();
+	 Menu.click();
 	Thread.sleep(2000);
 	Thread.sleep(1000);
 	EMRHomeScreen.click();
@@ -1587,6 +1589,10 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	Disgnosis.click();
 	Thread.sleep(1000);
 	DSInitiated.click();
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[2]/div[1]/div[2]/div[1]/app-load-components[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[2]/div[11]/div[2]/div[4]/ki-input-control[1]/div[1]/input[1]")).sendKeys("Test");
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[2]/div[1]/div[2]/div[1]/app-load-components[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[2]/div[12]/div[2]/div[4]/ki-input-control[1]/div[1]/input[1]")).sendKeys("Test");
 	Thread.sleep(1000);
 	save.click();
 	Thread.sleep(3000);
@@ -1666,10 +1672,12 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	else {
 		System.out.println("sri");
 	}
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	Visit.click();
-	Thread.sleep(4000);
-	
+	Thread.sleep(1000);
+	//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+	wait.until(ExpectedConditions.elementToBeClickable(verified));
+	Thread.sleep(2000);
 	verified.click();
 	Thread.sleep(1000);
 	Authorize.click();
@@ -1762,6 +1770,7 @@ public void PharmacyClearance(String MRNO , String Pharmacist_password ) throws 
 	taskIcon.click();
 	Thread.sleep(1000);
 	pharmacyClearance.click();
+	//label[@title='Clinical Pharmacist Clearance']
 	Thread.sleep(1000);
 	Searchfield.sendKeys(MRNO, Keys.ENTER);
 	Thread.sleep(1000);
@@ -1826,14 +1835,18 @@ public void ADTAppoval(String MRNo ) throws InterruptedException, AWTException {
 	ADT.click();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("arguments[0].scrollIntoView();", dischargeStatus);
-
-
+	driver.findElement(By.xpath("//input[@id='dischargestatus']")).click();
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//li[normalize-space()='Cured']")).click();
+	Thread.sleep(1000);
 	Thread.sleep(2000);
 	disposition.click();
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//li[normalize-space()='To Home']")).click();
 	Thread.sleep(1000);
 	ADTSave.click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
 Thread.sleep(3500);
@@ -1850,7 +1863,8 @@ Thread.sleep(1500);
 
 public void homeleaveCancel() throws AWTException, InterruptedException {
 
-	////Rollback	 
+	////Rollback	
+	Thread.sleep(3000);
 	JavascriptExecutor js= (JavascriptExecutor) driver;
 	js.executeScript("arguments[0].scrollIntoView();", dischargethreedot );
 
@@ -1975,6 +1989,10 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 	Thread.sleep(2000);
+	driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("APPROVED");
+	Thread.sleep(1000);
+	//input[@id='inputcontrol_3RmxbXOqB6a']
+	Save1.click();
 	driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 	Thread.sleep(2000);
 
@@ -1990,6 +2008,10 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 	Thread.sleep(2000);
+	driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("APPROVED");
+	Thread.sleep(1000);
+	Save1.click();
+	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 	Thread.sleep(2000);
 	

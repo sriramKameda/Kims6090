@@ -3307,6 +3307,9 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 
 		Visit.click();
 		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(DraftCompleted));
+		Thread.sleep(1000);		
 		DraftCompleted.click();
 		Thread.sleep(1000);
 		save.click();
@@ -3314,6 +3317,10 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 
 		Visit.click();
 		Thread.sleep(2500);
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Preview']")));
+		Thread.sleep(1000);		
 		driver.findElement(By.xpath("//button[normalize-space()='Preview']")).click();
 		Thread.sleep(3000);
 		LOG1.click();
@@ -3377,7 +3384,8 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 			System.out.println("sri");
 		}
 		Thread.sleep(1000);
-
+		wait.until(ExpectedConditions.elementToBeClickable(verified));
+		Thread.sleep(1000);
 		verified.click();
 		Thread.sleep(1000);
 		Authorize.click();
@@ -3470,7 +3478,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
 		Thread.sleep(2000);
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 				"/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
 

@@ -1208,7 +1208,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		}
 		Thread.sleep(600);
 
-		ReferenceCard.click();
+	/*	ReferenceCard.click();
 		Thread.sleep(600);
 		RefNo.click();
 		Thread.sleep(600);
@@ -1259,7 +1259,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 			System.out.println("sri");
 		}
-		Thread.sleep(600);
+		Thread.sleep(600);*/
 		
 		Thread.sleep(600);
 		BillingSave.click();
@@ -1321,8 +1321,10 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1200);
 		EnterPatientName.sendKeys(MRNo);
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("//span[@title='"+MRNo+"']")).click();
-
+		driver.findElement(By.xpath("//div[@class='pat-card-wrap ng-star-inserted active']//span[contains(text(),'"+MRNo+"')]")).click();
+		//driver.findElement(By.xpath("//span[contains(text(),G0000200443724)][1]")).click();
+		//driver.findElement(By.xpath("//span[@title='"+MRNo+"']")).click();
+		
 		//driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(1000);
 		/*	UParrow.click();

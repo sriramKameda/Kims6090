@@ -294,10 +294,10 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "//label[@class='check-container zero-label mt0 mr0']//span[@class='checkmark']")
 	public WebElement SelectAll;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[2]/i[1]")
+	@FindBy(xpath = "//div[@class='form-container pt-1 billing-card cb-40-bottom ng-star-inserted']//div[3]//div[1]//div[2]//div[2]//div[3]//div[7]//label[1]//i[1]")
 	public WebElement batchdelete;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[5]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[4]")
 	public WebElement Stockinfo;
 
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-brandpriority[1]/form[1]/div[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]")
@@ -1311,7 +1311,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-mar-admin[1]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/ul[1]/app-list-item[1]/li[1]")).click();
 		Thread.sleep(1000);
 		Add.click();
-
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='tail-icon-group icon-sgl ng-star-inserted']//i[@class='ki ki-plus']")).click();
+		
 		Thread.sleep(500);
 		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
@@ -1506,7 +1508,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		
 		Thread.sleep(30000);
 		wait.until(ExpectedConditions.elementToBeClickable(Admin5));
-		Thread.sleep(3000);		
+		Thread.sleep(3000);	
 		
 		
 	/////fiasp	
@@ -1529,7 +1531,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-mar-admin[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[3]/ul[1]/app-list-item[1]/li[1]")).click();
 		Thread.sleep(1000);
-		Add.click();
+		//Add.click();
 
 		Thread.sleep(500);
 		List<WebElement> dynamicElement511=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
@@ -1629,7 +1631,8 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			Thread.sleep(1000);
 			rejectionQty.sendKeys("0");
 			Thread.sleep(1000);
-			Add.click();
+			//driver.findElement(By.xpath("//div[@class='tail-icon-group icon-sgl ng-star-inserted']//i[@class='ki ki-plus']")).click();
+			//Add.click();
 
 			Thread.sleep(500);
 			List<WebElement> dynamicElement5111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));

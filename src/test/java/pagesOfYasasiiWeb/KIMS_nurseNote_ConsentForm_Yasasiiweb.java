@@ -39,7 +39,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='menu-toggle']")
 	public WebElement Hamburger;
 
-	@FindBy(xpath = "//div[@class='module-icon-wrap active ng-star-inserted']//i[@class='ki ki-reception-fill']")
+	@FindBy(xpath = "//i[@class='ki ki-reception-fill']")
 	public WebElement FOModule;
 
 	@FindBy(xpath = "//div[normalize-space()='Registration']")
@@ -276,7 +276,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 	@FindBy(xpath = "//input[@id='insertion']")
 	public WebElement Insertion_Implant;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-insertion[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/ki-auto-complete-pagination[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/app-insertion[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/ki-auto-complete-pagination[1]/div[1]/input[1]")
 	public WebElement Site1;
 
 	@FindBy(xpath = "//button[normalize-space()='Add']")
@@ -523,7 +523,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Thread.sleep(800);
 		FOModule.click(); 
 		Thread.sleep(1000);
-		Thread.sleep(500);
+		
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
 		if(dynamicElement.size() !=0)
@@ -804,9 +804,9 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 
 		
 				////History
-				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-				wait.until(ExpectedConditions.elementToBeClickable(History));
-				Thread.sleep(3000);
+				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+				wait.until(ExpectedConditions.elementToBeClickable(emrsave));
+				Thread.sleep(1000);
 		
 				History.click();
 				Thread.sleep(1000);
@@ -962,7 +962,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 				driver.findElement(By.xpath("//li[normalize-space()='Femoral(L)']")).click();
 				Thread.sleep(1000);
 				
-				driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-insertion[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/ki-calender-time[1]/div[1]/input[1]")).click();
+				driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/app-insertion[1]/div[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[2]/div[1]/ki-calender-time[1]/div[1]/input[1]")).click();
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
 				Thread.sleep(1000);
@@ -993,8 +993,8 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 						
 							
 				emrsave.click();
-				Thread.sleep(1000);
-//				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+				Thread.sleep(1000); 
+				//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='chief-complaint']")));
 				Thread.sleep(3000);
 				/////noteview

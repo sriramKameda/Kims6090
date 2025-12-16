@@ -61,7 +61,7 @@ public class TestBaseYasasiiWeb {
 
 	///Site
 	 
-	public String Site ="KIMSHEALTH Trivandrum";
+	public String Site ="KIMSHEALTH Nagercoil";
 	
 	public static String testname;
 
@@ -226,7 +226,7 @@ public class TestBaseYasasiiWeb {
 	public void extentReportEnd() {
 	rep.endTest(test);
 		rep.flush(); 
-		//rep.close();
+		rep.close();
 	}
 
 
