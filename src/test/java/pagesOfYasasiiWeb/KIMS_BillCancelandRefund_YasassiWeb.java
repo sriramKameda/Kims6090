@@ -523,8 +523,8 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 		//AdvanceView.click();
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
-		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+//		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement2=driver.findElements(By.xpath("//label[@title='Request for Cancellation']"));
@@ -969,8 +969,8 @@ public class KIMS_BillCancelandRefund_YasassiWeb  extends PageFactoryInitYasasii
 		driver.findElement(By.xpath("//li[normalize-space()='Cancelled']")).click();
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
-		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+//		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 		Thread.sleep(1000);
 

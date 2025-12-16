@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_DialysisNote_TestcaseYW">
         <methods>
-          <include name="navigateFOPage"/>
-          <include name="setup"/>
-          <include name="startTest"/>
           <include name="logout"/>
-          <include name="OR_ROOm" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="DialysisNote" invocation-numbers="0"/>
+          <include name="navigateFOPage"/>
+          <include name="startTest"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_DialysisNote_TestcaseYW -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

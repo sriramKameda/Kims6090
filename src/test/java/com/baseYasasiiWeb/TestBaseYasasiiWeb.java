@@ -61,7 +61,7 @@ public class TestBaseYasasiiWeb {
 
 	///Site
 	 
-	public String Site ="KIMSHEALTH Trivandrum";
+	public String Site ="KIMSHEALTH Nagercoil";
 	
 	public static String testname;
 

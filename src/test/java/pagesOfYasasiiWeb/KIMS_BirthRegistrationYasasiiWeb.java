@@ -1336,6 +1336,11 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(900);
 		ClickOk.click();
 		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SelectBirthNote));
+		Thread.sleep(2000);
+		
 		SelectBirthNote.click();
 		Thread.sleep(1000);
 		EnterGestationalAgeInWeeks.sendKeys("32");
@@ -1694,9 +1699,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(2500);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Child Development Chart')]")));
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(ChildDevelopmentChart));
 
 		////////// Enter data in child development chart
 		ChildDevelopmentChart.click();
