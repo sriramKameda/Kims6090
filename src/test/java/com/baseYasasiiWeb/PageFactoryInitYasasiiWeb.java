@@ -3,10 +3,7 @@ package com.baseYasasiiWeb;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageFactoryInitYasasiiWeb {
@@ -45,10 +42,6 @@ public class PageFactoryInitYasasiiWeb {
 	public String Samplepreparedby ="Sumayya";
 	public String Sampledespatchby ="Chithra";
 	
-	
-
-	
-
 	
 	
 	public static String Excelfilepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\SP55-KIMSDataSheet.xls";

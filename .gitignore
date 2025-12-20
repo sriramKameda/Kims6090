@@ -5,10 +5,6 @@ logs/
 # Test output (TestNG / Selenium)
 test-output/
 
-# Excel files
-*.xls
-*.xlsx
-
 # IDE
 .idea/
 .vscode/

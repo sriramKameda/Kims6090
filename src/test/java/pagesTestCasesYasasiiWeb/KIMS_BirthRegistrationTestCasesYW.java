@@ -29,7 +29,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 	}
 
-//	@Test(dataProvider = "getData", priority = 0)
+	@Test(dataProvider = "getData", priority = 0)
 	public void BirthReg(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNO, String Provider, String MRNo1, String ADTprovider, String nurseUser,
 			String password, String AdminUser, String AdminPassword, String DOCuser, String DOCpassword, String Site,
@@ -43,7 +43,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 	}
 
-//	@Test(dataProvider = "getData", priority = 1)
+	@Test(dataProvider = "getData", priority = 1)
 	public void Doctornote(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNo, String Provider, String MRNo1, String ADTprovider, String nurseUser,
 			String password, String AdminUser, String AdminPassword, String DOCuser, String DOCpassword, String Site,
@@ -60,7 +60,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 		Schedule1.Birthreg(MRNo, Provider, ADTprovider, MRNo1, AdminUser, AdminPassword);
 	}
 
-//	@Test(dataProvider = "getData", priority = 2)
+	@Test(dataProvider = "getData", priority = 2)
 	public void babynote(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNO, String Provider, String MRNo1, String ADTprovider, String nurseUser,
 			String password, String AdminUser, String AdminPassword, String DOCuser, String DOCpassword, String Site,
@@ -75,7 +75,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 	}
 
-//	@Test(dataProvider = "getData", priority = 3)
+	@Test(dataProvider = "getData", priority = 3)
 	public void Babydischarge(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNo, String Provider, String MRNo1, String ADTprovider, String nurseUser,
 			String password, String AdminUser, String AdminPassword, String DOCuser, String DOCpassword, String Site,
@@ -113,13 +113,13 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 		KIMS_BirthRegistrationYasasiiWeb Schedule = new KIMS_BirthRegistrationYasasiiWeb(driver);
 
-//		Schedule.dischargeRecommendationMOM(MRNo, nurseUser, DOCuser, DOCpassword, AdminUser, AdminPassword);
-//
-//		Schedule.dischargeApprovalMOM(MRNo, nurseUser, MRDPassword, AdminUser, AdminPassword);
-//
-//		Schedule.clinicalPharmasistclearanceMOM(MRNo, nurseUser, AdminUser, AdminPassword);
-//
-//		Schedule.readyForDischargeMOM(MRNo, nurseUser, AdminUser, AdminPassword);
+		Schedule.dischargeRecommendationMOM(MRNo, nurseUser, DOCuser, DOCpassword, AdminUser, AdminPassword);
+
+		Schedule.dischargeApprovalMOM(MRNo, nurseUser, MRDPassword, AdminUser, AdminPassword);
+
+		Schedule.clinicalPharmasistclearanceMOM(MRNo, nurseUser, AdminUser, AdminPassword);
+
+		Schedule.readyForDischargeMOM(MRNo, nurseUser, AdminUser, AdminPassword);
 
 		Schedule.Discharge_Summary_Clearance_MOM(MRDUser, MRDPassword, MRNo, DOCuser, DOCpassword, nurseUser);
 
