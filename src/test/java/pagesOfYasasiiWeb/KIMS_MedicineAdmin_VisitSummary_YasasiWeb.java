@@ -749,12 +749,12 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(1000);
-		/*	UParrow.click();
-	Thread.sleep(500);
-	Lock.click();
-	Thread.sleep(500); */
-		DoctorNote.click();
-		Thread.sleep(1000);
+//			UParrow.click();
+//	Thread.sleep(500);
+//	Lock.click();
+//	Thread.sleep(500); 
+		/*	swa	DoctorNote.click();
+	   Thread.sleep(1000);
 		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
 
 		if(dynamicElement1.size() !=0)
@@ -855,14 +855,14 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		//	prescriptionType.click();
 		Thread.sleep(1000);
 		//	driver.findElement(By.xpath("//li[normalize-space()='Discharge']")).click();
-		/*	Orderingreason.click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//li[normalize-space()='Others']")).click();
-			Thread.sleep(1000);
-			justification.click();
-			Thread.sleep(1000);
-			justification.sendKeys("ok");
-			Thread.sleep(1000); */
+//			Orderingreason.click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//li[normalize-space()='Others']")).click();
+//			Thread.sleep(1000);
+//			justification.click();
+//			Thread.sleep(1000);
+//			justification.sendKeys("ok");
+//			Thread.sleep(1000); 
 		Frequency.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
@@ -927,7 +927,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(1000);
 
 		EmrSave.click();
-		Thread.sleep(3000);    
+		Thread.sleep(3000); 
 
 
 
@@ -946,7 +946,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(2000);
 		Editnote.click();
 		Thread.sleep(2000);
-		wait.until(ExpectedConditions.elementToBeClickable(CPOEpharm));
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
 		Thread.sleep(3000);
 
 		CPOEpharm.click(); 
@@ -984,30 +984,30 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 
 
 
-		/*	NoCurrentmed.click();
-			Thread.sleep(1000);
-			//driver.findElement(By.xpath("//div[@class='mb10 btn-type-add ta-r']//button[@type='button'][normalize-space()='Add']")).click();
-			Thread.sleep(1000);
-			//NoCurrentmedCheck.click();
-			//Thread.sleep(1000);
-			//DischargeReconcile.click();
-			Thread.sleep(1000);
-			AdmsnReconcile.click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//i[contains(@class,'ki ki-continue')]")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//i[contains(@class,'ki ki-continue')]")).click();
-			Thread.sleep(1000);
-			Reconsile.click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click(); */
+//			NoCurrentmed.click();
+//			Thread.sleep(1000);
+//			//driver.findElement(By.xpath("//div[@class='mb10 btn-type-add ta-r']//button[@type='button'][normalize-space()='Add']")).click();
+//			Thread.sleep(1000);
+//			//NoCurrentmedCheck.click();
+//			//Thread.sleep(1000);
+//			//DischargeReconcile.click();
+//			Thread.sleep(1000);
+//			AdmsnReconcile.click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//i[contains(@class,'ki ki-continue')]")).click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//i[contains(@class,'ki ki-continue')]")).click();
+//			Thread.sleep(1000);
+//			Reconsile.click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click(); 
 
 
 
 		medicineAdd.click();
 		Thread.sleep(1000);
 		EmrSave.click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);swa */
 		wait.until(ExpectedConditions.elementToBeClickable(EnteredNote));
 		Thread.sleep(3000);
 
@@ -1021,12 +1021,14 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(1000);
 		cpoePrescriptionPrint.click();
 		Thread.sleep(5000);
-//			Robot t=new Robot();
+			Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000); 
-
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 
 		///Active & In-active filter

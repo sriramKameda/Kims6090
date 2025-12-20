@@ -143,7 +143,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement AddService;
 
 	@FindBy(xpath = "//div[@class='page-inner-btn-group']//button[1]")
@@ -612,7 +612,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//span[normalize-space()='Insurance and Other Information']")
 	public WebElement Insurance_otherinformation;
 	
-	@FindBy(xpath = "//ki-select-control[contains(@placeholder,'Insurance')]//input[@id='undefined']")
+	@FindBy(xpath = "//ki-select-control[@placeholder='Corporate']//input[@id='undefined']")
 	public WebElement Insurance;
 	
 	@FindBy(xpath = "//ki-select-control[@class='ng-untouched ng-pristine ng-invalid']//input[@id='undefined']")
@@ -891,7 +891,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[1]")).click();
 		Thread.sleep(500);
 		SAve.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 		List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']"));
 
@@ -904,7 +904,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		////Admission charge cancel reason
 		
@@ -1109,7 +1109,8 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(800);
 		tempOk.click();
 		Thread.sleep(3000);
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
 		Diagnosis.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -1204,7 +1205,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		
 		
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(username));
 		Thread.sleep(2000);
 
@@ -1557,7 +1558,8 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		search1.click();
 		Thread.sleep(1000);
 		
-	String SchemeA=	driver.findElement(By.xpath("//tr[@class='total-row']//td[@class='common max ng-star-inserted']")).getText();
+//	String SchemeA=	driver.findElement(By.xpath("//tr[@class='total-row']//td[@class='common max ng-star-inserted']")).getText();
+	String SchemeA=	driver.findElement(By.xpath("(//td[@class='common ta-r ng-star-inserted'])[2]")).getText();
 	
 	System.out.println(SchemeA + "Scheme A Amount");
 	Thread.sleep(2000);
@@ -1650,8 +1652,8 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		
 		///after scheme change
 		
-		toggle.click();
-		Thread.sleep(1000);
+		toggle.click(); 
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[normalize-space()='Interim Bill']")).click();
 		Thread.sleep(2000);
 		
@@ -1696,7 +1698,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//button[@title='Print']")).click();
 		Thread.sleep(5000);
 		
-
+		//Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(400);

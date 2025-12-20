@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_IPFinalbilling_TestcaseYW">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_NutritionManagement_TestcaseYW">
         <methods>
           <include name="setup"/>
-          <include name="logout"/>
           <include name="startTest"/>
-          <include name="navigateemradt"/>
-          <include name="finalbilling" invocation-numbers="0"/>
+          <include name="logout"/>
           <include name="getTestMethodProperties"/>
+          <include name="investigation" invocation-numbers="0"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
+          <include name="navigateFOPage"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_IPFinalbilling_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_NutritionManagement_TestcaseYW -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

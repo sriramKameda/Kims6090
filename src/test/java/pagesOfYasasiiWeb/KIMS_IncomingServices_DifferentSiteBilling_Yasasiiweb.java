@@ -558,7 +558,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 	//	Thread.sleep(2000);
 	//	Executionloc.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='LEVEL 2 SAMPLE COLLECTION']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='IPD LEVEL 2 SAMPLE COLLECTION']")).click();
 		Thread.sleep(1000);
 		
 		ExecutionlocOK.click();
@@ -754,7 +754,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		//js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
-		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+		//driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);
@@ -792,11 +792,13 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(1000);
 		Template.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Dental Examination and Treatment']")).click();
+		//driver.findElement(By.xpath("//li[normalize-space()='Dental Examination and Treatment']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
 		Thread.sleep(1000);
 		TemplateOK.click();
 		Thread.sleep(1000);
-
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));		
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
 		disgnosis.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -816,7 +818,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(1000);
 		CpoeServiceSearch.sendKeys("Basophils", Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[normalize-space()='Basophils']")).click();
+		driver.findElement(By.xpath("//label[normalize-space()='-Basophils']")).click();
 		Thread.sleep(2000);
 
 		EmrSave.click();
@@ -856,7 +858,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		//js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
-		driver.findElement(By.xpath("//li[normalize-space()='"+Site1+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);
@@ -929,14 +931,14 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 
 
 		Service.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		siteSelect.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagarcoil']")).click();	
+		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();	
 		Thread.sleep(800);
-		Orders.click();
+		//Orders.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
+		//driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
 		Thread.sleep(800);
 		serviceDelete.click();
 		Thread.sleep(800);
@@ -985,7 +987,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		//js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
-		driver.findElement(By.xpath("//li[normalize-space()='"+Site2+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);
@@ -1057,24 +1059,28 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(800);
 		siteSelect.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagarcoil']")).click();	
+		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();	
 		Thread.sleep(800);
-		Orders.click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
+//		Orders.click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
 		Thread.sleep(800);
 		billSave.click();
 		Thread.sleep(1800);
+		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();	
+		Thread.sleep(800);
 		encProvider.click();
 		Thread.sleep(800);
-		encProvider.sendKeys(Provider1);
+		encProvider.clear();
+		Thread.sleep(800);
+		encProvider.sendKeys(Provider);
 		Thread.sleep(1200);
-		driver.findElement(By.xpath("//li[normalize-space()='"+Provider1+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Provider+"']")).click();
 		Thread.sleep(1000);
 		billSave.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();	
-		Thread.sleep(800);
+		Thread.sleep(800); 
 		AvailedService.click();
 		Thread.sleep(800);
 		AvailedSearch.click();

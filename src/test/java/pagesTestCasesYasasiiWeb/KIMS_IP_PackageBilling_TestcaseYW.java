@@ -69,7 +69,7 @@ public class KIMS_IP_PackageBilling_TestcaseYW extends TestBaseYasasiiWeb {
 		ipPatientPackageFlow.packageAllocation(MRNo2);
 	}
 
-	@AfterClass
+	//@AfterClass
 	public void logout() throws Exception {
 		
 		Thread.sleep(2000);

@@ -371,7 +371,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(2000);
 		menuToggle.click();
 		Thread.sleep(1000);
-		//mastersModule.click(); // del for full run
+		mastersModule.click(); // del for full run
 		Thread.sleep(1000); // delfor full run
 		rcmPackage.click();
 		Thread.sleep(1000);
@@ -379,7 +379,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		packageGroupName.sendKeys(Group1);
 		Thread.sleep(1000);
-		groupLimit.sendKeys("30000");
+		groupLimit.sendKeys("5000");
 		Thread.sleep(1000);
 		limitMode.click();
 		Thread.sleep(1000);
@@ -482,7 +482,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		gross.click();
 		Thread.sleep(2000);
-		// services.click(); //remove in full run
+		 //services.click(); //remove in full run
 		Thread.sleep(1000);
 		serviceType.click();
 		Thread.sleep(1000);
@@ -557,7 +557,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		packageGroupName.sendKeys(Group3);
 		Thread.sleep(1000);
-		groupLimit.sendKeys("30000");
+		groupLimit.sendKeys("5000");
 		Thread.sleep(1000);
 		limitMode.click();
 		Thread.sleep(1000);
@@ -624,7 +624,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		packageGroupName.sendKeys(Group4);
 		Thread.sleep(1000);
-		groupLimit.sendKeys("30000");
+		groupLimit.sendKeys("5000");
 		Thread.sleep(1000);
 		limitMode.click();
 		Thread.sleep(1000);
@@ -691,7 +691,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		packageGroupName.sendKeys(Group5);
 		Thread.sleep(1000);
-		groupLimit.sendKeys("30000");
+		groupLimit.sendKeys("5000");
 		Thread.sleep(1000);
 		limitMode.click();
 		Thread.sleep(1000);
@@ -829,7 +829,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		packageGroupName.sendKeys(Group6);
 		Thread.sleep(1000);
-		groupLimit.sendKeys("30000");
+		groupLimit.sendKeys("5000");
 		Thread.sleep(1000);
 		limitMode.click();
 		Thread.sleep(1000);
@@ -900,7 +900,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		packageGroupName.sendKeys(Group7);
 		Thread.sleep(1000);
-		groupLimit.sendKeys("30000");
+		groupLimit.sendKeys("5000");
 		Thread.sleep(1000);
 		limitMode.click();
 		Thread.sleep(1000);
@@ -986,8 +986,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-		//mastersModule.click(); // del
-		//Thread.sleep(1000); // del
+		mastersModule.click(); // del
+		Thread.sleep(1000); // del
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageDefinition.click();
@@ -1005,7 +1005,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		packageDuration.sendKeys("10");
 		Thread.sleep(1000);
-		packageLimit.sendKeys("500000");
+		packageLimit.sendKeys("60000");
 		Thread.sleep(1000);
 		defaultCovergaeStatus.click();
 		Thread.sleep(1000);
@@ -1202,9 +1202,9 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		js.executeScript("arguments[0].scrollIntoView();",chargeTaxTab );
 		chargeTaxTab.click();
 		Thread.sleep(2500);
-		BaseCharge.sendKeys("5000");
+		BaseCharge.sendKeys("60000");
 		Thread.sleep(2000);
-		ContractCharge.sendKeys("5000");
+		ContractCharge.sendKeys("60000");
 		Thread.sleep(1000);
 		addButton.click();
 		Thread.sleep(1000);
@@ -1236,8 +1236,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-		//mastersModule.click(); //del for full run
-	//	Thread.sleep(1000); 
+		mastersModule.click(); //del for full run
+		Thread.sleep(1000); 
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageTariffMapping.click();
@@ -1273,9 +1273,9 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-//		 mastersModule.click(); // del for full run
-//		Thread.sleep(1000); // del for full run
-//		 rcmPackage.click();//
+		// mastersModule.click(); // del for full run
+		//Thread.sleep(1000); // del for full run
+		// rcmPackage.click();//
 		 Thread.sleep(1000);
 		packageTOsiteMappingTab.click();
 		Thread.sleep(2000);

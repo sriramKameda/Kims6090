@@ -755,19 +755,19 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		medicineAdd.click();
 		Thread.sleep(2000);
-//		MedicineSearch.clear();
-//		Thread.sleep(1000);
-//		MedicineSearch.sendKeys("6-MP 50 MG TAB", Keys.ENTER);
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root/app-layout/main[contains(@class,'page-body')]/app-emr-homescreen/div[contains(@class,'page-container h-100')]/div[contains(@class,'note-layout emr-homescreen-dash main-wrapper ng-star-inserted ab-locked layout-1')]/div[contains(@class,'notelayoutcontainer')]/app-emrtemplateloader[contains(@class,'ng-star-inserted')]/div[contains(@class,'pat-note-entry')]/div[contains(@class,'pat-current-temp')]/div[contains(@class,'temp-container')]/div[@id='noterightregion']/div[@id='section_cpoe']/div[@id='component_cpoe']/app-cpoe-container/div[contains(@class,'card-container')]/div[contains(@class,'row')]/div[contains(@class,'col-lg-7 mbl-pr5')]/div[contains(@class,'ng-star-inserted')]/div/div[contains(@class,'ng-star-inserted')]/div/div/app-cpoe-pharmacy-list/form[contains(@class,'ng-valid ng-dirty ng-touched')]/div[contains(@class,'card card-left list-container pharmacy-list')]/div[contains(@class,'card-body item-list-container')]/div[1]/div[1]/div[1]"))
-//				.click();
-//		Frequency.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
-//		Thread.sleep(1000);
-//		medicineAdd.click();
-//		Thread.sleep(2000);
+		MedicineSearch.clear();
+		Thread.sleep(1000);
+		MedicineSearch.sendKeys("6-MP 50 MG TAB", Keys.ENTER);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//body/app-root/app-layout/main[contains(@class,'page-body')]/app-emr-homescreen/div[contains(@class,'page-container h-100')]/div[contains(@class,'note-layout emr-homescreen-dash main-wrapper ng-star-inserted ab-locked layout-1')]/div[contains(@class,'notelayoutcontainer')]/app-emrtemplateloader[contains(@class,'ng-star-inserted')]/div[contains(@class,'pat-note-entry')]/div[contains(@class,'pat-current-temp')]/div[contains(@class,'temp-container')]/div[@id='noterightregion']/div[@id='section_cpoe']/div[@id='component_cpoe']/app-cpoe-container/div[contains(@class,'card-container')]/div[contains(@class,'row')]/div[contains(@class,'col-lg-7 mbl-pr5')]/div[contains(@class,'ng-star-inserted')]/div/div[contains(@class,'ng-star-inserted')]/div/div/app-cpoe-pharmacy-list/form[contains(@class,'ng-valid ng-dirty ng-touched')]/div[contains(@class,'card card-left list-container pharmacy-list')]/div[contains(@class,'card-body item-list-container')]/div[1]/div[1]/div[1]"))
+				.click();
+		Frequency.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
+		Thread.sleep(1000);
+		medicineAdd.click();
+		Thread.sleep(2000);
 
 		MedicineSearch.clear();
 		Thread.sleep(1000);
@@ -788,24 +788,24 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 
 		Thread.sleep(2000);
 
-//		MedicineSearch.clear();
-//		Thread.sleep(1000);
-//		MedicineSearch.sendKeys("SALISIA TV LOTION 50ML", Keys.ENTER);
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath(
-//				"//body/app-root/app-layout/main[@class='page-body']/app-emr-homescreen/div[@class='page-container h-100']/div[@class='note-layout emr-homescreen-dash main-wrapper ng-star-inserted ab-locked layout-1']/div[@class='notelayoutcontainer']/app-emrtemplateloader[@class='ng-star-inserted']/div[@class='pat-note-entry']/div[@class='pat-current-temp']/div[@class='temp-container']/div[@id='noterightregion']/div[@id='section_cpoe']/div[@id='component_cpoe']/app-cpoe-container/div[@class='card-container']/div[@class='row']/div[@class='col-lg-7 mbl-pr5']/div[@class='ng-star-inserted']/div/div[@class='ng-star-inserted']/div/div/app-cpoe-pharmacy-list/form[@class='ng-valid ng-dirty ng-touched']/div[@class='card card-left list-container pharmacy-list']/div[@class='card-body item-list-container']/div[@class='item-list ng-star-inserted']/div[@class='item-list-row']/div[1]"))
-//				.click();
-//		Thread.sleep(1000);
-//		Frequency.click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//input[@id='antibioticorderingreasonid']")).click();
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//li[normalize-space()='Culture']")).click();
-//		Thread.sleep(1000);
-//	
-//		medicineAdd.click();
+		MedicineSearch.clear();
+		Thread.sleep(1000);
+		MedicineSearch.sendKeys("SALISIA TV LOTION 50ML", Keys.ENTER);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//body/app-root/app-layout/main[@class='page-body']/app-emr-homescreen/div[@class='page-container h-100']/div[@class='note-layout emr-homescreen-dash main-wrapper ng-star-inserted ab-locked layout-1']/div[@class='notelayoutcontainer']/app-emrtemplateloader[@class='ng-star-inserted']/div[@class='pat-note-entry']/div[@class='pat-current-temp']/div[@class='temp-container']/div[@id='noterightregion']/div[@id='section_cpoe']/div[@id='component_cpoe']/app-cpoe-container/div[@class='card-container']/div[@class='row']/div[@class='col-lg-7 mbl-pr5']/div[@class='ng-star-inserted']/div/div[@class='ng-star-inserted']/div/div/app-cpoe-pharmacy-list/form[@class='ng-valid ng-dirty ng-touched']/div[@class='card card-left list-container pharmacy-list']/div[@class='card-body item-list-container']/div[@class='item-list ng-star-inserted']/div[@class='item-list-row']/div[1]"))
+				.click();
+		Thread.sleep(1000);
+		Frequency.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='antibioticorderingreasonid']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Culture']")).click();
+		Thread.sleep(1000);
+	
+		medicineAdd.click();
 		Thread.sleep(2000);
 
 		MedicineSearch.clear();

@@ -468,7 +468,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		ADT.click();
 		Thread.sleep(1000);
 		Thread.sleep(500);
-		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']"));
+	/* swa	List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']"));
 
 		if(dynamicElement11.size() !=0)
 		{
@@ -524,7 +524,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		//SelectBed.click();
 		Thread.sleep(500);
 		SAve.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 		List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']"));
 
@@ -560,7 +560,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(1000);
+		Thread.sleep(1000); swa*/
 		
 		
 		
@@ -576,23 +576,40 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		roomtype.click();
 		Thread.sleep(2500);
 		//selectroomtype.click();
-		driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")).click();
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")));
+//		Thread.sleep(1200);
+//		((JavascriptExecutor) driver).executeScript(
+//			    "arguments[0].click();",
+//			    driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]"))
+//			);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+			    new WebDriverWait(driver, Duration.ofSeconds(10))
+			        .until(ExpectedConditions.elementToBeClickable(
+			            By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")))
+			);
+
+
+		
+//		JavascriptExecutor js= (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView(true);", By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]"));
+		//driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")).click();
 		Thread.sleep(2000);
 		bedno.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'Transfer nursing station')])[1]")).click();
-		//selectbed.click();
+		//selectbed.click();Transfer nursing station
 		Thread.sleep(2000);
 		sendrequest.click();
 		Thread.sleep(3000); 
 
-
+ 
 	}
 
 	public void Appointment(String MRNo ) throws InterruptedException {
 
 
-
+		Thread.sleep(3000); 
 		Appointment.click();
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -739,7 +756,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@title='Nursing Station Transfer Request']")).click();
 
-		changetogridview.click();
+		//changetogridview.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(5000);

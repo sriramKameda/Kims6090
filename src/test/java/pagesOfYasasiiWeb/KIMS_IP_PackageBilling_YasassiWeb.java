@@ -952,6 +952,9 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		CpoeServiceSearch.sendKeys("Sodium (ISE Indirect)", Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='item-list-row']//label[@class='item-name']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//I[@class='ki ki-close-circle'])[6]")).click();
+		Thread.sleep(1000);
 //		driver.findElement(By.xpath("//div[@class='item-list-row']//label[@class='item-name']")).click();
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();

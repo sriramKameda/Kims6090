@@ -34,7 +34,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_TestcaseYW extends TestB
 
 	}
 
-	@Test(dataProvider="getData"  , priority=0)
+	//@Test(dataProvider="getData"  , priority=0)
 	public void patreg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String DOCuser ,String DOCpassword, String Site,String Site1,String Site2,String Provider1 ) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
@@ -51,13 +51,13 @@ public class KIMS_IncomingServices_DifferentSiteBilling_TestcaseYW extends TestB
 
 		KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb inc = new KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb(driver);
 
-		inc.BillingMessage(DOCuser, DOCpassword, Site, MRNo);
+		//inc.BillingMessage(DOCuser, DOCpassword, Site, MRNo);
 		
-//		inc.DoctorNote(DOCuser, DOCpassword, MRNo,Site);
-//
-//		inc.Billing_inTVM(Site1, MRNo);
-//
-//		inc.Billing_inKollam(Site2, MRNo, Provider1,Provider);
+		//inc.DoctorNote(DOCuser, DOCpassword, MRNo,Site);
+
+		inc.Billing_inTVM(Site1, MRNo);
+
+///////////		inc.Billing_inKollam(Site2, MRNo, Provider1,Provider);
 
 
 	}

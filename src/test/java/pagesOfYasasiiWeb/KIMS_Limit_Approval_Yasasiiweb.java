@@ -934,7 +934,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-	/*public void Billing( String User ,String Password , String Site , String MRNO , String ServiceName,String Provider) throws InterruptedException {
+/*	public void Billing( String User ,String Password ,  String MRNO , String ServiceName,String Provider) throws InterruptedException {
 
 
 
@@ -1208,7 +1208,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		}
 		Thread.sleep(600);
 
-	/*	ReferenceCard.click();
+		ReferenceCard.click();
 		Thread.sleep(600);
 		RefNo.click();
 		Thread.sleep(600);
@@ -1259,7 +1259,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 			System.out.println("sri");
 		}
-		Thread.sleep(600);*/
+		Thread.sleep(600);
 		
 		Thread.sleep(600);
 		BillingSave.click();
@@ -1310,7 +1310,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		ExpandedView.click();
 		Thread.sleep(1000);
-		Waiting.click();
+		// Waiting.click();
 		Thread.sleep(1000);
 
 		//	driver.findElement(By.xpath("//input[@id='maincategory']")).click();
@@ -1320,9 +1320,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		EnterPatientName.click();
 		Thread.sleep(1200);
 		EnterPatientName.sendKeys(MRNo);
-		Thread.sleep(1500);
-		driver.findElement(By.xpath("//div[@class='pat-card-wrap ng-star-inserted active']//span[contains(text(),'"+MRNo+"')]")).click();
-		//driver.findElement(By.xpath("//span[contains(text(),G0000200443724)][1]")).click();
+		Thread.sleep(1500);//div[@class='pat-mrn-g']//span[contains(text(),'G0000200443724')]
+		//driver.findElement(By.xpath("//div[@class='pat-card-wrap ng-star-inserted active']//span[contains(text(),'"+MRNo+"')]")).click();
+		driver.findElement(By.xpath("//div[@class='pat-mrn-g']//span[contains(text(),'"+MRNo+"')]")).click();
 		//driver.findElement(By.xpath("//span[@title='"+MRNo+"']")).click();
 		
 		//driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
@@ -1427,7 +1427,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		
 		
 		EmrSave.click();
-		Thread.sleep(3000);    
+		Thread.sleep(3000);   
 
 		
 		wait.until(ExpectedConditions.elementToBeClickable(CpoeAdministration));	
@@ -1445,7 +1445,10 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		OpenConsumption.click();
 		Thread.sleep(1000);
-
+		driver.findElement(By.xpath("//input[@id='phconslocationid']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='West Main']")).click();
+		Thread.sleep(1000);
 		Consumablesview.click();
 		Thread.sleep(1000);
 
@@ -1467,14 +1470,14 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		consumeadd.click();
 		Thread.sleep(600);
 
-		driver.findElement(By.xpath("//span[contains(@title,'8.5')]")).click();
-		Thread.sleep(600);
-		ConsumableQuantity.clear();
-		Thread.sleep(600);
-		ConsumableQuantity.sendKeys("8");
-		Thread.sleep(600);
-		consumeadd.click();
-		Thread.sleep(600);
+//		driver.findElement(By.xpath("//span[contains(@title,'8.5')]")).click();
+//		Thread.sleep(600);
+//		ConsumableQuantity.clear();
+//		Thread.sleep(600);
+//		ConsumableQuantity.sendKeys("8");
+//		Thread.sleep(600);
+//		consumeadd.click();
+//		Thread.sleep(600);
 
 		driver.findElement(By.xpath("//span[@title='COTTON ROLL I.P. 500GM']")).click();
 		Thread.sleep(600);

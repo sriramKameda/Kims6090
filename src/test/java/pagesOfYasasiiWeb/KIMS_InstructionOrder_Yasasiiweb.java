@@ -767,13 +767,13 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 
 		//Viewing Appointment Reason and remarks	
 		Thread.sleep(1000);
-		Expandedview.click();
-		Thread.sleep(1000);
-		Appointment.click();
-		Thread.sleep(1000);
+//		Expandedview.click();
+//		Thread.sleep(1000);
+//		Appointment.click();
+//		Thread.sleep(1000);
 		//Gridview.click();
 		//Thread.sleep(1000);
-		act.moveToElement(Remarks1).build().perform();
+//		act.moveToElement(Remarks1).build().perform();
 		Thread.sleep(1000);
 
 		/////doctornote
@@ -910,27 +910,20 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title=' Instruction']")).click();
 		Thread.sleep(1000);
-		CPOEServiceSearch.click();
+    	CPOEServiceSearch.click();
 		Thread.sleep(1000);
-		CPOEServiceSearch.sendKeys("Blood Pressure", Keys.ENTER);
+		CPOEServiceSearch.sendKeys("Free Text Order", Keys.ENTER);
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("//div[@class='btn-service-search']//i[@class='ki ki-favourite-fill']")).click();
 		//Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[normalize-space()='Blood Pressure']")).click();
+		driver.findElement(By.xpath("//label[normalize-space()='Free Text Order']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='orderdetails_add']")).click();
+		driver.findElement(By.xpath("//div[@class='form-group ng-star-inserted']//textarea[@id='remarks']")).sendKeys("Blood Pressure");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@id='orderdetails_add']")).click(); 
 		Thread.sleep(1000);
 
-
-
-		///plan 
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//div[@class='item-name'][normalize-space()='Plan']")).click();
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//textarea[@id='dynamic_textarea_HTF100190']")).sendKeys("action need to be taken");
-		//		Thread.sleep(1000);
-
-				EMRSave.click();
+		EMRSave.click();
 		Thread.sleep(3000); 
 
 		wait.until(ExpectedConditions.elementToBeClickable(NoteAdvanceSearch));
@@ -944,9 +937,15 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 		Thread.sleep(2000);
 		OPCheckBox.click();
 		Thread.sleep(2000);
-		Filter.click();
+	
+		
+		WebElement visitType1= driver.findElement(By.xpath("(//i[@title=' IP ("+Site+")'])[1]"));
 		Thread.sleep(1000);
-		act.moveToElement(visitType).build().perform();   	
+	
+	
+		Filter.click();
+		Thread.sleep(2000);
+		act.moveToElement(visitType1).build().perform();   	
 		Thread.sleep(2000);  
 
 
@@ -990,7 +989,7 @@ public class KIMS_InstructionOrder_Yasasiiweb  extends PageFactoryInitYasasiiWeb
 			String slot = String.valueOf(a);
 
 			System.out.println(slot+" -Slot");
-
+			
 			driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-instructionorder[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div["+slot+"]")).click();
 			Thread.sleep(1000);
 			AdminStatus.click();

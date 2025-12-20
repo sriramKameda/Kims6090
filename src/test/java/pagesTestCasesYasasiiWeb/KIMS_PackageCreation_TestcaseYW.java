@@ -39,20 +39,20 @@ public class KIMS_PackageCreation_TestcaseYW extends TestBaseYasasiiWeb{
 		
 		KIMS_PackageCreation_Yasassiweb packageCreation = new KIMS_PackageCreation_Yasassiweb(driver);
 		
-		packageCreation.packageCreationNew(Packagename,Name2);
+		//packageCreation.packageCreationNew(Packagename,Name2);
 		
-		packageCreation.groupCreationNew(Group1,Group2,Group3,Group4,Group5,Group6,Group7);
+		//packageCreation.groupCreationNew(Group1,Group2,Group3,Group4,Group5,Group6,Group7);
 		
-		packageCreation.packageDefination(Packagename,Group1,Group2,Group3,Group4,Group5,Group6,Group7);
+		//packageCreation.packageDefination(Packagename,Group1,Group2,Group3,Group4,Group5,Group6,Group7);
 		
-		packageCreation.tariffSetting(Packagename);
+		//packageCreation.tariffSetting(Packagename);
 		
 		packageCreation.packageTariffMapping(Packagename);
 		
 		packageCreation.packageToSiteMapping(Packagename);
 		
 	}
-	
+	 
 	@AfterClass
 	public void logout() throws Exception
 	{

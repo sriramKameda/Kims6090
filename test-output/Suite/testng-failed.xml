@@ -3,187 +3,282 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_AdjustmentRefund_TestcaseYW">
+      <class name="pagesTestCasesYasasiiWeb.KIMS_OrdersetFormulatory_testcaseYW">
         <methods>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="Reg" invocation-numbers="0"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="logout"/>
-          <include name="extentReportEnd"/>
-          <include name="navigateemradt"/>
-          <include name="getResult"/>
-          <include name="AdjustRefund" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_AdjustmentRefund_TestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_AppointmentFuture_Testcase">
-        <methods>
-          <include name="AppFuture1"/>
-          <include name="navigateemradt"/>
-          <include name="logout"/>
           <include name="setup"/>
           <include name="startTest"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="extentReportEnd"/>
-          <include name="AppFuture"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_AppointmentFuture_Testcase -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_DialysisNote_TestcaseYW">
-        <methods>
-          <include name="logout"/>
-          <include name="setup"/>
-          <include name="DialysisNote"/>
           <include name="navigateFOPage"/>
-          <include name="startTest"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
+          <include name="orderset" invocation-numbers="0"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
-          <include name="PAtreg"/>
+          <include name="logout"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_DialysisNote_TestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_BirthRegistrationTestCasesYW">
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_OrdersetFormulatory_testcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Limit_Approval_TestcaseYW">
         <methods>
           <include name="setup"/>
+          <include name="startTest"/>
+          <include name="LIMITBilling"/>
           <include name="logout"/>
           <include name="navigateemradt"/>
           <include name="teardown"/>
-          <include name="extentReportEnd"/>
-          <include name="MOMdischarge"/>
-          <include name="getResult"/>
-          <include name="Babydischarge"/>
-          <include name="startTest"/>
-          <include name="BirthReg"/>
-          <include name="babynote"/>
           <include name="getTestMethodProperties"/>
-          <include name="Doctornote"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_BirthRegistrationTestCasesYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_Diagnosis_LogView_testcaseYW">
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_Limit_Approval_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_FinalBilling_OP_TestcaseYW">
         <methods>
-          <include name="setup"/>
-          <include name="Hidenote"/>
           <include name="logout"/>
+          <include name="setup"/>
           <include name="startTest"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="navigateemradt"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
           <include name="Reg"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_Diagnosis_LogView_testcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_BillCancelandRefund_TestCaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="navigateemradt"/>
-          <include name="startTest"/>
-          <include name="logout"/>
-          <include name="BirthReg"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
+          <include name="finalbilling"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
-          <include name="billCancel"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_BillCancelandRefund_TestCaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_AppointmentCheckin_TestcaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="teardown"/>
           <include name="navigateemradt"/>
-          <include name="getTestMethodProperties"/>
-          <include name="logout"/>
-          <include name="Reg"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_AppointmentCheckin_TestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_EMRBlockandFreeze_TestcasesYW">
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_FinalBilling_OP_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IP_PackageBilling_TestcaseYW">
         <methods>
-          <include name="navigateemradt"/>
-          <include name="EMRBlock"/>
           <include name="logout"/>
           <include name="setup"/>
+          <include name="ipPatientPackageFlow"/>
+          <include name="navigateemradt"/>
           <include name="startTest"/>
+          <include name="ipPatientPackageFlow1"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_EMRBlockandFreeze_TestcasesYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_EMRhidenote_TeatcaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="logout"/>
-          <include name="startTest"/>
-          <include name="navigateemradt"/>
-          <include name="Hidenote" invocation-numbers="0"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_EMRhidenote_TeatcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_AdvanceRefund_TestcaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="navigateemradt"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="billCancel"/>
-          <include name="logout"/>
-          <include name="extentReportEnd"/>
-          <include name="Reg"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_AdvanceRefund_TestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_AppointmentView_inEMR_TestcaseYW">
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_IP_PackageBilling_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_interimIncoice_IP_TestcaseYW">
         <methods>
           <include name="Reg"/>
-          <include name="EMRapp"/>
           <include name="setup"/>
           <include name="navigateemradt"/>
           <include name="startTest"/>
           <include name="logout"/>
+          <include name="finalbilling"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_AppointmentView_inEMR_TestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_BlockandFreeze_TestcaseYW">
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_interimIncoice_IP_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IncomingServices_DifferentSiteBilling_TestcaseYW">
         <methods>
-          <include name="blockFreeze" invocation-numbers="0"/>
-          <include name="setup"/>
-          <include name="startTest"/>
           <include name="logout"/>
-          <include name="teardown"/>
+          <include name="doctornote"/>
+          <include name="setup"/>
           <include name="navigateemradt"/>
+          <include name="startTest"/>
+          <include name="patreg"/>
+          <include name="teardown"/>
           <include name="getTestMethodProperties"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_BlockandFreeze_TestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.KIMS_EmployeeAuthorization_TestcaseYW">
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_IncomingServices_DifferentSiteBilling_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_nursingStationTransfer_Testcase">
+        <methods>
+          <include name="setup"/>
+          <include name="logout"/>
+          <include name="navigateemradt"/>
+          <include name="startTest"/>
+          <include name="EMRtransfer"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_nursingStationTransfer_Testcase -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IPFinalbilling_TestcaseYW">
+        <methods>
+          <include name="Reg"/>
+          <include name="setup"/>
+          <include name="logout"/>
+          <include name="startTest"/>
+          <include name="navigateemradt"/>
+          <include name="finalbilling"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_IPFinalbilling_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_NutritionManagement_TestcaseYW">
         <methods>
           <include name="setup"/>
           <include name="startTest"/>
           <include name="logout"/>
-          <include name="navigateemradt"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
           <include name="Patreg"/>
-          <include name="SecondOpinion"/>
+          <include name="investigation"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+          <include name="navigateFOPage"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_NutritionManagement_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW">
+        <methods>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="EMRtransfer"/>
+          <include name="logout"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="navigateemradt"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+          <include name="BirthReg"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_MedicineMaster_Diagnosis_TestcaseYW">
+        <methods>
+          <include name="EMRapp"/>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="navigateemradt"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="logout"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_EmployeeAuthorization_TestcaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_MedicineMaster_Diagnosis_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_MergedMRNO_TestcaseYW">
+        <methods>
+          <include name="navigateemradt"/>
+          <include name="logout"/>
+          <include name="setup"/>
+          <include name="Reg"/>
+          <include name="startTest"/>
+          <include name="merged"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_MergedMRNO_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_InstructionOrder_TestcasesYW">
+        <methods>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="instruction"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+          <include name="navigateemradt"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_InstructionOrder_TestcasesYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_OutsiderPatientFlow_TestcaseYW">
+        <methods>
+          <include name="OUtsideReg"/>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="logout"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="navigateemradt"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+          <include name="Reg"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_OutsiderPatientFlow_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_IPpanel_MedicineAdministration_TestcaseYW">
+        <methods>
+          <include name="setup"/>
+          <include name="navigateemradt"/>
+          <include name="startTest"/>
+          <include name="Patreg"/>
+          <include name="logout"/>
+          <include name="IPpanel"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_IPpanel_MedicineAdministration_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases">
+        <methods>
+          <include name="navigateFOPage"/>
+          <include name="doc"/>
+          <include name="setup"/>
+          <include name="logout"/>
+          <include name="startTest"/>
+          <include name="or"/>
+          <include name="OR_ROOm"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+          <include name="foReg"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_ORFlowTestCases -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW">
+        <methods>
+          <include name="navigateFOPage"/>
+          <include name="logout"/>
+          <include name="setup"/>
+          <include name="Patreg"/>
+          <include name="startTest"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="investigation"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_nurseNote_ConsentForm_TestcaseYW">
+        <methods>
+          <include name="Reg"/>
+          <include name="setup"/>
+          <include name="navigateemradt"/>
+          <include name="startTest"/>
+          <include name="logout"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+          <include name="nursenote"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_nurseNote_ConsentForm_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_MedicineAdmin_VisitSummary_TestcaseYW">
+        <methods>
+          <include name="logout"/>
+          <include name="MIS"/>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="navigateemradt"/>
+          <include name="CPOE"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_MedicineAdmin_VisitSummary_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_OP_PackageBilling_TestcaseYW">
+        <methods>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="doctorNoteAndServices"/>
+          <include name="logout"/>
+          <include name="navigateemradt"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="patientRegistraionAndAdmission"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.KIMS_OP_PackageBilling_TestcaseYW -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
