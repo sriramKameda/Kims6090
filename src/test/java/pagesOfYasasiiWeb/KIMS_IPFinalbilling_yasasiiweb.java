@@ -141,7 +141,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@id='serviceidBilling']") 
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement AddService;
 
 	@FindBy(xpath = "//div[@class='page-inner-btn-group']//button[1]")
@@ -1204,7 +1204,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public void Billing(String provider , String service1,String service2,String service3 ) throws InterruptedException {
 
 		///Service Billing
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/label[1]/i[1]")).click();
 		Thread.sleep(2000);
 		Service.click();
@@ -1214,7 +1214,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-		servName.click();
+		/* swa servName.click();
 		Thread.sleep(1000);
 		servName.sendKeys("Admission Charge");
 		Thread.sleep(1000);
@@ -1225,14 +1225,17 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		ServSave.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 
 
 		servName.click();
 		Thread.sleep(1000);
 		servName.sendKeys(service1);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='"+service1+"']")).click();
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[normalize-space()='"+service1+"']")));
+		//driver.findElement(By.xpath("//li[normalize-space()='"+service1+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='HBsAg (ECLIA)']")).click();
 		Thread.sleep(1000);
 
 		AddService.click();
@@ -1379,7 +1382,8 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 		///Diagnosis	
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(50));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
 		Diagnosis.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -1497,10 +1501,10 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		////////login
 		Thread.sleep(2000);
 		userid.click();
-		userid.sendKeys(adminid);    
+		userid.sendKeys(FinalbillUser);    
 		Thread.sleep(1000);
 		password.click();
-		password.sendKeys(adminpassword);
+		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
 

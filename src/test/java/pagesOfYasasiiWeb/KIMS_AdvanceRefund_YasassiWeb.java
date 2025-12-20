@@ -218,7 +218,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//td[@class='icon-info']//i[@title='Cancel Approval']")
 	public WebElement ReqCancel;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
+	@FindBy(xpath = "//tbody/tr[@class='ng-star-inserted']/td[10]/span[1]/i[1]")//textarea[@id='undefined']
 	public WebElement RemarksIcon;
 
 	@FindBy(xpath = "//span[@class='search-icon']//i[@class='ki ki-search']")
@@ -664,7 +664,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		
 		*/
 		
-		selctcheckbox.click();
+		 selctcheckbox.click();
 		Thread.sleep(800);
 		Advancerefund.click();
 		Thread.sleep(800);
@@ -750,6 +750,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		SearchIcon.click();
 		Thread.sleep(1000);
 		firstcheckbox.click();
+		Thread.sleep(1000);
 		RemarksIcon.click();
 		Thread.sleep(800);
 		Remarks.click();

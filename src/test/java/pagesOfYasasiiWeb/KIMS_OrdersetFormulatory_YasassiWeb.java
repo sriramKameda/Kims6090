@@ -258,8 +258,8 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
-	public WebElement AddService;
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
+	public WebElement AddService;///i[@class='ki ki-plus']
 
 
 	@FindBy(xpath = "//i[@class='ki ki-cash-transfer-fill']")
@@ -326,8 +326,8 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		Hamburger.click();
 		Thread.sleep(800);
 		FOModule.click(); 
-		Thread.sleep(1000);
-		Registration.click();
+		Thread.sleep(3000);
+	    Registration.click();
 		Thread.sleep(500);
 		List<WebElement> dynamicElement = driver
 				.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
@@ -498,13 +498,19 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")));
 		Thread.sleep(3000);	
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(1000); 
 
 		//Availed services filters
 
 
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		AvailedService.click();
+		Thread.sleep(1000);
+		IP.click();
+		Thread.sleep(1000);
+		Cash.click();
+		Thread.sleep(1000);
+		OPCredit.click();
 		Thread.sleep(1000);
 		IP.click();
 		Thread.sleep(1000);
@@ -553,12 +559,12 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='All']")).click();
 		Thread.sleep(1000);
-		IP.click();
-		Thread.sleep(1000);
-		Cash.click();
-		Thread.sleep(1000);
-		OPCredit.click();
-		Thread.sleep(1000);
+//		IP.click();
+//		Thread.sleep(1000);
+//		Cash.click();
+//		Thread.sleep(1000);
+//		OPCredit.click();
+//		Thread.sleep(1000);
 		AvailSearch.click();
 		Thread.sleep(1000);
 		scheme.click();
@@ -607,7 +613,7 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		servname.clear();
 		Thread.sleep(1000);
 		servname.sendKeys("2 Year Registration");
-	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@title='Print']")));
 		Thread.sleep(2000);
 		
@@ -829,7 +835,10 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
 		Thread.sleep(700);
 		tempOk.click();
-		Thread.sleep(1700);
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='icon emrsave']")));
+		Thread.sleep(800);
 		diagnosis.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -864,7 +873,9 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		//		formulatoryblockOK.click();
 		//		Thread.sleep(2000);
 
-		///orderSet                    
+		///orderSet
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(hamberger));
 		hamberger.click();            
 		Thread.sleep(700);
 		EMR.click();

@@ -464,7 +464,10 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@id='cheqnoPayType']")
 	public WebElement TransactionNO;
 	
-
+	@FindBy(xpath = "//ki-select-control[@placeholder='Corporate']//input[@id='undefined']")
+	public WebElement corporate;
+	
+	
 
 	public void Patreg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider) throws InterruptedException, IOException, AWTException {
 
@@ -579,7 +582,8 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		InsuranceAndcorp.click();
 		Thread.sleep(600);
-		Insurance.click();
+		//Insurance.click();
+		corporate.click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
 		Thread.sleep(600);

@@ -61,7 +61,7 @@ public void EMRtransfer(String title,String Name,String lastname,String Dob, Str
 		 
 		ADT.ADTAppoval(MRNo);   
 		
-		ADT.homeleaveCancel();  
+		//ADT.homeleaveCancel();  
 		
 		ADT.financialClearance(MRNo);
 		

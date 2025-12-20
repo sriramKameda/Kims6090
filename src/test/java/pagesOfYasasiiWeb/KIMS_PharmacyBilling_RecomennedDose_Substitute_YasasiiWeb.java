@@ -232,7 +232,7 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement Amount;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement Add;//label[@class='icon-btn btn-dark-green inline']
 
 	@FindBy(xpath = "//span[contains(@class,'pay-style')]")
@@ -497,7 +497,7 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 
 		Registration.click();
@@ -655,7 +655,7 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		BirthRegistration.getRow(i).createCell(7).setCellValue(mrno);	
 		FileOutputStream fout=new FileOutputStream(src);	
 		wb.write(fout);
-		Thread.sleep(2000);
+		Thread.sleep(2000); 
 
 		Service.click();	
 		Thread.sleep(1000);
@@ -677,12 +677,14 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		Thread.sleep(1000);
 		Amount.sendKeys("5000");
 		Thread.sleep(1000);
-		Amount.sendKeys(Keys.ENTER);
+		//Amount.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Add));
 		Add.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
+		driver.findElement(By.xpath("//button[@id='billingsave']//i[@class='ki ki-save']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);

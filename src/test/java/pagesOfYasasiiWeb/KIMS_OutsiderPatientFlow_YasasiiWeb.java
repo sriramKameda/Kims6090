@@ -162,7 +162,7 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 	@FindBy(xpath = "//input[@id='serviceidBilling']")
 	public WebElement servName;
 
-	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	@FindBy(xpath = "//i[@class='ki ki-plus']")
 	public WebElement AddService;
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")
@@ -288,7 +288,11 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[normalize-space()='Master']")).click();
 		Thread.sleep(600);
-		firstname.sendKeys(NAME);
+		String lastName =RandomString.lastName();
+			
+		System.out.println(lastName + "LastName" );
+		
+		firstname.sendKeys(NAME+ lastName );
 		Thread.sleep(600);
 
 

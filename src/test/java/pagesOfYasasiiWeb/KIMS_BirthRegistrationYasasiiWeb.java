@@ -926,16 +926,14 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")
 	public WebElement saveButton;
-	//
-	// @FindBy(xpath = "//div[3]//div[7]//span[1]//i[1]")
-	// public WebElement delete;
-	//
-	// @FindBy(xpath = "//i[@class='ki ki-save']")
-	// public WebElement Saveimmunization;
-	//
-	// @FindBy(xpath = "//div[@class='table-row
-	// ng-star-inserted']//div[1]//div[7]//label[1]//span[1]//i[1]")
-	// public WebElement log;
+	
+	 @FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[2]/div[1]/div[2]/div[1]/app-load-components[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[2]/div[11]/div[2]/div[4]/ki-input-control[1]/div[1]/input[1]")
+	 public WebElement WhentoObtain;
+	
+	 @FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[2]/div[1]/div[2]/div[1]/app-load-components[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[2]/div[12]/div[2]/div[4]/ki-input-control[1]/div[1]/input[1]")
+	 public WebElement HowtoObtain;
+	
+	
 
 	public void patreg(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNO) throws InterruptedException, IOException, AWTException {
@@ -1699,7 +1697,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(2500);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(ChildDevelopmentChart));
+		wait.until(ExpectedConditions.elementToBeClickable(sAVe));
 
 		////////// Enter data in child development chart
 		ChildDevelopmentChart.click();
@@ -2246,7 +2244,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(DOD));
-		Thread.sleep(1000);		
+		Thread.sleep(3000);		
 		DOD.click();
 		Thread.sleep(1000);
 		Today.click();
@@ -2256,7 +2254,17 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Report.sendKeys(
 				"ChatGPT is a chatbot developed by OpenAI and launched on November 30, 2022. Based on large language models, it enables users to refine and steer a conversation towards a desired length, format, style,");
 		Thread.sleep(1000);
+	
+		
 		Disgnosis.click();
+		Thread.sleep(1000);
+		WhentoObtain.click();
+		Thread.sleep(1000);
+		WhentoObtain.sendKeys("WhentoObtain");
+		Thread.sleep(1000);
+		HowtoObtain.click();
+		Thread.sleep(1000);
+		HowtoObtain.sendKeys("HowtoObtainHowtoObtain");
 		Thread.sleep(1000);
 		DSInitiated.click();
 		Thread.sleep(1000);
@@ -2832,27 +2840,18 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		TemplateOK.click();
 		Thread.sleep(2000);
 
+		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
+		Thread.sleep(1000);
+				
+		
 		disgnosis.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
 		Thread.sleep(2000);
 
-		// List<WebElement>
-		// dynamicElement11=driver.findElements(By.xpath("//button[@class='btn
-		// btn-primary sm'][normalize-space()='OK']//i[@class='ki ki-check']"));
-		//
-		// if(dynamicElement11.size() !=0)
-		// {
-		// driver.findElement(By.xpath("//button[@class='btn btn-primary
-		// sm'][normalize-space()='OK']//i[@class='ki ki-check']")).click();
-		// }
-		//
-		//
-		// else {
-		// System.out.println("sri");
-		// }
-		// Thread.sleep(1000);
-
+		
 		Robot t = new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
@@ -3302,6 +3301,14 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 				"ChatGPT is a chatbot developed by OpenAI and launched on November 30, 2022. Based on large language models, it enables users to refine and steer a conversation towards a desired length, format, style,");
 		Thread.sleep(1000);
 		Disgnosis.click();
+		Thread.sleep(1000);
+		WhentoObtain.click();
+		Thread.sleep(1000);
+		WhentoObtain.sendKeys("WhentoObtain");
+		Thread.sleep(1000);
+		HowtoObtain.click();
+		Thread.sleep(1000);
+		HowtoObtain.sendKeys("HowtoObtainHowtoObtain");
 		Thread.sleep(1000);
 		DSInitiated.click();
 		Thread.sleep(1000);

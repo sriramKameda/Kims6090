@@ -835,7 +835,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 	}
 
 	public void doctorNoteForIpPatient(String DOCuser, String DOCpassword, String MRNo2, String DocID)
-			throws InterruptedException {
+			throws InterruptedException, AWTException {
 
 		Thread.sleep(3000);
 		((JavascriptExecutor) driver).executeScript("window.open()");
@@ -896,7 +896,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 
 		/////// Create the doctor note////////////
 
-		DoctorNote.click();
+	 DoctorNote.click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement1 = driver
 				.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
@@ -936,28 +936,30 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		CpoeServiceSearch.sendKeys("Potassium (ISE Indirect)", Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@id='cpoeservicelist_1']//label[@class='item-name']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-		Thread.sleep(1000);
-		medicineQuantity.sendKeys("1");
-		Thread.sleep(1000);
-		clinicalIndication.sendKeys("test");
-		Thread.sleep(1000);
-		addMedicine.click();
+		driver.findElement(By.xpath("//label[normalize-space()='Plasma Potassium (ISE Indirect)']")).click();
+//		driver.findElement(By.xpath("//div[@id='cpoeservicelist_1']//label[@class='item-name']")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+//		Thread.sleep(1000);
+//		medicineQuantity.sendKeys("1");
+//		Thread.sleep(1000);
+//		clinicalIndication.sendKeys("test");
+//		Thread.sleep(1000);
+//		addMedicine.click();
 		Thread.sleep(1000);
 		CpoeServiceSearch.clear();
 		Thread.sleep(1000);
 		CpoeServiceSearch.sendKeys("Sodium (ISE Indirect)", Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='item-list-row']//label[@class='item-name']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-		Thread.sleep(1000);
-		clinicalIndication.sendKeys("test");
-		Thread.sleep(1000);
-		addMedicine.click();
-		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//div[@class='item-list-row']//label[@class='item-name']")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+//		Thread.sleep(1000);
+//		clinicalIndication.sendKeys("test");
+//		Thread.sleep(1000);
+//		addMedicine.click();
+//		Thread.sleep(1000);
 		CpoeServiceSearch.clear();
 		Thread.sleep(1000);
 		CpoeServiceSearch.sendKeys("Lipid Panel", Keys.ENTER);
@@ -1068,7 +1070,9 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(3000);
 
 		///////////////// CPOE Administration///////////////////
-
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
 		cpoeAdmin.click();
 		Thread.sleep(1000);
 		serviceAdmin.click();

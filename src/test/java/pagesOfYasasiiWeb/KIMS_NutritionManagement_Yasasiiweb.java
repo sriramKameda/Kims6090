@@ -1039,7 +1039,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 
 		availedServices.click();
 		Thread.sleep(500);
-		ip.click();
+		//ip.click();
 		Thread.sleep(500);
 		search1.click();
 		Thread.sleep(500);

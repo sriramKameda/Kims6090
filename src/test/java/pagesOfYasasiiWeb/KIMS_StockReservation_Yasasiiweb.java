@@ -116,7 +116,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='col-md-5 plt-prt-5']//input[@id='phisslocid']")
 	public WebElement TOLOC;
 
-	@FindBy(xpath = "//i[@title='Search with Indent No/ MRNO/ Patient Name']")
+	@FindBy(xpath = "//div[@class='col-md-12 plt-prt-5']//input[@id='searchtxt']")
 	public WebElement indentsEARCH;
 
 	@FindBy(xpath = "//div[@class='form-group ki-dropdown']//input[@id='phreqlocid']")
@@ -255,7 +255,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-
+    String IndentNO;
 	public void InventoryHome() throws AWTException, InterruptedException {
 
 		Thread.sleep(2000);
@@ -377,7 +377,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		}
 		System.out.println(word[1]);
 
-		String IndentNO = word[1];
+		 IndentNO = word[1];
 
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
@@ -508,7 +508,12 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		indentsEARCH.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//b[normalize-space()='"+MRNo+"']")).click();
+		System.out.println(IndentNO);
+		indentsEARCH.sendKeys(IndentNO);
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//i[@title='Search with Indent No']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//span[normalize-space()='"+IndentNO+"']")).click();
 		Thread.sleep(1200);
 
 		item1.click();

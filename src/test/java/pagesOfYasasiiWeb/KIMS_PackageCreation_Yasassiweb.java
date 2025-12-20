@@ -289,7 +289,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement packageTariffMapping;
 	@FindBy(xpath = "//div[4]//ki-select-control[1]//div[1]//input[1]")
 	public WebElement enterDefaultPlan;
-	@FindBy(xpath = "//li[normalize-space()='DefaultTvm']")
+	@FindBy(xpath = "//li[normalize-space()='DefaultPlan']")
 	public WebElement selectDefaultTvm2;
 	@FindBy(xpath = "//input[@placeholder='Package Name']")
 	public WebElement enterPackageName; // searchicon
@@ -301,7 +301,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement cooperateDropdown;
 	@FindBy(xpath = "//div[@title='DefaultTvm']")
 	public WebElement defaultTvm;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-package-to-site-mapping[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/label[1]/i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-package-to-site-mapping[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/label[1]/i[1]")
 	public WebElement editIconForDefaultTvm;
 	@FindBy(xpath = "//input[@id='packageid']")
 	public WebElement packageNameDropdown;
@@ -371,7 +371,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(2000);
 		menuToggle.click();
 		Thread.sleep(1000);
-		mastersModule.click(); // del for full run
+		//mastersModule.click(); // del for full run
 		Thread.sleep(1000); // delfor full run
 		rcmPackage.click();
 		Thread.sleep(1000);
@@ -845,15 +845,17 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		baseTypeADT.click();
 		Thread.sleep(1000);
-		serviceName2.sendKeys("KAMEDA roomrent");
+		serviceName2.sendKeys("Deluxe Non AC");
 		Thread.sleep(2000);
 		// Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_BACK_SPACE);
 		t.keyRelease(KeyEvent.VK_BACK_SPACE);
 		Thread.sleep(1000);
-		serviceName2.sendKeys("t");
+		serviceName2.sendKeys("C");
 		Thread.sleep(1000);
-		KamedaService.click();
+		
+		driver.findElement(By.xpath("//li[normalize-space()='Deluxe Non AC']")).click();
+		//KamedaService.click();
 		Thread.sleep(1000);
 		addToGrid.click();
 		Thread.sleep(1000);
@@ -879,9 +881,11 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		baseTypeADT.click();
 		Thread.sleep(1000);
-		serviceName2.sendKeys("Room rent for Ultra-deluxe");
+		serviceName2.sendKeys("Rent for Ultra-Deluxe");
 		Thread.sleep(1000);
-		ultraDeluxADT.click();
+		driver.findElement(By.xpath("//li[normalize-space()='Rent for Ultra-Deluxe']")).click();
+		
+		//ultraDeluxADT.click();
 		Thread.sleep(1000);
 		addToGrid.click();
 		Thread.sleep(1000);
@@ -912,7 +916,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		baseNursingService.click();
 		Thread.sleep(1000);
-		serviceName2.sendKeys("kameda room nursingfee");
+		serviceName2.sendKeys("Nursing fee for Ultra-Deluxe");
 		Thread.sleep(2000);
 		// Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_BACK_SPACE);
@@ -920,7 +924,9 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		serviceName2.sendKeys("e");
 		Thread.sleep(1000);
-		kamedaRoomFee.click();
+		driver.findElement(By.xpath("//li[normalize-space()='Nursing fee for Ultra-Deluxe']")).click();
+		
+		//kamedaRoomFee.click();
 		Thread.sleep(1000);
 		addToGrid.click();
 		Thread.sleep(1000);
@@ -932,9 +938,11 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		baseNursingService.click();
 		Thread.sleep(1000);
-		serviceName2.sendKeys("UltraDelux Nursing Service");
+		serviceName2.sendKeys("Nursing Service- Deluxe AC");
 		Thread.sleep(1000);
-		ultraDeluxNursingService.click();
+		driver.findElement(By.xpath("//li[normalize-space()='Nursing Service- Deluxe AC']")).click();
+		
+		//ultraDeluxNursingService.click();
 		Thread.sleep(1000);
 		addToGrid.click();
 
@@ -978,8 +986,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-	//	mastersModule.click(); // del
-		Thread.sleep(1000); // del
+		//mastersModule.click(); // del
+		//Thread.sleep(1000); // del
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageDefinition.click();
@@ -1112,7 +1120,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-	//	mastersModule.click();
+		//mastersModule.click();// del for fullrun
 		Thread.sleep(1000); 
 		rcmPlanTab.click();
 		Thread.sleep(1000);
@@ -1126,10 +1134,10 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		editIcon.click();
 		Thread.sleep(1000);
-		selectplan.click();
-		Thread.sleep(1000);
-
-		selectDefaultTvm.click();
+//		selectplan.click();
+//		Thread.sleep(1000);
+//
+//		selectDefaultTvm.click();
 		Thread.sleep(1000);
 		serviceTabTariffScreen.click();
 		Thread.sleep(1000);
@@ -1228,7 +1236,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-	//	mastersModule.click(); 
+		//mastersModule.click(); //del for full run
 	//	Thread.sleep(1000); 
 		rcmPackage.click();
 		Thread.sleep(1000);
@@ -1236,7 +1244,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		enterDefaultPlan.click();
 		Thread.sleep(1000);
-		enterDefaultPlan.sendKeys("DefaultTvm");
+		enterDefaultPlan.sendKeys("DefaultPlan");
 		Thread.sleep(1000);
 		selectDefaultTvm2.click();
 		Thread.sleep(1000);
@@ -1250,7 +1258,10 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		editIcon.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='Savebutton']")).click();
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='Savebutton']")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='ki ki-upload']")));
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-package-tariff[1]/div[2]/form[1]/div[2]/form[1]/div[1]/div[3]/button[1]")).click();
 		
 		Thread.sleep(1000);
 		savedSuccessfullyOK.click();
@@ -1262,10 +1273,10 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-		// mastersModule.click(); // del for full run
-		// Thread.sleep(1000); // del for full run
-		// rcmPackage.click();
-		// Thread.sleep(1000);
+//		 mastersModule.click(); // del for full run
+//		Thread.sleep(1000); // del for full run
+//		 rcmPackage.click();//
+		 Thread.sleep(1000);
 		packageTOsiteMappingTab.click();
 		Thread.sleep(2000);
 		cooperateDropdown.click();
@@ -1277,7 +1288,9 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 //		WaitUtility.waitForElementToBeClickable(driver, selectDefault, 30);
 		selectDefault.click();
 		Thread.sleep(1000);
-		defaultTvm.click();
+		//defaultTvm.click();
+		driver.findElement(By.xpath("//div[@title='DefaultPlan']"));
+		
 		Thread.sleep(1000);
 	
 		wait.until(ExpectedConditions.elementToBeClickable(editIconForDefaultTvm));

@@ -41,7 +41,7 @@ public class KIMS_PackageCreation_TestcaseYW extends TestBaseYasasiiWeb{
 		
 		packageCreation.packageCreationNew(Packagename,Name2);
 		
-	//	packageCreation.groupCreationNew(Group1,Group2,Group3,Group4,Group5,Group6,Group7);
+		packageCreation.groupCreationNew(Group1,Group2,Group3,Group4,Group5,Group6,Group7);
 		
 		packageCreation.packageDefination(Packagename,Group1,Group2,Group3,Group4,Group5,Group6,Group7);
 		

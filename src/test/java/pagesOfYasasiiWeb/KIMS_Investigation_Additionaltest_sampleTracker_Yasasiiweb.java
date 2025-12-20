@@ -538,7 +538,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(1000);
 
@@ -552,7 +552,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 //		Executionloc.click();
 //		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(1000);
 		ExecutionlocOK.click();
 		Thread.sleep(1000);
@@ -872,6 +872,8 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-search']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
 
@@ -1024,6 +1026,12 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 
 		Homepage.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@id='reasonid']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Respond to IP Consultation']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@class='btn btn-primary ml10 sm active']//i[@class='ki ki-save']")).click();
 		Thread.sleep(1000);
 		EMRResult.click();
 		Thread.sleep(2000);

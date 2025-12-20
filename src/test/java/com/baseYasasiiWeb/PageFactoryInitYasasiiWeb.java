@@ -13,8 +13,8 @@ public class PageFactoryInitYasasiiWeb {
 	public static Actions act;
 	protected static WebDriver driver;
 	
-//	public String URL ="http://192.168.1.111:30150/";
-	public String URL ="http://192.168.2.11/";
+	//public String URL ="http://192.168.1.111:30150/login";
+	public String URL ="http://192.168.2.11/login";
 	public String Site ="KIMSHEALTH Nagercoil";
 	public String Provider ="Radhakrishnan Marimuthu";
 	public String ADTprovider ="Radhakrishnan Marimuthu(NGL18286)";
@@ -28,13 +28,16 @@ public class PageFactoryInitYasasiiWeb {
 	public String MRDID ="NGL18178";
 	public String Pharmacist_Id ="NGL17801";
 	public String Anesthetist ="NGL18349";
+//	public String authoriser ="Administrator(admin)";
 	public String authoriser ="Jayalakshmi P(NGL17801)";
 	public String FinalbillUser ="NGL17801";
 	public String Password ="KAmeda123$";
 	//public String PharmacyLocation ="Base_Nagercoil_Central";
 	public String PharmacyLocation ="West Main";
 	public String NursingStationLocation ="North Central pharmacy";
+	public String Inventoryissuelocation ="L1 - IPD PHARM";
 	public String SampleCollectionLocation ="LEVEL 2 SAMPLE COLLECTION";
+	public String SampleCollectionLocation1 ="IPD LEVEL 2 SAMPLE COLLECTION";
 	public String DischargeFollowupService ="Discharge Follow Up";
 	public String BiopsyDoctor ="Aaliya";
 	public String BiopsyDoctorID ="TVM2023";
