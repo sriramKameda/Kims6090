@@ -541,6 +541,13 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 				driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
 				Thread.sleep(700);
 				TemplateOK.click();
+				
+				
+				WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+				wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
+
+				
+				
 				Thread.sleep(2700);
 				cpoeService.click();
 				Thread.sleep(700);
@@ -569,7 +576,7 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 
 		/////////logout
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		
 		wait.until(ExpectedConditions.elementToBeClickable(username));
 
 		Thread.sleep(2000);

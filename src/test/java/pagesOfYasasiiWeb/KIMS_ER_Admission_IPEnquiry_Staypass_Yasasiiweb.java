@@ -78,8 +78,9 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 
 	@FindBy(xpath = "//i[@id='capture']")
 	public WebElement signupload;	
-	
 	@FindBy(xpath = "//input[@id='admittedproviderdisplayname']")
+	public WebElement EnterProviderName1;
+	@FindBy(xpath = "//input[@id='recomproviderdisplayname']")
 	public WebElement EnterProviderName;
 	@FindBy(xpath = "//li[contains(text(),'Thomas')]")
 	public WebElement SelectProviderName;
@@ -415,7 +416,7 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		drawAction.perform();
 		Thread.sleep(2500);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active ng-star-inserted']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
@@ -448,6 +449,18 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		billSave.click();
 		Thread.sleep(1000);
 		
+		List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement1111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//button[@type='button'][normalize-space()='OK'])[1]")));
 		Thread.sleep(2000);
@@ -477,9 +490,9 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		ADT.click();
 		Thread.sleep(1600);
 		
-		EnterProviderName.clear();
+		EnterProviderName1.clear();
 		Thread.sleep(700);
-		EnterProviderName.sendKeys(ADTprovider);
+		EnterProviderName1.sendKeys(ADTprovider);
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+ ADTprovider +"')])[1]")).click();
 		Thread.sleep(1000);
@@ -487,11 +500,15 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		
 		RoomType.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("(//*[contains(text(),'ER_Exclusive')])[1]")).click();
+		
+		driver.findElement(By.xpath("(//*[contains(text(),'Emergency room')])[1]")).click();
+		//driver.findElement(By.xpath("(//*[contains(text(),'ER_Exclusive')])[1]")).click();
 		Thread.sleep(1000);
 		Bed.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("(//*[contains(text(),'Emergency care')])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[1]")).click();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("(//*[contains(text(),'Emergency care')])[1]")).click();
 		Thread.sleep(1000);
 		SAve.click();
 		Thread.sleep(2000);
@@ -907,6 +924,30 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 			System.out.println("sri");
 		}
 		Thread.sleep(1000);
+		
+		////Admission charge cancel reason
+		
+		List<WebElement> dynamicElement411=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']"));
+
+		if(dynamicElement411.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//textarea[@id='undefined']")).sendKeys("Admission charge not required");
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//button[@id='save']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(1000);
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+
 
 
 

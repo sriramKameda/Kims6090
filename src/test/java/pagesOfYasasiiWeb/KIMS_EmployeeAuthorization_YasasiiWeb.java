@@ -232,7 +232,7 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 	@FindBy(xpath = "//span[normalize-space()='Insurance and Other Information']")
 	public WebElement insuranceinfo;
 
-	@FindBy(xpath = "//ki-select-control[@placeholder='Insurance ']//input[@id='undefined']")
+	@FindBy(xpath = "//ki-select-control[@placeholder='Corporate']//input[@id='undefined']")
 	public WebElement insurance;
 
 	@FindBy(xpath = "//ki-select-control[@class='ng-untouched ng-pristine ng-invalid']//input[@id='undefined']")
@@ -892,6 +892,13 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		Thread.sleep(1000);
 		TemplateOK.click();
 		Thread.sleep(3000);
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Diagnosis));
+		Thread.sleep(3000);
+
+
 
 		Diagnosis.click();
 		Thread.sleep(1700);
@@ -919,7 +926,7 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		Thread.sleep(3000);
 
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(Visit));
 		Thread.sleep(3000);
 

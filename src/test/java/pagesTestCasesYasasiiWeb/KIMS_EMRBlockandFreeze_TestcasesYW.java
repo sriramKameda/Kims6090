@@ -37,7 +37,7 @@ public void EMRBlock(String MRNO,String Provider) throws InterruptedException, I
 		    
 		KIMS_EMRBlockandFreeze_YasasiiWeb Block = new KIMS_EMRBlockandFreeze_YasasiiWeb(driver);
 		
-		Block.EMRblock(MRNO);
+		Block.EMRblock();
 		 
 		
 }

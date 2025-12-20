@@ -30,7 +30,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "//div[normalize-space()='Master']")
 	public WebElement Master;
 
-    @FindBy(xpath = "//div[normalize-space()='Block/Freeze Schedule']")
+	@FindBy(xpath = "//div[normalize-space()='Block/Freeze Schedule']")
 	public WebElement blockAndFreeze;
 
 	@FindBy(xpath="//input[@id='fromtime']")
@@ -95,7 +95,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 
 	@FindBy(xpath="//modal-container[@class='modal fade show']//input[@id='undefined']")
 	public WebElement CancelReason;
-	
+
 	@FindBy(xpath="//i[contains(@class,'ki ki-clear-back')]")
 	public WebElement Cancel;
 
@@ -114,7 +114,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 
 
 
-	public void EMRblock(String MRNO) throws InterruptedException, AWTException{
+	public void EMRblock() throws InterruptedException, AWTException{
 
 
 		Thread.sleep(2000);
@@ -123,36 +123,36 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
 		Thread.sleep(1000);
 		Thread.sleep(500);
-    	List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
-		
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
 		if(dynamicElement.size() !=0)
 		{
 			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		}
-		 
 
-		  else {
-		System.out.println("sri");
-		  }
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
-		
+
 		Master.click(); 
 		Thread.sleep(800);
 		blockAndFreeze.click();
 		Thread.sleep(600);
 		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
-		
+
 		if(dynamicElement1.size() !=0)
 		{
 			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		}
-		 
 
-		  else {
-		System.out.println("sri");
-		  }
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(600);
-		
+
 		/////Block	
 
 		Thread.sleep(800);
@@ -171,12 +171,12 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		todate.click();
 		r.keyPress(KeyEvent.VK_RIGHT);
 		Thread.sleep(400);
-        r.keyRelease(KeyEvent.VK_RIGHT);
+		r.keyRelease(KeyEvent.VK_RIGHT);
 		Thread.sleep(800);
 		//Robot r=new Robot(); 
 		r.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(400);
-    	r.keyRelease(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(800);
 
 		fromtime.click();
@@ -212,13 +212,19 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(800); 
 		driver.findElement(By.xpath("//li[normalize-space()='IP']")).click();
 		Thread.sleep(800);
+
+		String MRNO =	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[1]/lib-patientlist[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]")).getText();
+		Thread.sleep(800);
+		System.out.println(MRNO);
+
+
 		SearchField.clear();
 		Thread.sleep(800);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(800);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();  
 		Thread.sleep(5000);
- 
+
 		Thread.sleep(500);
 		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
@@ -233,17 +239,17 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		}
 		Thread.sleep(1000);
 
-		
-		
-		
-	/*	driver.findElement(By.xpath("//i[@class='dashboard-lock-arrow ki ki-chevron-up']")).click();
+
+
+
+		/*	driver.findElement(By.xpath("//i[@class='dashboard-lock-arrow ki ki-chevron-up']")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//i[@title='Lock/Unlock']")).click();
 		Thread.sleep(2000); */
 
- 
-        //Appointment 
-		
+
+		//Appointment 
+
 		appointment.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//i[@class='ki ki-arrow-left']")).click();
@@ -251,6 +257,10 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder,'Search Resource..')]")));
 		Thread.sleep(800);
+		
+		
+		
+		
 
 		Thread.sleep(800);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/lib-scheduler[1]/form[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[2]/div[1]")));
@@ -264,7 +274,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//div[@class='appointment-info']")).click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-plus']")).click();
-		
+
 		Thread.sleep(800);
 		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
@@ -278,7 +288,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 			System.out.println("sri");
 		}
 		Thread.sleep(1000);		
-		
+
 		AppReason.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("(//li[@class='uparrow-yellow'])[1]")).click();
@@ -294,14 +304,14 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(800);
 		blockAndFreeze.click();
 		Thread.sleep(800);
-        JavascriptExecutor js= (JavascriptExecutor) driver;
+		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", Refresh);
 		Thread.sleep(800);
 		Refresh.click();
 		Thread.sleep(3000);
-		
-		
-	/*	resource.click();
+
+
+		/*	resource.click();
     	Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Raina S(raina)']")).click();
 		Thread.sleep(800);  */
@@ -323,7 +333,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 
 		Thread.sleep(800);
 		fromDate.click();
-		
+
 		r.keyPress(KeyEvent.VK_RIGHT);
 		r.keyRelease(KeyEvent.VK_RIGHT);
 		Thread.sleep(800);
@@ -340,8 +350,8 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		r.keyPress(KeyEvent.VK_ENTER);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(800);
-		
-		
+
+
 		fromtime.click();
 		for (int i = 0; i <=5; i++) {
 			fromtime.sendKeys( Keys.BACK_SPACE);
@@ -358,7 +368,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		totime.sendKeys(Keys.HOME + "05 30");
 		reason.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='VVIP']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='IP']")).click();
 		Thread.sleep(800);
 		remarks.click();
 		Thread.sleep(800);
@@ -367,9 +377,9 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		save.click();
 		Thread.sleep(3000); 
 		driver.findElement(By.xpath("//span[@id='global_modal_close_button']")).click();
-        Thread.sleep(800);
-   
-        
+		Thread.sleep(800);
+
+
 
 		Thread.sleep(2000);
 		Hamberger.click();
@@ -379,17 +389,23 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'EMR HomeScreen')]")).click();
-        Thread.sleep(1000);
-		
-		
-//		driver.findElement(By.xpath("//div[@class='v-action-bar']")).click();
-//		Thread.sleep(2000);
-		
-		
+		Thread.sleep(1000);
+
+
+		//		driver.findElement(By.xpath("//div[@class='v-action-bar']")).click();
+		//		Thread.sleep(2000);
+
+
 		MainCategory.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[contains(text(),'IP')]")).click();
 		Thread.sleep(800);
+
+
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[1]/lib-patientlist[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/span[1]")).getText();
+		Thread.sleep(800);
+
+
 		SearchField.clear();
 		Thread.sleep(800);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
@@ -415,7 +431,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 
 
 		////App Closing
-		Thread.sleep(800);
+		Thread.sleep(20000);
 		driver.findElement(By.xpath("//label[@title='Cancel']")).click();
 		Thread.sleep(800);
 		CancelReason.click();
@@ -444,7 +460,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 			System.out.println("sri");
 		}
 		Thread.sleep(1000);		
-		
+
 		AppReason.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Follow-Up']")).click();
@@ -458,7 +474,7 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(800); 
 		cLOSEiPApp.click();
 		Thread.sleep(800);
-		
+
 		//driver.findElement(By.xpath("//modal-container[@class='modal fade show']//button[@type='button'][normalize-space()='Cancel']")).click();
 		Thread.sleep(1200);
 		//driver.findElement(By.xpath("//div[@class='form-group clear-bottom ki-dropdown']//input[@id='undefined']")).click();
@@ -493,12 +509,12 @@ public class KIMS_EMRBlockandFreeze_YasasiiWeb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[@id='global_modal_close_button']")).click();
 		Thread.sleep(800);
-		
+
 		Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
-		
-		
+
+
 
 	}
 

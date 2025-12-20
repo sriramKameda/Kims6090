@@ -137,6 +137,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//button[@id='btnPrint']")
 	public WebElement print;
+	
+	@FindBy(xpath = "//div[@class='form-group zero-bottom ki-dropdown']//input[@id='phreqlocid']")
+	public WebElement Pharmlocation;
+	
+	//div[@class='form-group zero-bottom ki-dropdown']//input[@id='phreqlocid']
 
 	@FindBy(xpath = "//span[normalize-space()='Update']")
 	public WebElement Update;
@@ -147,8 +152,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[normalize-space()='Inventory Indent']")
 	public WebElement InventoryIndent;
 
-	@FindBy(xpath = "//div[@class='form-group ki-dropdown']//input[@id='phisslocid']")
+	@FindBy(xpath = "//div[@class='form-group ki-dropdown']//input[@id='phreqlocid']")
 	public WebElement reqlocation;
+	
+	
+	
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")
 	public WebElement Save;
@@ -698,9 +706,9 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		InventoryIndent.click();
 		Thread.sleep(3000);
 
-		reqlocation.click();
+		IssuingLoc.click();
 		Thread.sleep(800);
-		reqlocation.sendKeys(Inventoryissuelocation);
+		IssuingLoc.sendKeys(Inventoryissuelocation);
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();	
 		Thread.sleep(800);
@@ -938,16 +946,15 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		reqlocation.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
 		Thread.sleep(800);
-
 		MRNO.click();
 		Thread.sleep(800);
 		MRNO.sendKeys( MRNo , Keys.ENTER);
 		Thread.sleep(800);
 		IssuingLoc.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
 		Thread.sleep(800);
 		
 		IndentType.click();
@@ -1023,12 +1030,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		//close indent
 
-		Thread.sleep(800);
-		reqlocation.click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
-		Thread.sleep(800);
-
+		
 		MRNO.click();
 		Thread.sleep(800);
 		MRNO.sendKeys( MRNo , Keys.ENTER);
@@ -1038,7 +1040,15 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='Regular']")).click();
 		Thread.sleep(800);
 
-
+		Thread.sleep(800);
+		reqlocation.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
+		Thread.sleep(800);
+		IssuingLoc.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
+		Thread.sleep(800);
 		Thread.sleep(800);
 		ItemName.click();
 		Thread.sleep(800);
@@ -1142,6 +1152,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Created']")).click();
 		Thread.sleep(800);
+		
+		Pharmlocation.click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+		Thread.sleep(800);
+		
 		IndentSearch.clear();
 		Thread.sleep(800);
 		IndentSearch.sendKeys(IndentNO , Keys.ENTER);
@@ -1271,14 +1286,13 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(2000);
 		Hamburger.click();
-		Thread.sleep(800);	
 		//	Indent.click();
 		Thread.sleep(800);
 		closeindent.click();
 		Thread.sleep(800);
 		Search.click();
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("(//span[@class='pr-2'][normalize-space()='"+closeIndentNO+"'])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'" + closeIndentNO + "')])[1]")).click();
 		Thread.sleep(800);
 		CloseIndent.click();
 		Thread.sleep(800);
@@ -1290,7 +1304,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Search.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("(//span[@class='pr-2'][normalize-space()='"+closeIndentNO+"'])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'" + closeIndentNO + "')])[1]")).click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//i[@class='ki ki-reset']")).click();
 		Thread.sleep(800);

@@ -175,6 +175,12 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//input[@id='frequencyid']")
 	public WebElement Frequency;
 
+	@FindBy(xpath = "//input[@id='antibioticorderingreasonid']")
+	public WebElement OrderingReason;	
+
+	@FindBy(xpath = "//input[@id='antibioticorderingremarks']")
+	public WebElement justification;	
+	
 	@FindBy(xpath = "//div[contains(text(),'ADT Info')]")
 	public WebElement ADT;
 
@@ -765,6 +771,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
 		Thread.sleep(1000);
 
+		
 
 		js.executeScript("arguments[0].scrollIntoView();",diagnosischevckbox);
 		Thread.sleep(1000);
@@ -777,7 +784,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 
 		MedicineSearch1.clear();
 		Thread.sleep(1000);
-		MedicineSearch1.sendKeys("CROCIN 650MG TAB", Keys.ENTER);
+		MedicineSearch1.sendKeys("AUGMENTIN 625MG DUO TAB", Keys.ENTER);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//body/app-root/app-layout/main[@class='page-body']/app-emr-homescreen[@class='ng-star-inserted']/div[@class='page-container h-100']/div[@class='note-layout emr-homescreen-dash main-wrapper ng-star-inserted ab-locked layout-1']/div[@class='notelayoutcontainer']/app-emrtemplateloader[@class='ng-star-inserted']/div[@class='pat-note-entry']/div[@class='pat-current-temp']/div[@class='temp-container']/div[@id='noterightregion']/div[@id='section_cpoe']/div[@id='component_cpoe']/app-cpoe-container/div[@class='card-container']/div[@class='row']/div[@class='col-lg-7 mbl-pr5']/div[@class='ng-star-inserted']/div/div[@class='ng-star-inserted']/div/div/app-cpoe-pharmacy-list/form[@class='ng-valid ng-dirty ng-touched']/div[@class='card card-left list-container pharmacy-list']/div[@class='card-body item-list-container']/div[@class='item-list ng-star-inserted']/div[@class='item-list-row']/div[1]")).click();
 		Thread.sleep(1000);
@@ -793,7 +800,14 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='PRN']")).click();
 		Thread.sleep(1000);
-
+		OrderingReason.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Others']")).click();
+		Thread.sleep(1000);
+		justification.click();
+		Thread.sleep(1000);
+		justification.sendKeys("ok");
+		Thread.sleep(1000); 
 
 		js.executeScript("arguments[0].scrollIntoView();",diagnosischevckbox);
 		Thread.sleep(1000);
@@ -807,7 +821,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@placeholder='Search Medicines']")).clear();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@placeholder='Search Medicines']")).sendKeys("Crocin 650Mg Tab" , Keys.ENTER);
+		driver.findElement(By.xpath("//input[@placeholder='Search Medicines']")).sendKeys("DOLOPAR 650 TAB" , Keys.ENTER);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//div[contains(@title,'by Oral')])[1]")).click();
 		Thread.sleep(1000);
@@ -832,12 +846,21 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 
 		medicineAdd.click();
 		Thread.sleep(1000);
+		
+	try {
 		OverRidereason.click();
 		Thread.sleep(500);
 		OverRidereason.sendKeys("ok");
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//button[@class='btn btn-dark-green active ng-star-inserted']")).click();
 		Thread.sleep(500);
+	}
+	
+	catch(Exception e) {
+		
+		
+	}
+		
 		PrescriptionPrintDN.click();
 		Thread.sleep(3000);
 
