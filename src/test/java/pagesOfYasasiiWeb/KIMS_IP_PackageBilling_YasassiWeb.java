@@ -810,7 +810,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		saveButton.click();
 		Thread.sleep(2000);
 		succefullyOK.click();
-
+		Thread.sleep(1000);
 		serviceType.click();
 		Thread.sleep(1500);
 		packagE.click();

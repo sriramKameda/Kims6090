@@ -440,7 +440,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(3000);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	/*	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(signupload));
 		Thread.sleep(3000);
 		
@@ -469,11 +469,11 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(1000);*/
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
 
-	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(billing));
 		Thread.sleep(3000);
 

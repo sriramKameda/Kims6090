@@ -714,7 +714,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 
 		// WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-emr-homescreen-shell[1]/app-patient-previousnotes[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")));
+				"//button[@class='icon cpoeadmin']")));
 		Thread.sleep(3000);
 
 	}
