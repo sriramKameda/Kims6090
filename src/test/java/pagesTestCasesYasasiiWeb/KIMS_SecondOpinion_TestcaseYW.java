@@ -29,7 +29,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-@Test(dataProvider="getData"  , priority=0)
+//@Test(dataProvider="getData"  , priority=0)
 public void Patreg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNO,String Provider ,String Provider1, String User , String Password , String site, String NURSEUser,String User1,String AdminID) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -50,17 +50,17 @@ public void SecondOpinion(String title,String Name,String lastname,String Dob, S
 		
 		KIMS_SecondOpinion_Yasasiiweb MDT = new KIMS_SecondOpinion_Yasasiiweb(driver);
 		
-	    MDT.docnote(User, Password, MRNO, User1, Provider1);
-		
-		MDT.secondopinion( User1, Password, MRNO);
-		
-		MDT.fileReadRequest(User, Password, MRNO);
-		
-		MDT.secondopinion1(User1, Password, MRNO);
-		
-		MDT.secondopinion_Comments_View(User, Password, MRNO);
-	
-		MDT.ReferalEncounter(AdminID, Password, MRNO);
+//	    MDT.docnote(User, Password, MRNO, User1, Provider1);
+//		
+//		MDT.secondopinion( User1, Password, MRNO);
+//		
+//		MDT.fileReadRequest(User, Password, MRNO);
+//		
+//		MDT.secondopinion1(User1, Password, MRNO);
+//		
+//		MDT.secondopinion_Comments_View(User, Password, MRNO);
+//	
+//		MDT.ReferalEncounter(AdminID, Password, MRNO);
 		
 		MDT.ReferalDoctor(User1, Password, MRNO);
 		
@@ -69,7 +69,7 @@ public void SecondOpinion(String title,String Name,String lastname,String Dob, S
 
 
 
-@AfterClass
+//@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

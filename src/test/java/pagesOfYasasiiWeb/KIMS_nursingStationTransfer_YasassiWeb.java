@@ -468,7 +468,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		ADT.click();
 		Thread.sleep(1000);
 		Thread.sleep(500);
-	/* swa	List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']"));
+	    List<WebElement> dynamicElement11=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']"));
 
 		if(dynamicElement11.size() !=0)
 		{
@@ -560,7 +560,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(1000); swa*/
+		Thread.sleep(1000); 
 		
 		
 		

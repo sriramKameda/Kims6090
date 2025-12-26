@@ -533,7 +533,9 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		EnterPatientName.sendKeys(MRNO);
 		Thread.sleep(1500);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='"+MRNO+"']")).click();
+		
+		//driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2500);
 		//SelectPatient.click();
 		/*	Thread.sleep(5000);
@@ -563,7 +565,9 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		TemplateOK.click();
 		Thread.sleep(3000);
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
+		Thread.sleep(3000);
 
 		vitalSigns.click();
 		//driver.findElement(By.xpath("//input[@title='Test V']")).click();
@@ -620,7 +624,7 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		EmrSave.click();
 		Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[contains(@title,'More')])[1]")));
 		Thread.sleep(4000);
 

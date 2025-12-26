@@ -47,7 +47,7 @@ public void Reg(String title,String Name,String Dob, String DocID, String MobNo,
 }
 
 
-@AfterClass
+//@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

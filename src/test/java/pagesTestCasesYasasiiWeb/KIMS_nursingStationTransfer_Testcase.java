@@ -29,7 +29,7 @@ public void navigateemradt() throws InterruptedException {
 	Thread.sleep(3000);
 	
 }
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void BirthReg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String ADTprovider,String User , String Password , String Site) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -48,7 +48,7 @@ public void EMRtransfer(String title,String Name,String Lastname,String Dob, Str
 		KIMS_nursingStationTransfer_YasassiWeb trans = new KIMS_nursingStationTransfer_YasassiWeb(driver);
 		
 		
-		//trans.Appointment(MRNo);
+		trans.Appointment(MRNo);
 		
 		trans.ADT();
 		
@@ -59,7 +59,7 @@ public void EMRtransfer(String title,String Name,String Lastname,String Dob, Str
 		}
 
 
-//@AfterClass
+@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

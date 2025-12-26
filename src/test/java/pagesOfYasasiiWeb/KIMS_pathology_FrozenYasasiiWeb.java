@@ -622,7 +622,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(700);
 		//Executionloc.click();
 		//Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(700);
 		ExecutionlocOK.click();
 		Thread.sleep(700);
@@ -726,10 +726,10 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		Donebydoc.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Samitha Nair']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Lakshmi S']")).click();
 		Thread.sleep(1000);
 		PathSave.click();
-		Thread.sleep(1000); 
+		Thread.sleep(1000);
 		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		////Login-Louis Xaviour	
 
@@ -765,7 +765,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(2000);
 
-//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link navbar-brand menu']//div[@class='menu-toggle']")));
 		Thread.sleep(1000);
 		//		Hamberger.click();
@@ -935,6 +935,11 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyDoctor+"']")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[normalize-space()='Set']")).click();
+	
+		Thread.sleep(1000);
 		GeneratefinalReport.click();
 		Thread.sleep(1000);
 		PathSave.click();
@@ -1052,7 +1057,6 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		Homeicon.click();
 		Thread.sleep(3000);
-		DocumentView.click();//i[@title='Document View']
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@class='canvasWrapper']//canvas")).click();
 		Thread.sleep(3000);
