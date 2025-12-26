@@ -218,7 +218,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//td[@class='icon-info']//i[@title='Cancel Approval']")
 	public WebElement ReqCancel;
 
-	@FindBy(xpath = "//tbody/tr[@class='ng-star-inserted']/td[10]/span[1]/i[1]")//textarea[@id='undefined']
+	@FindBy(xpath = "//tbody/tr[@class='ng-star-inserted']/td[8]/span[1]/i[1]")//textarea[@id='undefined']
 	public WebElement RemarksIcon;
 
 	@FindBy(xpath = "//span[@class='search-icon']//i[@class='ki ki-search']")

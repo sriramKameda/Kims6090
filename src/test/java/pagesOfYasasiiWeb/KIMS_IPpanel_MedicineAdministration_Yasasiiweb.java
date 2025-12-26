@@ -1132,7 +1132,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		MRNOSearch.sendKeys(MRNo, Keys.ENTER);
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//b[normalize-space()='"+MRNo+"']")).click();
-		Thread.sleep(1800);
+		Thread.sleep(3000);
 
 		Print.click();
 		Thread.sleep(5000);

@@ -10,7 +10,7 @@
       <class name="pagesTestCasesYasasiiWeb.KIMS_NutritionManagement_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_IP_PackageBilling_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_OP_PackageBilling_TestcaseYW"/>
-    <!--  <class name="pagesTestCasesYasasiiWeb.KIMS_Inventory_TestcaseYW"/>-->
+      <class name="pagesTestCasesYasasiiWeb.KIMS_Inventory_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_FinalBilling_OP_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_Investigation_Additionaltest_sampleTracker_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_FO_ADTactivities_TestcaseYW"/>

@@ -629,7 +629,7 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		Thread.sleep(1000);
 		Add.click();
 		Thread.sleep(1000);
-		BillPrintUncheck.click();
+	//	BillPrintUncheck.click();
 		Thread.sleep(1000);
 		EncSave.click();
 		Thread.sleep(2000);

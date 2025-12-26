@@ -79,7 +79,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 	public WebElement card;
 
 	//button[normalize-space()='OK']
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
+	@FindBy(xpath = "(//i[@title='Remarks'])[2]")
 	public WebElement remarks;
 
 	@FindBy(xpath = "//button[normalize-space()='OK']")
@@ -720,8 +720,10 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 			Thread.sleep(1000);
 			provider.click();
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//li[normalize-space()='"+DebitCard+"']")).click();
+			driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-payment-types[1]/form[1]/div[1]/div[2]/div[1]/ul[1]/app-list-item[1]/li[1]")).click();
 			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//li[normalize-space()='"+DebitCard+"']")).click();
+//			Thread.sleep(1000);
 			Amount.click();
 			Thread.sleep(1000);
 			Amount.sendKeys(CARDAMOUNT);

@@ -8,8 +8,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -19,6 +23,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
@@ -191,6 +196,23 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 
 	public void Patreg(String title, String Name, String lastname, String Dob, String DocID, String MobNo,String Address, String MRNo,  String ADTprovider)	throws InterruptedException, IOException, AWTException {
 
+
+
+		
+		
+	        LocalDate today = LocalDate.now();
+
+	        String month = today.getMonth()
+	                            .getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+	        
+	        int year = today.getYear();
+	        
+	        System.out.println("today: " + today);
+	        System.out.println("Month: " + month);
+	        System.out.println("Year: " + year);
+		
+		
+		
 		/////////////////// Register a female patient
 		Thread.sleep(1000);
 		Hamburger.click();
@@ -312,10 +334,6 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(1600);
-		
-		
-		
-		
 
 		/////////////// encounter
 
@@ -330,7 +348,8 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		// printUnckeck.click();
 		// Thread.sleep(1000);
 		billSave.click();
-		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")));
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -420,7 +439,10 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		TemplateOK.click();
 		Thread.sleep(2000);
-
+		
+		
+		wait.until(ExpectedConditions.elementToBeClickable(EMRSave));
+		Thread.sleep(700);	
 		Diagnosis.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
@@ -487,7 +509,9 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		More.click();
 		driver.findElement(By.xpath("//div[normalize-space()='Edit']")).click();
 		Thread.sleep(3000);
-
+		wait.until(ExpectedConditions.elementToBeClickable(EMRSave));
+		Thread.sleep(1500);
+		
 		Diagnosis.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("(//div[@class='item-label-action ng-star-inserted'][normalize-space()='Set as Primary'])[1]")).click();

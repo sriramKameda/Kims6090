@@ -981,6 +981,20 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(1000);
+		
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']//i[@class='ki ki-check']"));
+
+		if(dynamicElement111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']//i[@class='ki ki-check']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		
 		AppReason.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//li[@class='uparrow-yellow'])[1]")).click();

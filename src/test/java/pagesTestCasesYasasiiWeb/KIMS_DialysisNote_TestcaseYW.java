@@ -30,7 +30,7 @@ public class KIMS_DialysisNote_TestcaseYW extends TestBaseYasasiiWeb{
 	
 	
 	
-	//@Test (dataProvider = "getData", priority=0)
+	@Test (dataProvider = "getData", priority=0)
 	public void PAtreg(String title, String Name, String lastname, String Dob, String DocID, String MobNo,String Address, String MRNo, String Provider,String User,String Password,String site,String Service) throws InterruptedException, IOException, AWTException {
 		
 		Thread.sleep(3000); 

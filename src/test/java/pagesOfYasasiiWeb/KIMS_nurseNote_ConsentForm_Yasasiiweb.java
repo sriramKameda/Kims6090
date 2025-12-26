@@ -1268,7 +1268,10 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")));
 		Thread.sleep(2000);
-		
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")).click();
+		Thread.sleep(1000);
+
+
 		log.click();
 		Thread.sleep(2000);
 		//Arrow.click();
