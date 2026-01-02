@@ -692,10 +692,10 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 		insuranceinfo.click();
 		Thread.sleep(800);
-		insurance.click();
+		//insurance.click();
 		Thread.sleep(800);
-		//Corporate.click();
-	
+	    Corporate.click();
+	    Thread.sleep(800);
 		//		JavascriptExecutor js=(JavascriptExecutor)driver;
 		//		js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")));		
 		//		Thread.sleep(500);

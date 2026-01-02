@@ -1076,6 +1076,11 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_ESCAPE);
 		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait1.until(ExpectedConditions.elementToBeClickable(cpoeAdmin));
+		Thread.sleep(2000);		
+		
+		
 		cpoeAdmin.click();
 		Thread.sleep(1000);
 		serviceAdmin.click();
@@ -1219,9 +1224,10 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		SearchField.sendKeys(MRNo2, Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'" + MRNo2 + "')])[1]")).click();
-		Thread.sleep(5000);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
 
 		ivstgnSave.click();
 		Thread.sleep(2000);

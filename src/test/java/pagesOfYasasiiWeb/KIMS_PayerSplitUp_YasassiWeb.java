@@ -625,6 +625,9 @@ public class KIMS_PayerSplitUp_YasassiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(600);
 		Insurance.click();
 		Thread.sleep(600);
+		
+		 Corporate.click();
+	    Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
 		Thread.sleep(600);
 		Plan.click();

@@ -843,9 +843,9 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		medicinename.click();
 		Thread.sleep(1000);
-		medicinename.sendKeys("DIXIN 0.5MG/2ML INJ");
+		medicinename.sendKeys("GLUCI INJ 10ML");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='DIXIN 0.5MG/2ML INJ']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='GLUCI INJ 10ML']")).click();
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("//li[normalize-space()='Dixin 0.5Mg/2Ml Inj']")).click();
 		//Thread.sleep(500);
@@ -1556,12 +1556,12 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		AvailedService.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//label[normalize-space()='OP Credit']//span[@class='checkmark']")).click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//label[normalize-space()='IP']//span[@class='checkmark']")).click();
-		Thread.sleep(700);
+//		driver.findElement(By.xpath("//label[normalize-space()='Cash']//span[@class='checkmark']")).click();
+//		Thread.sleep(700);
+//		driver.findElement(By.xpath("//label[normalize-space()='OP Credit']//span[@class='checkmark']")).click();
+//		Thread.sleep(700);
+//		driver.findElement(By.xpath("//label[normalize-space()='IP']//span[@class='checkmark']")).click();
+//		Thread.sleep(700);
 		driver.findElement(By.xpath("//i[@class='ki ki-search text-white']")).click();
 		Thread.sleep(2000);
 
