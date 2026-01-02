@@ -396,7 +396,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//span[normalize-space()='Insurance and Other Information']")
 	public WebElement InsuranceAndcorp;
 
-	@FindBy(xpath = "//ki-select-control[@placeholder='Insurance ']//input[@id='undefined']")
+	@FindBy(xpath = "//ki-select-control[@placeholder='Corporate']//input[@id='undefined']")
 	public WebElement Insurance;
 
 	@FindBy(xpath = "//ki-select-control[@placeholder='Corporate']//input[@id='undefined']")
@@ -886,9 +886,9 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		ItemName.click();
 		Thread.sleep(1000);
-		ItemName.sendKeys("DOLOPAR 650 TAB");
+		ItemName.sendKeys("DOLO 650");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='DOLOPAR 650 TAB']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DOLO 650MG TAB']")).click();
 		Thread.sleep(1000);
 		Qty.click();
 		Thread.sleep(1000);

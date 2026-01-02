@@ -353,9 +353,9 @@ public class KIMS_ClosedEncounterBilling_Yasassiweb extends PageFactoryInitYasas
 		EncounterAdd.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		SAvesuccess.click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 
 
 		EpisodeIcon.click();

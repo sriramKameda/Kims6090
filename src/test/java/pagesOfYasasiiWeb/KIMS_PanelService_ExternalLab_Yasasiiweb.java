@@ -506,7 +506,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		RegSave.click();
 		Thread.sleep(3000);
 
-		js.executeScript("arguments[0].scrollIntoView();", signupload);
+	/*	js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
 		Thread.sleep(2000);
@@ -531,7 +531,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(1000);*/
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
 		//////Encounter
@@ -550,8 +550,8 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		EncounterAdd.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
-		Thread.sleep(1000);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
+		
 		SAvesuccess.click(); 
 
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
@@ -746,7 +746,8 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(800);
 		tempOk.click();
 		Thread.sleep(1000);
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
 
 		///Diagnosis	
 
@@ -909,8 +910,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		confirmOK.click();
 		Thread.sleep(2000);
 
-
-		ivstgnStatus.click();
+	ivstgnStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Sample Collection Pending - Unbilled']")).click();
 		Thread.sleep(1000);
@@ -933,7 +933,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
-		Thread.sleep(3000);		
+		Thread.sleep(3000);	
 		SaveOK1.click();
 		Thread.sleep(3000);
 		ivstgnStatus.click();
@@ -1047,7 +1047,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		////External Sample Processing
 
 		Hamberger.click();
-		Thread.sleep(700);
+		Thread.sleep(700); 
 		ExternalSampleProcessing.click();
 		Thread.sleep(700);
 		GroupLab.click();
@@ -1058,7 +1058,8 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(1000);
 		DespatchTo.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='DDRC']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DDRC Agilus']")).click();
+		//driver.findElement(By.xpath("//li[normalize-space()='DDRC']")).click();
 		Thread.sleep(1000);
 		ExternalMRNo.clear();
 		Thread.sleep(700);
@@ -1100,7 +1101,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		CarrierDetails.sendKeys("OK");
 		Thread.sleep(700);
 		EDOR.click();
-	//	Robot t=new Robot();
+	//Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_RIGHT);
 		t.keyRelease(KeyEvent.VK_RIGHT);
 		Thread.sleep(400);
@@ -1213,23 +1214,23 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		
 		
 		
-		
-		hamberger.click();
-		Thread.sleep(700);
-		resultPrint.click();
-		Thread.sleep(1000);
-		Searchfield1.click();//input[@id='mrno']
-		Thread.sleep(1000);
-		Searchfield1.sendKeys(MRNO, Keys.ENTER);
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[contains(text(),'" + MRNO + "')]")).click();
-		Thread.sleep(2000);
-		
-		
-		Preview.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
-		Thread.sleep(2000);
+//		
+//		hamberger.click();
+//		Thread.sleep(700);
+//		resultPrint.click();
+//		Thread.sleep(1000);
+//		Searchfield1.click();//input[@id='mrno']
+//		Thread.sleep(1000);
+//		Searchfield1.sendKeys(MRNO, Keys.ENTER);
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//*[contains(text(),'" + MRNO + "')]")).click();
+//		Thread.sleep(2000);
+//		
+//		
+//		Preview.click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+//		Thread.sleep(2000);
 
 		///////////	ResultAuthorization
 
@@ -1254,7 +1255,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
 		Thread.sleep(700);
 		ivstgnSave.click();
-		Thread.sleep(5000);  
+		Thread.sleep(5000); 
 
 		ivstgnStatus.click();
 		Thread.sleep(700);
@@ -1289,7 +1290,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		driver.findElement(By.xpath("//input[@id='chartlist']")).click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Critical Care Chart']")).click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='timeinterval']")).click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='5']")).click();

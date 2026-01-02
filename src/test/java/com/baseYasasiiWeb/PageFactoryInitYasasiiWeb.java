@@ -40,8 +40,8 @@ public class PageFactoryInitYasasiiWeb {
 	public String BiopsyDoctorID ="NGL16508";
 	//public String BiopsyTechnician ="Greeshma M Nair";
 	public String BiopsyTechnician ="Ann Mary Varghese"; //2.11
-	public String Samplepreparedby ="Sumayya";
-	public String Sampledespatchby ="Chithra";
+	public String Samplepreparedby ="Aadil M S";
+	public String Sampledespatchby ="Karthik P";
 	
 	
 	public static String Excelfilepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\SP55-KIMSDataSheet.xls";

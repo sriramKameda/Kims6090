@@ -932,8 +932,11 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(3000);
+		//s driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(3000);
+	//s	driver.findElement(By.xpath("//i[@class='ki ki-patient-fill']")).click();
+		//s driver.findElement(By.xpath("//i[@class='ki ki-pencil']")).click();
 		
 		
 

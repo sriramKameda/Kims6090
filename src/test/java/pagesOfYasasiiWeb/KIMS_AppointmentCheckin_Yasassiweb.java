@@ -394,7 +394,7 @@ public class KIMS_AppointmentCheckin_Yasassiweb  extends PageFactoryInitYasasiiW
 
 	public void Appointment(String Provider,String service ,String MRNo) throws AWTException, InterruptedException {
 
-
+		Thread.sleep(2000);
 		Appointment.click();
 		Thread.sleep(1000);
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));

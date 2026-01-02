@@ -400,16 +400,16 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='Consult Rule']")
 	public WebElement consultrule;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement consultruleName;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement EpisodeDays;
 
 	@FindBy(xpath = "//input[@id='servicecategory']")
 	public WebElement ServiceCategory;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/ki-auto-complete-pagination[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[5]/ki-auto-complete-pagination[1]/div[1]/input[1]")
 	public WebElement ServiceName;
 
 	@FindBy(xpath = "//div[@class='col-md-3 mbl-pl0']//i[@class='ki ki-plus']")
@@ -427,7 +427,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//button[normalize-space()='Add']//i[@class='ki ki-save']")
 	public WebElement specialitysave;
 
-	@FindBy(xpath="//button[@title='Add Consult Rule']//i[@class='ki ki-plus']")
+	@FindBy(xpath="//button[@title='Add Consult Rule']")
 	public WebElement addcnsltrule;
 
 	@FindBy(xpath = "//i[@class='ki ki-save']")
@@ -904,7 +904,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		RCM.click();
 		Thread.sleep(1000); 
-		TariffSetting.click();
+		/* swa TariffSetting.click();
 		Thread.sleep(1000); 
 		SchemeSearch.click();
 		Thread.sleep(1000); 
@@ -919,7 +919,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("//input[@id='plan']")).click();
 		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultTvm']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
 		Thread.sleep(1000); 
 
 
@@ -1026,18 +1026,19 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		Update.click();
 		Thread.sleep(3000); 
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000); 
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();swa*/
+		Thread.sleep(1000);
 
 		///consult rule mapping
 
 
 		Thread.sleep(2000); 
 		Hamberger.click();
-		Thread.sleep(1000);  
+		Thread.sleep(3000);  
 
 		consultrule.click();
 		Thread.sleep(600);
+		
 		consultruleName.click();
 		Thread.sleep(600);
 		consultruleName.sendKeys("First rule");
@@ -1056,6 +1057,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[normalize-space()='First Consultation']")).click();
 		Thread.sleep(1000);
+		
 		SpecialityADD.click();
 		Thread.sleep(600);
 		department1.click();
@@ -1063,11 +1065,22 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+Department+"']")).click();
 		Thread.sleep(1000);
 		Speciality1.click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Department+"']")).click();
 		Thread.sleep(1000);
 		Add1.click();
 		Thread.sleep(600);
 		specialitysave.click();
+		Thread.sleep(600);
+		
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")).sendKeys("EMERGENCY MEDICINE");
+		Thread.sleep(600);
+		//driver.findElement(By.xpath("//input[@class='form-control ng-touched ng-dirty ng-valid']")).sendKeys("EMERGENCY MEDICINE");
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//span[@title='EMERGENCY MEDICINE']")).click();
 		Thread.sleep(600);
 		addcnsltrule.click();
 		Thread.sleep(600);
@@ -1092,7 +1105,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000); 
 		plan.click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultTvm']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
 		Thread.sleep(2000); 	
 		Department2.click();
 		Thread.sleep(600);

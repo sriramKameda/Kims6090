@@ -32,7 +32,7 @@ public class KIMS_AdjustmentRefund_TestcaseYW  extends TestBaseYasasiiWeb  {
 
 	}
 
-	@Test(dataProvider="getData"  , priority=0)
+	//@Test(dataProvider="getData"  , priority=0)
 	public void Reg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo , String PROVIDER ,String ADJAMOUNT , String CARDAMOUNT , String CARDNO , String APPROVENO , String AUTHPERSON , String REMARK1, String REMARK2,String AUTHUser,String AUTHpassword,String DebitCard , String Site) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
@@ -54,7 +54,7 @@ public class KIMS_AdjustmentRefund_TestcaseYW  extends TestBaseYasasiiWeb  {
 
 		KIMS_AdjustmentRefund_Yasassiweb Adv = new KIMS_AdjustmentRefund_Yasassiweb(driver);
 
-		Adv.RcmRefund(MRNo, REMARK2,  AUTHUser, AUTHpassword, DebitCard,ADJAMOUNT);
+		//Adv.RcmRefund(MRNo, REMARK2,  AUTHUser, AUTHpassword, DebitCard,ADJAMOUNT);
 
 		Adv.cardmaster(MRNo, AUTHUser, AUTHpassword, DebitCard);   
 

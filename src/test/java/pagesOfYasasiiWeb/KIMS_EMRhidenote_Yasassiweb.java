@@ -1055,7 +1055,9 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 			Thread.sleep(700);
 			VerifiedBy.sendKeys(SecondNurse);
 			Thread.sleep(700);
-			driver.findElement(By.xpath("//li[normalize-space()='"+SecondNurse+"']")).click();
+			//driver.findElement(By.xpath("//li[normalize-space()='"+SecondNurse+"']")).click();
+			
+			driver.findElement(By.xpath("//li[contains(normalize-space(),'"+SecondNurse+"')]")).click();
 			Thread.sleep(700);
 			Password1.click();
 			Thread.sleep(700);

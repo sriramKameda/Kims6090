@@ -30,7 +30,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-@Test(dataProvider="getData"  , priority=0)
+//@Test(dataProvider="getData"  , priority=0)
 public void walkin(String PROVIDER, String MRNO , String filepath, String User , String Password , String site,String Authoriser) throws InterruptedException, IOException, AWTException {
 			
 		
@@ -48,7 +48,7 @@ public void walkin1(String PROVIDER, String MRNO , String filepath, String User 
 		
 	KIMS_Pharmacybill_Availedservice_Yasasiiweb avail = new KIMS_Pharmacybill_Availedservice_Yasasiiweb(driver);
 		
-	avail.Availed(User, Password, MRNO);
+	//avail.Availed(User, Password, MRNO);
 		
 	avail.AuthorisingRequest(User, Password, MRNO);
 

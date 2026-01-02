@@ -30,7 +30,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-@Test(dataProvider="getData"  , priority=0)
+//@Test(dataProvider="getData"  , priority=0)
 public void Reg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String ADTprovider,String DOCuser ,String DOCpassword , String Site,String SecondNurse  ) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		

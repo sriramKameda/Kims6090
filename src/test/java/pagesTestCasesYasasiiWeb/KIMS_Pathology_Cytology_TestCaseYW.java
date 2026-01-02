@@ -53,7 +53,7 @@ public class KIMS_Pathology_Cytology_TestCaseYW extends TestBaseYasasiiWeb  {
 		
 		}
 	
-	//@AfterClass
+	@AfterClass
 	public void logout() throws Exception
 	{
 		

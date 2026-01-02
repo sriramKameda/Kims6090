@@ -29,7 +29,7 @@ public class KIMS_pathology_CytologysmearTestcaseYW extends TestBaseYasasiiWeb  
 
 	
 
-	//@Test (dataProvider = "getData" ,priority=0)
+	@Test (dataProvider = "getData" ,priority=0)
 	public void Pathology(String NAME ,String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE, String User , String Password , String site,String Labdoctor, String technichian) throws InterruptedException, IOException, AWTException {
 		
 		

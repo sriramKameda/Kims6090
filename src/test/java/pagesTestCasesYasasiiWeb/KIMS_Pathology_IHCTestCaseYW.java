@@ -31,7 +31,7 @@ public class KIMS_Pathology_IHCTestCaseYW extends TestBaseYasasiiWeb  {
 
 	
 
-  //  @Test (dataProvider = "getData")
+    @Test (dataProvider = "getData")
 	public void Pathology(String NAME , String lastname,String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE, String User , String Password , String site,String SERVICE1,String technichian, String Labdoctor) throws InterruptedException, IOException {
 		
 		
@@ -54,7 +54,7 @@ public class KIMS_Pathology_IHCTestCaseYW extends TestBaseYasasiiWeb  {
 		ihc22.resultEnter(MRNO, User, Password);
 		}
 	
-	//@AfterClass
+	@AfterClass
 	public void logout() throws Exception
 	{
 		

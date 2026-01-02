@@ -1214,7 +1214,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		// lock.click();
 
 		/////// Create the doctor note and select pregnant
-		DoctorNote.click();
+	/* swa	DoctorNote.click();
 		Thread.sleep(1000);
 		// List<WebElement>
 		// dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create
@@ -1296,18 +1296,18 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		Cladd.click();
 		Thread.sleep(1000);
-		/*
-		 * Medicine2.click(); Thread.sleep(500); Past.click(); SelectPast.click();
-		 * OwnMedication.click(); SelectOnMedication.click(); Thread.sleep(500);
-		 * Cladd2.click();
-		 */
+		/
+//		  Medicine2.click(); Thread.sleep(500); Past.click(); SelectPast.click();
+//		  OwnMedication.click(); SelectOnMedication.click(); Thread.sleep(500);
+//		  Cladd2.click();
+//		 /
 
 		Thread.sleep(1000);
 		// arrw.click();
 		UpArrow.click();
 		Thread.sleep(600);
 		sAVe.click();
-		Thread.sleep(10000);
+		Thread.sleep(10000);swa */
 		// arw.click();
 		Thread.sleep(600);
 
@@ -1336,12 +1336,12 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(SelectBirthNote));
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
 		Thread.sleep(2000);
 		
 		SelectBirthNote.click();
 		Thread.sleep(1000);
-		EnterGestationalAgeInWeeks.sendKeys("32");
+		//EnterGestationalAgeInWeeks.sendKeys("32");
 		Thread.sleep(600);
 		Gender.click();
 		Thread.sleep(600);
@@ -1869,8 +1869,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Diagnosis and Plan')]")));
+		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));
 		Thread.sleep(2000);
 
 		disgnosis.click();
