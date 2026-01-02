@@ -620,7 +620,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(600);
 		InsuranceAndcorp.click();
 		Thread.sleep(600);
-		Insurance.click();
+		Corporate.click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[normalize-space()='MSD Ins Corp PVT.LTD']")).click();
 		Thread.sleep(600);
@@ -886,9 +886,9 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		ItemName.click();
 		Thread.sleep(1000);
-		ItemName.sendKeys("DOLOPAR 650 TAB");
+		ItemName.sendKeys("DOLO 650MG TAB");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='DOLOPAR 650 TAB']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DOLO 650MG TAB']")).click();
 		Thread.sleep(1000);
 		Qty.click();
 		Thread.sleep(1000);

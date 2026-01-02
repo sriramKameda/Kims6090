@@ -1058,7 +1058,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Homeicon.click();
 		Thread.sleep(3000);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//div[@class='canvasWrapper']//canvas")).click();
+		driver.findElement(By.xpath("//i[@title='Document View']")).click();
 		Thread.sleep(3000);
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(5000, document.body.scrollHeight)");
 		Thread.sleep(3000);

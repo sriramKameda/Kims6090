@@ -877,6 +877,11 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		driver.findElement(By.xpath("//li[normalize-space()='SOAP']")).click();
 		Thread.sleep(800);
 		tempOk.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
+		Thread.sleep(2000);		
+		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'Diagnosis and Plan')]")).click();
 		Thread.sleep(1000);

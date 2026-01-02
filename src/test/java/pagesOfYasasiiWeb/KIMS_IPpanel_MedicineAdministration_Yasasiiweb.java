@@ -1483,7 +1483,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(2000);
 
 		Save1.click();
-		Thread.sleep(30000);
+		Thread.sleep(3000);
 		Thread.sleep(500);
 		List<WebElement> dynamicElement51=driver.findElements(By.xpath("//input[@id='verifiedbyname']"));
 
@@ -1550,7 +1550,31 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Save1.click();
 		Thread.sleep(30000);
 
+		List<WebElement> dynamicElement5111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']"));
+
+		if(dynamicElement5111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
 		
+
+		List<WebElement> dynamicElement6111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement6111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(2000);
 ////pantocid		
 		
 		Thread.sleep(500);
@@ -1580,9 +1604,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			Add.click();
 
 			Thread.sleep(500);
-			List<WebElement> dynamicElement5111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+			List<WebElement> dynamicElement51111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
-			if(dynamicElement5111.size() !=0)
+			if(dynamicElement51111.size() !=0)
 			{
 				driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 			}
@@ -1595,6 +1619,31 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 
 			Save1.click();
 			Thread.sleep(30000);
+			
+			
+			Thread.sleep(500);
+			List<WebElement> dynamicElement151=driver.findElements(By.xpath("//input[@id='verifiedbyname']"));
+
+			if(dynamicElement151.size() !=0)
+			{
+				Thread.sleep(2000);
+				VerifiedBy.sendKeys("Athira M R(NGL17895)");
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//li[normalize-space()='Athira M R(NGL17895)']")).click();
+				Thread.sleep(1000);
+				Verifypassword.click();
+				Thread.sleep(1000);
+				Verifypassword.sendKeys(Password);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
+				Thread.sleep(1000);		}
+
+
+			else {
+				System.out.println("sri");
+			}
+			
+			
 		}
 
 
@@ -1635,9 +1684,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			//Add.click();
 
 			Thread.sleep(500);
-			List<WebElement> dynamicElement5111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+			List<WebElement> dynamicElement51111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
-			if(dynamicElement5111.size() !=0)
+			if(dynamicElement51111.size() !=0)
 			{
 				driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 			}
@@ -1649,9 +1698,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			Thread.sleep(2000);
 			
 			Thread.sleep(500);
-			List<WebElement> dynamicElement51111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+			List<WebElement> dynamicElement511111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
-			if(dynamicElement51111.size() !=0)
+			if(dynamicElement511111.size() !=0)
 			{
 				driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 			}

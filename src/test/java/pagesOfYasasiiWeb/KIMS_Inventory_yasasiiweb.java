@@ -20,6 +20,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public KIMS_Inventory_yasasiiweb(WebDriver driver) {
@@ -1274,9 +1275,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(800);
 		Clear.click();
-		Thread.sleep(800);
-
-
+		Thread.sleep(2000);
 
 
 	}
@@ -1290,6 +1289,14 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		closeindent.click();
 		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("/html/body/app-root/app-layout/main/app-inventory-landing/app-close-indent/div[1]/lib-pharmacyindentsearch/div/div[3]/form/div[3]/div/ki-calender-time-range/div/input")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
+		Thread.sleep(1000);
+		
+		
+		
 		Search.click();
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'" + closeIndentNO + "')])[1]")).click();
@@ -1497,9 +1504,12 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//*[@id=\"droplistkey0\"]/li")).click();
 		Thread.sleep(800);
+		
+		 String GRNO = RandomString.DOCID();
+		
 		GRNno.click();
 		Thread.sleep(800);
-		GRNno.sendKeys(GRNNO);
+		GRNno.sendKeys(GRNO);
 		Thread.sleep(800);
 
 		ItemName.clear();
@@ -1508,9 +1518,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
+		
+		 String DOCID = RandomString.DOCID();
 		batchNo.clear();
 		Thread.sleep(800);
-		batchNo.sendKeys(BatchNo);
+		batchNo.sendKeys(DOCID);
 		Thread.sleep(800);
 		GRNQTY.clear();
 		Thread.sleep(800);
@@ -1586,9 +1598,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
+		
+		 String DOCID1 = RandomString.DOCID();
 		batchNo.clear();
 		Thread.sleep(800);
-		batchNo.sendKeys(BatchNo);
+		batchNo.sendKeys(DOCID1);
 		Thread.sleep(800);
 		GRNQTY.clear();
 		Thread.sleep(800);
@@ -1612,11 +1626,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		unitcost.clear();
 		Thread.sleep(800);
-		unitcost.sendKeys("12");
+		unitcost.sendKeys("4");
 		Thread.sleep(800);
 		UnitSell.clear();
 		Thread.sleep(800);
-		UnitSell.sendKeys("12");
+		UnitSell.sendKeys("4");
 		Thread.sleep(800);
 		AddContinue.click();
 		Thread.sleep(800);
@@ -1628,9 +1642,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
+		
+		String DOCID11 = RandomString.DOCID();
 		batchNo.clear();
 		Thread.sleep(800);
-		batchNo.sendKeys(BatchNo);
+		batchNo.sendKeys(DOCID11);
 		Thread.sleep(800);
 		GRNQTY.clear();
 		Thread.sleep(800);
@@ -1656,10 +1672,10 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		unitcost.sendKeys("16");
 		Thread.sleep(800);
-//		UnitSell.clear();
-//		Thread.sleep(800);
-//		UnitSell.sendKeys("16");
-//		Thread.sleep(800);
+		UnitSell.clear();
+		Thread.sleep(800);
+		UnitSell.sendKeys("16");
+		Thread.sleep(800);
 		ADDCollapse.click();
 		Thread.sleep(1200);
 
@@ -1668,7 +1684,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		GRNnoSearch.click();
 		Thread.sleep(800);
-		GRNnoSearch.sendKeys(GRNNO , Keys.ENTER);
+		GRNnoSearch.sendKeys(GRNO , Keys.ENTER);
 		Thread.sleep(800);
 		SupplierEdit.click();
 		Thread.sleep(800);
@@ -1708,9 +1724,12 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//*[@id=\"droplistkey0\"]/li")).click();
 		Thread.sleep(800);
+		
+		String GRNO1 = RandomString.DOCID();
+		
 		GRNno.click();
 		Thread.sleep(800);
-		GRNno.sendKeys(GRNNO);
+		GRNno.sendKeys(GRNO1);
 		Thread.sleep(800);
 
 		ItemName.clear();
@@ -1719,9 +1738,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
+		
+		String DOCID21 = RandomString.DOCID();
 		batchNo.clear();
 		Thread.sleep(800);
-		batchNo.sendKeys("212");
+		batchNo.sendKeys(DOCID21);
 		Thread.sleep(800);
 		GRNQTY.clear();
 		Thread.sleep(800);
@@ -1748,10 +1769,10 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		unitcost.sendKeys("12");
 		Thread.sleep(800);
-//		UnitSell.clear();
-//		Thread.sleep(800);
-//		UnitSell.sendKeys("12");
-//		Thread.sleep(800);
+		UnitSell.clear();
+		Thread.sleep(800);
+		UnitSell.sendKeys("12");
+		Thread.sleep(800);
 		AddContinue.click();
 		Thread.sleep(2000);
 
@@ -1943,11 +1964,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		//close indent
 
-		Thread.sleep(800);
-		reqlocation.click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
-		Thread.sleep(800);
+//		Thread.sleep(800);
+//		reqlocation.click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
+//		Thread.sleep(800);
 
 		MRNO.click();
 		Thread.sleep(800);
@@ -1958,7 +1979,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='Regular']")).click();
 		Thread.sleep(800);
 
-
+		IssuingLoc.click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();
+		Thread.sleep(800);
+		
+		
 		Thread.sleep(800);
 		ItemName.click();
 		Thread.sleep(800);

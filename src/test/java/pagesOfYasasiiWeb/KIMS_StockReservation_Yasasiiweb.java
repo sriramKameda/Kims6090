@@ -490,10 +490,10 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-		FromLoc.click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
-		Thread.sleep(800);
+//		FromLoc.click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+//		Thread.sleep(800);
 		TOLOC.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();

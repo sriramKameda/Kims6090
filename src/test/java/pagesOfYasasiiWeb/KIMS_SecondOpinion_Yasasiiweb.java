@@ -745,50 +745,50 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//label[@title='Reason for Visit : Fever ']")).click();
 		Thread.sleep(5000);
-		//		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		//		Thread.sleep(2000);
-		//		Hamburger.click();
-		//		EMR.click();
-		//		
-		//		FileReqApproval.click();
-		//		
-		//		MRNOSearch.sendKeys(MRNO);
-		//		Search.click();
-		//		Status1.click();
-		//		Thread.sleep(1000);
-		//		driver.findElement(By.xpath("//div[@class='col-md-2']//li[contains(text(),'Approved')]")).click();
-		//		Thread.sleep(1000);
-		//		UPdate.click();
-		//		
-		//		Hamburger.click();
-		//		driver.findElement(By.xpath("//div[normalize-space()='EMR HomeScreen']")).click();
-		//		Thread.sleep(1000);
-		//		
-		//		
-		//		driver.findElement(By.xpath("//input[@id='maincategory']")).click();
-		//		Thread.sleep(500);
-		//		driver.findElement(By.xpath("//li[normalize-space()='My Pending Task']")).click();
-		//		Thread.sleep(500);
-		//		driver.findElement(By.xpath("//input[@id='subcategory']")).click();
-		//		Thread.sleep(500);
-		//		driver.findElement(By.xpath("//li[normalize-space()='Second Opinion']")).click();
-		//		Thread.sleep(2000);
-		//
-		//		EnterPatientName.sendKeys(MRNO);
-		//		Thread.sleep(1500);
-		//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		//		Thread.sleep(2500);
-		//
-		//
-		//		//	visit.click();
-		//		//	Thread.sleep(500);
-		//		secondOpinionRequest.click();
-		//		Thread.sleep(500);
-		//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")).click();
-		//		Thread.sleep(5000);
-
-		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(2000);
+				driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+				Thread.sleep(2000);
+//				Hamburger.click();
+//				EMR.click();
+//				
+//				FileReqApproval.click();
+//				
+//				MRNOSearch.sendKeys(MRNO);
+//				Search.click();
+//				Status1.click();
+//				Thread.sleep(1000);
+//				driver.findElement(By.xpath("//div[@class='col-md-2']//li[contains(text(),'Approved')]")).click();
+//				Thread.sleep(1000);
+//				UPdate.click();
+//				
+//				Hamburger.click();
+//				driver.findElement(By.xpath("//div[normalize-space()='EMR HomeScreen']")).click();
+//				Thread.sleep(1000);
+//				
+//				
+//				driver.findElement(By.xpath("//input[@id='maincategory']")).click();
+//				Thread.sleep(500);
+//				driver.findElement(By.xpath("//li[normalize-space()='My Pending Task']")).click();
+//				Thread.sleep(500);
+//				driver.findElement(By.xpath("//input[@id='subcategory']")).click();
+//				Thread.sleep(500);
+//				driver.findElement(By.xpath("//li[normalize-space()='Second Opinion']")).click();
+//				Thread.sleep(2000);
+//		
+//				EnterPatientName.sendKeys(MRNO);
+//				Thread.sleep(1500);
+//				driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+//				Thread.sleep(2500);
+//		
+//		
+//				//	visit.click();
+//				//	Thread.sleep(500);
+//				secondOpinionRequest.click();
+//				Thread.sleep(500);
+//				driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emr-homescreen-landing[1]/div[1]/div[1]/div[2]/app-patient-previousnotes[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/label[1]")).click();
+//				Thread.sleep(5000);
+//
+//		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+//		Thread.sleep(2000);
 
 
 	}
@@ -1050,8 +1050,31 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		EncounterAdd.click();
 		Thread.sleep(2000);
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+		Thread.sleep(2000);		
 		EncounterSave.click();
 		Thread.sleep(1000);
+		
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+		Thread.sleep(2000);		
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SAvesuccess));
+		Thread.sleep(3000);
 		SAvesuccess.click();
 		Thread.sleep(1000);
 

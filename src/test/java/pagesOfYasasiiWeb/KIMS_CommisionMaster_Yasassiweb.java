@@ -182,6 +182,7 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		serviceName.sendKeys("Surgeon Fee");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Surgeon Fee']")).click();
+		Thread.sleep(1000);
 		commissionvalue.sendKeys("2");
 		Thread.sleep(1000);
 		add.click();
@@ -201,8 +202,20 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		add.click();
 		Thread.sleep(1000);
-		saveButton.click();
-		Thread.sleep(2000);
+		
+		try{
+			saveButton.click();
+			Thread.sleep(2000);
+			
+		}
+		catch(Exception e){
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(1000);	
+			driver.findElement(By.xpath("//button[normalize-space()='Clear']")).click();
+			Thread.sleep(1000);	
+		
+		}
+		
 		search.clear();
 		Thread.sleep(1000);
 		search.sendKeys(RuleName, Keys.ENTER);
@@ -252,6 +265,8 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Priyanga Rule']")).click(); //// ask which wrong rule
 		Thread.sleep(1000);
+		providerName.clear();
+		Thread.sleep(1000);
 		providerName.sendKeys(Provider);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+Provider+"')])[2]")).click();	
@@ -289,8 +304,8 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
         int Year = today.getYear();
         
         System.out.println("today: " + today);
-        System.out.println("Month: " + month);
-        System.out.println("Year: " + year);
+        System.out.println("Month: " + Month);
+        System.out.println("Year: " + Year);
 		
 		
 		
