@@ -248,13 +248,6 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-
-
-
-
-
-
-
     String IndentNO;
 	public void InventoryHome() throws AWTException, InterruptedException {
 
@@ -342,7 +335,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		IndentQTY.click();
 		Thread.sleep(800);
-		IndentQTY.sendKeys("30");
+		IndentQTY.sendKeys("30.5");
 		Thread.sleep(800);
 		Add.click();
 		Thread.sleep(800);
@@ -675,7 +668,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		rejQuantity.clear();
 		Thread.sleep(800);
-		rejQuantity.sendKeys("10");
+		rejQuantity.sendKeys("10.5");
 		Thread.sleep(800);
 
 		RXComments.click();
@@ -1020,6 +1013,12 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Consumptioncancel.click();
 		Thread.sleep(800);
+		driver.findElement(By.xpath("//tbody/tr[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/span[1]")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//tbody/tr[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/span[1]")).click();
+		Thread.sleep(800);
+		
+		
 		Print.click();
 		Thread.sleep(2000);
 		t.keyPress(KeyEvent.VK_ESCAPE);

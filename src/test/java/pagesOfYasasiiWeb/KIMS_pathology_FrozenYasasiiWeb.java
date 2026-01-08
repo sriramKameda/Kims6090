@@ -1032,6 +1032,8 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
+		SearchField.sendKeys( Keys.ENTER);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
 		Resulttatus.click();
