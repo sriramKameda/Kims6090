@@ -53,18 +53,18 @@ public void LIMITBilling(String codeType , String code,String ServiceName , Stri
 		KIMS_Limit_Approval_Yasasiiweb price = new KIMS_Limit_Approval_Yasasiiweb(driver);
 		
     	
-		//price.EncounterBilling(User, Password, MRNO, ServiceName);
+		price.EncounterBilling(User, Password, MRNO, ServiceName);
 		
-		//price.DoctorNote(DOCuser, DOCpassword, MRNO, ServiceName);
+		price.DoctorNote(DOCuser, DOCpassword, MRNO, ServiceName);
 		
 		price.CPOEAdministration();
 		
-		//price.Ins_approval(User, Password, MRNO ,ApproveNO1, ApproveNO2);
+		price.Ins_approval(User, Password, MRNO ,ApproveNO1, ApproveNO2);
 		
 		
 		 		
 }
-//@AfterClass
+@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

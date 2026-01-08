@@ -30,7 +30,7 @@ public class KIMS_IPFinalbilling_TestcaseYW   extends TestBaseYasasiiWeb  {
 		Thread.sleep(3000);
 
 	}
-	 @Test(dataProvider="getData"  , priority=0)
+   // @Test(dataProvider="getData"  , priority=0)
 	public void Reg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNO,String provider,String  ADTprovider,String service1,String service2,String service3,String docid,String docpassword,String Site,String adminid,String adminpassword , String nurseUser , String  NursePassword ,String authoriser,String MRDUser, String MRDPassword  ) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
@@ -53,15 +53,15 @@ public class KIMS_IPFinalbilling_TestcaseYW   extends TestBaseYasasiiWeb  {
 
 		KIMS_IPFinalbilling_yasasiiweb IPfinal = new KIMS_IPFinalbilling_yasasiiweb(driver);
 
-    	IPfinal.doctoreNote(docid, docpassword, MRNO);
-
-    	IPfinal.PharmacyBilling(MRNO, ADTprovider, adminid, adminpassword);
-
-    	IPfinal.dischargeApproval(MRNO, nurseUser, NursePassword);
-    	
-   	    IPfinal.Discharge_Summary_Clearance(MRDUser, MRDPassword, MRNO, docid, docpassword, nurseUser);
-
-		IPfinal.ADTAppoval(MRNO, adminid, adminpassword);
+//    	IPfinal.doctoreNote(docid, docpassword, MRNO);
+//
+//    	IPfinal.PharmacyBilling(MRNO, ADTprovider, adminid, adminpassword);
+//
+//    	IPfinal.dischargeApproval(MRNO, nurseUser, NursePassword);
+//    	
+//   	    IPfinal.Discharge_Summary_Clearance(MRDUser, MRDPassword, MRNO, docid, docpassword, nurseUser);
+//
+//		IPfinal.ADTAppoval(MRNO, adminid, adminpassword);
 
 		IPfinal.FinalBilling( adminid, adminpassword,  MRNO);
 

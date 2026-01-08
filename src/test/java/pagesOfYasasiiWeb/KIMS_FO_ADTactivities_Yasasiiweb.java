@@ -2015,8 +2015,8 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 	Thread.sleep(2000);
 	
-//	driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@title='Search By'][normalize-space()='Search By']")).click();
-//	Thread.sleep(2000);
+	driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@title='Search By'][normalize-space()='Search By']")).click();
+	Thread.sleep(2000);
 	
 	Invoicemode.click();
 	Thread.sleep(1000);

@@ -261,7 +261,7 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']")).click();
+		//driver.findElement(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']")).click();
 		Thread.sleep(2000);
 		
 		

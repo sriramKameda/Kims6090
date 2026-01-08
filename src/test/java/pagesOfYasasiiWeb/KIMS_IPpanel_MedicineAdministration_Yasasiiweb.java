@@ -941,7 +941,15 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 
 
 	public void IPpanel(String MRNo) throws InterruptedException, AWTException {
-
+		
+		Thread.sleep(1000); 
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		
 		Logoutarw.click();
 		Thread.sleep(1000);
 		Logoutbutton.click();
@@ -1049,7 +1057,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		prescriptionPrint.click();
 		Thread.sleep(8000);
 
-		Robot t=new Robot();
+		//Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(400);
@@ -1490,9 +1498,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		if(dynamicElement51.size() !=0)
 		{
 			Thread.sleep(2000);
-			VerifiedBy.sendKeys("Athira M R(NGL17895)");
+			VerifiedBy.sendKeys("Anitha R (NGL17697)");
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//li[normalize-space()='Athira M R(NGL17895)']")).click();
+			driver.findElement(By.xpath("//li[normalize-space()='Anitha R (NGL17697)']")).click();
 			Thread.sleep(1000);
 			Verifypassword.click();
 			Thread.sleep(1000);
@@ -1627,9 +1635,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			if(dynamicElement151.size() !=0)
 			{
 				Thread.sleep(2000);
-				VerifiedBy.sendKeys("Athira M R(NGL17895)");
+				VerifiedBy.sendKeys("Anitha R (NGL17697)");
 				Thread.sleep(1000);
-				driver.findElement(By.xpath("//li[normalize-space()='Athira M R(NGL17895)']")).click();
+				driver.findElement(By.xpath("//li[normalize-space()='Anitha R (NGL17697)']")).click();
 				Thread.sleep(1000);
 				Verifypassword.click();
 				Thread.sleep(1000);

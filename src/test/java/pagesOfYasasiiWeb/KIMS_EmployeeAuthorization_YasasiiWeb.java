@@ -615,7 +615,7 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		Thread.sleep(600);
 
 
-		// copying File path to Clipboard
+		/*// copying File path to Clipboard
 		StringSelection str = new StringSelection("C:\\Users\\sriram\\Pictures\\Screenshots\\prescription.pdf");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 		Thread.sleep(1000);
@@ -631,7 +631,26 @@ public class KIMS_EmployeeAuthorization_YasasiiWeb extends PageFactoryInitYasasi
 		// for pressing and releasing Enter
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
+		String filePath = System.getProperty("user.dir")
+                + "\\src\\test\\resources\\uploads\\userCreation_passed140.PNG";
+
+		StringSelection str = new StringSelection(filePath);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+
+		Thread.sleep(1000);
+
+		// Robot actions
+		Robot rb = new Robot();
+		rb.keyPress(KeyEvent.VK_CONTROL);
+		rb.keyPress(KeyEvent.VK_V);
+		rb.keyRelease(KeyEvent.VK_V);
+		rb.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		rb.keyPress(KeyEvent.VK_ENTER);
+		rb.keyRelease(KeyEvent.VK_ENTER);
 
 
 		Eye.click();

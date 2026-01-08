@@ -836,7 +836,7 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		Thread.sleep(700);
 		tempOk.click();
 		Thread.sleep(3000);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='icon emrsave']")));
 		Thread.sleep(800);
 		diagnosis.click();

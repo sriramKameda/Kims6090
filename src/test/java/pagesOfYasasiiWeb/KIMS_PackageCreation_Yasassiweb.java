@@ -930,7 +930,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		addToGrid.click();
 		Thread.sleep(1000);
-		serviceType.click();
+		serviceType.click(); 
 		Thread.sleep(1000);
 		serviceTypeNursingService.click();
 		Thread.sleep(1000);

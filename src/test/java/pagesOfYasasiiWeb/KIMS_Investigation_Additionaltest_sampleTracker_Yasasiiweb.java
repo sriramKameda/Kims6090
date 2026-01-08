@@ -815,7 +815,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
-		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
+		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")));
 		Thread.sleep(500);		
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();

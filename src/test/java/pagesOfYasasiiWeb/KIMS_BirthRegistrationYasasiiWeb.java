@@ -1087,9 +1087,9 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		EncounterAdd.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
-		Thread.sleep(1000);
-		SAvesuccess.click();
 		Thread.sleep(3000);
+		SAvesuccess.click();
+		Thread.sleep(2000);
 
 		String mrno = driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
@@ -1214,7 +1214,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		// lock.click();
 
 		/////// Create the doctor note and select pregnant
-	/* swa	DoctorNote.click();
+		DoctorNote.click();
 		Thread.sleep(1000);
 		// List<WebElement>
 		// dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create
@@ -1296,7 +1296,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		Cladd.click();
 		Thread.sleep(1000);
-		/
+		
 //		  Medicine2.click(); Thread.sleep(500); Past.click(); SelectPast.click();
 //		  OwnMedication.click(); SelectOnMedication.click(); Thread.sleep(500);
 //		  Cladd2.click();
@@ -1307,7 +1307,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		UpArrow.click();
 		Thread.sleep(600);
 		sAVe.click();
-		Thread.sleep(10000);swa */
+		Thread.sleep(10000);
 		// arw.click();
 		Thread.sleep(600);
 
@@ -1315,7 +1315,9 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 	///////// Select the delivery note template and add the details
 
 	public void DeliveryNOTE() throws InterruptedException {
-
+		
+		
+		Thread.sleep(10000);
 		DoctorNote.click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement1 = driver
@@ -1470,6 +1472,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 //		Thread.sleep(800);
 
 		EnterName.sendKeys(MRNo);
+		Thread.sleep(1000);
 		EnterName.sendKeys(Keys.ENTER);
 		Thread.sleep(600);
 		driver.findElement(By.xpath("(//*[contains(text(),'" + MRNo + "')])[1]")).click();
@@ -1489,6 +1492,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(600);
 
 		EnterMob.clear();
+		Thread.sleep(1000);
 		EnterMob.sendKeys("4512451236");
 		// driver.findElement(By.xpath("//li[normalize-space()='Female']")).click();
 		// Thread.sleep(1000);
@@ -1674,7 +1678,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		// lock.click();
 
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		DoctorNote1.click();
 		Thread.sleep(2000);
 		List<WebElement> dynamicElement1 = driver

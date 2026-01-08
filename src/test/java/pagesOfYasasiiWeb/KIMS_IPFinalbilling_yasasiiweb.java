@@ -1977,7 +1977,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);	
 
-/* swa		Menu.click();
+	/*swa	Menu.click();
 		Thread.sleep(2000);
 		Thread.sleep(1000);
 		EMRHomeScreen.click();
@@ -2218,12 +2218,12 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(400);
 		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE); swa*/
+		t.keyRelease(KeyEvent.VK_ESCAPE);swa */
 
 
 
 		///Pharmacy Clearance
-
+		Thread.sleep(1000);
 		Logoutarw.click();
 		Thread.sleep(1000);
 		Logoutbutton.click();
@@ -2537,7 +2537,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		/////////InvoiceView
 		Thread.sleep(3000);
-		//InvoiceView.click();
+		InvoiceView.click();
 		Thread.sleep(1000);	
 		Invoicemode.click();
 		Thread.sleep(1000);

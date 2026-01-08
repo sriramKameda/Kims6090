@@ -1231,7 +1231,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 		zoom.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[contains(text(),'100%')]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		SearchInReports.click();
 		Thread.sleep(1000);
 		Searchtext.click();

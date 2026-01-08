@@ -52,8 +52,8 @@ public class KIMS_IPpanel_MedicineAdministration_TestcaseYW extends TestBaseYasa
 
 
 		KIMS_IPpanel_MedicineAdministration_Yasasiiweb IPpanel = new KIMS_IPpanel_MedicineAdministration_Yasasiiweb(driver);
-
-		IPpanel.doctoreNote(docid, docpassword, MRNo, OrdersetName);
+		
+		IPpanel. doctoreNote(docid,docpassword,MRNo,OrdersetName);
 
 		IPpanel.IPpanel(MRNo);
 
