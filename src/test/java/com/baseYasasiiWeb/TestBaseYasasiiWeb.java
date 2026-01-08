@@ -69,7 +69,11 @@ public class TestBaseYasasiiWeb {
 	@BeforeTest
 	public static void startTest()
 	{
-		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\surefire-reports\\extentReport.html");
+		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\extentReport.html");
+		
+		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
+		 
+
 		
 	}
 
@@ -124,6 +128,7 @@ public class TestBaseYasasiiWeb {
 			else if (config.getProperty("browser").equals("chrome")) {
 				WebDriverManager.chromedriver().driverVersion(chromeversion).setup();
 				ChromeOptions chrop = new ChromeOptions();
+				
 		        String opt[] = new String[] { "-test-type", "test-type=browser", "-disable-default-apps",
 		                "-enable-precise-memory-info", "-js-flags=-expose-gc", "-disable-infobars", "-start-maximized",
 		                "-ignore-certificate-errors", "-disable-popup-blocking", "-allow-running-insecure-content",
@@ -222,7 +227,7 @@ public class TestBaseYasasiiWeb {
 	
 	
 
-	@AfterSuite
+	@AfterSuite(alwaysRun = true)
 	public void extentReportEnd() {
 	rep.endTest(test);
 		rep.flush(); 
@@ -240,6 +245,8 @@ public class TestBaseYasasiiWeb {
 			driver.quit();
 		}
 
+	
+	
 		log.debug("Test execution completed");
 	}
 

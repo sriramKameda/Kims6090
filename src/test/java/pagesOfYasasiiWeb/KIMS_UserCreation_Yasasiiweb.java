@@ -1577,7 +1577,6 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 			System.out.println("sri");
 		}
 
-		
 		Thread.sleep(3000);
 		MenuToggle.click();
 		Thread.sleep(1000);

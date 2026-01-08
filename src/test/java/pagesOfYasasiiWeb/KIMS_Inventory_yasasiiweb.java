@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,6 +19,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 import com.w2a.utilities.RandomString;
@@ -1931,6 +1934,10 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		Search.click();
 		Thread.sleep(3000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Print));
+		Thread.sleep(2000);
 
 		Print.click();
 		Thread.sleep(4000);

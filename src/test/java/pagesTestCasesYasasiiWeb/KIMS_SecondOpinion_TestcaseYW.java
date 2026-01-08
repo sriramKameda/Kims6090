@@ -79,6 +79,7 @@ public void logout() throws Exception
 	t.keyPress(KeyEvent.VK_ESCAPE);
 	t.keyRelease(KeyEvent.VK_ESCAPE);
 	
+		
 	this.hm.clickLogout();
 }
 

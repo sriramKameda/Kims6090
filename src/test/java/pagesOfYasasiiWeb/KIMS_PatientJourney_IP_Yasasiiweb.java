@@ -428,6 +428,14 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 	@FindBy(xpath = "//input[@id='sublocationid']")
 	public WebElement Location;	
+	
+	@FindBy(xpath = "//div[contains(@class,'site-mapping-storage-card')]//div[1]//div[1]//div[2]//div[2]//div[1]//button[1]")
+	public WebElement Recieve_i_icon;	
+	
+	@FindBy(xpath = "//div[@class='site-mapping-storage-card']//div[1]//div[1]//div[2]//div[2]//div[3]//button[1]//strong[1]")
+	public WebElement Go;	
+	
+	
 
 	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='Transfer']")
 	public WebElement transfer;
@@ -885,9 +893,11 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "//div[contains(text(),'CPOE Info')]")
 	public WebElement CPOEInfo;
 
+	@FindBy(xpath = "//span[contains(@title,'Change Pharmacy Location')]//i[contains(@class,'ki ki-map-pin-fill')]")
+	public WebElement Changelocation;
 
-
-
+	@FindBy(xpath = "//div[normalize-space()='Inventory Home']")
+	public WebElement InventoryHome;
 	
 	
 	
@@ -1288,7 +1298,11 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		tempOk.click();
 		Thread.sleep(3000);
 
-
+		Thread.sleep(2000);
+		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));	
+		Thread.sleep(2000);
+		
 		///Diagnosis	
 
 		Diagnosis.click();
@@ -1787,13 +1801,38 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		Hamburger.click();
 		Thread.sleep(800);
-		StockRecieve.click();
+		InventoryHome.click();
 		Thread.sleep(800);
-
-		ReqLoc.click();
+	
+		Changelocation.click();
+		Thread.sleep(800);
+		Location.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
 		Thread.sleep(800);
+		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")).click();
+		Thread.sleep(2000);
+
+		Recieve_i_icon.click();
+		Thread.sleep(800);
+		List<WebElement> Recieveitems=driver.findElements(By.xpath("(//i[contains(@title,'View Details')])"));
+		Thread.sleep(800);
+        int a =Recieveitems.size();
+        Thread.sleep(800);
+        driver.findElement(By.xpath("(//i[contains(@title,'View Details')])["+a+"]")).click();
+		Thread.sleep(800);
+	    driver.findElement(By.xpath("//button[contains(@class,'btn-sm btn btn-red clear')]")).click();
+		Thread.sleep(800);
+		Go.click();
+		Thread.sleep(1800);
+		
+//		StockRecieve.click();
+//		Thread.sleep(800);
+//
+//		ReqLoc.click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+//		Thread.sleep(800);
 
 		MRNOSearch.clear();
 		Thread.sleep(800);
@@ -3060,7 +3099,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		
 				pharmacyLocation.click();
 				Thread.sleep(800);
-				driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+				driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
 				Thread.sleep(800);
 				OK1.click();
 				Thread.sleep(800);
@@ -3242,7 +3281,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(800);
 		reqLocation.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='Base_Nagercoil_Central']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
 		Thread.sleep(800);
 		MRNoSearch.clear();
 		Thread.sleep(800);
@@ -3325,7 +3364,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 		reqLocation1.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[@class='col-md-5 plt-prt-5']//li[@class='uparrow-yellow'][normalize-space()='Base_Nagercoil_Central']")).click();
+		driver.findElement(By.xpath("//div[@class='col-md-5 plt-prt-5']//li[@class='uparrow-yellow'][normalize-space()='"+PharmacyLocation+"']")).click();
 		Thread.sleep(1000);
 
 		search2.click();
@@ -3353,7 +3392,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(800);
 		location.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//span[@title='Base_Nagercoil_Central']")).click();
+		driver.findElement(By.xpath("//span[@title='"+PharmacyLocation+"']")).click();
 		Thread.sleep(1000);
 		MRNOSearch.clear();
 		Thread.sleep(800);
@@ -3476,12 +3515,17 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		
 		driver.findElement(By.xpath("//button[normalize-space()='Edit Existing Note']")).click();
 		Thread.sleep(3000);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(EMRsave));
+		
+		
 	
 		cpoePharmacy.click();
 		Thread.sleep(1000);
 		//Activemedicine.click();
 		IPpendingorders.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//i[@class='ki ki-diagnosis']")));
 		
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");

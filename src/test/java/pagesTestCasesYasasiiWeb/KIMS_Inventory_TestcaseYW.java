@@ -15,7 +15,6 @@ import com.baseYasasiiWeb.TestBaseYasasiiWeb;
 import pagesOfYasasiiWeb.HomePageYasasiiWeb;
 import pagesOfYasasiiWeb.LoginPageYasasiiWeb;
 import pagesOfYasasiiWeb.KIMS_Inventory_yasasiiweb;
-import pagesOfYasasiiWeb.KIMS_MedicineMaster_Diagnosis_Yasasiiweb;
 
 public class KIMS_Inventory_TestcaseYW extends TestBaseYasasiiWeb  { 
 	public static LoginPageYasasiiWeb login;

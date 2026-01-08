@@ -32,7 +32,7 @@ public class KIMS_AdjustmentRefund_TestcaseYW  extends TestBaseYasasiiWeb  {
 
 	}
 
-	//@Test(dataProvider="getData"  , priority=0)
+	@Test(dataProvider="getData"  , priority=0)
 	public void Reg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo , String PROVIDER ,String ADJAMOUNT , String CARDAMOUNT , String CARDNO , String APPROVENO , String AUTHPERSON , String REMARK1, String REMARK2,String AUTHUser,String AUTHpassword,String DebitCard , String Site) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
