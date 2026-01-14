@@ -72,7 +72,7 @@ public class TestBaseYasasiiWeb {
 	{
 		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\extentReport.html");
 		
-		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
+		//rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
 		 
 
 		
