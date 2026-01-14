@@ -839,7 +839,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public WebElement status1;
 	
 	@FindBy(xpath="//li[normalize-space()='Submitted']")
-	public WebElement submitted ;
+	public WebElement submitted;
 	
 	@FindBy(xpath="//input[@id='searchmrno']")
 	public WebElement searchMrno;
@@ -2795,7 +2795,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		location.click();
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("//li[normalize-space()='OT-main']")).click();
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", driver.findElement(By.xpath("//li[normalize-space()='L4 - IPD OT']")));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true); arguments[0].click();", driver.findElement(By.xpath("//li[normalize-space()='"+OT_PharmacyLocation+"']")));
 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")).click();
@@ -3394,8 +3394,10 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		
 		
 		Thread.sleep(2000);
-			//////////////////OR Medicine Admin			
-			driver.findElement(By.xpath("//label[normalize-space()='OR Medicine Admin']")).click();
+
+		//////////////////OR Medicine Admin			
+
+		    	driver.findElement(By.xpath("//label[normalize-space()='OR Medicine Admin']")).click();
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//i[@title='Encounter']")).click();
 				Thread.sleep(1000);

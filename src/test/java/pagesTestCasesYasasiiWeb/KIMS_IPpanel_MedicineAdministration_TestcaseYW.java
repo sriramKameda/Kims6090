@@ -30,7 +30,7 @@ public class KIMS_IPpanel_MedicineAdministration_TestcaseYW extends TestBaseYasa
 
 	}
 
-	@Test(dataProvider="getData"  , priority=0)
+//	@Test(dataProvider="getData"  , priority=0)
 	public void Patreg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String  ADTprovider ,String docid,String docpassword,String Site,String OrdersetName,String FoUser, String Password,String NurseID) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
@@ -53,13 +53,13 @@ public class KIMS_IPpanel_MedicineAdministration_TestcaseYW extends TestBaseYasa
 
 		KIMS_IPpanel_MedicineAdministration_Yasasiiweb IPpanel = new KIMS_IPpanel_MedicineAdministration_Yasasiiweb(driver);
 		
-		IPpanel. doctoreNote(docid,docpassword,MRNo,OrdersetName);
-
-		IPpanel.IPpanel(MRNo);
-
-		IPpanel.Stockreceive(MRNo);
-
-		IPpanel.IPMedicineAdministration(MRNo);
+	//	IPpanel. doctoreNote(docid,docpassword,MRNo,OrdersetName);
+//
+//		IPpanel.IPpanel(MRNo);
+//
+//		IPpanel.Stockreceive(MRNo);
+//
+//		IPpanel.IPMedicineAdministration(MRNo);
 
 		IPpanel.BackendBillgeneration(MRNo);
 

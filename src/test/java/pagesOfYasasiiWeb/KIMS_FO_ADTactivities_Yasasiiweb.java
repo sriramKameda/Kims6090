@@ -600,9 +600,8 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='col-12 col-md-3 ta-r']//i[@class='ki ki-search']")
 	public WebElement invoiceSearch;
 
-//	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
-//	public WebElement options;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]")
+
+	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v bydefault']")
 	public WebElement options;
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")

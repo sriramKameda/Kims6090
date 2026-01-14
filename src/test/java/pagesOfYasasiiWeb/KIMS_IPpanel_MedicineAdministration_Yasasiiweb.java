@@ -294,7 +294,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "//label[@class='check-container zero-label mt0 mr0']//span[@class='checkmark']")
 	public WebElement SelectAll;
 
-	@FindBy(xpath = "//div[@class='form-container pt-1 billing-card cb-40-bottom ng-star-inserted']//div[3]//div[1]//div[2]//div[2]//div[3]//div[7]//label[1]//i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[2]/i[1]")
 	public WebElement batchdelete;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[4]")
@@ -1047,13 +1047,17 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		
 		SelectAll.click();
 		Thread.sleep(2000);
-//		
-//		batchdelete.click();
-//		Thread.sleep(1000);
-//		Stockinfo.click();
-//		Thread.sleep(1200);
-//		BatchSelect.click();
-//		Thread.sleep(1200);
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(batchdelete));
+		Thread.sleep(3000);		
+		
+		batchdelete.click();
+		Thread.sleep(1000);
+		Stockinfo.click();
+		Thread.sleep(1200);
+		BatchSelect.click();
+		Thread.sleep(1200);
 		prescriptionPrint.click();
 		Thread.sleep(8000);
 
@@ -1085,9 +1089,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(4000);
 		
 		
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(Hamburger));
-		Thread.sleep(30000);		
+		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait1.until(ExpectedConditions.elementToBeClickable(Hamburger));
+		Thread.sleep(10000);		
 		
 		Status.click();
 		Thread.sleep(800);

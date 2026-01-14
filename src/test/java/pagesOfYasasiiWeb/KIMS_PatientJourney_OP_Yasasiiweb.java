@@ -1593,6 +1593,21 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		DraftGenerate.click();
 		Thread.sleep(1000);
+
+		Thread.sleep(500);
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
 		OK1.click();
 		Thread.sleep(1000);
 
@@ -1705,6 +1720,22 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		DraftGenerate.click();
 		Thread.sleep(1000);
+		
+		Thread.sleep(500);
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+
+		
 		OK1.click();
 		Thread.sleep(1000);
 

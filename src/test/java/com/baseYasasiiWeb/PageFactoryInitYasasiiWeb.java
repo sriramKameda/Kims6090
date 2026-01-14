@@ -45,8 +45,6 @@ public class PageFactoryInitYasasiiWeb {
 	public String OT_PharmacyLocation="L4 - IPD OT";;
 	public String SecondNurse="Anitha R (NGL17697)";
 	
-	
-	
 	public static String Excelfilepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\SP55-KIMSDataSheet.xls";
 
 

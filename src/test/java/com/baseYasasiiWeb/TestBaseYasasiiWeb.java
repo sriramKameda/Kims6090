@@ -28,6 +28,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.*;
 
 import com.codoid.products.exception.FilloException;
@@ -69,9 +70,9 @@ public class TestBaseYasasiiWeb {
 	@BeforeTest
 	public static void startTest()
 	{
-		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\extentReport.html");
+		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\extentReport.html");
 		
-		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
+		//rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
 		 
 
 		
@@ -82,6 +83,10 @@ public class TestBaseYasasiiWeb {
 
 	public void setup() {
 
+		PropertyConfigurator.configure(  TestBaseYasasiiWeb.class.getClassLoader().getResource("propertiesYasasiiWeb/log4j.properties"));
+		    log.info("Log4j initialized successfully");
+		
+		
 		if(driver==null) {
 
 
@@ -223,15 +228,22 @@ public class TestBaseYasasiiWeb {
 			test.log(LogStatus.SKIP,"Skip test is"+res.getTestName());
 		}
 		
+		rep.endTest(test);
+		rep.flush();
+		
 		}
 	
 	
 
 	@AfterSuite(alwaysRun = true)
 	public void extentReportEnd() {
-	rep.endTest(test);
-		rep.flush(); 
-		rep.close();
+//	rep.endTest(test);
+//		rep.flush(); 
+//		rep.close();
+		
+		 if (rep != null) {
+		        rep.close();  
+		 }// close once
 	}
 
 
@@ -248,7 +260,8 @@ public class TestBaseYasasiiWeb {
 	
 	
 		log.debug("Test execution completed");
+		
 	}
 
-
+	
 }
