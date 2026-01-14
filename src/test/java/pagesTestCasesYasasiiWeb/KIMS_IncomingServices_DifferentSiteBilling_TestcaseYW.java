@@ -57,7 +57,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_TestcaseYW extends TestB
 
 		inc.Billing_inTVM(Site1, MRNo);
 
-///////////		inc.Billing_inKollam(Site2, MRNo, Provider1,Provider);
+		inc.Billing_inKollam(Site2, MRNo, Provider1,Provider);
 
 
 	}

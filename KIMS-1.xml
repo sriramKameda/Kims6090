@@ -20,6 +20,9 @@
       <class name="pagesTestCasesYasasiiWeb.KIMS_ER_Admission_IPEnquiry_Staypass_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_AdvanceRefund_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_Diagnosis_LogView_testcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PharmacyQueue_TestcaseYW"/>
+      
+      
       
     </classes>
   </test> <!-- Test -->

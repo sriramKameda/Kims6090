@@ -46,7 +46,7 @@ public class KIMS_PatientJourney_IP_TestcaseYW extends TestBaseYasasiiWeb {
 
 	}
 
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 	public void BirthReg(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
 			String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
 			String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
@@ -62,7 +62,7 @@ public class KIMS_PatientJourney_IP_TestcaseYW extends TestBaseYasasiiWeb {
 
 	}
 
-//@Test(dataProvider="getData"  , priority=1)
+@Test(dataProvider="getData"  , priority=1)
 	public void IPMEdication(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
 			String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
 			String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
@@ -84,7 +84,7 @@ public class KIMS_PatientJourney_IP_TestcaseYW extends TestBaseYasasiiWeb {
 
 	}
 
-//@Test(dataProvider="getData", priority=2)
+@Test(dataProvider="getData", priority=2)
 public void MedicineAdmin(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
 		String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
 		String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,
@@ -107,7 +107,7 @@ public void MedicineAdmin(String title, String Name, String Lastname, String Dob
 	
 	
 }
-//@Test(dataProvider="getData", priority=3)
+@Test(dataProvider="getData", priority=3)
 public void medicine_discontinue(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
 		String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,
 		String OrdersetName, String FoUser, String Password, String NurseID, String Pharmacist_Id,

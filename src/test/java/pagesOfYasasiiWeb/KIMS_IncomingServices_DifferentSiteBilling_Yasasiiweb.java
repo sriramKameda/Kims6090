@@ -936,9 +936,9 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();	
 		Thread.sleep(800);
-		//Orders.click();
+		Orders.click();
 		Thread.sleep(800);
-		//driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
+		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
 		Thread.sleep(800);
 		serviceDelete.click();
 		Thread.sleep(800);
@@ -987,7 +987,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		//js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
-		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site2+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);
@@ -1057,30 +1057,38 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(1000);
 		Service.click();
 		Thread.sleep(800);
+		encProvider.clear();
+		Thread.sleep(800);
+		encProvider.sendKeys(Provider1);
+		Thread.sleep(1200);
+		driver.findElement(By.xpath("//li[normalize-space()='"+Provider1+"']")).click();
+		Thread.sleep(1000);
 		siteSelect.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();	
 		Thread.sleep(800);
-//		Orders.click();
-//		Thread.sleep(800);
-//		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
+		Orders.click();
 		Thread.sleep(800);
-		billSave.click();
-		Thread.sleep(1800);
-		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();	
+		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
 		Thread.sleep(800);
-		encProvider.click();
-		Thread.sleep(800);
+	
+		
 		encProvider.clear();
 		Thread.sleep(800);
-		encProvider.sendKeys(Provider);
+		encProvider.sendKeys(Provider1);
 		Thread.sleep(1200);
-		driver.findElement(By.xpath("//li[normalize-space()='"+Provider+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Provider1+"']")).click();
 		Thread.sleep(1000);
 		billSave.click();
-		Thread.sleep(800);
+		Thread.sleep(2800);
+		
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();	
-		Thread.sleep(800); 
+		Thread.sleep(2000);
+	
+//		billSave.click();
+//		Thread.sleep(800);
+//		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();	
+//		Thread.sleep(800); 
 		AvailedService.click();
 		Thread.sleep(800);
 		AvailedSearch.click();

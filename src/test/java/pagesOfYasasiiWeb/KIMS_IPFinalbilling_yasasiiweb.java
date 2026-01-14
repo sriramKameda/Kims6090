@@ -83,6 +83,11 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//i[@title='Add']")
 	public WebElement Clickadd;
+	
+
+	@FindBy(xpath = "//span[@class='icon-btn btn-dark-green inline']//i[@class='ki ki-plus']")
+	public WebElement Addd;
+	
 
 	@FindBy(xpath = "//button[@class='btn-feedback']")
 	public WebElement HowDidYouKnow;
@@ -335,7 +340,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[normalize-space()='Settle Invoice']")
 	public WebElement SettleInvoice;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement Mrnoenter3;
 
 	@FindBy(xpath = "(//i[@title='Settle Invoice'])[1]")
@@ -612,6 +617,24 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[@title='Apply Adjustment'][1]")
 	public WebElement Adjustment;
 
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-generation-adjustment[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/input[1]")
+	public WebElement All;
+
+	@FindBy(xpath = "//button[@title='Add']")
+	public WebElement Add1;
+
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-generation-adjustment[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement ADJamount;
+	
+	@FindBy(xpath = "//i[@title='Adjustment Log']")
+	public WebElement AdjLog;
+
+	@FindBy(xpath = "//button[normalize-space()='Close']")
+	public WebElement close;
+	
+	
+	
+	
 	@FindBy(xpath = "//label[@class='btn-feedback ng-star-inserted']")
 	public WebElement Additionalinfo;
 
@@ -691,7 +714,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='col-12 col-md-3 ta-r']//i[@class='ki ki-search']")
 	public WebElement invoiceSearch;
 
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v bydefault']")
 	public WebElement options;
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
@@ -1041,9 +1064,9 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//input[@id='guarantorphonehome']")).sendKeys("9845123658");
 		Thread.sleep(600);
 		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", Add);
+		js.executeScript("arguments[0].scrollIntoView(true);", Addd);
 		Thread.sleep(600);
-		Add.click();
+		Addd.click();
 		Thread.sleep(600);
 
 
@@ -1937,6 +1960,39 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		}
 		Thread.sleep(1000);
 
+		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+
+		Thread.sleep(2000);
+		NameSearch.clear();
+		Thread.sleep(1000);
+		NameSearch.sendKeys(MRNO);
+		Thread.sleep(1000);
+		SearchIcon1.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();", Depclearance);
+		Thread.sleep(3000);
+		act.moveToElement(Depclearance).click().build().perform();
+		//Depclearance.click();
+		Thread.sleep(1000);
+
+		pharmacycheckbox.click();
+		Thread.sleep(1000);
+
+
+		verifiedBy.click();
+		Thread.sleep(1000);
+		verifiedBy.sendKeys(NurseID);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+NurseID+"')])")).click();
+		Thread.sleep(1000);
+		verifyPassword.click();
+		verifyPassword.sendKeys(Password);
+		Thread.sleep(1000);
+		verifySave.click();
+		Thread.sleep(2000);   
 
 
 	}
@@ -1977,7 +2033,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);	
 
-	/*swa	Menu.click();
+		Menu.click();
 		Thread.sleep(2000);
 		Thread.sleep(1000);
 		EMRHomeScreen.click();
@@ -2218,84 +2274,84 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(400);
 		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);swa */
+		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 
-
-		///Pharmacy Clearance
-		Thread.sleep(1000);
-		Logoutarw.click();
-		Thread.sleep(1000);
-		Logoutbutton.click();
-		Thread.sleep(1000);
-		Logoutconfrm.click();
-		Thread.sleep(1000);
-
-
-		//login
-		userid.click();
-		Thread.sleep(1000);
-		userid.sendKeys(NurseID);
-		Thread.sleep(1000);
-		password.click();
-		password.sendKeys(Password); 
-		Thread.sleep(1000);
-		site.click();
-		Thread.sleep(1000);
-//						JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
-		driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
-
-
-		///	driver.navigate().refresh();
-		Thread.sleep(2000);
-		Hamberger.click();
-		Thread.sleep(1000);
-		EMR.click();
-		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
-		Thread.sleep(1000);
-		WhiteBoard.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
-		Thread.sleep(2000);
-
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
-
-		Thread.sleep(2000);
-		NameSearch.clear();
-		Thread.sleep(1000);
-		NameSearch.sendKeys(MRNo);
-		Thread.sleep(1000);
-		SearchIcon1.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
-		Thread.sleep(2000);
-		js.executeScript("arguments[0].scrollIntoView();", Depclearance);
-		Thread.sleep(3000);
-		act.moveToElement(Depclearance).click().build().perform();
-		//Depclearance.click();
-		Thread.sleep(1000);
-
-		pharmacycheckbox.click();
-		Thread.sleep(1000);
-
-
-		verifiedBy.click();
-		Thread.sleep(1000);
-		verifiedBy.sendKeys(NurseID);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+NurseID+"')])")).click();
-		Thread.sleep(1000);
-		verifyPassword.click();
-		verifyPassword.sendKeys(Password);
-		Thread.sleep(1000);
-		verifySave.click();
-		Thread.sleep(2000);   
+//
+//		///Pharmacy Clearance
+//		Thread.sleep(1000);
+//		Logoutarw.click();
+//		Thread.sleep(1000);
+//		Logoutbutton.click();
+//		Thread.sleep(1000);
+//		Logoutconfrm.click();
+//		Thread.sleep(1000);
+//
+//
+//		//login
+//		userid.click();
+//		Thread.sleep(1000);
+//		userid.sendKeys(NurseID);
+//		Thread.sleep(1000);
+//		password.click();
+//		password.sendKeys(Password); 
+//		Thread.sleep(1000);
+//		site.click();
+//		Thread.sleep(1000);
+////						JavascriptExecutor js= (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+//		driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+//		Thread.sleep(5000);
+//
+//
+//		///	driver.navigate().refresh();
+//		Thread.sleep(2000);
+//		Hamberger.click();
+//		Thread.sleep(1000);
+//		EMR.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
+//		Thread.sleep(1000);
+//		WhiteBoard.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
+//		Thread.sleep(2000);
+//
+//		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+//
+//		Thread.sleep(2000);
+//		NameSearch.clear();
+//		Thread.sleep(1000);
+//		NameSearch.sendKeys(MRNo);
+//		Thread.sleep(1000);
+//		SearchIcon1.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
+//		Thread.sleep(2000);
+//		js.executeScript("arguments[0].scrollIntoView();", Depclearance);
+//		Thread.sleep(3000);
+//		act.moveToElement(Depclearance).click().build().perform();
+//		//Depclearance.click();
+//		Thread.sleep(1000);
+//
+//		pharmacycheckbox.click();
+//		Thread.sleep(1000);
+//
+//
+//		verifiedBy.click();
+//		Thread.sleep(1000);
+//		verifiedBy.sendKeys(NurseID);
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//*[contains(text(),'"+NurseID+"')])")).click();
+//		Thread.sleep(1000);
+//		verifyPassword.click();
+//		verifyPassword.sendKeys(Password);
+//		Thread.sleep(1000);
+//		verifySave.click();
+//		Thread.sleep(2000);   
 
 
 	}
@@ -2554,82 +2610,106 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Adjustment.click();
 		Thread.sleep(1000);
-		AdjustmentPercentage.click();
+		All.click();
 		Thread.sleep(1000);
-		AdjustmentPercentage.sendKeys("25");
+		ADJamount.click();
 		Thread.sleep(1000);
-		RaiseRequest.click();
+		ADJamount.sendKeys("500");
 		Thread.sleep(1000);
-		Authoriser.click();
+		
+		Add1.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[@title='"+authoriser+"']")).click();
+		driver.findElement(By.xpath("//button[@class='btn btn-primary sm inline ml0 ng-star-inserted']")).click();
 		Thread.sleep(1000);
-		Remarks.click();
+		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
-		Remarks.sendKeys("ok"); 
+		
+		
+		
+		
+		AdjLog.click();
+        String Adjamount =driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]")).getText();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='dailog-btn']//i[@class='ki ki-check']")).click();
-		Thread.sleep(1000);
-
-		//RCM
-		Thread.sleep(1000);
-		toggle.click();
-		Thread.sleep(1000); 
-		RCM.click();
-		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//div[normalize-space()='Approve Request']")).click();
-		Thread.sleep(1000);
-		InvoiceadjApprove.click();
-		Thread.sleep(1000);
-		patientSearch.clear();	
-		Thread.sleep(1000);
-		patientSearch.sendKeys(MRNO ,Keys.ENTER);
-		Thread.sleep(1000);
-		SearchIconFB.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[5]/lib-invoice-adj-approval[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();	
-		//CHECK.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[5]/lib-invoice-adj-approval[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")).click();	
-
-		Thread.sleep(1000);
-		remark1.click();
-		Thread.sleep(1000);
-		remark1.sendKeys("approved");
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
-		Thread.sleep(1000);
-		APPROVE.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();	
-		Thread.sleep(1000);  
-
-		///refund
-
-		toggle.click();
-		Thread.sleep(1000); 
-		//RCM.click();
-		Thread.sleep(1000);
-		invoiceCancel.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/ul[1]/li[5]/a[1]/span[1]")).click();	
-		Thread.sleep(1000);
-		patientSearch.clear();
-		Thread.sleep(1000);
-		patientSearch.sendKeys(MRNO ,Keys.ENTER);
-		Thread.sleep(1000);
-		SearchIconFB.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[5]/lib-invoice-adj-apply[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
-		Thread.sleep(1000);
-		//driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		//Thread.sleep(1000);
-		OK1.click();
-		Thread.sleep(1000);  
+		
+		System.out.println(Adjamount);
+		close.click();
+		
+//		AdjustmentPercentage.click();
+//		Thread.sleep(1000);
+//		AdjustmentPercentage.sendKeys("25");
+//		Thread.sleep(1000);
+//		RaiseRequest.click();
+//		Thread.sleep(1000);
+//		Authoriser.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//span[@title='"+authoriser+"']")).click();
+//		Thread.sleep(1000);
+//		Remarks.click();
+//		Thread.sleep(1000);
+//		Remarks.sendKeys("ok"); 
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//div[@class='dailog-btn']//i[@class='ki ki-check']")).click();
+//		Thread.sleep(1000);
+//
+//		//RCM
+//		Thread.sleep(1000);
+//		toggle.click();
+//		Thread.sleep(1000); 
+//		RCM.click();
+//		Thread.sleep(1000); 
+//		driver.findElement(By.xpath("//div[normalize-space()='Approve Request']")).click();
+//		Thread.sleep(1000);
+//		InvoiceadjApprove.click();
+//		Thread.sleep(1000);
+//		patientSearch.clear();	
+//		Thread.sleep(1000);
+//		patientSearch.sendKeys(MRNO ,Keys.ENTER);
+//		Thread.sleep(1000);
+//		SearchIconFB.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[5]/lib-invoice-adj-approval[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();	
+//		//CHECK.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[5]/lib-invoice-adj-approval[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")).click();	
+//
+//		Thread.sleep(1000);
+//		remark1.click();
+//		Thread.sleep(1000);
+//		remark1.sendKeys("approved");
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
+//		Thread.sleep(1000);
+//		APPROVE.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();	
+//		Thread.sleep(1000);  
+//
+//		///refund
+//
+//		toggle.click();
+//		Thread.sleep(1000); 
+//		//RCM.click();
+//		Thread.sleep(1000);
+//		invoiceCancel.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/ul[1]/li[5]/a[1]/span[1]")).click();	
+//		Thread.sleep(1000);
+//		patientSearch.clear();
+//		Thread.sleep(1000);
+//		patientSearch.sendKeys(MRNO ,Keys.ENTER);
+//		Thread.sleep(1000);
+//		SearchIconFB.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[5]/lib-invoice-adj-apply[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+//		Thread.sleep(1000);
+//		//driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+//		//Thread.sleep(1000);
+//		OK1.click();
+//		Thread.sleep(1000);  
 
 
 
@@ -2637,7 +2717,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		toggle.click();
 		Thread.sleep(1000); 
-		IP.click();
+//		IP.click();
 		Thread.sleep(1000); 
 		SettleInvoice.click();
 		Thread.sleep(1000);

@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -195,7 +196,7 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement serviceCounterId;// walkin
 	@FindBy(xpath = "//div[@class='modal-footer']//button[@type='button'][normalize-space()='OK']")
 	public WebElement okbutton;
-	@FindBy(xpath = "//label[@title='Call Next Token']//i[@class='ki ki-token-call']") // modal-container[@role='dialog']
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[1]/lib-patientlist[1]/form[1]/div[2]/div[1]/div[2]/lib-queue-caller-parent[1]/form[1]/div[2]/div[1]/div[1]/div[1]/label[2]/i[1]") // modal-container[@role='dialog']
 	public WebElement callNextToken;
 
 	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='bar2']")
@@ -232,6 +233,32 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		foTab.click();
 		Thread.sleep(1000);
 		queueMaster.click();
+		Thread.sleep(1000);
+		
+		queuetypeid.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Pharmacy Queue']")).click();
+		Thread.sleep(1000);
+		Search.click();
+		Thread.sleep(1000);
+		Search.sendKeys(QueueName, Keys.ENTER);
+		Thread.sleep(1000);
+		
+	 List<WebElement> Element= driver.findElements(By.xpath("//div[@title='"+QueueName+"']"));
+		Thread.sleep(1000);
+		int A =Element.size();
+		
+		if(A!=0) {
+			driver.findElement(By.xpath("//div[@title='"+QueueName+"']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@class='result-actions']//i[@class='ki ki-trash']")).click();
+			Thread.sleep(1000);	
+			driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']//i[@class='ki ki-check']")).click();
+			Thread.sleep(1000);
+			
+			
+		}
+		
 		Thread.sleep(1000);
 		queueName.sendKeys(QueueName);
 		Thread.sleep(1000);
@@ -619,9 +646,20 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		walkin.click();
 		Thread.sleep(1000);
 		okbutton.click();
+		Thread.sleep(2000);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(45));
+
+	
+	 driver.findElement(By.xpath("//modal-container[@role='dialog']")).click();
 		Thread.sleep(1000);
+
+
+		// Now click the icon
+		wait.until(ExpectedConditions.elementToBeClickable(callNextToken)).click();
+
 //		callNextToken.click();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		/////////////////////////
 //		//Robot t = new Robot();
 //		t.keyPress(KeyEvent.VK_CONTROL);
@@ -650,11 +688,21 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		driver.navigate().back();
 		Thread.sleep(3000);
 
+		 driver.findElement(By.xpath("//button[normalize-space()='Cancel']")).click();
+			Thread.sleep(1000);
+		
+		
+		
 	//	Robot t = new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		
 		menuToggle.click();
 		Thread.sleep(1000);
 		mastersModule.click();
