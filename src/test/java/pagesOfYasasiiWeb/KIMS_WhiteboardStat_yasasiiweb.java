@@ -387,7 +387,7 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(1000);
 		medicineAdd.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		EMRsave.click();
 		Thread.sleep(1000);
 

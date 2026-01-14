@@ -600,7 +600,9 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='col-12 col-md-3 ta-r']//i[@class='ki ki-search']")
 	public WebElement invoiceSearch;
 
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	public WebElement options;
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]")
 	public WebElement options;
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
@@ -2018,6 +2020,8 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@title='Search By'][normalize-space()='Search By']")).click();
 	Thread.sleep(2000);
 	
+	driver.findElement(By.xpath("//div[@class='col-md-6 col-3 ta-r pr-1']//button[@type='button'][normalize-space()='Clear']")).click();
+	Thread.sleep(1000);
 	Invoicemode.click();
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//li[normalize-space()='Generated']")).click();

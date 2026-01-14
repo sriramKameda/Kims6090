@@ -59,7 +59,7 @@ public void instruction(String title,String Name,String Lastname ,String Dob, St
 		}
 
 
-//@AfterClass
+@AfterClass
 public void logout() throws Exception
 {
 	

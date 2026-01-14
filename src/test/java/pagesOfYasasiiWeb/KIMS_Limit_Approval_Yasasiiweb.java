@@ -1310,7 +1310,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		ExpandedView.click();
 		Thread.sleep(1000);
-		// Waiting.click();
+		 Waiting.click();
 		Thread.sleep(1000);
 
 		//	driver.findElement(By.xpath("//input[@id='maincategory']")).click();
@@ -1908,8 +1908,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Search1.click();
 		Thread.sleep(600);
-
-		Status.click();
+		driver.findElement(By.xpath("//ki-select-control[@title='Status']//input[@id='undefined']")).click();
+		
+		//Status.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Approve']")).click();
 		Thread.sleep(1000);

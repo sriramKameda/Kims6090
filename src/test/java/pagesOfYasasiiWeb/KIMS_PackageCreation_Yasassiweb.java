@@ -301,8 +301,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement cooperateDropdown;
 	@FindBy(xpath = "//div[@title='DefaultTvm']")
 	public WebElement defaultTvm;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-package-to-site-mapping[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/label[1]/i[1]")
-	public WebElement editIconForDefaultTvm;
+	@FindBy(xpath = "//label[@title='Edit']//i[@class='ki ki-pencil']")
+	public WebElement editIconForDefaultPlan;
 	@FindBy(xpath = "//input[@id='packageid']")
 	public WebElement packageNameDropdown;
 
@@ -371,8 +371,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(2000);
 		menuToggle.click();
 		Thread.sleep(1000);
-		mastersModule.click(); // del for full run
-		Thread.sleep(1000); // delfor full run
+		//mastersModule.click(); // del for full run
+		//Thread.sleep(1000); // delfor full run
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageGroup.click();
@@ -986,8 +986,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-		mastersModule.click(); // del
-		Thread.sleep(1000); // del
+//		mastersModule.click(); // del
+//		Thread.sleep(1000); // del
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageDefinition.click();
@@ -1134,10 +1134,10 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		editIcon.click();
 		Thread.sleep(1000);
-//		selectplan.click();
-//		Thread.sleep(1000);
-//
-//		selectDefaultTvm.click();
+		selectplan.click();
+		Thread.sleep(1000);
+        driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+//		//li[normalize-space()='DefaultPlan']
 		Thread.sleep(1000);
 		serviceTabTariffScreen.click();
 		Thread.sleep(1000);
@@ -1236,7 +1236,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-		mastersModule.click(); //del for full run
+		//mastersModule.click(); //del for full run
 		Thread.sleep(1000); 
 		rcmPackage.click();
 		Thread.sleep(1000);
@@ -1273,9 +1273,9 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-		// mastersModule.click(); // del for full run
-		//Thread.sleep(1000); // del for full run
-		// rcmPackage.click();//
+//		 mastersModule.click(); // del for full run
+//		Thread.sleep(1000); // del for full run
+		 rcmPackage.click();//
 		 Thread.sleep(1000);
 		packageTOsiteMappingTab.click();
 		Thread.sleep(2000);
@@ -1288,20 +1288,23 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 //		WaitUtility.waitForElementToBeClickable(driver, selectDefault, 30);
 		selectDefault.click();
 		Thread.sleep(1000);
-		//defaultTvm.click();
-		driver.findElement(By.xpath("//div[@title='DefaultPlan']"));
+		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys("DefaultPlan");
+		Thread.sleep(1000);
+		searchIcon.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@title='DefaultPlan']")).click();
 		
 		Thread.sleep(1000);
 	
-		wait.until(ExpectedConditions.elementToBeClickable(editIconForDefaultTvm));
-		Thread.sleep(3000);		
-
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",editIconForDefaultTvm );
-		Thread.sleep(1000);
-		
+//		wait.until(ExpectedConditions.elementToBeClickable(editIconForDefaultPlan));
+//		Thread.sleep(3000);		
+//
+//		JavascriptExecutor js= (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();",editIconForDefaultPlan );
+//		Thread.sleep(1000);
+//		
 //		PageUtility.clickJavaScripExcecutor(editIconForDefaultTvm, driver);
-		editIconForDefaultTvm.click();
+		editIconForDefaultPlan.click();
 		Thread.sleep(1000);
 		packageNameDropdown.click();
 		Thread.sleep(1000);

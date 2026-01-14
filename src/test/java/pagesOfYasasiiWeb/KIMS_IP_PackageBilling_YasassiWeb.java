@@ -526,8 +526,9 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//i[@class='ki ki-chevron-double-right']")
 	public WebElement doublearrow;
 
-	// @FindBy(xpath = "") public WebElement ;
-	// @FindBy(xpath = "") public WebElement ;
+	 @FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-package-allocation[1]/div[1]/div[1]/form[1]/div[4]/div[3]/div[1]/div[1]/table[1]/thead[1]/tr[1]/th[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	 public WebElement deallocatecheckbox;
+	 @FindBy(xpath = "//i[@class='ki ki-chevron-double-left']") public WebElement doubleLeft;
 	// @FindBy(xpath = "") public WebElement ;
 	// @FindBy(xpath = "") public WebElement ;
 	// @FindBy(xpath = "") public WebElement ;
@@ -1334,7 +1335,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 
 		servicesTab.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		saveButton.click();
 		Thread.sleep(2000);
 		succefullyOK.click();
@@ -1383,6 +1384,12 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//span[normalize-space()='Package Availed Amount']")).click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0, 1000);");
+		Thread.sleep(1000);
+		deallocatecheckbox.click();
+		Thread.sleep(1000);
+		doubleLeft.click();
+		Thread.sleep(1000);
+		saveButton.click();
 
 	}
 

@@ -37,10 +37,10 @@ public class KIMS_PharmacyQueue_TestcaseYW extends TestBaseYasasiiWeb{
 		
 		KIMS_PharmacyQueue_Yasassiweb pharmacyQueue = new KIMS_PharmacyQueue_Yasassiweb(driver);
 		
-//		pharmacyQueue.queueCreationNew(QueueName);
-//		
-//		pharmacyQueue.queue(QueueName);
-//		
+		pharmacyQueue.queueCreationNew(QueueName);
+		
+		pharmacyQueue.queue(QueueName);
+		
 		pharmacyQueue.tokenSend(Name,mobile,Token,MRNo);
 	
 		pharmacyQueue.Pharmacy_Kiosk(QueueName);

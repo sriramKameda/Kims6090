@@ -1047,13 +1047,13 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		
 		SelectAll.click();
 		Thread.sleep(2000);
-		
-		batchdelete.click();
-		Thread.sleep(1000);
-		Stockinfo.click();
-		Thread.sleep(1200);
-		BatchSelect.click();
-		Thread.sleep(1200);
+//		
+//		batchdelete.click();
+//		Thread.sleep(1000);
+//		Stockinfo.click();
+//		Thread.sleep(1200);
+//		BatchSelect.click();
+//		Thread.sleep(1200);
 		prescriptionPrint.click();
 		Thread.sleep(8000);
 

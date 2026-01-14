@@ -1,5 +1,8 @@
 package pagesOfYasasiiWeb;
 
+import org.apache.tools.ant.launch.Locator;
+import org.openqa.selenium.devtools.v113.page.Page;
+
 import com.microsoft.playwright.*;
 
 public class Playwright_inventory {

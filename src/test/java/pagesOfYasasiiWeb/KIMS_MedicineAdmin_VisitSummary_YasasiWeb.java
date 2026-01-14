@@ -753,9 +753,9 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 //	Thread.sleep(500);
 //	Lock.click();
 //	Thread.sleep(500); 
-		/*	swa	DoctorNote.click();
+			DoctorNote.click();
 	   Thread.sleep(1000);
-		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
+	   List<WebElement> dynamicElement1=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
 
 		if(dynamicElement1.size() !=0)
 		{
@@ -925,7 +925,10 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(500);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
-
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		Thread.sleep(500);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
 		EmrSave.click();
 		Thread.sleep(3000); 
 
@@ -1007,7 +1010,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		medicineAdd.click();
 		Thread.sleep(1000);
 		EmrSave.click();
-		Thread.sleep(2000);swa */
+		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(EnteredNote));
 		Thread.sleep(3000);
 
@@ -1021,7 +1024,7 @@ public class KIMS_MedicineAdmin_VisitSummary_YasasiWeb extends PageFactoryInitYa
 		Thread.sleep(1000);
 		cpoePrescriptionPrint.click();
 		Thread.sleep(5000);
-			Robot t=new Robot();
+			//Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
 		t.keyRelease(KeyEvent.VK_ESCAPE);

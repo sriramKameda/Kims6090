@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
@@ -512,7 +513,13 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		lastname.clear();
 		Thread.sleep(500);
-		lastname.sendKeys(LastName);
+        String lastName =RandomString.lastName();
+		
+		System.out.println(lastName + "LastName" );
+		lastname.click();
+		Thread.sleep(500);
+		lastname.sendKeys(lastName);
+
 		Thread.sleep(500);
 		gender.click();
 		Thread.sleep(500);

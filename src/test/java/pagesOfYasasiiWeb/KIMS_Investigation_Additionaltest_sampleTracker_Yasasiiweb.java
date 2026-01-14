@@ -543,7 +543,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 
 
-		Hamberger.click();
+	Hamberger.click();
 		Thread.sleep(1000);
 		Investigation.click();
 		Thread.sleep(1000);
@@ -561,7 +561,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 
 		//Sample Collection
 
-		SearchField.click();
+			SearchField.click();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
@@ -880,7 +880,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		RepeatTest.click();
 		Thread.sleep(1000);
 		ivstgnSave.click();
-		Thread.sleep(1000);  
+		Thread.sleep(1000); 
 
 
 		///Repeat-Request	

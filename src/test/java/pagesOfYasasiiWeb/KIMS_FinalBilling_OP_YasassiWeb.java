@@ -318,10 +318,13 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	
 	@FindBy(xpath = "//div[contains(@class,'col-12 col-md-3 ta-r')]//i[contains(@class,'ki ki-search')]")
 	public WebElement Search2;
-
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//
+//	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	public WebElement ThreeDot;
+	
+	@FindBy(xpath = "//label[@class='multi-action item-value']")
 	public WebElement ThreeDot;
-
+	
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
 	public WebElement DraftFinalization;
 

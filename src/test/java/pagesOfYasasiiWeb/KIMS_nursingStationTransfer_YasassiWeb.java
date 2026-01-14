@@ -796,7 +796,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 	public void PateintStatusEdit(String MRNo) throws InterruptedException {
 
 		Thread.sleep(1000);
-		Hamburger.click();
+		 Hamburger.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//label[normalize-space()='Modules']")).click();
 		Thread.sleep(800);

@@ -658,10 +658,10 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		}
 		Thread.sleep(1000);
 
-		/*
-		 * UParrow.click(); Thread.sleep(1000); act.doubleClick(UParrow).perform();
-		 * Thread.sleep(1000); lock.click(); Thread.sleep(1000);
-		 */
+		
+		// UParrow.click(); Thread.sleep(1000); act.doubleClick(UParrow).perform();
+		 // Thread.sleep(1000); lock.click(); Thread.sleep(1000);
+		 
 		DoctorNote.click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement11 = driver

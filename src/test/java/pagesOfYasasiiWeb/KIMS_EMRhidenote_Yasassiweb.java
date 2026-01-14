@@ -557,7 +557,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		///printUnckeck.click();
 		//Thread.sleep(1000);
 		billSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -938,7 +938,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 	}
 
 
-	public void CPOE(String SecondNurse,String MRNo) throws InterruptedException, AWTException {
+	public void CPOE(String MRNo) throws InterruptedException, AWTException {
 
 		
 		Thread.sleep(3000);
@@ -1054,10 +1054,10 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 			VerifiedBy.click();
 			Thread.sleep(700);
 			VerifiedBy.sendKeys(SecondNurse);
-			Thread.sleep(700);
-			//driver.findElement(By.xpath("//li[normalize-space()='"+SecondNurse+"']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//li[normalize-space()='"+SecondNurse+"']")).click();
 			
-			driver.findElement(By.xpath("//li[contains(normalize-space(),'"+SecondNurse+"')]")).click();
+			//driver.findElement(By.xpath("//li[contains(normalize-space(),'"+SecondNurse+"')]")).click();
 			Thread.sleep(700);
 			Password1.click();
 			Thread.sleep(700);

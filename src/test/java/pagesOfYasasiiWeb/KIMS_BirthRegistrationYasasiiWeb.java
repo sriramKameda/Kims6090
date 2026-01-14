@@ -867,7 +867,9 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 	@FindBy(xpath = "//button[normalize-space()='Financial Clearance']")
 	public WebElement Financial_Clearance;
 
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	public WebElement options;
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]")
 	public WebElement options;
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")

@@ -55,9 +55,10 @@ public void Hidenote(String title,String Name,String lastname,String Dob, String
 		
 		hide.DoctorNote(DOCuser, DOCpassword, MRNo, ADTprovider);
 		
-		hide.CPOE( SecondNurse,MRNo);
+		hide.CPOE( MRNo);
 		
 		}
+
 
 
 @AfterClass

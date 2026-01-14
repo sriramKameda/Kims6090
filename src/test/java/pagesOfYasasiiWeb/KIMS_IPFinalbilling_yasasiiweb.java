@@ -691,8 +691,11 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='col-12 col-md-3 ta-r']//i[@class='ki ki-search']")
 	public WebElement invoiceSearch;
 
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+//	public WebElement options;
+	@FindBy(xpath = "//label[@class='multi-action item-value']")
 	public WebElement options;
+
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
 	public WebElement DraftFinalization;
@@ -1977,7 +1980,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);	
 
-	/*swa	Menu.click();
+	   Menu.click();
 		Thread.sleep(2000);
 		Thread.sleep(1000);
 		EMRHomeScreen.click();
@@ -2218,7 +2221,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(400);
 		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);swa */
+		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 
 
@@ -2263,7 +2266,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
 		Thread.sleep(2000);
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
 
 		Thread.sleep(2000);

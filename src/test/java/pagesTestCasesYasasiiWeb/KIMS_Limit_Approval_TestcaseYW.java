@@ -30,7 +30,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void pricebyUser(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -52,7 +52,6 @@ public void LIMITBilling(String codeType , String code,String ServiceName , Stri
 		    
 		KIMS_Limit_Approval_Yasasiiweb price = new KIMS_Limit_Approval_Yasasiiweb(driver);
 		
-    	
 		price.EncounterBilling(User, Password, MRNO, ServiceName);
 		
 		price.DoctorNote(DOCuser, DOCpassword, MRNO, ServiceName);
