@@ -740,6 +740,8 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 			Thread.sleep(1000);
 			save.click();
 			Thread.sleep(3000);
+			driver.findElement(By.xpath("(//div[@class='modal-body']//button[@type='button'][normalize-space()='OK'])[1]")).click();
+			Thread.sleep(1000);
 			authoriser.click();
 			Thread.sleep(1000);
 			SearchAuth.sendKeys(AUTHPERSON);

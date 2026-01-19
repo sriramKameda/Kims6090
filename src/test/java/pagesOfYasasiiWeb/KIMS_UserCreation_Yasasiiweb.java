@@ -5,11 +5,17 @@ import static org.junit.Assert.assertTrue;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -165,7 +171,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath="//input[@id='encountersubmodeid']")
 	public WebElement SubMode;
-	
+
 	@FindBy(xpath="//input[@id='paymodeid']")
 	public WebElement PayMode;
 
@@ -452,17 +458,17 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//input[@id='name']")
 	public WebElement Rule;
 
-		@FindBy(xpath="//input[@id='oldpassword']")
-		public WebElement OldPassword;
-	
-		@FindBy(xpath = "//input[@id='newpassword']")
-		public WebElement NewPassword;
-	
-		@FindBy(xpath = "//input[@id='confirmpassword']")
-		public WebElement ConfirmPassword;
-	
-		@FindBy(xpath = "//button[@class='btn btn-dark-green active']")
-		public WebElement Save1;
+	@FindBy(xpath="//input[@id='oldpassword']")
+	public WebElement OldPassword;
+
+	@FindBy(xpath = "//input[@id='newpassword']")
+	public WebElement NewPassword;
+
+	@FindBy(xpath = "//input[@id='confirmpassword']")
+	public WebElement ConfirmPassword;
+
+	@FindBy(xpath = "//button[@class='btn btn-dark-green active']")
+	public WebElement Save1;
 
 
 
@@ -477,7 +483,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 
 
-	public void userCreation(String FirstName ,String MiddleName,String LastName,String Gender,String PhoneNumber,String userId,String UserType,String Department,String Designation,String allowedSites,String Userprofile,String Passsword,String DOJ ,String emailid, String DOB , String encounterCreation,String modules1,String modules2,String modules3,String modules4,String modules5,String modules6,String modules7,String modules8,String deafultmodule,String RegistrationNO,String Country) throws InterruptedException, AWTException{
+	public void userCreation(String FirstName ,String MiddleName,String LastName,String Gender,String PhoneNumber,String userId,String UserType,String Department,String Designation,String allowedSites,String Userprofile,String Passsword,String DOJ ,String emailid, String DOB , String encounterCreation,String modules1,String modules2,String modules3,String modules4,String modules5,String modules6,String modules7,String modules8,String deafultmodule,String RegistrationNO,String Country) throws InterruptedException, AWTException, IOException{
 
 
 		Thread.sleep(2000);
@@ -513,8 +519,8 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		lastname.clear();
 		Thread.sleep(500);
-        String lastName =RandomString.lastName();
-		
+		String lastName =RandomString.lastName();
+
 		System.out.println(lastName + "LastName" );
 		lastname.click();
 		Thread.sleep(500);
@@ -538,7 +544,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		EmployeeId.clear();
 		Thread.sleep(500);
-		EmployeeId.sendKeys(userId);
+		EmployeeId.sendKeys( "Calv"+lastName);
 		Thread.sleep(500);
 
 		DOb.clear();
@@ -814,6 +820,32 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 
+		search.clear();
+		search.sendKeys(lastName, Keys.ENTER);
+		String UserID	= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-root[1]/app-userregister[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]")).getText();
+		Thread.sleep(500);
+
+
+		
+		System.out.println(UserID);
+
+		File src=new File(Excelfilepath);
+		FileInputStream fis=new FileInputStream(src);
+		HSSFWorkbook wb=new HSSFWorkbook(fis);
+		HSSFSheet BirthRegistration=wb.getSheetAt(20);	
+		int i=BirthRegistration.getLastRowNum();
+		System.out.println("Number of rows: " + i);		
+		BirthRegistration.getRow(i).createCell(5).setCellValue(UserID);	
+		FileOutputStream fout=new FileOutputStream(src);	
+		wb.write(fout);
+		Thread.sleep(2000);
+
+
+
+
+
+
+
 	}
 
 
@@ -845,12 +877,12 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		SiteName.sendKeys(Keys.DOWN);
 		Thread.sleep(700);
-//		SiteName.sendKeys(Keys.DOWN);
-//		Thread.sleep(700);
+		//		SiteName.sendKeys(Keys.DOWN);
+		//		Thread.sleep(700);
 		SiteName.sendKeys(Keys.ENTER);
 		Thread.sleep(700);
-//				driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']"));
-//				Thread.sleep(2000);
+		//				driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']"));
+		//				Thread.sleep(2000);
 		providername.click();
 		Thread.sleep(700);
 		providername.sendKeys(userId);
@@ -859,37 +891,37 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		try {
 
-		ProviderRoomNo.click();
-		Thread.sleep(700);
-		ProviderRoomNo.sendKeys("100");
-		Thread.sleep(700);
-		nurseRoomNo1.click();
-		Thread.sleep(700);
-		nurseRoomNo1.sendKeys("101");
-		Thread.sleep(700);
-		nurseService1.click();
-		Thread.sleep(700);
-		nurseService1.sendKeys("Visit");
-		Thread.sleep(700);
-		NurseRoom2.click();
-		Thread.sleep(700);
-		NurseRoom2.sendKeys("102");
-		Thread.sleep(700);
-		Nurseservice2.click();
-		Thread.sleep(700);
-		Nurseservice2.sendKeys("vitals");
-		Thread.sleep(700);
-		Add.click();
-		Thread.sleep(700);
-		save.click();
-		Thread.sleep(1500);
+			ProviderRoomNo.click();
+			Thread.sleep(700);
+			ProviderRoomNo.sendKeys("100");
+			Thread.sleep(700);
+			nurseRoomNo1.click();
+			Thread.sleep(700);
+			nurseRoomNo1.sendKeys("101");
+			Thread.sleep(700);
+			nurseService1.click();
+			Thread.sleep(700);
+			nurseService1.sendKeys("Visit");
+			Thread.sleep(700);
+			NurseRoom2.click();
+			Thread.sleep(700);
+			NurseRoom2.sendKeys("102");
+			Thread.sleep(700);
+			Nurseservice2.click();
+			Thread.sleep(700);
+			Nurseservice2.sendKeys("vitals");
+			Thread.sleep(700);
+			Add.click();
+			Thread.sleep(700);
+			save.click();
+			Thread.sleep(1500);
 		}
-		
+
 		catch(Exception e){
-			
+
 			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 			Thread.sleep(500);	
-			
+
 		}
 
 	}
@@ -911,7 +943,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		RCM.click();
 		Thread.sleep(1000); 
-		/* swa TariffSetting.click();
+		TariffSetting.click();
 		Thread.sleep(1000); 
 		SchemeSearch.click();
 		Thread.sleep(1000); 
@@ -964,8 +996,8 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		chargingParameter.click();
 		Thread.sleep(1000); 
-		
-		
+
+
 		SubMode.click();
 		Thread.sleep(1000); 
 		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
@@ -976,9 +1008,9 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		driver.findElement(By.xpath("//label[@title='Add submode and paymode']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(1000); 
-		
-		
-		
+
+
+
 		chargingParameter.click();
 		Thread.sleep(1000); 
 		ChargeTAx.click();
@@ -997,14 +1029,14 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		ADJpercent.sendKeys("10.5");
 		Thread.sleep(1000); 
-//		SponsorAmount.click();
-//		Thread.sleep(1000); 
-//		SponsorAmount.sendKeys("219.28");
-//		Thread.sleep(1000); 
-//		withoutvat.click();
-//		Thread.sleep(1000); 
-//		withoutvat.sendKeys("219.28");
-//		Thread.sleep(1000); 
+		//		SponsorAmount.click();
+		//		Thread.sleep(1000); 
+		//		SponsorAmount.sendKeys("219.28");
+		//		Thread.sleep(1000); 
+		//		withoutvat.click();
+		//		Thread.sleep(1000); 
+		//		withoutvat.sendKeys("219.28");
+		//		Thread.sleep(1000); 
 
 
 		//	JavascriptExecutor js= (JavascriptExecutor) driver;
@@ -1033,7 +1065,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		Update.click();
 		Thread.sleep(3000); 
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();swa*/
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
 		///consult rule mapping
@@ -1045,7 +1077,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		consultrule.click();
 		Thread.sleep(600);
-		
+
 		consultruleName.click();
 		Thread.sleep(600);
 		consultruleName.sendKeys("First rule");
@@ -1064,7 +1096,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//li[normalize-space()='First Consultation']")).click();
 		Thread.sleep(1000);
-		
+
 		SpecialityADD.click();
 		Thread.sleep(600);
 		department1.click();
@@ -1079,8 +1111,8 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		specialitysave.click();
 		Thread.sleep(600);
-		
-		
+
+
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")).click();
 		Thread.sleep(600);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-consultrule[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")).sendKeys("EMERGENCY MEDICINE");
@@ -1144,7 +1176,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 	}
 
 
-	public void ScheduleSetting(String FirstName,String allowedSites) throws InterruptedException, AWTException {
+	public void ScheduleSetting(String FirstName,String allowedSites,String userId) throws InterruptedException, AWTException {
 
 
 		Thread.sleep(2000); 
@@ -1160,9 +1192,9 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);   
 		Name.click();
 		Thread.sleep(1000);   
-		Name.sendKeys(FirstName);
+		Name.sendKeys(userId);
 		Thread.sleep(1000);   
-		driver.findElement(By.xpath("(//*[contains(text(),'"+FirstName+"')])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'"+userId+"')])[1]")).click();
 		Thread.sleep(1000);   
 		site1.click();
 		Thread.sleep(1000);   
@@ -1280,7 +1312,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		SearchResource.click();
 		Thread.sleep(800);
-		SearchResource.sendKeys( FirstName, Keys.ENTER);
+		SearchResource.sendKeys( userId, Keys.ENTER);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='resource-name']")).click();
 		Thread.sleep(800);
@@ -1290,7 +1322,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		SearchResoaurce.click();
 		Thread.sleep(1000);
-		SearchResoaurce.sendKeys(FirstName);
+		SearchResoaurce.sendKeys(userId);
 		Thread.sleep(1000);
 		System.out.println(FirstName + " = provider");
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/lib-scheduler[1]/form[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/span[1]")).click();
@@ -1299,8 +1331,8 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(1000);
-		
-		
+
+
 
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement03=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
@@ -1316,13 +1348,13 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		}
 
 		Thread.sleep(1500);
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 		ReportingStatus.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"droplistkey0\"]/li")).click();
@@ -1440,13 +1472,13 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		}
 
 		Thread.sleep(1500);
-		
+
 		EncounterSave.click();
 		Thread.sleep(2000);
-		
-	
-		
-		
+
+
+
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")));
 		Thread.sleep(2000);
 		SAvesuccess.click();
@@ -1549,7 +1581,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
-		
+
 		Thread.sleep(1000);
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
@@ -1559,7 +1591,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);
 
-		
+
 		Thread.sleep(600);
 		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//button[@class='btn btn-dark-green active']"));
 
@@ -1569,7 +1601,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 			OldPassword.click();
 			OldPassword.sendKeys(Password);
 			Thread.sleep(500);
-			
+
 			NewPassword.click();
 			NewPassword.sendKeys("KAmeda123#");
 			Thread.sleep(500);

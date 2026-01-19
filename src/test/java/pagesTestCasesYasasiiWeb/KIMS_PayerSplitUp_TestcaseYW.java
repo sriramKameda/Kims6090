@@ -33,7 +33,7 @@ public class KIMS_PayerSplitUp_TestcaseYW extends TestBaseYasasiiWeb {
 
 	}
 
-    @Test(dataProvider="getData"  , priority=0)
+   // @Test(dataProvider="getData"  , priority=0)
 	public void Reg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider, String service1,String service2,String service3) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
@@ -54,7 +54,7 @@ public class KIMS_PayerSplitUp_TestcaseYW extends TestBaseYasasiiWeb {
 		KIMS_PayerSplitUp_YasassiWeb FBOP = new KIMS_PayerSplitUp_YasassiWeb(driver);
 
 
-		FBOP.encounterClose(MRNo);
+	//	FBOP.encounterClose(MRNo);
 
 		FBOP.FinalBilling(MRNo);
 

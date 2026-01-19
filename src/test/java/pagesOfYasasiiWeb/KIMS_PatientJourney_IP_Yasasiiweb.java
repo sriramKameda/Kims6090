@@ -1960,7 +1960,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		CPOEadministration.click();
 		Thread.sleep(1500);
 		
-		IVRatechange.click();
+	IVRatechange.click();
 		Thread.sleep(500);
 		Rate.clear();
 		Thread.sleep(500);

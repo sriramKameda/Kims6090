@@ -552,8 +552,14 @@ public class KIMS_AppointmentFuture_Yasasiiweb extends PageFactoryInitYasasiiWeb
 		Daterange.click();
 		Thread.sleep(700);
 		Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_LEFT);
-		t.keyRelease(KeyEvent.VK_LEFT);
+		t.keyPress(KeyEvent.VK_UP);
+		t.keyRelease(KeyEvent.VK_UP);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ENTER);
+		t.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_DOWN);
+		t.keyRelease(KeyEvent.VK_DOWN);
 		Thread.sleep(400);
 		t.keyPress(KeyEvent.VK_ENTER);
 		t.keyRelease(KeyEvent.VK_ENTER);
@@ -565,7 +571,7 @@ public class KIMS_AppointmentFuture_Yasasiiweb extends PageFactoryInitYasasiiWeb
 		WebElement patient = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[1]/lib-patientlist[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1]"));
 		Thread.sleep(1500);
 
-		act.moveToElement(patient).build().perform();
+		act.moveToElement(patient).click().build().perform();
 		Thread.sleep(500);
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
 

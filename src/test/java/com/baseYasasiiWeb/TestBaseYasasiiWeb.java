@@ -239,7 +239,7 @@ public class TestBaseYasasiiWeb {
 	public void extentReportEnd() {
 //	rep.endTest(test);
 //		rep.flush(); 
-//		rep.close();
+//		rep.close();1
 		
 		 if (rep != null) {
 		        rep.close();  

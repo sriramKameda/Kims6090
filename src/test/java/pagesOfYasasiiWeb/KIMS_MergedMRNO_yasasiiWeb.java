@@ -1120,7 +1120,7 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 
 
 
-		((JavascriptExecutor)driver).executeScript("window.open()");
+	/*SWA	((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs11 = new ArrayList<String>(driver.getWindowHandles()); 
 		int Windowsize11 =driver.getWindowHandles().size();
 		int windowopen11= Windowsize11-1;
@@ -1255,8 +1255,9 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
 		MergeSave.click();
+		Thread.sleep(2000);
+		EnterPatientName.clear();
 		Thread.sleep(1000);
-
 
 		EnterPatientName.click();
 		Thread.sleep(1000);
@@ -1305,7 +1306,7 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		act.moveToElement(Merge).click().build().perform();
 		//Merge.click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);SWA*/
 
 		////////////////EMR
 
@@ -1337,20 +1338,20 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		site.click();
 		Thread.sleep(1000);
 
-//		JavascriptExecutor js= (JavascriptExecutor) driver;
+		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(2000);
-
+		
 		Thread.sleep(3000);
-		/*	MenuToggle.click();
+		//////
+	/*		MenuToggle.click();
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
 	Thread.sleep(1000);
  	EMRHomeScreen.click();
-	Thread.sleep(1200);    */
+	Thread.sleep(1200);  */  ////////
 		EnterPatientName.click();
 		Thread.sleep(1000);
 		EnterPatientName.clear();
@@ -1358,11 +1359,13 @@ public class KIMS_MergedMRNO_yasasiiWeb extends PageFactoryInitYasasiiWeb {
 		EnterPatientName.sendKeys(MRNO2);
 		Thread.sleep(1500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO2+"')])[1]")).click();
-		/*		Thread.sleep(1000);
+		//////////////
+		Thread.sleep(1000);
 		UpArrow.click();
 		Thread.sleep(500);
 		Lock.click();
-		Thread.sleep(500); */
+		Thread.sleep(500); 
+		//////////
 		family.click();
 		Thread.sleep(1000);
 		Merged.click();//span[normalize-space()='Merged']

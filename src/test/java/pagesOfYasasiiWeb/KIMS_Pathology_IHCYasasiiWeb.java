@@ -897,8 +897,8 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click();
 
-		///////////////////Staining
-	/* noNeed	Thread.sleep(3000);
+		///////////////////Staining//N
+	Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
 		Thread.sleep(2000);
 		Enddate.click();
@@ -961,7 +961,7 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//label[@class='data-info']")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click(); noNeed*/
+		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click(); 
 	}
 
 

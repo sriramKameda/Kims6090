@@ -923,7 +923,7 @@ public class KIMS_pathology_Cytologysmear_YasasiiWeb extends  PageFactoryInitYas
 
 	public void resultEnter(String MRNO, String User , String Password , String site) throws InterruptedException {
 
-		Thread.sleep(700);
+		Thread.sleep(3000);
 		ResultEnter.click();
 		Thread.sleep(2000);
 		///cytologysmear

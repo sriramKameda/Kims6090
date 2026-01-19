@@ -141,7 +141,7 @@ public void medicine_discontinue(String title, String Name, String Lastname, Str
 		KIMS_PatientJourney_IP_Yasasiiweb bill = new KIMS_PatientJourney_IP_Yasasiiweb(driver);
 		
 
-		bill.doctoreNote1(docid, docpassword, MRNo);
+		bill.doctoreNote1(docid, docpassword, MRNo); 
 	
 		bill.clinicalPharmasistclearance(MRNo, NurseID, Pharmacist_password);
 

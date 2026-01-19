@@ -18,7 +18,7 @@ import pagesOfYasasiiWeb.KIMS_MergedMRNO_yasasiiWeb;
 import pagesOfYasasiiWeb.KIMS_OutsiderPatientFlow_YasasiiWeb;
 
 public class KIMS_OutsiderPatientFlow_TestcaseYW extends TestBaseYasasiiWeb  {
-	public static LoginPageYasasiiWeb login;
+public static LoginPageYasasiiWeb login;
 public static HomePageYasasiiWeb hm;
 
 
@@ -51,9 +51,8 @@ public void OUtsideReg(String Title,String NAME,String lastName,String DOB,Strin
 		
 		    
 		KIMS_OutsiderPatientFlow_YasasiiWeb OS = new KIMS_OutsiderPatientFlow_YasasiiWeb(driver);
-	
 	  
-	  OS.Appointment(NAME, lastName, MRNO, DOCno, service);
+	    OS.Appointment(NAME, lastName, MRNO, DOCno, service);
 	  
 		
 }
