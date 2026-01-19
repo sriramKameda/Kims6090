@@ -8,9 +8,7 @@
       <class name="pagesTestCasesYasasiiWeb.KIMS_PatientFullReg_TestCaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_PanelService_ExternalLab_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_PackageCreation_TestcaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_StatementSettlement_TestcaseYW"/>
-      
-       <!--  
+      <class name="pagesTestCasesYasasiiWeb.KIMS_StatementSettlement_TestcaseYW"/>  
       <class name="pagesTestCasesYasasiiWeb.KIMS_WhiteboardStat_TestCaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_UserCreation_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_CytologysmearTestcaseYW"/> 
@@ -25,7 +23,7 @@
       <class name="pagesTestCasesYasasiiWeb.KIMS_Pharmacybill_Availedservice_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_biopsy_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_Pathology_IHCTestCaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_CommisionMaster_TestCaseYW"/>        --> 
+      <class name="pagesTestCasesYasasiiWeb.KIMS_CommisionMaster_TestCaseYW"/>       
       
     </classes>
   </test> <!-- Test -->

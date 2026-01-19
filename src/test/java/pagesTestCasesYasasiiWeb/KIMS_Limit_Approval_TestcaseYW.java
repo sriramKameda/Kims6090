@@ -30,8 +30,8 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-@Test(dataProvider="getData"  , priority=0)
-public void pricebyUser(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
+//@Test(dataProvider="getData"  , priority=0)
+public void ServiceMaster(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
 		    
@@ -39,13 +39,22 @@ public void pricebyUser(String codeType , String code,String ServiceName , Strin
 		
 		price.master(codeType, code, ServiceName, BaseCategory, SubCategory, ServiceDescription);
 			
+	
+}
+//@Test(dataProvider="getData"  , priority=1)
+public void Limitsetting(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
+		Thread.sleep(2000);
+		
+		    
+		KIMS_Limit_Approval_Yasasiiweb price = new KIMS_Limit_Approval_Yasasiiweb(driver);
+		
+		
 	    price.tariff(ServiceName, SubCategory);
 		 
     	price.Limit_Setting();
 		 		
 }
-	 
-@Test(dataProvider="getData"  , priority=1)
+@Test(dataProvider="getData"  , priority=2)
 public void LIMITBilling(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -60,6 +69,7 @@ public void LIMITBilling(String codeType , String code,String ServiceName , Stri
 		
 		price.Ins_approval(User, Password, MRNO ,ApproveNO1, ApproveNO2);
 		
+		price.billing_postapprove(MRNO);
 		
 		 		
 }

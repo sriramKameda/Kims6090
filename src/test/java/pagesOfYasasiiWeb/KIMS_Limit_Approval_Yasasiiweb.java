@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
+import com.w2a.utilities.RandomString;
 
 public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
@@ -442,7 +443,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='FO']")
 	public WebElement FO1;
 
-	@FindBy(xpath = "//span[contains(@class,'display-item')]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
 	public WebElement Orders;
 
 	@FindBy(xpath = "(//span[@class='option-name'])[1]")
@@ -526,7 +527,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-	public void master(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory,String ServiceDescription) throws InterruptedException, AWTException{
+	public void master(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory,String ServiceDescription) throws InterruptedException, AWTException, IOException{
 
 
 		Thread.sleep(1000);
@@ -587,11 +588,20 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(400);
 		driver.findElement(By.xpath("//li[contains(text(),'"+SubCategory+"')]")).click();
 		Thread.sleep(400);
+		
+		
+		
+		String append = RandomString.lastName();
+		
+		String servicename = ServiceName + append ;
+		
+		System.out.println(servicename + " = serviceName");
+		
 		serviceName.clear();
 		Thread.sleep(400);
 		serviceName.click();
 		Thread.sleep(400);
-		serviceName.sendKeys(ServiceName);
+		serviceName.sendKeys(servicename);
 		Thread.sleep(400);
 		codetype.click();
 		Thread.sleep(400);
@@ -636,10 +646,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 		////Consumables marking
-		
-		
-
-
+	
 		js.executeScript("arguments[0].scrollIntoView();",Consumables_mapping );
 		Thread.sleep(400);  
 		Consumables_mapping.click();
@@ -703,8 +710,25 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 
+		
+
+		File src=new File(Excelfilepath);
+		FileInputStream fis=new FileInputStream(src);
+		HSSFWorkbook wb=new HSSFWorkbook(fis);
+		HSSFSheet BirthRegistration=wb.getSheetAt(32);	
+		int i=BirthRegistration.getLastRowNum();
+		System.out.println("Number of rows: " + i);		
+		BirthRegistration.getRow(i).createCell(2).setCellValue(servicename);	
+		FileOutputStream fout=new FileOutputStream(src);	
+		wb.write(fout);
+		Thread.sleep(2000);	
+		
+		
 
 	}
+	
+	
+	
 	public void tariff(String ServiceName ,String SubCategory) throws InterruptedException, AWTException {
 
 
@@ -1360,6 +1384,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		wait.until(ExpectedConditions.elementToBeClickable(EmrSave));	
 		Thread.sleep(1000);
 		disgnosis.click();
+		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='(Idiopathic) normal pressure hydrocephalus']")).click();
 		Thread.sleep(2000);
@@ -1772,11 +1797,14 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//Remarks.sendKeys("Sending");
 		Thread.sleep(1000);
 
+	  	String ApproveNO =	RandomString.DOCID();
+	    System.out.println(ApproveNO);
+		
 		Approvequantity.sendKeys("1");
 		Thread.sleep(600);
 		Approvalnumber.click();
 		Thread.sleep(600);
-		Approvalnumber.sendKeys(ApproveNO1);
+		Approvalnumber.sendKeys(ApproveNO);
 		Thread.sleep(600);
 		Validitydays.click();
 		Thread.sleep(600);
@@ -1789,10 +1817,12 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//Edit1.click();
 		Thread.sleep(2000);
 
-
+	}
 		/////////////////
 
 
+	public void billing_postapprove(String MRNo) throws InterruptedException {
+		
 		Thread.sleep(1000);
 		Hamberger.click();
 		Thread.sleep(600);
@@ -1919,11 +1949,16 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//Remarks.sendKeys("Sending");
 		Thread.sleep(1000);
 
+		
+		
+      	String ApproveNO =	RandomString.DOCID();
+	    System.out.println(ApproveNO);
+	
 		Approvequantity.sendKeys("1");
 		Thread.sleep(600);
 		Approvalnumber.click();
 		Thread.sleep(600);
-		Approvalnumber.sendKeys(ApproveNO2);
+		Approvalnumber.sendKeys(ApproveNO);
 		Thread.sleep(600);
 		Validitydays.click();
 		Thread.sleep(600);

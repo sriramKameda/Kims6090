@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -185,6 +186,10 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//i[@class='ki ki-patient-bed-fill']")
 	public WebElement ADT;
 
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-card[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement OtherCharges;
+
+	
 
 	@FindBy(xpath = "//input[@id='medicinename']")
 	public WebElement ItemName;
@@ -980,6 +985,24 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 
 		AddService.click();
+		Thread.sleep(1000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//div[@title='"+service1+"']")) );
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@title='"+service1+"']")).click();
+		Thread.sleep(1000);
+		OtherCharges.clear();
+		Thread.sleep(500);
+	 for (int i = 0; i < 5; i++) {
+		 
+		 OtherCharges.sendKeys(Keys.BACK_SPACE);
+		
+	}
+		OtherCharges.sendKeys("100");
+		Thread.sleep(500);
+		
+		
+		js.executeScript("arguments[0].scrollIntoView();",servName);
 		Thread.sleep(1000);
 		Thread.sleep(1000);
 		servName.click();
