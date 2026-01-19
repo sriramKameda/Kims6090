@@ -31,7 +31,7 @@ public void navigateemradt() throws InterruptedException {
 }
 
 
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void BirthReg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String DOCuser ,String DOCpassword,String OrdersetName, String adminuser,String adminpassword, String service1,String service2,String service3) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -46,7 +46,7 @@ public void BirthReg(String title,String Name,String lastname,String Dob, String
 			
 		}
 
-//@Test(dataProvider="getData"  , priority=1)
+@Test(dataProvider="getData"  , priority=1)
 public void EMRORDRING(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String DOCuser ,String DOCpassword,String OrdersetName, String adminuser,String adminpassword, String service1,String service2,String service3 ) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -70,10 +70,10 @@ public void Billing(String title,String Name,String lastname,String Dob, String 
 		
 		KIMS_PatientJourney_OP_Yasasiiweb bill = new KIMS_PatientJourney_OP_Yasasiiweb(driver);
 	
-//	bill.PharmacyBilling(MRNo, Provider);
-//	
-//	bill.encounterClose(MRNo, service1, service2, service3, Provider);
-//	
+	bill.PharmacyBilling(MRNo, Provider);
+	
+	bill.encounterClose(MRNo, service1, service2, service3, Provider);
+	
 	bill.finalbilling(MRNo);
 			
 		}

@@ -1302,7 +1302,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 ////////Dextrose		
 		
 		
-		admin2.click();
+     	admin2.click();
 		Thread.sleep(1000);
 		MedicineSource.click();
 		Thread.sleep(1000);
@@ -1586,9 +1586,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(2000);
+		Thread.sleep(500);
 ////pantocid		
-		
+	
 		Thread.sleep(500);
 		List<WebElement> dynamicElement6=driver.findElements(By.xpath("(//i[@class='ki-user-drug ki'])[11]"));
 
@@ -1725,7 +1725,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			
 
 			Save1.click();
-			Thread.sleep(30000);
+			Thread.sleep(1000);
 		
 			admin6.click();
 			Thread.sleep(1000);

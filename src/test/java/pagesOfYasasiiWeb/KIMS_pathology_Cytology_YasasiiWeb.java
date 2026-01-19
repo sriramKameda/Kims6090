@@ -340,7 +340,9 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 	@FindBy(xpath="//label[contains(text(),'Cancer Registry')]")
 	public WebElement EMRcancerRegistry;
 
-	@FindBy(xpath="//i[@class='fa fa-ellipsis-v']")
+//	@FindBy(xpath="//i[@class='fa fa-ellipsis-v']")
+//	public WebElement Threedot;
+	@FindBy(xpath = "//label[@class='multi-action item-value']")
 	public WebElement Threedot;
 
 	@FindBy(xpath="//label[@class='remark']")
@@ -866,9 +868,8 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		SearchField.click();
 		Thread.sleep(700);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		Thread.sleep(5000);
 		//caudatecheckbox.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();

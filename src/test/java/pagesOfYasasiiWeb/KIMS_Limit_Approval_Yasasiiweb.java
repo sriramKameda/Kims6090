@@ -24,6 +24,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
+import io.netty.util.internal.ThreadLocalRandom;
+
 public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	public KIMS_Limit_Approval_Yasasiiweb(WebDriver driver) {
@@ -1776,7 +1778,13 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		Approvalnumber.click();
 		Thread.sleep(600);
-		Approvalnumber.sendKeys(ApproveNO1);
+		int sixDigitNumber = ThreadLocalRandom.current().nextInt(100000, 1000000);
+		int num = sixDigitNumber;
+
+		System.out.println(num);
+
+		Approvalnumber.sendKeys(String.valueOf(num));
+
 		Thread.sleep(600);
 		Validitydays.click();
 		Thread.sleep(600);
@@ -1923,7 +1931,14 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		Approvalnumber.click();
 		Thread.sleep(600);
-		Approvalnumber.sendKeys(ApproveNO2);
+		int sixDigitNumber1 = ThreadLocalRandom.current().nextInt(100000, 1000000);
+		int num1 = sixDigitNumber;
+
+		System.out.println(num1);
+
+		Approvalnumber.sendKeys(String.valueOf(num1));
+
+		
 		Thread.sleep(600);
 		Validitydays.click();
 		Thread.sleep(600);
