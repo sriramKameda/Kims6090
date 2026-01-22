@@ -33,7 +33,7 @@ public class KIMS_ORFlowTestCases extends TestBaseYasasiiWeb{
 
 
 
-	//	@Test(dataProvider="getData",priority=0)
+	/////	@Test(dataProvider="getData",priority=0)
 	public void ORMASTER(String ServiceName, String PrefcardName,String ParameterRulename,String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String MajorProcedure ,String ADTprovider,String docid,String docpassword,String User , String Password,String Site,String Medicine,String refProvider,String anesthesiaID , String anesthesiapassword,String ORAdmin, String ORpassword,String Nuruser ,String Nurpassword,String ReferalID, String Referalpassword,String Indent_1,String Indent_2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 

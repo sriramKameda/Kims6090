@@ -54,7 +54,7 @@ public class KIMS_pathology_biopsy_TestcaseYW extends TestBaseYasasiiWeb  {
 	@AfterClass
 	public void logout() throws Exception
 	{
-		
+		 
 		Thread.sleep(2000);
 		this.hm.clickLogout();
 		

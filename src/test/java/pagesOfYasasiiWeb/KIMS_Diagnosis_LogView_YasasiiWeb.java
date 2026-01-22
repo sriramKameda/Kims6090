@@ -511,7 +511,7 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(EMRSave));
 		Thread.sleep(1500);
-		//driver.findElement(By.xpath("(//div[contains(text(),'Diagnosis and Plan')])[1]")).click();
+	//	driver.findElement(By.xpath("(//div[contains(text(),'Diagnosis and Plan')])[1]")).click();
 		
 		Diagnosis.click();
 		Thread.sleep(700);

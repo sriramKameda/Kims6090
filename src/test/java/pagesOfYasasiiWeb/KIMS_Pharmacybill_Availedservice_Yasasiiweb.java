@@ -582,10 +582,9 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		//File upload by Robot Class
 
 
-		// copying File path to Clipboard
-		String filePath = System.getProperty("user.dir")
-                + "\\src\\test\\resources\\uploads\\userCreation_passed140.PNG";
-		StringSelection str = new StringSelection(filePath);
+
+		
+		StringSelection str = new StringSelection(DocUploadfilePath);
 		//StringSelection str = new StringSelection("C:\\Users\\sriram\\Pictures\\Screenshots\\prescription.pdf");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 		Thread.sleep(2500);
@@ -630,22 +629,22 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 		Thread.sleep(1000);
 		Eye.click();
 		Thread.sleep(2000);
-		//WebDriverWait wait = new WebDriverWait(driver,30);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Close']")));
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+	//wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='Close']")));
 		Thread.sleep(2000);
-		//	rotateRight.click();
+		rotateRight.click();
 		Thread.sleep(1000);
-		//	zoomin.click();
+		zoomin.click();
 		Thread.sleep(1000);
-		//	zoomout.click();
+		zoomout.click();
 		Thread.sleep(1000);
 
-		/* swa for (int i = 0; i <2; i++) {
+		for (int i = 0; i <2; i++) {
 
 			nextpage.click();
 			Thread.sleep(800);
 
-		}swa*/
+		}
 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='btn btn-danger sm ml10'][normalize-space()='Close']")).click();
