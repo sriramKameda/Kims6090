@@ -626,7 +626,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 
 
 		Thread.sleep(1000);
-		AdjustAmount.click();
+		AdjustAmount.clear();
 		Thread.sleep(1000);
 		AdjustAmount.sendKeys(ADJAMOUNT);
 		Thread.sleep(1000);
@@ -740,9 +740,12 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 			Thread.sleep(1000);
 			save.click();
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("(//div[@class='modal-body']//button[@type='button'][normalize-space()='OK'])[1]")).click();
-			Thread.sleep(1000);
-			authoriser.click();
+			//driver.findElement(By.xpath("(//div[@class='modal-body']//button[@type='button'][normalize-space()='OK'])[1]")).click();
+			
+			
+			driver.findElement(By.xpath("//button[@class='dropdown-toggle form-control multiselect-list']")).click();
+			
+
 			Thread.sleep(1000);
 			SearchAuth.sendKeys(AUTHPERSON);
 			Thread.sleep(1000);

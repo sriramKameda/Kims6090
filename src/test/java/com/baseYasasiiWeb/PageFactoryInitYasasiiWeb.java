@@ -46,7 +46,7 @@ public class PageFactoryInitYasasiiWeb {
 	public String SecondNurse="Anitha R (NGL17697)";
 	
 	public static String Excelfilepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\SP55-KIMSDataSheet.xls";
-
+	public static String DocUploadfilePath = System.getProperty("user.dir")+ "\\src\\test\\resources\\uploads\\OT Consumables.pdf";
 
 
 

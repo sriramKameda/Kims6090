@@ -2875,7 +2875,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		indent1.click();
 		Thread.sleep(1000);
-		//StatusCheck.click();
+		StatusCheck.click();
 		Thread.sleep(1000);
 		UpdateINV.click();
 		Thread.sleep(2000);
@@ -2891,7 +2891,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		MRNOSearch.sendKeys(MRNo);
 		Thread.sleep(1000);
 		indentSearch.click();
-		Thread.sleep(2000);
+		Thread.sleep(2000); 
 
 
 		/////// Stock Transfer
