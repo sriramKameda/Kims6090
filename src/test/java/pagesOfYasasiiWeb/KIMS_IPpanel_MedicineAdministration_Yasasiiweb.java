@@ -1145,7 +1145,8 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//b[normalize-space()='"+MRNo+"']")).click();
 		Thread.sleep(3000);
-
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Print));
 		Print.click();
 		Thread.sleep(5000);
 		Robot t=new Robot();
@@ -1187,7 +1188,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(1800);
 		driver.findElement(By.xpath("//div[@class='col-md-12']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(800);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']")));
 		Thread.sleep(3000);		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
@@ -1724,7 +1725,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 			Thread.sleep(2000);
 			
 
-			Save1.click();
+			Save1.click(); 
 			Thread.sleep(1000);
 		
 			admin6.click();

@@ -337,10 +337,10 @@ public class KIMS_Pharmacybill_Availedservice_Yasasiiweb  extends PageFactoryIni
 	@FindBy(xpath = "(//div[@class='v-action-bar'])[1]")
 	public WebElement barspace;
 
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/ki-document-viewer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ngx-extended-pdf-viewer[1]/div[1]/div[1]/div[1]/div[1]/div[2]/pdf-toolbar[1]/div[1]/div[1]/div[1]/pdf-zoom-toolbar[1]/div[1]/pdf-zoom-in[1]/button[1]/*[name()='svg'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/ki-document-viewer[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ngx-extended-pdf-viewer[1]/div[1]/div[1]/div[1]/div[1]/div[2]/pdf-toolbar[1]/div[1]/div[1]/div[1]/pdf-zoom-toolbar[1]/div[1]/pdf-zoom-in[1]/button[1]/*[name()='svg'][1]/*[name()='path'][1]")
 	public WebElement zoomin;
 
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/ki-document-viewer[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ngx-extended-pdf-viewer[1]/div[1]/div[1]/div[1]/div[1]/div[2]/pdf-toolbar[1]/div[1]/div[1]/div[1]/pdf-zoom-toolbar[1]/div[1]/pdf-zoom-out[1]/button[1]/*[name()='svg'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/ki-document-viewer[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ngx-extended-pdf-viewer[1]/div[1]/div[1]/div[1]/div[1]/div[2]/pdf-toolbar[1]/div[1]/div[1]/div[1]/pdf-zoom-toolbar[1]/div[1]/pdf-zoom-out[1]/button[1]/*[name()='svg'][1]")
 	public WebElement zoomout;
 
 	@FindBy(xpath = "//button[@id='next']//*[name()='svg']")

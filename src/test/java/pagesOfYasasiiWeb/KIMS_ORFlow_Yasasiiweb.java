@@ -3429,7 +3429,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 				//		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active'][normalize-space()='OK']")).click();
 				//		Thread.sleep(1500);
 
-		////////////////////Time out	SRI	
+		////////////////////Time out	SRI
 		Thread.sleep(600);	
 	    driver.findElement(By.xpath("//button[@title='Time Out']//div[@class='btn-name']")).click();
 		Thread.sleep(2000);

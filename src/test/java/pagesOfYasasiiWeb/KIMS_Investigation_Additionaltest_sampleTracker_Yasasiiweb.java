@@ -922,9 +922,9 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
 		Thread.sleep(1000);
 		ivstgnSave.click();
-	
-		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
+		
 		SaveOK1.click();
 		Thread.sleep(2000);
 
@@ -1026,13 +1026,14 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 
 		Homepage.click();
-		Thread.sleep(1000);
+		Thread.sleep(1000);//
 		driver.findElement(By.xpath("//input[@id='reasonid']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Respond to IP Consultation']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary ml10 sm active']//i[@class='ki ki-save']")).click();
 		Thread.sleep(1000);
+		//
 		EMRResult.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@class='sm btn btn-danger sm clear m0']")).click();

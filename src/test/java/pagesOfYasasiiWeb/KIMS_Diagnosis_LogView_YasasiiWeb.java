@@ -471,7 +471,7 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(3000);
 
 		ActiveProblems.click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		ActiveProblems1.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("(//i[@title='Log'])[1]")).click();
@@ -510,10 +510,12 @@ public class KIMS_Diagnosis_LogView_YasasiiWeb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//div[normalize-space()='Edit']")).click();
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(EMRSave));
-		Thread.sleep(1500);
-	//	driver.findElement(By.xpath("(//div[contains(text(),'Diagnosis and Plan')])[1]")).click();
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='item-name'][normalize-space()='Diagnosis and Plan']")));
+		Thread.sleep(700);
+		driver.findElement(By.xpath("//div[@class='item-name'][normalize-space()='Diagnosis and Plan']")).click();
 		
-		Diagnosis.click();
+	//	Diagnosis.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("(//div[@class='item-label-action ng-star-inserted'][normalize-space()='Set as Primary'])[1]")).click();
 		Thread.sleep(1000);

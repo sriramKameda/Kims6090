@@ -83,7 +83,6 @@ public class KIMS_PatientJourney_IP_TestcaseYW extends TestBaseYasasiiWeb {
 		
 
 	}
-
 @Test(dataProvider="getData", priority=2)
 public void MedicineAdmin(String title, String Name, String Lastname, String Dob, String DocID, String MobNo,
 		String Address, String MRNo, String provider, String ADTprovider, String docid, String docpassword,

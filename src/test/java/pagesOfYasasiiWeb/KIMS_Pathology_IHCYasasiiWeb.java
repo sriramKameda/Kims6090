@@ -589,6 +589,7 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		//driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
 //		Thread.sleep(1000);
 
@@ -749,7 +750,7 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		today.click();
 		Thread.sleep(700);
 		Donebytech.click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyTechnician+"']")).click();
 		Thread.sleep(700);
 		Remarks.click();

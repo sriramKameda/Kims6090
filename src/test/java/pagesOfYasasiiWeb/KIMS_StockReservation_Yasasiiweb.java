@@ -709,7 +709,7 @@ public class KIMS_StockReservation_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		search.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//span[normalize-space()='"+word[1]+"']")).click();
-		Thread.sleep(800);
+		Thread.sleep(1000);
 		Recieve.click();
 		Thread.sleep(800);
 		Comments1.click();
