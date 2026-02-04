@@ -1112,6 +1112,7 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 		Thread.sleep(2000);
 		saveButton.click();
 		Thread.sleep(2000);
+		succefullyOK.click();
 
 	}
 

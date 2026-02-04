@@ -322,12 +322,13 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		expand.click();
 		Thread.sleep(1000);
 		int i = 0;
+		//if (next.isEnabled()) {
 		while (i <= 3) {
 			next.click();
 			Thread.sleep(1500);
 			i++;
 		}
-
+		
 		print.click();
 		Thread.sleep(2000);
 		Robot robot = new Robot();

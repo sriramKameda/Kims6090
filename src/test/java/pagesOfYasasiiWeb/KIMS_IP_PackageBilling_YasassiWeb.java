@@ -960,10 +960,10 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 //		Thread.sleep(1000);
-//		clinicalIndication.sendKeys("test");
-//		Thread.sleep(1000);
-//		addMedicine.click();
-//		Thread.sleep(1000);
+		clinicalIndication.sendKeys("test");
+		Thread.sleep(1000);
+		addMedicine.click();
+		Thread.sleep(1000);
 		CpoeServiceSearch.clear();
 		Thread.sleep(1000);
 		CpoeServiceSearch.sendKeys("Lipid Panel", Keys.ENTER);
@@ -1367,14 +1367,16 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		
 		moveServices.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		Thread.sleep(1000);
 		doublearrow.click();
 		Thread.sleep(1000);
 		moveServices.click();
-		Thread.sleep(1000);
-		doublearrow.click();
-		Thread.sleep(1000);
+		Thread.sleep(600);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(600);
+	//	doublearrow.click();
+	//	Thread.sleep(1000);
 		saveButton.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();

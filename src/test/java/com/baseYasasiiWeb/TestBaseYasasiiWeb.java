@@ -131,7 +131,7 @@ public class TestBaseYasasiiWeb {
 
 			}
 			else if (config.getProperty("browser").equals("chrome")) {
-				WebDriverManager.chromedriver().driverVersion(chromeversion).setup();
+				WebDriverManager.chromedriver().driverVersion("144.0.7559.110").setup();
 				ChromeOptions chrop = new ChromeOptions();
 				
 		        String opt[] = new String[] { "-test-type", "test-type=browser", "-disable-default-apps",
@@ -142,7 +142,7 @@ public class TestBaseYasasiiWeb {
 		        chrop.addArguments(opt);
  
 		       // chrop.addArguments("headless");
-		        
+		       
 				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\executablesYasasiiWeb\\chromedriver.exe");
 				
 				this.driver= new ChromeDriver(chrop);
@@ -248,7 +248,7 @@ public class TestBaseYasasiiWeb {
 
 
 
-	@AfterSuite(alwaysRun = true)
+	//@AfterSuite(alwaysRun = true)
 
 	public void teardown() {
 

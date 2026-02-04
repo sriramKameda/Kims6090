@@ -821,8 +821,12 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "//div[@class='col-12 col-md-3 ta-r']//i[@class='ki ki-search']")
 	public WebElement invoiceSearch;
 
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+	//@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
+	//public WebElement options;
+	
+	@FindBy(xpath = "//label[@class='multi-action item-value']")
 	public WebElement options;
+
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
 	public WebElement DraftFinalization;

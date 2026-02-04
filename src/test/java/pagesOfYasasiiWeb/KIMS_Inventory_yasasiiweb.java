@@ -213,6 +213,9 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//i[@class='ki ki-search']")
 	public WebElement Search;
+	
+	@FindBy(xpath = "//button[@id='btnsearch']")
+	public WebElement Search1;
 
 	@FindBy(xpath = "//button[@id='btnCloseIndent']")
 	public WebElement CloseIndent;
@@ -1828,8 +1831,11 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
-
+		
 		Search.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='btnsearch']")).click();
+		
 		Thread.sleep(2000);
 
 		Detailed.click();
@@ -1865,7 +1871,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		StockView.click();
 		Thread.sleep(800);
-		Search.click();
+		Search1.click();
 		Thread.sleep(3000);
 		Detailedview.click();
 		Thread.sleep(3000);
@@ -1873,7 +1879,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		EXpired.click();
 		Thread.sleep(800);
-		Search.click();
+		Search1.click();
 		Thread.sleep(3000);
 		clear.click();
 		Thread.sleep(800);
@@ -1881,7 +1887,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Days.click();
 		Days.sendKeys("90");
 		Thread.sleep(800);
-		Search.click();
+		Search1.click();
 		Thread.sleep(3000);
 
 
@@ -1902,7 +1908,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Medicine']")).click();
 		Thread.sleep(800);
-		Search.click();
+		Search1.click();
 		Thread.sleep(3000);
 		clear.click();
 		Thread.sleep(800);
@@ -1911,6 +1917,8 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		ItemName.sendKeys("DOLOPAR 650 TAB" , Keys.ENTER);
 		Thread.sleep(800);
 		Search.click();
+		Thread.sleep(800);
+		Search1.click();
 		Thread.sleep(3000);
 		clear.click();
 		Thread.sleep(800);
@@ -1932,7 +1940,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//div[@class='displaing-item']")).click();
 		Thread.sleep(800);
-		Search.click();
+		Search1.click();
 		Thread.sleep(3000);
 		
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));

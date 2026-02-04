@@ -949,7 +949,7 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		if(dynamicElement411.size() !=0)
 		{
 			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-close-circle']")).click();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//textarea[@id='undefined']")).sendKeys("Admission charge not required");
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[@id='save']")).click();

@@ -975,7 +975,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		MRNOsearch.sendKeys(MRNO);
 		Thread.sleep(800);
 		search2.click();
-		Thread.sleep(1800);
+		Thread.sleep(3000);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
 				driver.findElement(By.xpath("//th[normalize-space()='From Date']")));
 		Thread.sleep(2000);

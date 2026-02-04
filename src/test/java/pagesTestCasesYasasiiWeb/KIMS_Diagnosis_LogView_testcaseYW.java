@@ -55,7 +55,7 @@ public void Hidenote(String title,String Name,String lastname,String Dob, String
 		}
 
 
-//@AfterClass
+@AfterClass
 public void logout() throws Exception
 {
 	

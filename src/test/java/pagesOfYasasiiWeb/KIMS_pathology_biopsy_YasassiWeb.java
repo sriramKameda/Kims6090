@@ -989,7 +989,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		preview.click();
 		Thread.sleep(1000);
-		String biopsyno =driver.findElement(By.xpath("/html[1]/body[1]/modal-container[2]/div[1]/div[1]/div[2]/span[1]/div[1]/p[1]/span[2]")).getText();
+				String biopsyno =driver.findElement(By.xpath("/html[1]/body[1]/modal-container[2]/div[1]/div[1]/div[2]/span[1]/div[1]/p[1]/span[1]")).getText();
+		//String biopsyno =driver.findElement(By.xpath("/html[1]/body[1]/modal-container[2]/div[1]/div[1]/div[2]/span[1]/div[1]/p[1]/span[2]")).getText();
 		Thread.sleep(1000);
 		System.out.println(biopsyno);
 		Thread.sleep(2000);
@@ -1021,8 +1022,9 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 
 		SearchField.clear();
 		Thread.sleep(1000);
+		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(1000);
-		SearchField.sendKeys(biopsyno , Keys.ENTER);
+		///SearchField.sendKeys(biopsyno , Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
@@ -1084,6 +1086,9 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
 		Thread.sleep(1000);
+		SearchField.clear();
+		Thread.sleep(1000);
+		SearchField.sendKeys(MRNO , Keys.ENTER);
 		driver.findElement(By.xpath("//i[@class='ki ki-search']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
@@ -1142,8 +1147,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
-		//driver.findElement(By.xpath("//button[@id='onSaveid']")).click();
-		//	ivstgnSave.click();
+		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
+			//ivstgnSave.click();
 		Thread.sleep(3000);
 		ivstgnStatus.click();
 		Thread.sleep(1000);
