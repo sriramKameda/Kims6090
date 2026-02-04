@@ -70,9 +70,15 @@ public class TestBaseYasasiiWeb {
 	@BeforeTest
 	public static void startTest()
 	{
-		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\extentReport.html");
+		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\target\\extent-reports\\extentReport.html", true);
 		
-		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
+		System.out.println(System.getProperty("user.dir"));
+
+		
+		
+		rep=new ExtentReports("C:\\Users\\sriram\\eclipse-workspace\\KimsYasasiiWeb-Sprint55.4\\target\\extent-reports\\extentReport.html", true);
+		 
+		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html", true);
 		 
 
 		
@@ -131,7 +137,7 @@ public class TestBaseYasasiiWeb {
 
 			}
 			else if (config.getProperty("browser").equals("chrome")) {
-				WebDriverManager.chromedriver().driverVersion("144.0.7559.110").setup();
+				WebDriverManager.chromedriver().driverVersion(chromeversion).setup();
 				ChromeOptions chrop = new ChromeOptions();
 				
 		        String opt[] = new String[] { "-test-type", "test-type=browser", "-disable-default-apps",
@@ -142,7 +148,7 @@ public class TestBaseYasasiiWeb {
 		        chrop.addArguments(opt);
  
 		       // chrop.addArguments("headless");
-		       
+		        
 				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\executablesYasasiiWeb\\chromedriver.exe");
 				
 				this.driver= new ChromeDriver(chrop);
@@ -229,7 +235,7 @@ public class TestBaseYasasiiWeb {
 		}
 		
 		rep.endTest(test);
-		rep.flush();
+	
 		
 		}
 	
@@ -240,7 +246,7 @@ public class TestBaseYasasiiWeb {
 //	rep.endTest(test);
 //		rep.flush(); 
 //		rep.close();1
-		
+		rep.flush();
 		 if (rep != null) {
 		        rep.close();  
 		 }// close once
@@ -248,7 +254,7 @@ public class TestBaseYasasiiWeb {
 
 
 
-	//@AfterSuite(alwaysRun = true)
+	@AfterSuite(alwaysRun = true)
 
 	public void teardown() {
 
