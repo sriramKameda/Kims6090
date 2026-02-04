@@ -1974,6 +1974,8 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(2000);
+		
+//		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", Depclearance);
 		Thread.sleep(3000);
 		act.moveToElement(Depclearance).click().build().perform();

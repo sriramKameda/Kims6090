@@ -70,9 +70,15 @@ public class TestBaseYasasiiWeb {
 	@BeforeTest
 	public static void startTest()
 	{
-		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\extentReport.html");
+		rep=new ExtentReports(System.getProperty("user.dir")+"\\target\\target\\extent-reports\\extentReport.html", true);
 		
-		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html");
+		System.out.println(System.getProperty("user.dir"));
+
+		
+		
+		rep=new ExtentReports("C:\\Users\\sriram\\eclipse-workspace\\KimsYasasiiWeb-Sprint55.4\\target\\extent-reports\\extentReport.html", true);
+		 
+		rep=new ExtentReports("C:\\Users\\sriram\\Documents\\extentReport.html", true);
 		 
 
 		
@@ -229,7 +235,7 @@ public class TestBaseYasasiiWeb {
 		}
 		
 		rep.endTest(test);
-		rep.flush();
+	
 		
 		}
 	
@@ -240,7 +246,7 @@ public class TestBaseYasasiiWeb {
 //	rep.endTest(test);
 //		rep.flush(); 
 //		rep.close();1
-		
+		rep.flush();
 		 if (rep != null) {
 		        rep.close();  
 		 }// close once

@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
+import java.util.List;
 import java.util.Locale;
 
 import org.openqa.selenium.By;
@@ -203,18 +204,21 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		add.click();
 		Thread.sleep(1000);
 		
-		try{
+		
 			saveButton.click();
 			Thread.sleep(2000);
-			
-		}
-		catch(Exception e){
+List<WebElement>	Info = driver.findElements(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']//label[@class='dialog-title'][normalize-space()='Information']"));
+Thread.sleep(1000);
+		
+int a = Info.size();
+
+if (a!=0) {
 			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 			Thread.sleep(1000);	
 			driver.findElement(By.xpath("//button[normalize-space()='Clear']")).click();
 			Thread.sleep(1000);	
-		
-		}
+}	
+	
 		
 		search.clear();
 		Thread.sleep(1000);

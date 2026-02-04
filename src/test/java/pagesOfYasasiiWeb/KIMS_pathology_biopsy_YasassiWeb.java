@@ -387,7 +387,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		Thread.sleep(500);
 		String lastName =RandomString.lastName();
-		
+
 		System.out.println(lastName + "LastName" );
 		Lastname.click();
 		Thread.sleep(500);
@@ -422,7 +422,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		}
 		//aadharNo.click();
 		String DOCID = RandomString.DOCID();
-			
+
 		aadharNo.sendKeys(DOCID );
 		Thread.sleep(1000);
 		docAdd.click();
@@ -468,7 +468,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		RegSave.click();
 		Thread.sleep(3000);
-		
+
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -497,8 +497,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
-		
-		
+
+
 		//////Encounter
 		Thread.sleep(1000);
 		clear.click();
@@ -611,7 +611,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
-//		Thread.sleep(1000);
+		//		Thread.sleep(1000);
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
@@ -643,13 +643,13 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		SampleProcessing.click();
 		Thread.sleep(1000);
-		
+
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@title='Sample No']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
-		Thread.sleep(1000);
-		
+		Thread.sleep(10000);
+
 		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
@@ -935,8 +935,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		clinicalDiagnosis.sendKeys("Clinical diagnosis");
 		Thread.sleep(1000);
-//		macroScopy.clear();
-//		Thread.sleep(1000);
+		//		macroScopy.clear();
+		//		Thread.sleep(1000);
 		//	macroScopy.sendKeys("Macroscopy");
 		Thread.sleep(1000);
 		//	microscopy.clear();
@@ -989,10 +989,23 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		preview.click();
 		Thread.sleep(1000);
-		String biopsyno =driver.findElement(By.xpath("/html[1]/body[1]/modal-container[2]/div[1]/div[1]/div[2]/span[1]/div[1]/p[1]/span[2]")).getText();
+		String input =driver.findElement(By.xpath("//body[1]/modal-container[2]/div[1]/div[1]/div[2]/span[1]/div[1]/p[1]/span[1]")).getText();
 		Thread.sleep(1000);
-		System.out.println(biopsyno);
+		System.out.println(input + " = Whole content");
 		Thread.sleep(2000);
+
+
+		String[] part = input.split("[: ]");
+
+		System.out.println(part[1]);
+
+		String biopsyno = part[1].replaceAll("^\\s+", "");
+
+		//System.out.println(result);
+
+		//String biopsyno = part[1];
+		System.out.println(biopsyno);
+
 		driver.findElement(By.xpath("//button[contains(@class,'btn btn-danger sm clear')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
@@ -1001,8 +1014,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 
 
 
-//		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
-//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("//i[@class='ki ki-lock ki-lock-open']")).click();
+		//		Thread.sleep(1000);
 		/////critical informed
 		Range.click();
 		Thread.sleep(1000);
@@ -1022,8 +1035,10 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		SearchField.clear();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		SearchField.sendKeys(biopsyno , Keys.ENTER);
+		SearchField.sendKeys( Keys.ENTER);
 		Thread.sleep(1000);
+//		SearchField.sendKeys(biopsyno , Keys.ENTER);
+//		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
 		criticalCall.click();
@@ -1052,31 +1067,31 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
 		Thread.sleep(1000);
-//		SearchField.clear();
-//		Thread.sleep(1000);
-//		SearchField.sendKeys(MRNO , Keys.ENTER);
-//		Thread.sleep(1000);
-//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-//		Thread.sleep(2000);
+		//		SearchField.clear();
+		//		Thread.sleep(1000);
+		//		SearchField.sendKeys(MRNO , Keys.ENTER);
+		//		Thread.sleep(1000);
+		//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		//		Thread.sleep(2000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
 
-		
-//				ivstgnSave.click();//button[@id='onSaveid']
-//				Thread.sleep(3000);
-//				ivstgnStatus.click();
-//				Thread.sleep(1000);
-//				driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
-//				Thread.sleep(1000); 
-//		
-//				System.out.println(MRNO);
-//				Thread.sleep(2500);
-//				ivstgnSave.click();
-			Thread.sleep(2000);
+
+		//				ivstgnSave.click();//button[@id='onSaveid']
+		//				Thread.sleep(3000);
+		//				ivstgnStatus.click();
+		//				Thread.sleep(1000);
+		//				driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
+		//				Thread.sleep(1000); 
+		//		
+		//				System.out.println(MRNO);
+		//				Thread.sleep(2500);
+		//				ivstgnSave.click();
+		Thread.sleep(2000);
 
 
 		/////////unAuthorize
 
-			
+
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='v-action-bar ng-star-inserted']")).click();
 		Thread.sleep(1000);

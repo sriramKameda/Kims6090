@@ -1088,6 +1088,12 @@ public class KIMS_PayerSplitUp_YasassiWeb extends PageFactoryInitYasasiiWeb {
 		Search2.click();
 		Thread.sleep(1000);
 		settleicon1.click();
+		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[normalize-space()='Copay']//span[@class='checkmark']")));
+		Thread.sleep(2000);		
+		
+		
 		driver.findElement(By.xpath("//label[normalize-space()='Copay']//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 
