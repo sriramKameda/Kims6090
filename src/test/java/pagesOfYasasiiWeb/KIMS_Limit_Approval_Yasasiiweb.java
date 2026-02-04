@@ -1905,6 +1905,12 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();	
 		Thread.sleep(600);
+	}	
+		
+		public void OverlimitApproval(String MRNo) throws InterruptedException {
+			
+			
+	
 	    Thread.sleep(1000);
 		Hamberger.click();
 		Thread.sleep(600);
@@ -1941,9 +1947,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Search1.click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//ki-select-control[@title='Status']//input[@id='undefined']")).click();
+	//	driver.findElement(By.xpath("//ki-select-control[@title='Status']//input[@id='undefined']")).click();
 		
-		//Status.click();
+		Status.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Approve']")).click();
 		Thread.sleep(1000);
@@ -2009,9 +2015,8 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 
-
+		}
 
 
 	}
 
-}

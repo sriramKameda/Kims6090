@@ -76,8 +76,8 @@ public class KIMS_AdjustmentRefund_TestcaseYW  extends TestBaseYasasiiWeb  {
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 
-
 		this.hm.clickLogout();
+		
 	}
 
 
