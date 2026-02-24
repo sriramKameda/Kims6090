@@ -34,7 +34,7 @@ public class KIMS_OP_PackageBilling_TestcaseYW extends TestBaseYasasiiWeb{
 	public void patientRegistraionAndAdmission(String Packagename, String Name1, String Group1, String Group2, String Group3,
 			String Group4, String Group5, String Group6, String Group7, String title, String Name, String lastname,
 			String Dob, String DocID, String MobNo,
-			String Address, String MRNo, String Provider, String ADTprovider, String DOCuser, String DOCpassword, String Site,String Name2,String lastname2,String DocID2,String MRNo2) throws InterruptedException, IOException, AWTException {
+		 	String Address, String MRNo, String Provider, String ADTprovider, String DOCuser, String DOCpassword, String Site,String Name2,String lastname2,String DocID2,String MRNo2) throws InterruptedException, IOException, AWTException {
 
 		Thread.sleep(2000);
 

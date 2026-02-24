@@ -506,9 +506,10 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 
 	@FindBy(xpath = "//label[normalize-space()='Modules']")
 	public WebElement module;
+	//label[@title='Clear']//i[@class='ki ki-close']
 
-
-
+	@FindBy(xpath = "//label[@title='Clear']//i[@class='ki ki-close']")
+	public WebElement close;
 
 	public void Patreg(String title,String Name,String Lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String provider) throws InterruptedException, IOException, AWTException {
 
@@ -588,6 +589,8 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Clickadd.click();
 		Thread.sleep(800);
 
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", emergencyContact);
 
 		Thread.sleep(600);
 		emergencyContact.click();
@@ -600,7 +603,7 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(600);
 		ERmob.sendKeys("9845123658");
 		Thread.sleep(600);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
+		//JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",Add1 );
 		Add1.click();
 		Thread.sleep(600);
@@ -983,7 +986,10 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 
 
 	public void encounterClose(String MRNO, String service1,String service2,String service3,String provider) throws InterruptedException, AWTException {
-
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1000);
 		toggle.click();
 		Thread.sleep(1000);
 		FO.click();
@@ -1061,7 +1067,8 @@ public class KIMS_StatementSettlement_YasasiiWeb extends PageFactoryInitYasasiiW
 		/////Encounter2
 
 		Thread.sleep(1000);
-		clear.click();
+		close.click();
+		//clear.click(); //commenting because of bug clear not loading 64822
 		Thread.sleep(1000);
 		//printuncheck.click();
 		//Thread.sleep(1000);

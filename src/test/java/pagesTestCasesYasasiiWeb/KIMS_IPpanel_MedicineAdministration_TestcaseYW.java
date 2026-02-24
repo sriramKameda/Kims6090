@@ -56,7 +56,7 @@ public class KIMS_IPpanel_MedicineAdministration_TestcaseYW extends TestBaseYasa
 		IPpanel. doctoreNote(docid,docpassword,MRNo,OrdersetName);
 
 		IPpanel.IPpanel(MRNo);
-
+ 
 		IPpanel.Stockreceive(MRNo);
 
 		IPpanel.IPMedicineAdministration(MRNo);

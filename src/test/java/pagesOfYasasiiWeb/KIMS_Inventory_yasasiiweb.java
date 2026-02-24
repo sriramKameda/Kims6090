@@ -423,7 +423,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		LocationIcon.click();
 
-		Thread.sleep(800);
+		Thread.sleep(800); 
 		Pharmacylocation.click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Inventoryissuelocation+"']")).click();

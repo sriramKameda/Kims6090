@@ -586,7 +586,10 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath="//div[normalize-space()='Tariff Setting']")
 	public WebElement tariffsetting;
-
+	
+	@FindBy(xpath="//div[normalize-space()='Tariff Setting(Old)']")
+	public WebElement tariffsettingOld;
+	
 	@FindBy(xpath="//span[@class='btn btn-link ng-star-inserted'][normalize-space()='Services']")
 	public WebElement Service1;
 
@@ -757,8 +760,10 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//label[normalize-space()='Preference Card Usage']")
 	public WebElement PrefcardUsage1;
 
+
 	@FindBy(xpath = "(//span[@class='checkmark'])[4]")
 	public WebElement Verifyitem;
+
 
 	@FindBy(xpath = "//span[@class='ng-star-inserted']//i[@class='ki ki-save']")
 	public WebElement SavePrefUsage;
@@ -986,7 +991,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		RCM_plan.click();
 		Thread.sleep(700);
-		tariffsetting.click();
+		tariffsettingOld.click();
 		Thread.sleep(700);
 		refsearch.click();
 		Thread.sleep(700);
@@ -3364,7 +3369,8 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		
 		anesthetistVerify.sendKeys(Anesthetist);
 		Thread.sleep(600);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+Anesthetist+"')])[3]")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Anesthetist1+"']")).click();
+		//driver.findElement(By.xpath("(//*[contains(text(),'"+Anesthetist+"')])[3]")).click();
 		Thread.sleep(1000);
 		surgeonVerify.sendKeys(ADTprovider);
 		Thread.sleep(1000);
@@ -3419,7 +3425,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 				Thread.sleep(1000); 
 		
 				driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']//i[@class='ki ki-save']")).click();
-				Thread.sleep(2500); 
+				Thread.sleep(2500);
 				//		Nurseverifiesby.sendKeys(Nuruser);
 				//		Thread.sleep(1000);
 				//		driver.findElement(By.xpath("(//*[contains(text(),'"+Nuruser+"')])")).click();
@@ -3442,7 +3448,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		anesthetistVerify.sendKeys(Anesthetist);
 		Thread.sleep(600);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+Anesthetist+"')])[3]")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Anesthetist1+"']")).click();
 		Thread.sleep(1000);
 		surgeonVerify.sendKeys(ADTprovider);
 		Thread.sleep(600);
@@ -3603,7 +3609,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 
 		ORSave.click();
-		Thread.sleep(10000); 
+		Thread.sleep(10000);
 		//saveok.click();
 		////Preference card usage
 
@@ -3615,6 +3621,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Verifyitem.click();
 		Thread.sleep(1000);
+		
 		SavePrefUsage.click();
 		Thread.sleep(1000);
 		SearchItem.clear();
@@ -3622,6 +3629,8 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		SearchItem.sendKeys("Tab");
 		Thread.sleep(1000);
 		SearchItem.clear();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//ki-checkbox-control[@class='zero-label ng-untouched ng-valid ng-dirty']//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 		Authorize.click();
 		Thread.sleep(1000);
@@ -3702,7 +3711,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		Thread.sleep(500);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(500); 
+		Thread.sleep(500);
 
 
 		////////////Sign Out		
@@ -3722,7 +3731,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		anesthetistVerify.sendKeys(Anesthetist);
 		Thread.sleep(600);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+Anesthetist+"')])[3]")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Anesthetist1+"']")).click();
 		Thread.sleep(600);
 		surgeonVerify.sendKeys(ADTprovider);
 		Thread.sleep(600);

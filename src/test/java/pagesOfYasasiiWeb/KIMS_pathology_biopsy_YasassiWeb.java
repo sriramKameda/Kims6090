@@ -444,7 +444,8 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		}
 		Thread.sleep(1000);
 
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", emergencyContact);
 		Thread.sleep(600);
 		emergencyContact.click();
 		Thread.sleep(600);
@@ -456,7 +457,7 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//input[@id='guarantorphonehome']")).sendKeys("9845123658");
 		Thread.sleep(600);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
+		//JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",Add1 );
 		Add1.click();
 		Thread.sleep(600);
@@ -872,6 +873,15 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		Thread.sleep(1000);
 		Specialtest.click();
+		
+		WebElement firstListItem = driver.findElement(
+		        By.xpath("//app-list-item[@id='droplistkey15']//li[1]")
+		);
+
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", firstListItem);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//app-list-item[@id='droplistkey15']//li[1]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//app-list-item[@id='droplistkey15']//li[1]")).click();
 		Thread.sleep(1000);
@@ -1134,9 +1144,16 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
-
+		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
+		Thread.sleep(1000);
+		ivstgnStatus.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
+		Thread.sleep(1000);
+		
 		//////////second level authorize
-
+		
+		Thread.sleep(1000);
 		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
@@ -1148,6 +1165,9 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
 			//ivstgnSave.click();
 		Thread.sleep(3000);

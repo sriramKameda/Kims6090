@@ -1056,8 +1056,10 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(1000);
 		Stockinfo.click();
 		Thread.sleep(1200);
-		BatchSelect.click();
-		Thread.sleep(1200);
+		Close.click();
+		Thread.sleep(1000);
+		//BatchSelect.click();
+		//Thread.sleep(1200);
 		prescriptionPrint.click();
 		Thread.sleep(8000);
 
@@ -1303,7 +1305,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 ////////Dextrose		
 		
 		
-     	admin2.click();
+     	admin2.click(); 
 		Thread.sleep(1000);
 		MedicineSource.click();
 		Thread.sleep(1000);

@@ -44,7 +44,7 @@ public class KIMS_NutritionManagement_TestcaseYW extends TestBaseYasasiiWeb   {
 		NM.ADT();
 		
 		
-		}
+		} 
 	
 	@Test (dataProvider = "getData" , priority=1)
 	public void investigation(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String docid,String docpassword,String User , String Password , String site,String ADTprovider,String SERVICE1  ) throws InterruptedException, IOException, AWTException {

@@ -25,6 +25,7 @@ public class PageFactoryInitYasasiiWeb {
 	public String MRDID ="NGL18178";
 	public String Pharmacist_Id ="NGL17801";
 	public String Anesthetist ="NGL18349";
+	public String Anesthetist1 ="Monisha Vijay(NGL18349)";
 //	public String authoriser ="Administrator(admin)";
 	public String authoriser ="Jayalakshmi P(NGL17801)";
 	public String FinalbillUser ="NGL17801";

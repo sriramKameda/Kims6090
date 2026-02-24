@@ -151,7 +151,10 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 	@FindBy(xpath = "//span[normalize-space()='Emergency / Guardian / Other Contacts']")
 	public WebElement emergencyContact;
-
+	
+//	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[2]/accordion[1]/accordion-group[6]/div[1]/div[1]/div[1]/div[1]")
+//	public WebElement emergencyContact;
+//	
 	@FindBy(xpath = "//input[@id='type']")
 	public WebElement Type;
 
@@ -402,7 +405,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "(//i[@title='Stock List'])[1]")
 	public WebElement Stockinfo;
 
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-brandpriority[1]/form[1]/div[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-brandpriority[1]/form[1]/div[1]/div[1]/tabset[1]/div[1]/tab[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]")
 	public WebElement BatchSelect;
 
 	@FindBy(xpath = "//i[@title='Prescription Print']")
@@ -998,9 +1001,11 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 			driver.findElement(By.xpath("//label[normalize-space()='Emergency']//span[@class='checkmark']")).click();
 
 		}
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", emergencyContact);
 
-
-
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(emergencyContact));
 		Thread.sleep(600);
 		emergencyContact.click();
 		Thread.sleep(600);
@@ -1012,7 +1017,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(600);
 		driver.findElement(By.xpath("//input[@id='guarantorphonehome']")).sendKeys("9845123658");
 		Thread.sleep(600);
-		JavascriptExecutor js=(JavascriptExecutor)driver;
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", Add1);
 		Thread.sleep(600);
 		Add1.click();
@@ -1029,7 +1034,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Save.click();
 		Thread.sleep(3000);
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='Close']")));
 		Thread.sleep(2000);
 

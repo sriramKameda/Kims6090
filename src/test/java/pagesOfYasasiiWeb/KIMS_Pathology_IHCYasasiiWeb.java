@@ -589,7 +589,7 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		//driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
 //		Thread.sleep(1000);
 
@@ -743,6 +743,7 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
+		Thread.sleep(700);
 		Processing.click();
 		Thread.sleep(700);
 		Enddate.click();
