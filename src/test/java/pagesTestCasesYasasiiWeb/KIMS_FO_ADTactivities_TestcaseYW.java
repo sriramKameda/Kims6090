@@ -42,7 +42,7 @@ public void BirthReg(String title,String Name,String lastname,String Dob, String
 		
 		ADT.ADT();
 	
-		 
+		
 		}
 
 @Test(dataProvider="getData"  , priority=1)

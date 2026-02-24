@@ -760,10 +760,8 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//label[normalize-space()='Preference Card Usage']")
 	public WebElement PrefcardUsage1;
 
-//	@FindBy(xpath = "(//span[@class='checkmark'])[3]")
-//	public WebElement Verifyitem;
-	
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-or-administration[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-preferencecardentry[1]/div[1]/form[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[16]/div[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+
+	@FindBy(xpath = "(//span[@class='checkmark'])[4]")
 	public WebElement Verifyitem;
 
 

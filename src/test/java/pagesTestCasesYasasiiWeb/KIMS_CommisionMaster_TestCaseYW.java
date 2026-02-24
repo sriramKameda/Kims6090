@@ -54,6 +54,8 @@ public class KIMS_CommisionMaster_TestCaseYW extends TestBaseYasasiiWeb{
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		
 		this.hm.clickLogout();
+		
+		
 
 	}
 	@DataProvider

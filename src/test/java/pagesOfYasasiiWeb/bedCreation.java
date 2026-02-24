@@ -78,6 +78,318 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 
 
+
+	public void bed() throws InterruptedException {
+
+		String  a="A11";
+		
+
+
+		Thread.sleep(2000);
+		Menutoggle.click();
+		Thread.sleep(600);
+		mastericon.click();
+		Thread.sleep(600);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", resource );
+		Thread.sleep(600);
+		resource.click();
+		Thread.sleep(600);
+		resourceMaster.click();
+		Thread.sleep(2000);
+		category.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Bed']")).click();                                  
+		Thread.sleep(600);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/form[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='A1 Block']")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//div[@class='form-group zero-bottom ki-dropdown']//input[@id='floorid']")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Ground floor']")).click();
+
+		ROOMcategory.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Ultra-Deluxe Room']")).click();
+		Thread.sleep(600);
+		ultradeluxRoom.click();
+		Thread.sleep(600);
+		
+//		driver.findElement(By.xpath("//li[normalize-space()='Deluxe Room']")).click();
+//		Thread.sleep(600);
+//		deluxRoom.click();
+//		Thread.sleep(600);
+	
+		Edit.click();
+		Thread.sleep(600);
+		BedType.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
+		Thread.sleep(600);
+		nurestation.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"0");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"1");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"2");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"3");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"4");
+		Thread.sleep(600);
+		bedAdd.click();
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"5");
+		Thread.sleep(600);
+		bedAdd.click();
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"6");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		//nurestation.click();
+		Thread.sleep(600);
+		//driver.findElement(By.xpath("//li[normalize-space()='Ward Nure_Nursing station']")).click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"7");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"8");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("ANS-"+a+"9");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		//	bedname.sendKeys("ANS-1040");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);  
+		nurestation.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Transfer nursing station']")).click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-1"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-2"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-3"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-4"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		nurestation.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-5"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-6"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-7"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-8"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-9"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("transfer-10"+a+"");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		update.click();
+		Thread.sleep(4000);
+
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(category));
+		Thread.sleep(2000);
+
+
+
+		////////////////////Emergency beds
+
+
+		category.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Bed']")).click();
+		Thread.sleep(600);
+
+		driver.findElement(By.xpath("//div[@class='form-group zero-bottom ki-dropdown']//input[@id='hospitalid']")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/form[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")).click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='A1 Block']")).click();
+		Thread.sleep(600);
+		floor.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Ground floor']")).click();
+		Thread.sleep(600);
+		RoomWard.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Emergengy Room']")).click();
+		Thread.sleep(600);
+		emrgncyRoom.click();
+		Thread.sleep(600);
+		Edit.click();
+		Thread.sleep(600);
+		BedType.click();
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
+		Thread.sleep(600);
+		nurestation.click();	
+		Thread.sleep(600);
+		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"0");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"1");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"2");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"3");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"4");
+		Thread.sleep(600);
+		bedAdd.click();
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"5");
+		Thread.sleep(600);
+		bedAdd.click();
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"6");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		//nurestation.click();
+		Thread.sleep(600);
+		//driver.findElement(By.xpath("//li[normalize-space()='Ward Nure_Nursing station']")).click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"7");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"8");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		bedname.sendKeys("EXE-"+a+"9");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		bedname.click();
+		Thread.sleep(600);
+		//	bedname.sendKeys("ANS-1040");
+		Thread.sleep(600);
+		bedAdd.click();
+		Thread.sleep(600);
+		update.click();
+		Thread.sleep(2000);
+
+
+
+
+
+
+
+
+	}
+
 	public void ultradeluxe() throws InterruptedException {
 
 		Thread.sleep(2000);
@@ -691,317 +1003,5 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000);
 		
 	}
-
-	public void bed() throws InterruptedException {
-
-		String  a="A16";
-		char b=67;
-
-
-		Thread.sleep(2000);
-		Menutoggle.click();
-		Thread.sleep(600);
-		mastericon.click();
-		Thread.sleep(600);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", resource );
-		Thread.sleep(600);
-		resource.click();
-		Thread.sleep(600);
-		resourceMaster.click();
-		Thread.sleep(2000);
-		category.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Bed']")).click();                                  
-		Thread.sleep(600);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/form[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='A1 Block']")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//div[@class='form-group zero-bottom ki-dropdown']//input[@id='floorid']")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Ground floor']")).click();
-
-		ROOMcategory.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Ultra-Deluxe Room']")).click();
-		Thread.sleep(600);
-		ultradeluxRoom.click();
-		Thread.sleep(600);
-		
-//		driver.findElement(By.xpath("//li[normalize-space()='Deluxe Room']")).click();
-//		Thread.sleep(600);
-//		deluxRoom.click();
-//		Thread.sleep(600);
-	
-		Edit.click();
-		Thread.sleep(600);
-		BedType.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
-		Thread.sleep(600);
-		nurestation.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"0");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"1");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"2");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"3");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"4");
-		Thread.sleep(600);
-		bedAdd.click();
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"5");
-		Thread.sleep(600);
-		bedAdd.click();
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"6");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		//nurestation.click();
-		Thread.sleep(600);
-		//driver.findElement(By.xpath("//li[normalize-space()='Ward Nure_Nursing station']")).click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"7");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"8");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("ANS-"+a+"9");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		//	bedname.sendKeys("ANS-1040");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);  
-		nurestation.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Transfer nursing station']")).click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-1"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-2"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-3"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-4"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		nurestation.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-5"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-6"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-7"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-8"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-9"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("transfer-10"+a+"");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		update.click();
-		Thread.sleep(4000);
-
-
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(category));
-		Thread.sleep(2000);
-
-
-
-		////////////////////Emergency beds
-
-
-		category.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Bed']")).click();
-		Thread.sleep(600);
-
-		driver.findElement(By.xpath("//div[@class='form-group zero-bottom ki-dropdown']//input[@id='hospitalid']")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/form[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")).click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='A1 Block']")).click();
-		Thread.sleep(600);
-		floor.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Ground floor']")).click();
-		Thread.sleep(600);
-		RoomWard.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Emergengy Room']")).click();
-		Thread.sleep(600);
-		emrgncyRoom.click();
-		Thread.sleep(600);
-		Edit.click();
-		Thread.sleep(600);
-		BedType.click();
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
-		Thread.sleep(600);
-		nurestation.click();	
-		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"0");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"1");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"2");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"3");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"4");
-		Thread.sleep(600);
-		bedAdd.click();
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"5");
-		Thread.sleep(600);
-		bedAdd.click();
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"6");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		//nurestation.click();
-		Thread.sleep(600);
-		//driver.findElement(By.xpath("//li[normalize-space()='Ward Nure_Nursing station']")).click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"7");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"8");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		bedname.sendKeys("EXE-"+a+"9");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		bedname.click();
-		Thread.sleep(600);
-		//	bedname.sendKeys("ANS-1040");
-		Thread.sleep(600);
-		bedAdd.click();
-		Thread.sleep(600);
-		update.click();
-		Thread.sleep(2000);
-
-
-
-
-
-
-
-
-	}
-
 
 }

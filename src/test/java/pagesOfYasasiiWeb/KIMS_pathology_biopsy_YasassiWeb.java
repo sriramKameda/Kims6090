@@ -1,3 +1,4 @@
+
 package pagesOfYasasiiWeb;
 
 import java.awt.AWTException;
@@ -1230,3 +1231,4 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 	}
 
 }
+

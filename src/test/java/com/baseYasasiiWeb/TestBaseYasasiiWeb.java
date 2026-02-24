@@ -1,3 +1,4 @@
+
 package com.baseYasasiiWeb;
 
 import java.io.FileInputStream;
@@ -254,7 +255,7 @@ public class TestBaseYasasiiWeb {
 
 
 
-	//@AfterSuite(alwaysRun = true)
+	@AfterSuite(alwaysRun = true)
 
 	public void teardown() {
 
