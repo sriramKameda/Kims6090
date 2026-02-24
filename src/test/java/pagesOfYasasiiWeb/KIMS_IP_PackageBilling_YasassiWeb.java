@@ -815,7 +815,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 		serviceType.click();
 		Thread.sleep(1500);
 		packagE.click();
-		Thread.sleep(1500);
+		Thread.sleep(1500); 
 		serviceName.sendKeys(Packagename);
 		Thread.sleep(1500);
 

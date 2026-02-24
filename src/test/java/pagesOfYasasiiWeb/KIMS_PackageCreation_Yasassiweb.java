@@ -234,7 +234,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement exclusionCoverageStorage;
 	@FindBy(xpath = "//div[@class='link-value'][normalize-space()='RCM-Plan']")
 	public WebElement rcmPlanTab;
-	@FindBy(xpath = "//div[normalize-space()='Tariff Setting']")
+	@FindBy(xpath = "//div[normalize-space()='Tariff Setting(Old)']")
 	public WebElement tariffSettingTab;
 	@FindBy(xpath = "//input[@placeholder='Search reference name...']")
 	public WebElement enterReference;// searchicon
@@ -986,8 +986,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(1000);
-//		mastersModule.click(); // del
-//		Thread.sleep(1000); // del
+		//mastersModule.click(); // del
+		//Thread.sleep(1000); // del
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageDefinition.click();
@@ -1273,8 +1273,8 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-//		 mastersModule.click(); // del for full run
-//		Thread.sleep(1000); // del for full run
+		 mastersModule.click(); // del for full run
+		Thread.sleep(1000); // del for full run
 		 rcmPackage.click();//
 		 Thread.sleep(1000);
 		packageTOsiteMappingTab.click();

@@ -54,9 +54,8 @@ public class KIMS_IPFinalbilling_TestcaseYW   extends TestBaseYasasiiWeb  {
 
 		KIMS_IPFinalbilling_yasasiiweb IPfinal = new KIMS_IPFinalbilling_yasasiiweb(driver);
 
-
-    	IPfinal.doctoreNote(docid, docpassword, MRNO);
-
+        IPfinal.doctoreNote(docid,docpassword, MRNO);
+        
     	IPfinal.PharmacyBilling(MRNO, ADTprovider, adminid, adminpassword);
 
     	IPfinal.dischargeApproval(MRNO, nurseUser, NursePassword);

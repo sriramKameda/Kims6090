@@ -55,7 +55,7 @@ public void walkin1(String PROVIDER, String MRNO , String filepath, String User 
 }
 
 
-@AfterClass
+//@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

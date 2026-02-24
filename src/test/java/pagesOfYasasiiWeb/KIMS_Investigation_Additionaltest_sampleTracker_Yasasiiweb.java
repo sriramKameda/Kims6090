@@ -866,7 +866,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Status.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Unauthorized']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(1000); 
 
 		SearchField.click();
 		Thread.sleep(1000);
@@ -1016,7 +1016,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(2000);
 

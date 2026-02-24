@@ -135,7 +135,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 	public WebElement Selectall;
 
 
-	@FindBy(xpath="//div[normalize-space()='Tariff Setting']")
+	@FindBy(xpath="//div[normalize-space()='Tariff Setting(Old)']")
 	public WebElement TariffSetting;
 
 	@FindBy(xpath="//input[@placeholder='Search reference name...']")

@@ -32,7 +32,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 
 		super(driver);
 
-	}
+	} 
 
 	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='menu-toggle']")
 	public WebElement Hamburger;

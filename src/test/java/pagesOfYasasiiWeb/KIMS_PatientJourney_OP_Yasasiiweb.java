@@ -1203,7 +1203,7 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		counterSearch.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(2000);
 		counterSearchicon.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		// patientSearch2.click();
 		Thread.sleep(2000);
@@ -1339,7 +1339,11 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 	}
 	
 	public void encounterClose(String MRNO, String service1,String service2,String service3,String provider) throws InterruptedException, AWTException {
-
+		
+		driver.navigate().refresh();///refreshing page beausr clear and refernce letter not working due to ui Issue
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1000);//button[normalize-space()='Close']
 		toggle.click();
 		Thread.sleep(1000);
 		FO.click();
@@ -1417,7 +1421,8 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		/////Encounter2
 
 		Thread.sleep(1000);
-		clear.click();
+		driver.findElement(By.xpath("//label[@title='Clear']")).click();//label[@title='Clear']
+	//	clear.click(); clear button disable and overlapping
 		Thread.sleep(1000);
 		//printuncheck.click();
 		//Thread.sleep(1000);

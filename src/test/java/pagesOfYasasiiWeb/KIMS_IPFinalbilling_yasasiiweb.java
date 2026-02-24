@@ -2598,6 +2598,9 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		InvoiceView.click();
 		Thread.sleep(1000);	
+		driver.findElement(By.xpath("//div[@class='col-md-6 col-3 ta-r pr-1']//i[@class='ki ki-reset']")).click();
+		Thread.sleep(2000);
+		
 		Invoicemode.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Generated']")).click();

@@ -1069,7 +1069,7 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@title='Early leaving']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//i[@class='ki ki-trash'])[3]")).click();
+		driver.findElement(By.xpath("//lib-searchbarlist[@type='folookupmaster']//span[@id='common_trash_icon_0']//i[@class='ki ki-trash']//lib-searchbarlist[@type='folookupmaster']//span[@id='common_trash_icon_0']//i[@class='ki ki-trash']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
 		Thread.sleep(3000);

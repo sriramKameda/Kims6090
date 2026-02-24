@@ -156,9 +156,12 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[@class='ki ki-plus-circle']")
 	public WebElement DialysisNote;
 
-	@FindBy(xpath = "//ki-calender-time//input[@type='text']")
+	@FindBy(xpath = "(//ki-calender-time//input[@type='text'])[1]")
 	public WebElement ExcTime;
-
+	
+//	@FindBy(xpath = "//input[@class='form-control ng-pristine ng-star-inserted ng-invalid ng-touched']")
+//	public WebElement ExcTime;
+//	
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/app-dialysis-note[1]/div[1]/div[2]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[2]/div[4]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement hptltype;
 
@@ -489,7 +492,7 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 				driver.get(URL);
 				Thread.sleep(1000);
 		
-				Thread.sleep(2000);
+			Thread.sleep(2000);
 				userid.click();
 				Thread.sleep(700);
 				userid.sendKeys(ProviderID);
@@ -585,7 +588,7 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 		logout.click();
 		Thread.sleep(2000);
 		logoutConfirm.click();
-
+		
 		////////login
 		Thread.sleep(2000);
 		userid.click();
@@ -631,7 +634,7 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 		TemplateOK.click();
 		Thread.sleep(3000);
 		DialysisNote.click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		ExcTime.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//span[normalize-space()='Today']")).click();
@@ -715,7 +718,7 @@ public class KIMS_DialysisNote_YasasiiWeb  extends PageFactoryInitYasasiiWeb{
 		EmrSave.click();
 		Thread.sleep(3000);
 
-
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(Rightkey));
 		Thread.sleep(2000);
 

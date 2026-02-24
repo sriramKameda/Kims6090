@@ -131,7 +131,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//div[@class='link-value'][normalize-space()='RCM-Plan']")
 	public WebElement RCM;
 
-	@FindBy(xpath="//div[normalize-space()='Tariff Setting']")
+	@FindBy(xpath="//div[normalize-space()='Tariff Setting(Old)']")
 	public WebElement TariffSetting;
 
 	@FindBy(xpath="//input[@placeholder='Search reference name...']")
@@ -736,7 +736,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(2000); 
 		Hamberger.click();
-		Thread.sleep(1000); 
+		Thread.sleep(2000); 
 		RCM.click();
 		Thread.sleep(1000); 
 		TariffSetting.click();

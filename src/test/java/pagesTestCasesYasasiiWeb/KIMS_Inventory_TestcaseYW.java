@@ -35,7 +35,7 @@ public class KIMS_Inventory_TestcaseYW extends TestBaseYasasiiWeb  {
 	public void inventory(String Supplier,String Sublocation , String MRNo,String IndGroupName,String GRNNO,String BatchNo, String DOB,String closeIndentNO) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 
-
+ 
 		KIMS_Inventory_yasasiiweb INV = new KIMS_Inventory_yasasiiweb(driver);
 
 		INV.InventoryHome();
