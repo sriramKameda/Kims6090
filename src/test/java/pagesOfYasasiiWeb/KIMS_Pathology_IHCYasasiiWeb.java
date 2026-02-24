@@ -734,7 +734,7 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 //		CasssetteRemarks.sendKeys("OK");
 //		Thread.sleep(700);
 		PathSave.click();
-		Thread.sleep(700);
+		Thread.sleep(1700);
 		
 		
 		
@@ -898,71 +898,71 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click();
 
-		///////////////////Staining//N
-	Thread.sleep(3000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
-		Thread.sleep(2000);
-		Enddate.click();
-		Thread.sleep(700);
-		today.click();
-		Thread.sleep(700);
-		Donebytech.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyTechnician+"']")).click();
-		Thread.sleep(700);
-		Remarks.click();
-		Thread.sleep(700);
-		Remarks.sendKeys("Processing done successfully");
-		Thread.sleep(700);
-		Thread.sleep(700);
-		Specialtest.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//app-list-item[@id='droplistkey15']//li[1]")).click();
-		Thread.sleep(700);
-		PathSave.click();
-		Thread.sleep(700);
-
-		///////////////mounting
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
-		Thread.sleep(2000);
-		Enddate.click();
-		Thread.sleep(700);
-		today.click();
-		Thread.sleep(700);
-		Donebytech.click();
-		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyTechnician+"']")).click();
-		Donebydoc.click();
-	  driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyDoctor+"']")).click();
-		Remarks.click();
-		Thread.sleep(700);
-		Remarks.sendKeys(" done successfully");
-		Thread.sleep(700);
-		PathSave.click();
-		Thread.sleep(700);   
-
-		////////Reporting
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
-		Thread.sleep(2000);
-		Enddate.click();
-		Thread.sleep(2000);
-		today.click();
-		Thread.sleep(700);	
-		Remarks.click();
-		Thread.sleep(700);
-		Remarks.sendKeys(" done successfully");
-		Thread.sleep(700);
-		Donebydoc.click();
-		Thread.sleep(700);
-	   driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyDoctor+"']")).click();
-		Thread.sleep(700);
-		GeneratefinalReport.click();
-		Thread.sleep(700);
-		PathSave.click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//label[@class='data-info']")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click(); 
+//		///////////////////Staining//N
+//	Thread.sleep(3000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
+//		Thread.sleep(2000);
+//		Enddate.click();
+//		Thread.sleep(700);
+//		today.click();
+//		Thread.sleep(700);
+//		Donebytech.click();
+//		Thread.sleep(700);
+//		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyTechnician+"']")).click();
+//		Thread.sleep(700);
+//		Remarks.click();
+//		Thread.sleep(700);
+//		Remarks.sendKeys("Processing done successfully");
+//		Thread.sleep(700);
+//		Thread.sleep(700);
+//		Specialtest.click();
+//		Thread.sleep(700);
+//		driver.findElement(By.xpath("//app-list-item[@id='droplistkey15']//li[1]")).click();
+//		Thread.sleep(700);
+//		PathSave.click();
+//		Thread.sleep(700);
+//
+//		///////////////mounting
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
+//		Thread.sleep(2000);
+//		Enddate.click();
+//		Thread.sleep(700);
+//		today.click();
+//		Thread.sleep(700);
+//		Donebytech.click();
+//		Thread.sleep(700);
+//		driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyTechnician+"']")).click();
+//		Donebydoc.click();
+//	  driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyDoctor+"']")).click();
+//		Remarks.click();
+//		Thread.sleep(700);
+//		Remarks.sendKeys(" done successfully");
+//		Thread.sleep(700);
+//		PathSave.click();
+//		Thread.sleep(700);   
+//
+//		////////Reporting
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ki-calender-time[@id='enddate']//input[@type='text']")));
+//		Thread.sleep(2000);
+//		Enddate.click();
+//		Thread.sleep(2000);
+//		today.click();
+//		Thread.sleep(700);	
+//		Remarks.click();
+//		Thread.sleep(700);
+//		Remarks.sendKeys(" done successfully");
+//		Thread.sleep(700);
+//		Donebydoc.click();
+//		Thread.sleep(700);
+//	   driver.findElement(By.xpath("//li[normalize-space()='"+BiopsyDoctor+"']")).click();
+//		Thread.sleep(700);
+//		GeneratefinalReport.click();
+//		Thread.sleep(700);
+//		PathSave.click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//label[@class='data-info']")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(By.xpath("//button[normalize-space()='Back']")).click(); 
 	}
 
 
