@@ -1017,7 +1017,8 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		//driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+		driver.findElement(By.xpath("//*[contains(text(),'"+MRNO+"')]")).click();
 		Thread.sleep(2000);
 
 		ResultPreview.click();

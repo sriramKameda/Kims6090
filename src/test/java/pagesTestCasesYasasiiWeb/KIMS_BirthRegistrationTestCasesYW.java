@@ -29,6 +29,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 	}
 
+	
 	@Test(dataProvider = "getData", priority = 0)
 	public void BirthReg(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNO, String Provider, String MRNo1, String ADTprovider, String nurseUser,

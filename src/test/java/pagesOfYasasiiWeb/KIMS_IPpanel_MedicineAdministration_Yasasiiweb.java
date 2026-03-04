@@ -1088,6 +1088,9 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(800);
 		
 		Transfer.click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		
 		Thread.sleep(4000);
 		
 		
@@ -1181,7 +1184,8 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(800);
 		RecieveQTY.clear();
 		Thread.sleep(800);
-		RecieveQTY.sendKeys("2");
+		//RecieveQTY.sendKeys("2");
+		RecieveQTY.sendKeys("0.25");
 		Thread.sleep(800);
 		ReceiveStock.click();
 		Thread.sleep(800);
@@ -1420,7 +1424,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 
 		Save1.click();
 		Thread.sleep(30000);
-		
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(admin3));
 		Thread.sleep(3000);		
 		

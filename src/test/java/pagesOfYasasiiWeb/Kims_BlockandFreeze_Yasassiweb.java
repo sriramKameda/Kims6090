@@ -370,7 +370,9 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(800);
 		Thread.sleep(1000);   */
 
-
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(SelectCategory));
+		Thread.sleep(1000);
 
 		SelectCategory.click();
 		Thread.sleep(1000);
@@ -460,7 +462,7 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 			System.out.println("sri"); 
 		}
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='searchtext']")));
 		Thread.sleep(1000);
 		/*	driver.findElement(By.xpath("//i[@title='Phone No']")).click();

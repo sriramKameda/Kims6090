@@ -662,7 +662,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		// UParrow.click(); Thread.sleep(1000); act.doubleClick(UParrow).perform();
 		 // Thread.sleep(1000); lock.click(); Thread.sleep(1000);
 		 
-		DoctorNote.click();
+	    DoctorNote.click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement11 = driver
 				.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
@@ -733,7 +733,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		clickToAdministration.click();
 		Thread.sleep(700);
 		Save.click();
-		Thread.sleep(700);
+		Thread.sleep(1500);
 
 		//// Diet-admin
 

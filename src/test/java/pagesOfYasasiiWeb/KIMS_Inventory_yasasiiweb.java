@@ -1281,7 +1281,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(800);
 		Clear.click();
-		Thread.sleep(2000);
+		Thread.sleep(2000); 
 
 
 	}

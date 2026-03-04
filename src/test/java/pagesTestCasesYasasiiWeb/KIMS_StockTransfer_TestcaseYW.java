@@ -52,7 +52,7 @@ public class KIMS_StockTransfer_TestcaseYW extends TestBaseYasasiiWeb  {
 
 
 	
-	@AfterClass
+	//@AfterClass
 	public void logout() throws Exception
 	{
 

@@ -31,7 +31,7 @@ public class KIMS_NutritionManagement_TestcaseYW extends TestBaseYasasiiWeb   {
 	this.hm = login.enterloginDetails("admin", "KAmeda123$", Site);
 	Thread.sleep(2000); 
 	}
-
+ 
 	
  @Test (dataProvider = "getData" , priority=0)
 	public void Patreg(String NAME , String lastname, String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE ,String docid,String docpassword,String User , String Password , String site,String ADTprovider,String SERVICE1 ) throws InterruptedException, IOException, AWTException {

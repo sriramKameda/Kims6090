@@ -983,11 +983,11 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 	public void packageDefination(String Packagename, String Group1, String Group2, String Group3, String Group4,
 			String Group5, String Group6, String Group7) throws InterruptedException {
-
+  
 		menuToggle.click();
 		Thread.sleep(1000);
-		//mastersModule.click(); // del
-		//Thread.sleep(1000); // del
+	//	mastersModule.click(); // del
+	//	Thread.sleep(1000); // del
 		rcmPackage.click();
 		Thread.sleep(1000);
 		packageDefinition.click();
@@ -1273,7 +1273,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-		 mastersModule.click(); // del for full run
+	//	 mastersModule.click(); // del for full run
 		Thread.sleep(1000); // del for full run
 		 rcmPackage.click();//
 		 Thread.sleep(1000);
