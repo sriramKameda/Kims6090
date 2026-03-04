@@ -58,12 +58,12 @@ public class TestBaseYasasiiWeb {
 	public String browserType;
 	public String chromeversion =" 104.0.5112.102";
 	public static String screenshotPath;
+	
+	
 	public String ProviderID ="NGL18286";
 	public String FinalbillUser ="NGL17801";
-
 	///Site
-	 
-	public String Site ="KIMSHEALTH Nagercoil";
+	public String Site ="KIMSHEALTH Trivandrum";
 	
 	public static String testname;
 

@@ -1103,8 +1103,21 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		driver.findElement(By.xpath("//li[normalize-space()='Patient Not Available']")).click();
 		Thread.sleep(700);
 		AdminAdd.click();
-		Thread.sleep(700);
+		Thread.sleep(500);
+		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
+		if(dynamicElement1.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+
+
+		Thread.sleep(700);
 		Remarks.click();
 		Thread.sleep(700);
 		Remarks.sendKeys("patient Not coperating");
@@ -1112,9 +1125,9 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		AdminAdd.click();
 		Thread.sleep(700);
 		Thread.sleep(500);
-		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
+		List<WebElement> dynamicElement91=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
-		if(dynamicElement1.size() !=0)
+		if(dynamicElement91.size() !=0)
 		{
 			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		}

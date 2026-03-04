@@ -244,7 +244,7 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Search.sendKeys(QueueName, Keys.ENTER);
 		Thread.sleep(1000);
 		
-	 List<WebElement> Element= driver.findElements(By.xpath("//div[@title='"+QueueName+"']"));
+	    List<WebElement> Element= driver.findElements(By.xpath("//div[@title='"+QueueName+"']"));
 		Thread.sleep(1000);
 		int A =Element.size();
 		

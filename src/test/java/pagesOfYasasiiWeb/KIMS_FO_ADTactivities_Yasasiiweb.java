@@ -1700,8 +1700,10 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 	Thread.sleep(4000);
 	t.keyPress(KeyEvent.VK_ESCAPE);
 	t.keyRelease(KeyEvent.VK_ESCAPE);
-
-
+	t.keyPress(KeyEvent.VK_ESCAPE);
+	t.keyRelease(KeyEvent.VK_ESCAPE);
+	t.keyPress(KeyEvent.VK_ESCAPE);
+	t.keyRelease(KeyEvent.VK_ESCAPE);
 }
 
 

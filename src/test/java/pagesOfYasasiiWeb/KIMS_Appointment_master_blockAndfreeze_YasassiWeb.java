@@ -242,6 +242,23 @@ public class KIMS_Appointment_master_blockAndfreeze_YasassiWeb extends PageFacto
 		Thread.sleep(1000);
 		BlockUpdate.click();
 		Thread.sleep(2000);
+		
+
+		Thread.sleep(1000);
+		List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']"));
+
+		if(dynamicElement1111.size() !=0)
+		{
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+		
+		
 		BottomRefresh.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/app-blockschedule[1]/div[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")).click();

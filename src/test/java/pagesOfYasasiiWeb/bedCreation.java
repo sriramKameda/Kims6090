@@ -81,10 +81,8 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 	public void bed() throws InterruptedException {
 
-		String  a="A11";
+		String  a="A1";
 		
-
-
 		Thread.sleep(2000);
 		Menutoggle.click();
 		Thread.sleep(600);
