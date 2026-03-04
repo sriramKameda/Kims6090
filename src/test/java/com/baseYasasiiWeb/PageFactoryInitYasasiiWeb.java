@@ -10,9 +10,9 @@ public class PageFactoryInitYasasiiWeb {
 	public static Actions act;
 	protected static WebDriver driver;
 	
-	//public String URL ="http://192.168.1.111:30150/login";
-	public String URL ="http://192.168.2.11/login";
-	public String Site ="KIMSHEALTH Nagercoil";
+	public String URL ="http://192.168.1.143/";
+	//public String URL ="http://192.168.2.11/login";
+	public String Site ="KIMSHEALTH Trivandrum";
 	public String Provider ="Radhakrishnan Marimuthu";
 	public String ADTprovider ="Radhakrishnan Marimuthu(NGL18286)";
 	public String ProviderID ="NGL18286";
@@ -23,7 +23,7 @@ public class PageFactoryInitYasasiiWeb {
 	public String SecondOpinionProvider ="Dr Prethesh Raaj T(NGL18086)";
 	public String NurseID ="NGL17696";
 	public String MRDID ="NGL18178";
-	public String Pharmacist_Id ="NGL17801";
+	public String Pharmacist_Id ="NGL18485";
 	public String Anesthetist ="NGL18349";
 	public String Anesthetist1 ="Monisha Vijay(NGL18349)";
 //	public String authoriser ="Administrator(admin)";
@@ -43,7 +43,7 @@ public class PageFactoryInitYasasiiWeb {
 	public String BiopsyTechnician ="Ann Mary Varghese"; //2.11
 	public String Samplepreparedby ="Aadil M S";
 	public String Sampledespatchby ="Karthik P";
-	public String OT_PharmacyLocation="L4 - IPD OT";;
+	public String OT_PharmacyLocation="L4 - IPD OT";
 	public String SecondNurse="Anitha R (NGL17697)";
 	
 	public static String Excelfilepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\SP55-KIMSDataSheet.xls";

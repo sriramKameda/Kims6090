@@ -670,9 +670,9 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(800);
 		authorizer.click();
 		Thread.sleep(800);
-		entername.sendKeys(authorisername);
+		entername.sendKeys(authoriser);
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//span[@title='"+authorisername+"']")).click();
+		driver.findElement(By.xpath("//span[@title='"+authoriser+"']")).click();
 		Thread.sleep(800);
 		enterremark.sendKeys(remarks);
 		Thread.sleep(800);
@@ -698,9 +698,9 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 
 		//login
 		userid.click();
-		userid.sendKeys(AUTHUser);
+		userid.sendKeys(FinalbillUser);
 		password.click();
-		password.sendKeys(AUTHpassword);
+		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
 		Thread.sleep(1000);

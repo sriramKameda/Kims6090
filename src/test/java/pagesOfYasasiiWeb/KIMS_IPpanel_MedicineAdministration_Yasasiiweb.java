@@ -300,7 +300,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[4]")
 	public WebElement Stockinfo;
 
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-brandpriority[1]/form[1]/div[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-brandpriority[1]/form[1]/div[1]/div[1]/tabset[1]/div[1]/tab[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]")
 	public WebElement BatchSelect;
 
 	@FindBy(xpath = "//i[@title='Prescription Print']")
@@ -1056,10 +1056,10 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(1000);
 		Stockinfo.click();
 		Thread.sleep(1200);
-		Close.click();
-		Thread.sleep(1000);
-		//BatchSelect.click();
-		//Thread.sleep(1200);
+		//Close.click();
+		//Thread.sleep(1000);
+		BatchSelect.click();
+		Thread.sleep(1200);
 		prescriptionPrint.click();
 		Thread.sleep(8000);
 

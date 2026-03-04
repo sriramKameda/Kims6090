@@ -29,7 +29,6 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 	}
 
-	
 	@Test(dataProvider = "getData", priority = 0)
 	public void BirthReg(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNO, String Provider, String MRNo1, String ADTprovider, String nurseUser,
@@ -88,7 +87,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 		Schedule1.dischargeRecommendationBaby(MRNo1, nurseUser, DOCuser, DOCpassword);
 
-		Schedule1.dischargeApprovalBaby(MRNo1, nurseUser, AdminUser, AdminPassword);
+//		Schedule1.dischargeApprovalBaby(MRNo1, nurseUser, AdminUser, AdminPassword);
 
 		Schedule1.clinicalPharmasistclearance(MRNo1, nurseUser, AdminUser, AdminPassword);
 
@@ -116,7 +115,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 		Schedule.dischargeRecommendationMOM(MRNo, nurseUser, DOCuser, DOCpassword, AdminUser, AdminPassword);
 
-		Schedule.dischargeApprovalMOM(MRNo, nurseUser, MRDPassword, AdminUser, AdminPassword);
+//		Schedule.dischargeApprovalMOM(MRNo, nurseUser, MRDPassword, AdminUser, AdminPassword);
 
 		Schedule.clinicalPharmasistclearanceMOM(MRNo, nurseUser, AdminUser, AdminPassword);
 

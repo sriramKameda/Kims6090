@@ -110,7 +110,7 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 	public WebElement CardOK;
 
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-authoriser-request[1]/div[2]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
-	public WebElement authoriser;
+	public WebElement authorizer;
 
 	@FindBy(xpath = "//input[@placeholder='Search...']")
 	public WebElement SearchAuth;
@@ -747,9 +747,9 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 			
 
 			Thread.sleep(1000);
-			SearchAuth.sendKeys(AUTHPERSON);
+			SearchAuth.sendKeys(authoriser);
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[@title='"+AUTHPERSON+"']")).click();
+			driver.findElement(By.xpath("//span[@title='"+authoriser+"']")).click();
 
 			//driver.findElement(By.xpath("//*[contains(text(),'" +AUTHPERSON+ "')]")).click();
 			Thread.sleep(1000);
@@ -813,9 +813,9 @@ public class KIMS_AdjustmentRefund_Yasassiweb extends PageFactoryInitYasasiiWeb 
 
 		//login
 		userid.click();
-		userid.sendKeys(AUTHUser);
+		userid.sendKeys(FinalbillUser);
 		password.click();
-		password.sendKeys(AUTHpassword);
+		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
 		Thread.sleep(1000);

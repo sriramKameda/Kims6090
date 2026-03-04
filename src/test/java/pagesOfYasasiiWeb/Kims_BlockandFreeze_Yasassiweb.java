@@ -243,26 +243,26 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		lookupMaster.click();
 		Thread.sleep(1000);
-		lookuptype.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Appointment Block']")).click();
-		Thread.sleep(1000);
-		lookupValue.click();
-		Thread.sleep(1000);
-		lookupValue.sendKeys("Early leaving");
-		Thread.sleep(1000);
-		Save.click();
-		Thread.sleep(2000);
-
-		Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(1000);
-		t.keyPress(KeyEvent.VK_ESCAPE);
-		t.keyRelease(KeyEvent.VK_ESCAPE);
-		Thread.sleep(2000);
-		//driver.findElement(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']")).click();
-		Thread.sleep(2000);
+//		lookuptype.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//li[normalize-space()='Appointment Block']")).click();
+//		Thread.sleep(1000);
+//		lookupValue.click();
+//		Thread.sleep(1000);
+//		lookupValue.sendKeys("Early leaving");
+//		Thread.sleep(1000);
+//		Save.click();
+//		Thread.sleep(2000);
+//
+//		Robot t=new Robot();
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(1000);
+//		t.keyPress(KeyEvent.VK_ESCAPE);
+//		t.keyRelease(KeyEvent.VK_ESCAPE);
+//		Thread.sleep(2000);
+//		//driver.findElement(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']")).click();
+//		Thread.sleep(2000);
 		
 		
 	

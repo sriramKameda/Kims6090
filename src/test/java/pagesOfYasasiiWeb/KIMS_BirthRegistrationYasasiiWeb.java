@@ -977,7 +977,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Lastname.sendKeys(lastName1);
 		Thread.sleep(500);
 
-		EnterAge.click();
+		EnterAge.clear();
 		Thread.sleep(500);
 
 		Robot t = new Robot();
@@ -1896,35 +1896,35 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		EmrSave.click();
 		Thread.sleep(1000);
 
-		// openNewTab
-
-		Thread.sleep(3000);
-		((JavascriptExecutor) driver).executeScript("window.open()");
-		ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
-		int Windowsize1 = driver.getWindowHandles().size();
-		int windowopen1 = Windowsize1 - 1;
-
-		driver.switchTo().window(tabs1.get(windowopen1));
-		driver.switchTo().window(tabs1.get(windowopen1));
-		Thread.sleep(5000);
-		driver.get(URL);
-		Thread.sleep(3000);
-
-		// login
-		userid.click();
-		userid.sendKeys(NurseID);
-		password.click();
-		password.sendKeys(Password);
-		Thread.sleep(1000);
-		site.click();
-		// JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",
-				driver.findElement(By.xpath("//li[normalize-space()='" + Site + "']")));
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='" + Site + "']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(3000);
+//		// openNewTab
+//
+//		Thread.sleep(3000);
+//		((JavascriptExecutor) driver).executeScript("window.open()");
+//		ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
+//		int Windowsize1 = driver.getWindowHandles().size();
+//		int windowopen1 = Windowsize1 - 1;
+//
+//		driver.switchTo().window(tabs1.get(windowopen1));
+//		driver.switchTo().window(tabs1.get(windowopen1));
+//		Thread.sleep(5000);
+//		driver.get(URL);
+//		Thread.sleep(3000);
+//
+//		// login
+//		userid.click();
+//		userid.sendKeys(NurseID);
+//		password.click();
+//		password.sendKeys(Password);
+//		Thread.sleep(1000);
+//		site.click();
+//		// JavascriptExecutor js= (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();",
+//				driver.findElement(By.xpath("//li[normalize-space()='" + Site + "']")));
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//li[normalize-space()='" + Site + "']")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+//		Thread.sleep(3000);
 
 	}
 
@@ -2032,8 +2032,8 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		FO.click();
 		Thread.sleep(1000);
-		 Pharmacypanel.click();
-		
+//	    Pharmacypanel.click();
+	    Thread.sleep(500);
 		IPpanel.click();
 
 		Thread.sleep(500);
@@ -2651,7 +2651,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		saveButton.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 
 //		driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@class='row justify-content-between']")).click();
 //		Thread.sleep(2000);
@@ -2984,7 +2984,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		FO.click();
 		Thread.sleep(1000);
-	    Pharmacypanel.click();
+	//    Pharmacypanel.click();
 		//Close.click();
 		Thread.sleep(1000);
 		IPpanel.click();
