@@ -501,8 +501,8 @@ public class KIMS_ER_Admission_IPEnquiry_Staypass_Yasasiiweb extends PageFactory
 		RoomType.click();
 		Thread.sleep(700);
 		
-		driver.findElement(By.xpath("(//*[contains(text(),'Emergency room')])[1]")).click();
-		//driver.findElement(By.xpath("(//*[contains(text(),'ER_Exclusive')])[1]")).click();
+		//driver.findElement(By.xpath("(//*[contains(text(),'Emergency room')])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'ER_Exclusive')])[1]")).click();
 		Thread.sleep(1000);
 		Bed.click();
 		Thread.sleep(700);

@@ -431,7 +431,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		Lastname.sendKeys(lastName);
 		Thread.sleep(500);
 
-		EnterAge.click();
+		EnterAge.clear();
 		Thread.sleep(500);
 
 

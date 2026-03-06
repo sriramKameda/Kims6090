@@ -746,8 +746,23 @@ public class KIMS_CpoePendingOrder_Billing_Yasasiiweb extends PageFactoryInitYas
 		Thread.sleep(1000);
 		Hamburger.click();
 		Thread.sleep(800);
-		FOModule.click();
+		Thread.sleep(500);
+		List<WebElement> dynamicElement01=driver.findElements(By.xpath("//i[@class='ki ki-reception-fill']"));
+
+		if(dynamicElement01.size() !=0)
+		{
+			FOModule.click();
+			Thread.sleep(1000);
+		}
+
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
+		
+		
+	
 		Thread.sleep(500);
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
 

@@ -765,7 +765,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(2000);
 
-		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link navbar-brand menu']//div[@class='menu-toggle']")));
 		Thread.sleep(1000);
 		//		Hamberger.click();

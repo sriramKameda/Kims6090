@@ -34,13 +34,13 @@ public class PageFactoryInitYasasiiWeb {
 	public String PharmacyLocation ="West Main";
 	public String NursingStationLocation ="North Central pharmacy";
 	public String Inventoryissuelocation ="L1 - IPD PHARM";
-	public String SampleCollectionLocation ="LEVEL 2 SAMPLE COLLECTION";
-	public String SampleCollectionLocation1 ="IPD LEVEL 2 SAMPLE COLLECTION";
+    public String SampleCollectionLocation1 ="LEVEL 2 SAMPLE COLLECTION";  
+	public String SampleCollectionLocation ="IPD LEVEL 2 SAMPLE COLLECTION";
 	public String DischargeFollowupService ="Discharge Follow Up";
 	public String BiopsyDoctor ="Aaliya";
 	public String BiopsyDoctorID ="NGL16508";
-	//public String BiopsyTechnician ="Greeshma M Nair";
-	public String BiopsyTechnician ="Ann Mary Varghese"; //2.11
+	public String BiopsyTechnician ="Reshma T";
+	//public String BiopsyTechnician ="Ann Mary Varghese"; //2.11
 	public String Samplepreparedby ="Aadil M S";
 	public String Sampledespatchby ="Karthik P";
 	public String OT_PharmacyLocation="L4 - IPD OT";

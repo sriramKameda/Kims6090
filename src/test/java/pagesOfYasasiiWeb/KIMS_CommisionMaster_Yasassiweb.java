@@ -6,6 +6,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
+import java.util.List;
 import java.util.Locale;
 
 import org.openqa.selenium.By;
@@ -322,11 +323,29 @@ public class KIMS_CommisionMaster_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		expand.click();
 		Thread.sleep(1000);
+		
+		
+		
+		
+		
 		int i = 0;
-		//if (next.isEnabled()) {
 		while (i <= 3) {
-			next.click();
-			Thread.sleep(1500);
+			
+			Thread.sleep(500);
+			List<WebElement> dynamicElement = driver
+					.findElements(By.xpath("//button[@class='pagination-buttons next sm active']"));
+
+			if (dynamicElement.size() != 0) {
+				
+				next.click();
+				Thread.sleep(1500);
+			}
+
+			else {
+				System.out.println("sri");
+			}
+			Thread.sleep(1000);
+			
 			i++;
 		}
 		

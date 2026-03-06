@@ -46,7 +46,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[@title='A1 Block-Ground floor-Ultra-Deluxe-Ultra-Deluxe Room']")
 	public WebElement  ultradeluxRoom;
 
-	@FindBy(xpath = "//div[@title='A1 Block-Ground floor-ER_Exclusive-Emergengy Room']")
+	@FindBy(xpath = "//div[@title='A1 Block-Ground floor-ER_Exclusive-ER Room']")
 	public WebElement  emrgncyRoom;
 
 	@FindBy(xpath = "//i[@class='ki ki-pencil']")
@@ -82,7 +82,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 	public void bed() throws InterruptedException {
 
 
-		String  a="A1";
+		String  a="A3";
 
 		
 		Thread.sleep(2000);
@@ -298,7 +298,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(600);
 		RoomWard.click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='Emergengy Room']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='ER Room']")).click();
 		Thread.sleep(600);
 		emrgncyRoom.click();
 		Thread.sleep(600);
