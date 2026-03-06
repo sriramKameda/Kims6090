@@ -226,7 +226,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "//button[@id='ordersetAdd']")
 	public WebElement serviceAdd;
 	
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-duplicate-medicine-confirmation[1]/div[2]/div[1]/div[3]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-duplicate-medicine-confirmation[1]/div[2]/div[1]/div[6]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement OverrideReason;
 	
 
@@ -294,7 +294,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "//label[@class='check-container zero-label mt0 mr0']//span[@class='checkmark']")
 	public WebElement SelectAll;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[2]/i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[1]/i[1]")
 	public WebElement batchdelete;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[4]")
@@ -377,7 +377,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	
 	
 	
-	@FindBy(xpath = "//input[@id='medicinesource1']")
+	@FindBy(xpath = "//input[@id='medicinesource']")
 	public WebElement MedicineSource1;
 	
 	@FindBy(xpath = "//input[@id='batchnoid1']")
@@ -912,7 +912,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		serviceAdd.click();
 		Thread.sleep(800);
 		
-		List<WebElement> dynamicElement111=driver.findElements(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-duplicate-medicine-confirmation[1]/div[2]/div[1]/div[3]/div[1]/ki-input-control[1]/div[1]/input[1]"));
+		List<WebElement> dynamicElement111=driver.findElements(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-duplicate-medicine-confirmation[1]/div[2]/div[1]/div[6]/div[1]/ki-input-control[1]/div[1]/input[1]"));
 
 		if(dynamicElement111.size() !=0)
 		{
@@ -1088,7 +1088,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(800);
 		
 		Transfer.click();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		
 		Thread.sleep(4000);
@@ -1184,8 +1184,8 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(800);
 		RecieveQTY.clear();
 		Thread.sleep(800);
-		//RecieveQTY.sendKeys("2");
-		RecieveQTY.sendKeys("0.25");
+		RecieveQTY.sendKeys("2");
+		//RecieveQTY.sendKeys("0.25");
 		Thread.sleep(800);
 		ReceiveStock.click();
 		Thread.sleep(800);
@@ -1298,7 +1298,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 
 
 		CPOEadministration.click();
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		
 		driver.findElement(By.xpath("//input[@id='LocationDropDownid']")).click();
 		Thread.sleep(1000);

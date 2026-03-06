@@ -552,7 +552,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 //		Executionloc.click();
 //		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
 		Thread.sleep(1000);
 		ExecutionlocOK.click();
 		Thread.sleep(1000);

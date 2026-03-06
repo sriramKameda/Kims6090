@@ -1161,7 +1161,7 @@ public class KIMS_Inventory_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		
 		Pharmlocation.click();
-		driver.findElement(By.xpath("//li[normalize-space()='"+NursingStationLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+PharmacyLocation+"']")).click();
 		Thread.sleep(800);
 		
 		IndentSearch.clear();

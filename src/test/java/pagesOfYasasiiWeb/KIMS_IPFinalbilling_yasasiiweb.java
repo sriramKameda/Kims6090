@@ -1766,10 +1766,11 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		///	driver.navigate().refresh();
 		Thread.sleep(2000);
-		Hamberger.click();
+		/*Hamberger.click();
 		Thread.sleep(1000);
 		
 		Pharmacypanel.click();
+		Thread.sleep(1000);
 		Ip_panel.click();
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
@@ -1781,7 +1782,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		else {
 			System.out.println("sri");
-		}
+		}*/
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
