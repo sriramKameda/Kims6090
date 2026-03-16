@@ -19,8 +19,8 @@ public class PageFactoryInitYasasiiWeb {
 	public String ERProvider ="Prethesh Raaj T";
 	public String SeniorDoctorID ="TVM18286";
 	public String JuniorDoctorID ="vijay";
-	public String SecondOpinionProviderID ="TVM18086";
-	public String SecondOpinionProvider ="Dr Pretheesh Raaj T (TVM18086)";
+	public String SecondOpinionProviderID ="NGL18086";
+	public String SecondOpinionProvider ="Dr Prethesh Raaj T(NGL18086)";
 	public String NurseID ="TVM17696";
 	public String MRDID ="TVM19809";
 	public String Pharmacist_Id ="NGL18485";
@@ -34,16 +34,15 @@ public class PageFactoryInitYasasiiWeb {
 	public String PharmacyLocation ="West Main";
 	public String NursingStationLocation ="North Central pharmacy";
 	public String Inventoryissuelocation ="L1 - IPD PHARM";
-    public String SampleCollectionLocation1 ="LEVEL 2 SAMPLE COLLECTION";  
-	//public String SampleCollectionLocation ="IPD LEVEL 2 SAMPLE COLLECTION";
-	public String SampleCollectionLocation ="KN Level 6 Phlebotomy";
+    public String SampleCollectionLocation1 ="KN Level 6 Phlebotomy";  
+	public String SampleCollectionLocation ="IPD LEVEL 2 SAMPLE COLLECTION";
 	public String DischargeFollowupService ="Discharge Follow Up";
 	public String BiopsyDoctor ="Aaliya S";
 	public String BiopsyDoctorID ="NGL16508";
 	public String BiopsyTechnician ="REMYA S";
-	//public String BiopsyTechnician ="Ann Mary Varghese"; //2.11
-	public String Samplepreparedby ="AKHILA V T";
-	public String Sampledespatchby ="Akhil";
+	public String Plan ="DefaultTVM"; //2.1
+	public String Samplepreparedby ="Aadil M S";
+	public String Sampledespatchby ="Karthik P";
 	public String OT_PharmacyLocation="OT MAIN";
 	public String SecondNurse="Anitha R (NGL17697)";
 	
