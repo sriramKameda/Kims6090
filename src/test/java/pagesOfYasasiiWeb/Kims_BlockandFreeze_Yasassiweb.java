@@ -235,8 +235,8 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		js1.executeScript("arguments[0].scrollIntoView();", resource);
 		Thread.sleep(1000);  
-		resource.click();
-		Thread.sleep(1000);
+	//	resource.click();
+	//	Thread.sleep(1000);
 
 		//////Lookup Reason add
 
@@ -281,7 +281,7 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Comments.sendKeys("ok");
 		Thread.sleep(1000);
 		Upload.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		/////////////////////////////block and freeze	
 
@@ -543,8 +543,8 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();", resource);
 		Thread.sleep(1000);  
-		resource.click();
-		Thread.sleep(1000);
+	//	resource.click();
+	//	Thread.sleep(1000);
 		blockandfreeze.click();
 		Thread.sleep(1000);
 
@@ -789,8 +789,8 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView();", resource);
 		Thread.sleep(1000);  
-		resource.click();
-		Thread.sleep(1000);
+	//	resource.click();
+	//	Thread.sleep(1000);
 		blockandfreeze.click();
 		Thread.sleep(1000);
 		SelectCategory.click();
@@ -1034,8 +1034,8 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", resource);
 		Thread.sleep(1000);  
-		resource.click();
-		Thread.sleep(1000);
+	//	resource.click();
+	//	Thread.sleep(1000);
 		blockandfreeze.click();
 		Thread.sleep(1000);
 
@@ -1061,20 +1061,20 @@ public class Kims_BlockandFreeze_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		////////////Look up reason delete
 
-		lookupAdd.click();
-		Thread.sleep(1000);
-		lookupcat.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Appointment Block']")).click();
-		Thread.sleep(1000);
-		Searchlookup.sendKeys("Early leaving" , Keys.ENTER);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@title='Early leaving']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//lib-searchbarlist[@type='folookupmaster']//span[@id='common_trash_icon_0']//i[@class='ki ki-trash']//lib-searchbarlist[@type='folookupmaster']//span[@id='common_trash_icon_0']//i[@class='ki ki-trash']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
-		Thread.sleep(3000);
+//		lookupAdd.click();
+//		Thread.sleep(1000);
+//		lookupcat.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//li[normalize-space()='Appointment Block']")).click();
+//		Thread.sleep(1000);
+//		Searchlookup.sendKeys("Early leaving" , Keys.ENTER);
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//div[@title='Early leaving']")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//lib-searchbarlist[@type='folookupmaster']//span[@id='common_trash_icon_0']//i[@class='ki ki-trash']//lib-searchbarlist[@type='folookupmaster']//span[@id='common_trash_icon_0']//i[@class='ki ki-trash']")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+//		Thread.sleep(3000);
 	//	Close.click();
 	//	Thread.sleep(3000); 
 

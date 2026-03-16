@@ -726,7 +726,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(2000);
 		Donebydoc.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Lakshmi S']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Lekshmi V L']")).click();
 		Thread.sleep(1000);
 		PathSave.click();
 		Thread.sleep(1000);
@@ -774,7 +774,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		//		Thread.sleep(1000);
 		//Executionloc.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(2000);
 		ExecutionlocOK.click();
 		Thread.sleep(2000);
@@ -882,7 +882,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 	//	Executionloc.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(1000);
 		ExecutionlocOK.click();
 		Thread.sleep(1000);

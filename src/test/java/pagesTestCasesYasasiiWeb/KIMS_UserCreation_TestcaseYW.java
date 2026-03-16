@@ -52,10 +52,9 @@ public class KIMS_UserCreation_TestcaseYW   extends TestBaseYasasiiWeb  {
 		KIMS_UserCreation_Yasasiiweb User = new KIMS_UserCreation_Yasasiiweb(driver);
 
 		User.Caller(FirstName,userId, MRNo, Queue_Name);
-
+		
 		User.tariffSetting(FirstName , userId, Department);
 		
-
 		User.ScheduleSetting(FirstName, allowedSites,userId);
 
 		User.Billing(FirstName, Provider, MRNo, Queue_Name,userId);

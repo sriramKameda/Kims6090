@@ -271,7 +271,7 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		site.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		location.click();
 		Thread.sleep(1000);
@@ -490,6 +490,11 @@ public class KIMS_PharmacyQueue_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		save.click();
 		Thread.sleep(1000);
+		
+		//Wait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")));
+	
+		Thread.sleep(2000);
 		succesfullyOk.click();
 		Thread.sleep(1000);
 		Dispensing.click();

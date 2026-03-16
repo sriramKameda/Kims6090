@@ -589,10 +589,19 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		//driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div[1]/label[2]/span[1]")).click();
-//		Thread.sleep(1000);
 
+		List<WebElement> dynamicElement = driver.findElements(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']//label[@class='dialog-title'][normalize-space()='Information']"));
+
+		if (dynamicElement.size() != 0) {
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(2000);
+		}
+
+		else {
+			System.out.println("sri");
+		}
+		Thread.sleep(1000);
+		
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[contains(text(),'Print Barcode')]")).click();
 		Thread.sleep(1000);
@@ -1088,8 +1097,11 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		Thread.sleep(700);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
 		
-		//ivstgnSave.click();//button[@id='onSaveid']
 		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@class='v-action-bar ng-star-inserted']")).click();
+		Thread.sleep(2000);
+		
+		
 		ivstgnStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='First Level Authorized']")).click();
@@ -1108,6 +1120,8 @@ public class KIMS_Pathology_IHCYasasiiWeb extends  PageFactoryInitYasasiiWeb {
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resultentry[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/span[1]/button[1]")).click();
 		//ivstgnSave.click();
 		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[@class='v-action-bar ng-star-inserted']")).click();
+		Thread.sleep(2000);
 		ivstgnStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();

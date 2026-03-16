@@ -801,6 +801,9 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		js.executeScript("arguments[0].scrollIntoView();", Usercredential);
 		Usercredential.click();
 		Thread.sleep(500);
+		driver .findElement(By.xpath("//label[normalize-space()='User must change Password at Next Login']//span[@class='checkmark']")).click();
+		Thread.sleep(2000);
+		
 		Password.clear();
 		Thread.sleep(500);
 		Password.sendKeys(Passsword);
@@ -840,12 +843,6 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		wb.write(fout);
 		Thread.sleep(2000);
 
-
-
-
-
-
-
 	}
 
 
@@ -877,18 +874,26 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		SiteName.sendKeys(Keys.DOWN);
 		Thread.sleep(700);
-		//		SiteName.sendKeys(Keys.DOWN);
-		//		Thread.sleep(700);
+		SiteName.sendKeys(Keys.DOWN);
+		Thread.sleep(700);
 		SiteName.sendKeys(Keys.ENTER);
 		Thread.sleep(700);
 		//				driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']"));
 		//				Thread.sleep(2000);
-		providername.click();
-		Thread.sleep(700);
-		providername.sendKeys(userId);
-		Thread.sleep(700);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+userId+"')])[1]")).click();
-		Thread.sleep(700);
+//		providername.click();
+//		Thread.sleep(700);
+//		ProviderRoomNo.click();
+//		Thread.sleep(700);
+//		
+//		providername.click();
+//		Thread.sleep(700);
+//		providername.sendKeys("%%%");
+//		Thread.sleep(700);
+////		providername.sendKeys(userId);
+////		Thread.sleep(700);
+////		driver.findElement(By.xpath("//*[@id=\"AutoCompletedroplistkey0\"]"));
+//		driver.findElement(By.xpath("(//*[contains(text(),'"+userId+"')])[1]")).click();
+//		Thread.sleep(700);
 		try {
 
 			ProviderRoomNo.click();
@@ -910,6 +915,18 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 			Nurseservice2.click();
 			Thread.sleep(700);
 			Nurseservice2.sendKeys("vitals");
+			Thread.sleep(700);
+			Add.click();
+			Thread.sleep(700);
+			
+			providername.click();
+			Thread.sleep(700);
+//			providername.sendKeys("%%%");
+//			Thread.sleep(700);
+			providername.sendKeys(userId);
+			Thread.sleep(700);
+//			driver.findElement(By.xpath("//*[@id=\"AutoCompletedroplistkey0\"]"));
+			driver.findElement(By.xpath("(//*[contains(text(),'"+userId+"')])[1]")).click();
 			Thread.sleep(700);
 			Add.click();
 			Thread.sleep(700);
@@ -958,7 +975,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		driver.findElement(By.xpath("//input[@id='plan']")).click();
 		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Plan+"']")).click();
 		Thread.sleep(1000); 
 
 
@@ -1144,7 +1161,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000); 
 		plan.click();
 		Thread.sleep(600);
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Plan+"']")).click();
 		Thread.sleep(2000); 	
 		Department2.click();
 		Thread.sleep(600);
@@ -1169,7 +1186,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Add.click();
 		Thread.sleep(600);
 		save.click();
-		Thread.sleep(600);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(2000); 
 

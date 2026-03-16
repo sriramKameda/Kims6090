@@ -953,12 +953,12 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 
 		//Clearing Browser cache
 
-		driver.get("chrome://settings/clearBrowserData");
-		Thread.sleep(2000);
-		Robot t=new Robot();
-		t.keyPress(KeyEvent.VK_ENTER);
-		t.keyRelease(KeyEvent.VK_ENTER);
-		Thread.sleep(2000);
+//		driver.get("chrome://settings/clearBrowserData");
+//		Thread.sleep(2000);
+//		Robot t=new Robot();
+//		t.keyPress(KeyEvent.VK_ENTER);
+//		t.keyRelease(KeyEvent.VK_ENTER);
+//		Thread.sleep(2000);
 
 		//Application Url
 

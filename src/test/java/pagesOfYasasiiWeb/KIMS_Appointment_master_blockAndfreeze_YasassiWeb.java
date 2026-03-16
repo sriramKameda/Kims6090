@@ -33,7 +33,7 @@ public class KIMS_Appointment_master_blockAndfreeze_YasassiWeb extends PageFacto
 	@FindBy(xpath = "//input[@placeholder='Search Resource..']")
 	public WebElement Searchresource;
 
-	@FindBy(xpath = "//div[@title='Radhakrishnan Marimuthu(NGL18286)']")
+	@FindBy(xpath = "//div[@title='Radhakrishnan Marimuthu(TVM18286)']")
 	public WebElement provider;
 
 	@FindBy(xpath = "//label[@title='Block/Freeze Schedule']//i[@class='ki ki-cog']")
@@ -130,10 +130,10 @@ public class KIMS_Appointment_master_blockAndfreeze_YasassiWeb extends PageFacto
 		Thread.sleep(1000);
 		Searchresource.clear();
 		Thread.sleep(500);
-		Searchresource.sendKeys("Radhakrishnan Marimuthu(NGL18286)");
+		Searchresource.sendKeys(ADTprovider);
 		Thread.sleep(2000);	
 		
-		WebElement Provider= driver.findElement(By.xpath("//div[@title='Radhakrishnan Marimuthu(NGL18286)']"));
+		WebElement Provider= driver.findElement(By.xpath("//div[@title='"+ADTprovider+"']"));
 		
 		act.moveToElement(Provider).build().perform();
 		Thread.sleep(1000);
@@ -332,7 +332,7 @@ public class KIMS_Appointment_master_blockAndfreeze_YasassiWeb extends PageFacto
 		Thread.sleep(2000);
 		Searchresource.clear();
 		Thread.sleep(500);
-		Searchresource.sendKeys("Radhakrishnan Marimuthu(NGL18286)");
+		Searchresource.sendKeys(ADTprovider);
 		Thread.sleep(2000);	
 
 
@@ -340,7 +340,11 @@ public class KIMS_Appointment_master_blockAndfreeze_YasassiWeb extends PageFacto
 		driver.findElement(By.xpath("(//div[@class='slot-wrapper free-slot'])[2]")).click();
 		Thread.sleep(1000);
 		FreezedSlot.click();
+		Thread.sleep(1000);
 		act.moveToElement(FreezedSlot).build().perform();
+		Thread.sleep(2000);
+		
+	//	provider.click();
 		Thread.sleep(1000);
 		act.moveToElement(provider).build().perform();
 		Thread.sleep(1000);

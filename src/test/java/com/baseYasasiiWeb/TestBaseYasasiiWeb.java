@@ -60,7 +60,7 @@ public class TestBaseYasasiiWeb {
 	public static String screenshotPath;
 	
 	
-	public String ProviderID ="NGL18286";
+	public String ProviderID ="TVM18286";
 	public String FinalbillUser ="NGL17801";
 	///Site
 	public String Site ="KIMSHEALTH Trivandrum";

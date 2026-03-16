@@ -435,10 +435,10 @@ public class KIMS_CpoePendingOrder_Billing_Yasasiiweb extends PageFactoryInitYas
 
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys(DOCuser);
+		userid.sendKeys(ProviderID);
 		password.click();
 		Thread.sleep(1000);
-		password.sendKeys(DOCpassword);
+		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
 		Thread.sleep(1000);

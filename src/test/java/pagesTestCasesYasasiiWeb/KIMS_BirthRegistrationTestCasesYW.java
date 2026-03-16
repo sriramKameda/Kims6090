@@ -42,7 +42,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 		Schedule1.patreg(title, NAME, lastName, DOB, MBLNO, ADDRESS, DOCno, MRNo1);
 
 	}
-
+	
 	@Test(dataProvider = "getData", priority = 1)
 	public void Doctornote(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNo, String Provider, String MRNo1, String ADTprovider, String nurseUser,
@@ -57,7 +57,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 
 		Schedule1.DeliveryNOTE();
 
-		Schedule1.Birthreg(MRNo, Provider, ADTprovider, MRNo1, AdminUser, AdminPassword);
+		Schedule1.Birthreg(MRNo, Provider, MRNo1, AdminUser, AdminPassword);
 	}
 
 	@Test(dataProvider = "getData", priority = 2)

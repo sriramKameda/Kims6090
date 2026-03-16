@@ -82,7 +82,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 	public void bed() throws InterruptedException {
 
 
-		String  a="A3";
+		String  a="A2";
 
 		
 		Thread.sleep(2000);
@@ -93,7 +93,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", resource );
 		Thread.sleep(600);
-		resource.click();
+	//	resource.click();
 		Thread.sleep(600);
 		resourceMaster.click();
 		Thread.sleep(2000);
