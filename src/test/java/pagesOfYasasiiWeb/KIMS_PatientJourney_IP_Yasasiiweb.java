@@ -399,10 +399,10 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 	//@FindBy(xpath = "//div[@class='form-container pt-1 billing-card cb-40-bottom ng-star-inserted']//div[3]//div[1]//div[2]//div[2]//div[3]//div[7]//label[1]//i[1]")
 	//public WebElement batchdelete;
-	@FindBy(xpath = "//*[@id=\"addNewOrder\"]/div[2]/div[3]/div[7]/label[2]/i")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[1]/i[1]")
 	public WebElement batchdelete;
 	
-	@FindBy(xpath = "(//i[@title='Stock List'])[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[4]")
 	public WebElement Stockinfo;
 
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-brandpriority[1]/form[1]/div[1]/div[1]/tabset[1]/div[1]/tab[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/a[1]")
@@ -846,7 +846,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "//button[normalize-space()='Draft Generate']")
 	public WebElement DraftGenerate;
 	
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/app-billing-adjustment[1]/div[1]/div[2]/div[3]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-generation-adjustment[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[2]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement AdjustmentPercentage;
 
 	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline ml0 ng-star-inserted']")
@@ -855,7 +855,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/ul[1]/li[3]/ul[1]/li[2]/a[1]/div[1]")
 	public WebElement invoiceCancel;
 
-	@FindBy(xpath = "//i[@title='Request for Adjustment']")
+	@FindBy(xpath = "//tbody/tr[@class='ng-star-inserted']/td[18]/i[1]")
 	public WebElement Adjustment;
 
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-authoriser-request[1]/div[2]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
@@ -3609,7 +3609,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 		//// Clinical Pharmacist Clearance
 
-		Thread.sleep(2000);
+		/*Thread.sleep(2000);
 		Hamberger.click();
 		Thread.sleep(1000);
 		FO1.click();
@@ -3631,7 +3631,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(1000);
+		Thread.sleep(1000);*/
 
 		 Close2.click();
 		Thread.sleep(1000);
@@ -3937,6 +3937,10 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		DSInitiated.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[2]/div[1]/div[2]/div[1]/app-load-components[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[2]/div[11]/div[2]/div[4]/ki-input-control[1]/div[1]/input[1]")).sendKeys("Test");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[2]/div[1]/div[2]/div[1]/app-load-components[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/app-custum-template[1]/div[1]/form[1]/div[1]/div[1]/div[4]/div[2]/div[12]/div[2]/div[4]/ki-input-control[1]/div[1]/input[1]")).sendKeys("Test");
+		Thread.sleep(1000);
 		save.click();
 		Thread.sleep(3000);
 
@@ -4060,7 +4064,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 
 
-	public void PharmacyClearance(String MRNO ) throws InterruptedException {
+	public void PharmacyClearance(String MRNO ) throws InterruptedException, AWTException {
 
 
 		//////////Pharmacy clearance	
@@ -4135,6 +4139,13 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		verifyuserSave.click();
 		Thread.sleep(1000);
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(4000);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+
 
 
 	}
@@ -4169,12 +4180,13 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(2000);
 
-
+		//Close1.click();
 		Thread.sleep(2000);
 		Hamburger.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-reception-fill']")).click();
 		
-		FOModule.click();
+		//FOModule.click();
 		Thread.sleep(1000);
 		
 		Thread.sleep(500);
@@ -4359,7 +4371,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@class='row justify-content-between']")).click();
+		//driver.findElement(By.xpath("//div[@class='form-container invoice-view mb0']//div[@class='row justify-content-between']")).click();
 		Thread.sleep(2000);
 		
 		Invoicemode.click();
@@ -4405,11 +4417,20 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 		Adjustment.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-generation-adjustment[1]/div[1]/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
+		Thread.sleep(1000);
 		AdjustmentPercentage.click();
 		Thread.sleep(1000);
 		AdjustmentPercentage.sendKeys("25");
 		Thread.sleep(1000);
-		RaiseRequest.click();
+		driver.findElement(By.xpath("//button[@title='Add']")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//button[@class='btn btn-primary sm inline ml0 ng-star-inserted']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
+		
+/*		RaiseRequest.click();
 		Thread.sleep(1000);
 		Authoriser.click();
 		Thread.sleep(1000);
@@ -4480,7 +4501,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		//driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		//Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
   
 
 
@@ -4489,7 +4510,7 @@ public class KIMS_PatientJourney_IP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 
 		Hamburger.click();
 		Thread.sleep(800);
-		IP.click();
+		//IP.click();
 		Thread.sleep(1000); 
 		SettleInvoice.click();
 		Thread.sleep(1000);

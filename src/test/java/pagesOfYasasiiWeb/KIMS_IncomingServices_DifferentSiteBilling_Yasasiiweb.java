@@ -558,7 +558,8 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 	//	Thread.sleep(2000);
 	//	Executionloc.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='IPD LEVEL 2 SAMPLE COLLECTION']")).click();
+		
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
 		Thread.sleep(1000);
 		
 		ExecutionlocOK.click();
@@ -744,7 +745,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys(DOCuser);
+		userid.sendKeys(ProviderID);
 		password.click();
 		Thread.sleep(1000);
 		password.sendKeys(DOCpassword);
@@ -934,11 +935,11 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(2000);
 		siteSelect.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();	
+		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']")).click();	
 		Thread.sleep(800);
 		Orders.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
+		//driver.findElement(By.xpath("//i[@class='fa fa-square-o']")).click();	
 		Thread.sleep(800);
 		serviceDelete.click();
 		Thread.sleep(800);
@@ -1065,7 +1066,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		Thread.sleep(1000);
 		siteSelect.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Nagercoil']")).click();	
+		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']")).click();	
 		Thread.sleep(800);
 		Orders.click();
 		Thread.sleep(800);

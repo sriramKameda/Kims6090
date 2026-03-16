@@ -25,7 +25,7 @@ public static HomePageYasasiiWeb hm;
 public void navigateemradt() throws InterruptedException {
 	
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("NGL18286","KAmeda123$",Site);
+	this.hm = login.enterloginDetails("TVM18286","KAmeda123$",Site);
 	Thread.sleep(3000);
 	
 } 

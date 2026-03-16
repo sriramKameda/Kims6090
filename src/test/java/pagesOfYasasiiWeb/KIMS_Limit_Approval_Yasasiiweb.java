@@ -641,7 +641,8 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(400);
 		Executioncategory.click();
 		Thread.sleep(400);
-		driver.findElement(By.xpath("//li[contains(text(),'"+BaseCategory+"')]")).click();
+		//driver.findElement(By.xpath("//li[contains(text(),'"+BaseCategory+"')]")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Others']")).click();
 		Thread.sleep(400);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary sm ng-star-inserted']")).click();
 		Thread.sleep(400);      
@@ -677,7 +678,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(400);
 		Add1.click();
 
-		Consumables.sendKeys("STERILE GLOVES  8.5");
+		Consumables.sendKeys("STERILE GLOVES  6");
 		Thread.sleep(600);  
 		driver.findElement(By.xpath("//li[contains(text(),'STERILE GLOVES')]")).click();
 		Thread.sleep(400);

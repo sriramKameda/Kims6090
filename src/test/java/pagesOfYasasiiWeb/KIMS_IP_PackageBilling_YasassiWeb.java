@@ -215,7 +215,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 	@FindBy(xpath = "//button[@aria-label='Ok'][normalize-space()='OK']")
 	public WebElement TemplateOK;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[8]/div[2]/div[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[9]/div[2]/div[1]")
 	public WebElement disgnosis;
 
 	@FindBy(xpath = "//label[normalize-space()='CPOE Pharmacy']")
@@ -852,7 +852,7 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys(DOCuser);
+		userid.sendKeys(ProviderID);
 		password.click();
 		Thread.sleep(1000);
 		password.sendKeys(Password);
@@ -960,10 +960,10 @@ public class KIMS_IP_PackageBilling_YasassiWeb extends PageFactoryInitYasasiiWeb
 //		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 //		Thread.sleep(1000);
-		clinicalIndication.sendKeys("test");
-		Thread.sleep(1000);
-		addMedicine.click();
-		Thread.sleep(1000);
+//		clinicalIndication.sendKeys("test");
+//		Thread.sleep(1000);
+	//	addMedicine.click();
+//		Thread.sleep(1000);
 		CpoeServiceSearch.clear();
 		Thread.sleep(1000);
 		CpoeServiceSearch.sendKeys("Lipid Panel", Keys.ENTER);

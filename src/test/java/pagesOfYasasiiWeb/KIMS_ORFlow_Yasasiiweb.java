@@ -1005,7 +1005,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//input[@id='plan']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultTVM']")).click();
 		Thread.sleep(3000);
 		
 
@@ -1131,7 +1131,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		name.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='Ajith Kumar M(NGL19856)']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Aadhya D Lal(TVM17439)']")).click();
 		Thread.sleep(1000); 
 		Add2.click();
 		Thread.sleep(700);
@@ -1432,7 +1432,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//		Thread.sleep(600);
 		//
 		//		Thread.sleep(1000);
-		Thread.sleep(1000);
+			Thread.sleep(2000);
 		hamberger.click();
 		Thread.sleep(1000);
 		RCM_OR.click();
@@ -1747,7 +1747,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		/////Parameter Rule mapping
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		hamberger.click();
 		Thread.sleep(700);
 		ParameterRuleMapping.click();
@@ -1762,7 +1762,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2700);
 		driver.findElement(By.xpath("//input[@id='planid']")).click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='DefaultTVM']")).click();
 		Thread.sleep(700);
 		
 		Surgerytype1.click();
@@ -2919,7 +2919,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		fromLOC.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='L4 - IPD OT']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='OT MAIN']")).click();
 		Thread.sleep(1000);
 
 		ToLoc.click();
@@ -3040,7 +3040,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		ToLocTransfer.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//li[normalize-space()='L4 - IPD OT']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='OT MAIN']")).click();
 		Thread.sleep(800);
 		status1.click();
 		Thread.sleep(800);
@@ -3436,7 +3436,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 				//		Thread.sleep(1500);
 
 		////////////////////Time out	SRI
-		Thread.sleep(600);	
+		Thread.sleep(2000);	
 	    driver.findElement(By.xpath("//button[@title='Time Out']//div[@class='btn-name']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[@title='Confirm all team members have Introduced themselfs by name and role']//span[@class='checkmark']")).click();

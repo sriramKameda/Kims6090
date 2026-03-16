@@ -354,7 +354,7 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 
 	public void Appointment(String NAME,String lastName,String MRNO,String DOCno,String service) throws AWTException, InterruptedException {
 
-
+		
 		Appointment.click();
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
@@ -463,7 +463,7 @@ public class KIMS_OutsiderPatientFlow_YasasiiWeb  extends PageFactoryInitYasasii
 		//driver.findElement(By.xpath("//label[@class='check-container zero-label']")).click();
 		//Thread.sleep(1000);
 		Save.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 

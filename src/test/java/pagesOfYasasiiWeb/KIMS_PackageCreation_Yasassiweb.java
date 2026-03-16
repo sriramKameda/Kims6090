@@ -238,7 +238,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement tariffSettingTab;
 	@FindBy(xpath = "//input[@placeholder='Search reference name...']")
 	public WebElement enterReference;// searchicon
-	@FindBy(xpath = "//div[@title='Default']")
+	@FindBy(xpath = "//li[normalize-space()='DefaultTVM']")
 	public WebElement defaultService;// editicon
 	@FindBy(xpath = "//input[@id='plan']")
 	public WebElement selectplan;
@@ -289,7 +289,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement packageTariffMapping;
 	@FindBy(xpath = "//div[4]//ki-select-control[1]//div[1]//input[1]")
 	public WebElement enterDefaultPlan;
-	@FindBy(xpath = "//li[normalize-space()='DefaultPlan']")
+	@FindBy(xpath = "//li[normalize-space()='DefaultTVM']")
 	public WebElement selectDefaultTvm2;
 	@FindBy(xpath = "//input[@placeholder='Package Name']")
 	public WebElement enterPackageName; // searchicon
@@ -986,7 +986,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
   
 		menuToggle.click();
 		Thread.sleep(1000);
-	//	mastersModule.click(); // del
+		mastersModule.click(); // del
 	//	Thread.sleep(1000); // del
 		rcmPackage.click();
 		Thread.sleep(1000);
@@ -1126,7 +1126,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		tariffSettingTab.click();
 		Thread.sleep(1000);
-		enterReference.sendKeys("Default");
+		enterReference.sendKeys("DefaultTVM");
 		Thread.sleep(1000);
 		searchIcon.click();
 		Thread.sleep(1000);
@@ -1136,7 +1136,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		selectplan.click();
 		Thread.sleep(1000);
-        driver.findElement(By.xpath("//li[normalize-space()='DefaultPlan']")).click();
+        driver.findElement(By.xpath("//li[normalize-space()='DefaultTVM']")).click();
 //		//li[normalize-space()='DefaultPlan']
 		Thread.sleep(1000);
 		serviceTabTariffScreen.click();
@@ -1244,7 +1244,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		enterDefaultPlan.click();
 		Thread.sleep(1000);
-		enterDefaultPlan.sendKeys("DefaultPlan");
+		enterDefaultPlan.sendKeys("DefaultTVM");
 		Thread.sleep(1000);
 		selectDefaultTvm2.click();
 		Thread.sleep(1000);
@@ -1257,7 +1257,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		//clickPackage.click();
 		Thread.sleep(1000);
 		editIcon.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='Savebutton']")));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='ki ki-upload']")));
@@ -1273,7 +1273,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-	//	 mastersModule.click(); // del for full run
+		 mastersModule.click(); // del for full run
 		Thread.sleep(1000); // del for full run
 		 rcmPackage.click();//
 		 Thread.sleep(1000);
@@ -1288,11 +1288,11 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 //		WaitUtility.waitForElementToBeClickable(driver, selectDefault, 30);
 		selectDefault.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys("DefaultPlan");
+		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys("DefaultTVM");
 		Thread.sleep(1000);
 		searchIcon.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@title='DefaultPlan']")).click();
+		driver.findElement(By.xpath("//div[@title='DefaultTVM']")).click();
 		
 		Thread.sleep(1000);
 	

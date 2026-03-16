@@ -922,7 +922,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		driver.findElement(By.xpath("//label[contains(text(),'Print Receipt')]")).click();
 		Thread.sleep(1000);
 		ivstgnSave.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
 		
 		SaveOK1.click();

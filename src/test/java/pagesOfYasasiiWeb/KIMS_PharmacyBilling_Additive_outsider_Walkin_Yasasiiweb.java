@@ -753,7 +753,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 		/////doctornote
 		Thread.sleep(1000);
-		Hamberger.click();
+	/*swa	Hamberger.click();
 		Thread.sleep(1000);
 		EMRhomescreen.click();
 		Thread.sleep(2000);
@@ -887,7 +887,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 		////////logout
 	WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link dropdown-toggle pro-pic tab-prof-wrap']")));
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link dropdown-toggle pro-pic tab-prof-wrap']")));swa*/
 
 		Thread.sleep(3000);
 		username.click();
@@ -1020,7 +1020,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
 		Thread.sleep(1000);
 		
-		
+		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();

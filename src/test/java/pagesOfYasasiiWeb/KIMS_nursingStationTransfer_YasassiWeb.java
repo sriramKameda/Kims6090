@@ -464,7 +464,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 	public void ADT() throws InterruptedException{
 
 
-
+		Thread.sleep(2000);
 		ADT.click();
 		Thread.sleep(1000);
 		Thread.sleep(500);

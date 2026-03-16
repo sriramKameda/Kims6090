@@ -2794,7 +2794,6 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		module.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//i[@class='ki ki-reception-fill']")).click();
 		Thread.sleep(1000);	
 
 		Registration.click();

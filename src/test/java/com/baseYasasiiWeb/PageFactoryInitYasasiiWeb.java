@@ -24,8 +24,8 @@ public class PageFactoryInitYasasiiWeb {
 	public String NurseID ="TVM17696";
 	public String MRDID ="TVM19809";
 	public String Pharmacist_Id ="NGL18485";
-	public String Anesthetist ="NGL18349";
-	public String Anesthetist1 ="Monisha Vijay(NGL18349)";
+	public String Anesthetist ="TVM19278";
+	public String Anesthetist1 ="Amal S Prasad(TVM19278)";
 //	public String authoriser ="Administrator(admin)";
 	public String authoriser ="Jayalakshmi P(NGL17801)";
 	public String FinalbillUser ="NGL17801";
@@ -37,13 +37,13 @@ public class PageFactoryInitYasasiiWeb {
     public String SampleCollectionLocation1 ="KN Level 6 Phlebotomy";  
 	public String SampleCollectionLocation ="IPD LEVEL 2 SAMPLE COLLECTION";
 	public String DischargeFollowupService ="Discharge Follow Up";
-	public String BiopsyDoctor ="Aaliya";
+	public String BiopsyDoctor ="Aaliya S";
 	public String BiopsyDoctorID ="NGL16508";
 	public String BiopsyTechnician ="REMYA S";
-	public String Plan ="DefaultTVM"; //2.11
+	public String Plan ="DefaultTVM"; //2.1
 	public String Samplepreparedby ="Aadil M S";
 	public String Sampledespatchby ="Karthik P";
-	public String OT_PharmacyLocation="L4 - IPD OT";
+	public String OT_PharmacyLocation="OT MAIN";
 	public String SecondNurse="Anitha R (NGL17697)";
 	
 	public static String Excelfilepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\SP55-KIMSDataSheet.xls";
