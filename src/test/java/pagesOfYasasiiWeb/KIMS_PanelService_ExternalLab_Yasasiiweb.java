@@ -992,7 +992,8 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("//label[@title='MRNo/Name']//i[@class='ki ki-user']")).click();
 //		Thread.sleep(1000);
-		
+		 
+				
 		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(sampleno , Keys.ENTER);
@@ -1019,6 +1020,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(1000);
 		SearchField.sendKeys(sampleno , Keys.ENTER);
 		Thread.sleep(3000);
+		//Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ENTER);
 		t.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(4000);
@@ -1101,7 +1103,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		CarrierDetails.sendKeys("OK");
 		Thread.sleep(700);
 		EDOR.click();
-	//Robot t=new Robot();
+	   // Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_RIGHT);
 		t.keyRelease(KeyEvent.VK_RIGHT);
 		Thread.sleep(400);
@@ -1255,12 +1257,12 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
 		Thread.sleep(700);
 		ivstgnSave.click();
-		Thread.sleep(5000); 
+		Thread.sleep(5000);
 
 		ivstgnStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Second Level Authorized']")).click();
-		Thread.sleep(700);
+		Thread.sleep(7000);
 		SearchField.clear();
 		Thread.sleep(700);
 		SearchField.sendKeys(MRNO , Keys.ENTER);

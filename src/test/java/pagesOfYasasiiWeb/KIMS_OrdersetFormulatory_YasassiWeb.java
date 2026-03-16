@@ -688,6 +688,8 @@ public class KIMS_OrdersetFormulatory_YasassiWeb  extends  PageFactoryInitYasasi
 		Thread.sleep(2000);
 		hamberger.click();
 		Thread.sleep(700);
+		driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
+		Thread.sleep(700);
 		EMR.click();
 		Thread.sleep(700);
 		Orderset.click();

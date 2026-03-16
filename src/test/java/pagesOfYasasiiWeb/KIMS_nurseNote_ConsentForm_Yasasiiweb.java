@@ -755,6 +755,8 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		Thread.sleep(3000);
 		MenuToggle.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
+		Thread.sleep(1000);
 		EMRHomeScreen.click();
 		Thread.sleep(1200);
 
@@ -1050,7 +1052,7 @@ public class KIMS_nurseNote_ConsentForm_Yasasiiweb extends PageFactoryInitYasasi
 		driver.findElement(By.xpath("//i[@class='ki ki-save']")).click();
 		Thread.sleep(2500);
 		
-//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-discharge-summary[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]")));
 		Thread.sleep(3000);		
 		

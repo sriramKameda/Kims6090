@@ -36,7 +36,7 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//a[@class='nav-link navbar-brand menu']//div[@class='bar2']")
 	public WebElement Hamburger;
 
-	@FindBy(xpath = "//div[@class='module-icon-wrap active ng-star-inserted']//i[@class='ki ki-reception-fill']")
+	@FindBy(xpath = "//i[@class='ki ki-reception-fill']")
 	public WebElement FOModule;
 
 	@FindBy(xpath = "//div[normalize-space()='Registration']")
@@ -757,6 +757,8 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 
 		toggle.click();
 		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//i[@class='ki ki-reception-fill']")).click();
+		Thread.sleep(1000);
 		Pharmacypanel.click();
 		Thread.sleep(1000);
 		opPanel.click();
@@ -951,8 +953,10 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 	public void encounterClose(String MRNO) throws InterruptedException {
 
 		toggle.click();
-		Thread.sleep(1000);
-		FO.click();
+		Thread.sleep(2000);
+		//FO.click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/div[1]/div[1]/div[3]/label[1]/i[1]")).click();
+		
 		Thread.sleep(1000);
 		Registration.click();
 

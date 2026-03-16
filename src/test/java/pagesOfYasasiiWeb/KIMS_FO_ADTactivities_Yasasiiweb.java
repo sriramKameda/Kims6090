@@ -804,7 +804,7 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		//printUnckeck.click();
 		//Thread.sleep(1000);
 		billSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -1360,9 +1360,9 @@ public void dischargeApproval(String MRNO , String nurseUser , String  NursePass
 	////Clinical Pharmacist Clearance
 	
 	Thread.sleep(2000);
-	Hamberger.click();
+	/*Hamberger.click();
 	Thread.sleep(1000);
-	Pharmacypanel.click();
+	//Pharmacypanel.click();
 	Thread.sleep(1000);
 	IPpanel.click();
 
@@ -1378,7 +1378,7 @@ public void dischargeApproval(String MRNO , String nurseUser , String  NursePass
 	else {
 		System.out.println("sri");
 	}
-	Thread.sleep(1000);
+	Thread.sleep(1000);*/
 	
 	
 	Close.click();
@@ -1437,6 +1437,9 @@ public void dischargeApproval(String MRNO , String nurseUser , String  NursePass
 	///	driver.navigate().refresh();
 	Thread.sleep(2000);
 	Hamberger.click();
+	Thread.sleep(1000);
+	driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
+	
 	Thread.sleep(1000);
 	EMRhomescreen.click();
 	Thread.sleep(2000);
@@ -1530,6 +1533,7 @@ public void Discharge_Summary_Clearance(String MRDUser, String MRDPassword ,Stri
 
 	 Menu.click();
 	Thread.sleep(2000);
+	driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
 	Thread.sleep(1000);
 	EMRHomeScreen.click();
 	Thread.sleep(1000);
@@ -1743,7 +1747,7 @@ public void PharmacyClearance(String MRNO , String Pharmacist_password ) throws 
 	////Clinical Pharmacist Clearance
 	
 	Thread.sleep(2000);
-	Hamberger.click();
+	/*Hamberger.click();
 	Thread.sleep(1000);
 	Pharmacypanel.click();
 	Thread.sleep(1000);
@@ -1763,7 +1767,7 @@ public void PharmacyClearance(String MRNO , String Pharmacist_password ) throws 
 	}
 	Thread.sleep(1000);
 	
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));*/
 	//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
 	
 	
@@ -1794,6 +1798,8 @@ public void ADTAppoval(String MRNo ) throws InterruptedException, AWTException {
 
 	Thread.sleep(2000);
 	Hamburger.click();
+	Thread.sleep(800);
+	driver.findElement(By.xpath("//i[@class='ki ki-chevron-up']")).click();
 	Thread.sleep(800);
 	FOModule.click();
 	Thread.sleep(1000);

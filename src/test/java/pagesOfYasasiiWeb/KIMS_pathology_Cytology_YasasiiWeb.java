@@ -795,7 +795,7 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 		Thread.sleep(1000);
 
-		act.moveToElement(Threedot).build().perform();
+		//act.moveToElement(Threedot).build().perform();
 		Thread.sleep(1000);
 
 		//act.moveToElement(remarks).click().build().perform();
@@ -858,7 +858,7 @@ public class KIMS_pathology_Cytology_YasasiiWeb extends  PageFactoryInitYasasiiW
 		//Thread.sleep(700);
 		//Executionloc.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
 		Thread.sleep(700);
 		ExecutionlocOK.click();
 		Thread.sleep(700);

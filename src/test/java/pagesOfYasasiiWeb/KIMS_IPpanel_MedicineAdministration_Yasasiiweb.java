@@ -808,6 +808,8 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(1000);
 		Hamberger.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
+		Thread.sleep(1000);
 		EMRhomescreen.click();
 		Thread.sleep(2000);
 		Thread.sleep(500);

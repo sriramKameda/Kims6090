@@ -62,7 +62,7 @@ public void MIS(String title,String Name,String lastname,String Dob, String DocI
 		
 		}
 
-@AfterClass
+//@AfterClass
 public void logout() throws Exception
 
 {

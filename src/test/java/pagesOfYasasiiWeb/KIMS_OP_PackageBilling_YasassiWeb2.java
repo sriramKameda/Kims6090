@@ -215,7 +215,7 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 	@FindBy(xpath = "//button[@aria-label='Ok'][normalize-space()='OK']")
 	public WebElement TemplateOK;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[8]/div[2]/div[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[9]/div[2]/div[1]")
 	public WebElement disgnosis;
 
 	@FindBy(xpath = "//label[normalize-space()='CPOE Pharmacy']")
@@ -661,7 +661,7 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys(DOCuser);
+		userid.sendKeys(ProviderID);
 		password.click();
 		Thread.sleep(1000);
 		password.sendKeys(Password);

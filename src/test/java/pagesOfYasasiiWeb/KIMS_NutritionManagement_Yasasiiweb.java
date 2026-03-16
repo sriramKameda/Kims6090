@@ -221,7 +221,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//input[@id='dietAdminStatus']")
 	public WebElement AdmindietStatus;
 
-	@FindBy(xpath = "//i[@class='ki ki-chevron-down']")
+	@FindBy(xpath = "//label[@title='Expand Feeds']//i[@class='ki ki-chevron-down']")
 	public WebElement DownArrow;
 
 	@FindBy(xpath = "//ki-checkbox-control[@class='ng-untouched ng-pristine ng-valid']//label[contains(@class,'check-container')][normalize-space()='Start']//span[@class='checkmark']")
@@ -308,7 +308,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")
 	public WebElement Logoutconfrm;
 
-	@FindBy(xpath = "//div[@class='module-icon-wrap active ng-star-inserted']//i[@class='ki ki-reception-fill']")
+	@FindBy(xpath = "//i[@class='ki ki-reception-fill']")
 	public WebElement FOModule;
 
 	@FindBy(xpath = "//label[normalize-space()='Service Administration']")
@@ -616,6 +616,8 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		Hamberger.click();
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-sthethescope']")).click();
+		Thread.sleep(1000);
 		EMRhomescreen.click();
 		Thread.sleep(2000);
 		Thread.sleep(500);
@@ -662,7 +664,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		// UParrow.click(); Thread.sleep(1000); act.doubleClick(UParrow).perform();
 		 // Thread.sleep(1000); lock.click(); Thread.sleep(1000);
 		 
-	    DoctorNote.click();
+	   DoctorNote.click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement11 = driver
 				.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
@@ -722,7 +724,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 	public void Diet_administration() throws InterruptedException {
 
 		Thread.sleep(700);
-		CPOEAdministration.click();
+		 CPOEAdministration.click();
 		Thread.sleep(700);
 
 		/// service administration
@@ -809,7 +811,7 @@ public class KIMS_NutritionManagement_Yasasiiweb extends PageFactoryInitYasasiiW
 		Update.click();
 		Thread.sleep(2700);
 
-//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(DownArrow));
 		Thread.sleep(3000);
 		DownArrow.click();
