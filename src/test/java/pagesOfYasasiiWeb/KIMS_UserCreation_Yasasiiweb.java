@@ -210,6 +210,19 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath="//div[@class='link-value'][normalize-space()='RCM-Plan']")
 	public WebElement RCM;
+	
+	@FindBy(xpath="//tbody/tr[1]/td[3]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement First_charge;
+
+	@FindBy(xpath="//input[@id='categoryListId']")
+	public WebElement Category;
+
+	@FindBy(xpath="//div[@class='form-group ki-dropdown']//input[@id='namelistdisplay']")
+	public WebElement Name;
+
+	@FindBy(xpath="//div[normalize-space()='Consult Rule Charges']")
+	public WebElement ConsultRule_charges;
+	
 
 	@FindBy(xpath="//span[normalize-space()='Provider']")
 	public WebElement Provider;
@@ -223,11 +236,14 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//div[normalize-space()='Schedule Setting']")
 	public WebElement ScheduleSetting;
 
-	@FindBy(xpath="//input[@id='categoryListId']")
-	public WebElement Category;
+	@FindBy(xpath="//tr[@class='ng-untouched ng-pristine ng-invalid ng-star-inserted']//input[@id='charge']")
+	public WebElement Followup_charge;
+	
+	@FindBy(xpath="//input[@id='siteid']")
+	public WebElement Siteid;
 
-	@FindBy(xpath="//div[@class='form-group ki-dropdown']//input[@id='namelistdisplay']")
-	public WebElement Name;
+	@FindBy(xpath="//input[@id='name']")
+	public WebElement Rule1;
 
 	@FindBy(xpath="//div[@class='form-group ki-dropdown']//input[@id='siteid']")
 	public WebElement site1;
@@ -1267,6 +1283,63 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 	}
 
+	
+	
+	public void Consultrule_charges(String userId) throws InterruptedException {
+		
+		
+		Thread.sleep(3000);
+		Hamberger.click();
+		Thread.sleep(600);
+		RCM.click();	
+		Thread.sleep(500);
+		ConsultRule_charges.click();
+		Thread.sleep(500);
+		search.click();
+		Thread.sleep(500);
+		search.sendKeys(userId, Keys.ENTER);
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//*[@id=\"search-results\"]/div/div/div/div/div[1]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//i[@class='ki ki-pencil']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//span[normalize-space()='Consult Rule']")).click();
+		Thread.sleep(500);
+		Rule1.click();
+		driver.findElement(By.xpath("//li[normalize-space()='General Rule']")).click();
+		Thread.sleep(500);
+		First_charge.clear();
+		Thread.sleep(500);
+		First_charge.sendKeys("300");
+		Thread.sleep(500);
+		Followup_charge.clear();
+		Thread.sleep(500);
+		Followup_charge.sendKeys("345");
+		Thread.sleep(500);
+		Siteid.click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH Trivandrum']")).click();
+		Thread.sleep(500);
+		Add.click();
+		driver.findElement(By.xpath("//button[@id='Savebutton']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='Confirm']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		Thread.sleep(1500);
+		
+		search.clear();
+		Thread.sleep(500);
+		search.sendKeys(userId, Keys.ENTER);
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//*[@id=\"search-results\"]/div/div/div/div/div[1]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//i[@class='ki ki-pencil']")).click();
+		Thread.sleep(500);
+		
+	}
+	
+	
 	public void Billing(String FirstName,String provider,String MRNO,String Queue_Name,String userId) throws InterruptedException, AWTException {
 
 		Thread.sleep(3000);
@@ -1365,12 +1438,6 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		}
 
 		Thread.sleep(1500);
-
-
-
-
-
-
 
 		ReportingStatus.click();
 		Thread.sleep(1000);
@@ -1492,8 +1559,6 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		EncounterSave.click();
 		Thread.sleep(2000);
-
-
 
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")));
@@ -1691,7 +1756,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		//JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", Resource);
-		Resource.click();
+//		Resource.click();
 		Thread.sleep(1000);   
 		ScheduleSetting.click();
 		Thread.sleep(1000);   

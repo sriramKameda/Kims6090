@@ -32,7 +32,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void Reg(String title,String Name,String Lastname ,String Dob, String DocID, String MobNo,String Address,String MRNo , String PROVIDER, String CHEIFCOMPLAINT , String MEDICINE,String id, String docpassword , String Site ,String AdminID, String AdminPassword) throws InterruptedException, IOException, AWTException {
 		
 	Thread.sleep(2000);
@@ -53,7 +53,7 @@ public void AdjustRefund(String title,String Name,String Lastname ,String Dob, S
      
 		KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb subs = new KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb(driver);
 		
-//	    subs.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE, id, docpassword, AdminID, AdminPassword);
+	    subs.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE, id, docpassword, AdminID, AdminPassword);
 		
 		subs.pharmacyBilling(AdminID, AdminPassword, MRNo);
 		

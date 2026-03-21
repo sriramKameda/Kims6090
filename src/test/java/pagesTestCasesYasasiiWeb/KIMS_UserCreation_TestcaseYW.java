@@ -56,6 +56,8 @@ public class KIMS_UserCreation_TestcaseYW   extends TestBaseYasasiiWeb  {
 		User.tariffSetting(FirstName , userId, Department);
 		
 		User.ScheduleSetting(FirstName, allowedSites,userId);
+		
+		User.Consultrule_charges(userId);
 
 		User.Billing(FirstName, Provider, MRNo, Queue_Name,userId);
 

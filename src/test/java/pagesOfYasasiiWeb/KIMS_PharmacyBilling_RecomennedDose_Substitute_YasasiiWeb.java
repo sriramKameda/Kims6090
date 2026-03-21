@@ -592,9 +592,13 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		js.executeScript("arguments[0].scrollIntoView();",Add1 );
 		Add1.click();
 		Thread.sleep(600);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.elementToBeClickable(Save));
+		Thread.sleep(600);
     	Save.click();
 		Thread.sleep(3000);
-
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(600);
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -619,6 +623,9 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[normalize-space()='OK']"))));
+		Thread.sleep(600);
+		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
@@ -680,7 +687,7 @@ public class KIMS_PharmacyBilling_RecomennedDose_Substitute_YasasiiWeb  extends 
 		//Amount.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(Add));
 		Add.click();
 		Thread.sleep(1000);

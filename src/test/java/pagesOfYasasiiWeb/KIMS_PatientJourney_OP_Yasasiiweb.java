@@ -1198,7 +1198,7 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 //		Thread.sleep(1000);
 	
 	
-		/*swacounterSearch.click();
+		counterSearch.click();
 		Thread.sleep(2000);
 		counterSearch.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(2000);
@@ -1241,7 +1241,7 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(2000);
 		holdbillSave.click();
 		Thread.sleep(2000);
-		confirmOK.click();swa*/
+		confirmOK.click();
 		Thread.sleep(1000);
 		status.click();
 		Thread.sleep(2000);
