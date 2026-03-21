@@ -1266,7 +1266,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(3000);
 
-		toggle.click();
+	/*SWA	toggle.click();
 		Thread.sleep(1000);
 		Pharmacypanel.click();
 		Thread.sleep(1000);
@@ -1442,7 +1442,7 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='link-value'][normalize-space()='FO']")).click();
 		Thread.sleep(2000);
-		Registration.click();
+		Registration.click();SWA*/
 		Thread.sleep(2000);
 		
 		Searchfield.click();
@@ -1580,9 +1580,10 @@ public class KIMS_interimIncoice_IP_yasasiiweb extends PageFactoryInitYasasiiWeb
 		Thread.sleep(1000);
 		search1.click();
 		Thread.sleep(1000);
+		String SchemeA=	driver.findElement(By.xpath("//td[@class='common ta-r ng-star-inserted']")).getText();
 		
 //	String SchemeA=	driver.findElement(By.xpath("//tr[@class='total-row']//td[@class='common max ng-star-inserted']")).getText();
-	String SchemeA=	driver.findElement(By.xpath("(//td[@class='common ta-r ng-star-inserted'])[2]")).getText();
+//	String SchemeA=	driver.findElement(By.xpath("(//td[@class='common ta-r ng-star-inserted'])[2]")).getText();
 	
 	System.out.println(SchemeA + "Scheme A Amount");
 	Thread.sleep(2000);

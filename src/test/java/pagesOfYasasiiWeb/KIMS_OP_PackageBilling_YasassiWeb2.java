@@ -453,7 +453,31 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 
 	@FindBy(xpath = "//label[normalize-space()='Service Administration']")
 	public WebElement serviceAdmin;
+	
+	@FindBy(xpath = "//i[contains(@class,'ki ki-cheque icon-btn-billing btn-dark-green inline')]")
+	public WebElement Cheque;
 
+	@FindBy(xpath = "//ki-select-control[@class='ng-untouched ng-pristine ng-invalid']//input[@id='undefined']")
+	public WebElement issuingBank;
+	
+	@FindBy(xpath = "//input[@id='amountPayType']")
+	public WebElement Amount;
+
+	@FindBy(xpath = "//label[contains(@title,'Add')]")
+	public WebElement Cardadd;
+
+	@FindBy(xpath = "//button[@class='btn btn-primary sm active']")
+	public WebElement cardok;
+
+	@FindBy(xpath = "//input[@id='cheqnoPayType']")
+	public WebElement TransactionNO;
+	
+	@FindBy(xpath = "//button[normalize-space()='Settle']")
+	public WebElement settle;
+	
+	@FindBy(xpath = "//button[normalize-space()='OK']")
+	public WebElement OK1;
+	
 	public void Patreg(String Packagename, String title, String Name, String lastname, String Dob, String DocID, String MobNo,
 			String Address, String MRNo) throws InterruptedException, AWTException, IOException {
 
@@ -637,9 +661,41 @@ public class KIMS_OP_PackageBilling_YasassiWeb2 extends PageFactoryInitYasasiiWe
 
 		driver.findElement(By.xpath("//li[normalize-space()='" + Packagename + "']")).click();
 		// li[normalize-space()='Executive Health Package(EHP) - B']
+		
 		Thread.sleep(1500);
 		add.click();
 		Thread.sleep(1500);
+		String AMOUNT = driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-payment-details[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[2]/div[10]/div[2]")).getText();
+		System.out.println(AMOUNT);
+		Thread.sleep(1500);
+		//JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", Cheque);
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.elementToBeClickable(Cheque));
+		Thread.sleep(1000);
+		Cheque.click();
+		Thread.sleep(1000);
+		issuingBank.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='VMKC Bank']")).click();
+		Thread.sleep(1000);
+		Amount.clear();
+		Thread.sleep(1000);
+		Amount.sendKeys(AMOUNT);
+		Thread.sleep(1000);
+		TransactionNO.sendKeys("5356436");
+		Thread.sleep(1000);
+		Cardadd.click();
+		Thread.sleep(2000);
+		cardok.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@class='check-container zero-label']")).click();
+		Thread.sleep(1000);
+		//settle.click();
+		//Thread.sleep(1000);
+		//OK1.click();
+		//Thread.sleep(10000);
+		
 		save.click();
 		Thread.sleep(2000);
 

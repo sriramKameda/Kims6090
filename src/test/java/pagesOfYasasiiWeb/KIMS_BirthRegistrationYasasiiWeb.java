@@ -2028,26 +2028,26 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		//// Clinical Pharmacist Clearance
 
 		Thread.sleep(2000);
-//		Hamberger.click();
-//		Thread.sleep(1000);
-//		FO.click();
-//		Thread.sleep(2000);
-//	    Pharmacypanel.click();
-//	    Thread.sleep(500);
-//		IPpanel.click();
-//
-//		Thread.sleep(500);
-//		List<WebElement> dynamicElement = driver
-//				.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
-//
-//		if (dynamicElement.size() != 0) {
-//			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"))
-//					.click();
-//		}
-//
-//		else {
-//			System.out.println("sri");
-//		}
+		Hamberger.click();
+		Thread.sleep(1000);
+		FO.click();
+		Thread.sleep(2000);
+	    Pharmacypanel.click();
+	    Thread.sleep(500);
+		IPpanel.click();
+
+		Thread.sleep(500);
+		List<WebElement> dynamicElement = driver
+				.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if (dynamicElement.size() != 0) {
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"))
+					.click();
+		}
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
 
 		 Close.click();
@@ -2979,28 +2979,28 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 
 		//// Clinical Pharmacist Clearance
 
-//		Thread.sleep(2000);
-//		Hamberger.click();
-//		Thread.sleep(1000);
-//		FO.click();
-//		Thread.sleep(1000);
-//	//    Pharmacypanel.click();
-//		//Close.click();
-//		Thread.sleep(1000);
-//		IPpanel.click();
-//
-//		Thread.sleep(500);
-//		List<WebElement> dynamicElement = driver
-//				.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
-//
-//		if (dynamicElement.size() != 0) {
-//			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"))
-//					.click();
-//		}
-//
-//		else {
-//			System.out.println("sri");
-//		}
+		Thread.sleep(2000);
+		Hamberger.click();
+		Thread.sleep(1000);
+		FO.click();
+		Thread.sleep(1000);
+	    Pharmacypanel.click();
+		//Close.click();
+		Thread.sleep(1000);
+		IPpanel.click();
+
+		Thread.sleep(500);
+		List<WebElement> dynamicElement = driver
+				.findElements(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"));
+
+		if (dynamicElement.size() != 0) {
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']"))
+					.click();
+		}
+
+		else {
+			System.out.println("sri");
+		}
 		Thread.sleep(1000);
 
 		 Close.click();

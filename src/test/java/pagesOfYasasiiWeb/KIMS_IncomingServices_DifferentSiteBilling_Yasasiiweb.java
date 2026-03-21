@@ -559,8 +559,8 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 	//	Executionloc.click();
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
-		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
+		Thread.sleep(1000);//li[normalize-space()='KN Level 6 Phlebotomy']
 		
 		ExecutionlocOK.click();
 		Thread.sleep(1000);

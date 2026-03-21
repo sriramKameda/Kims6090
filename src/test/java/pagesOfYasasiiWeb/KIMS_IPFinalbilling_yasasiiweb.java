@@ -1132,7 +1132,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		AddRegisteration.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		SAvesuccess.click();
 		Thread.sleep(3000);
 
@@ -1248,7 +1248,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 		AddService.click();
 		Thread.sleep(1000);
 		ServSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(2000);
 
@@ -1766,7 +1766,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		///	driver.navigate().refresh();
 		Thread.sleep(2000);
-		/*Hamberger.click();
+		Hamberger.click();
 		Thread.sleep(1000);
 		
 		Pharmacypanel.click();
@@ -1782,7 +1782,7 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		else {
 			System.out.println("sri");
-		}*/
+		}
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
@@ -2789,12 +2789,12 @@ public class KIMS_IPFinalbilling_yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public void Discharge_followup(String MRNO) throws InterruptedException {
 
 
-
+		Thread.sleep(1000);
 		toggle.click();
 		Thread.sleep(1000); 
-		module.click();
+		billing.click();
 		Thread.sleep(1000);
-		Thread.sleep(1000);	
+			
 
 		Registration.click();
 		Thread.sleep(500);

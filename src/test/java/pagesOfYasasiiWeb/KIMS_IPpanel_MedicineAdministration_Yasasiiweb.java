@@ -226,7 +226,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "//button[@id='ordersetAdd']")
 	public WebElement serviceAdd;
 	
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-duplicate-medicine-confirmation[1]/div[2]/div[1]/div[6]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-duplicate-medicine-confirmation[1]/div[2]/div[1]/div[3]/div[1]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement OverrideReason;
 	
 
@@ -294,7 +294,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 	@FindBy(xpath = "//label[@class='check-container zero-label mt0 mr0']//span[@class='checkmark']")
 	public WebElement SelectAll;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[1]/i[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[7]/label[2]/i[1]")
 	public WebElement batchdelete;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-panel-container[1]/div[2]/div[1]/app-ip-panel[1]/div[1]/lib-pharmacy-card[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/i[4]")
@@ -927,12 +927,12 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		}
 		Thread.sleep(800); 
 
-//		OverrideReason.click();
-//		Thread.sleep(800);
-//		OverrideReason.sendKeys("ok");
-//		Thread.sleep(800);
-//		driver.findElement(By.xpath("//button[@class='btn btn-dark-green active ng-star-inserted']")).click();
-//		Thread.sleep(1000); 
+		OverrideReason.click();
+		Thread.sleep(800);
+		OverrideReason.sendKeys("ok");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@class='btn btn-dark-green active ng-star-inserted']")).click();
+		Thread.sleep(1000); 
 		
 		EMRsave.click();
 		wait.until(ExpectedConditions.elementToBeClickable(Logoutarw));
@@ -1025,7 +1025,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Thread.sleep(800);
 		SearchIcon.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//div[@title='"+MRNo+"']")).click();
+			driver.findElement(By.xpath("//div[@title='"+MRNo+"']")).click();
 		Thread.sleep(3000);
 		
 //		
