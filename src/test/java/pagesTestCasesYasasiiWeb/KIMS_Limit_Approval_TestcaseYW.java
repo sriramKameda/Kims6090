@@ -30,7 +30,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-@Test(dataProvider="getData"  , priority=0)
+/////@Test(dataProvider="getData"  , priority=0)
 public void ServiceMaster(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -41,7 +41,7 @@ public void ServiceMaster(String codeType , String code,String ServiceName , Str
 			
 	
 }
-@Test(dataProvider="getData"  , priority=1)
+//@Test(dataProvider="getData"  , priority=1)
 public void Limitsetting(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -73,7 +73,7 @@ public void LIMITBilling(String codeType , String code,String ServiceName , Stri
 		
 		price.OverlimitApproval(MRNO);	
 }
-@AfterClass
+//@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

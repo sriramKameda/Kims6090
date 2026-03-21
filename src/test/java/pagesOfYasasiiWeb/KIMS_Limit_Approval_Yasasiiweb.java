@@ -1206,7 +1206,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		SearchPAt.sendKeys(MRNO , Keys.ENTER);
 		Thread.sleep(600);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		Thread.sleep(1600);
+		Thread.sleep(2000);
 
 
 		driver.findElement(By.xpath("//button[normalize-space()='Clear']")).click();

@@ -497,7 +497,7 @@ public class KIMS_AdvanceRefund_YasassiWeb  extends PageFactoryInitYasasiiWeb {
 		//	PrintCheck.click();
 		//	Thread.sleep(1000);
 		EncounterSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		SAvesuccess.click();
 		Thread.sleep(3000);
 

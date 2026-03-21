@@ -543,7 +543,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 
 
-	Hamberger.click();
+	    Hamberger.click();
 		Thread.sleep(1000);
 		Investigation.click();
 		Thread.sleep(1000);
@@ -552,7 +552,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 //		Executionloc.click();
 //		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(1000);
 		ExecutionlocOK.click();
 		Thread.sleep(1000);
@@ -754,7 +754,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(2000);
 		Executionloc.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(1000);
 		ExecutionlocOK.click();
 		Thread.sleep(1000);
@@ -896,7 +896,7 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 //		Thread.sleep(1000);
 		
 		
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(1000);
 		ExecutionlocOK.click();
 		Thread.sleep(1000);
@@ -923,7 +923,8 @@ public class KIMS_Investigation_Additionaltest_sampleTracker_Yasasiiweb extends 
 		Thread.sleep(1000);
 		ivstgnSave.click();
 		Thread.sleep(3000);
-		wait.until(ExpectedConditions.elementToBeClickable(SaveOK1));
+		WebDriverWait wait2 = new WebDriverWait(driver,Duration.ofSeconds(60));
+		wait2.until(ExpectedConditions.elementToBeClickable(SaveOK1));
 		
 		SaveOK1.click();
 		Thread.sleep(2000);

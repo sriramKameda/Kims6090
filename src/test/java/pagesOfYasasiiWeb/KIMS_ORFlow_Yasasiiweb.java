@@ -2735,7 +2735,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//div[@class='form-group min-clear-bottom ki-dropdown']//input[@id='undefined']")).click();
 		Thread.sleep(800);
 		
-		driver.findElement(By.xpath("//li[normalize-space()='L4 - IPD OT']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+OT_PharmacyLocation+"']")).click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//label[normalize-space()='Transfer Summary Print']//span[@class='checkmark']")).click();
 		
