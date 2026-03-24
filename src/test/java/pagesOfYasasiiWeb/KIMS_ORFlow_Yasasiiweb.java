@@ -3436,7 +3436,7 @@ public class KIMS_ORFlow_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 				//		Thread.sleep(1500);
 
 		////////////////////Time out	SRI
-		Thread.sleep(2000);	
+			
 	    driver.findElement(By.xpath("//button[@title='Time Out']//div[@class='btn-name']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[@title='Confirm all team members have Introduced themselfs by name and role']//span[@class='checkmark']")).click();

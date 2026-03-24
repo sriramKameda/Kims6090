@@ -560,7 +560,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		else {
 			System.out.println("sri");
 		}
-		Thread.sleep(1000); 
+		Thread.sleep(1000);
 		
 		
 		
@@ -583,17 +583,19 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 //			    "arguments[0].click();",
 //			    driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]"))
 //			);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-			    new WebDriverWait(driver, Duration.ofSeconds(10))
-			        .until(ExpectedConditions.elementToBeClickable(
-			            By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")))
-			);
+	//	JavascriptExecutor js= (JavascriptExecutor) driver;
+	//	js.executeScript("arguments[0].scrollIntoView(true);", By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[4]"));
+		
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();",
+//			    new WebDriverWait(driver, Duration.ofSeconds(30))
+//			        .until(ExpectedConditions.elementToBeClickable(
+//			            By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[4]")))
+//			);
 
 
 		
-//		JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView(true);", By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]"));
-		//driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")).click();
+//		
+		driver.findElement(By.xpath("(//*[contains(text(),'Ultra-Deluxe')])[3]")).click();
 		Thread.sleep(2000);
 		bedno.click();
 		Thread.sleep(2000);
@@ -640,7 +642,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(1000);
 
 		AppSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -757,8 +759,23 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		driver.findElement(By.xpath("//label[@title='Nursing Station Transfer Request']")).click();
 
 		//changetogridview.click();
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")));
+//		Thread.sleep(1200);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
+		
+//		js.executeScript(
+//			    "arguments[0].click();",
+//			    new WebDriverWait(driver, Duration.ofSeconds(30))
+//			        .until(
+//			            ExpectedConditions.elementToBeClickable(
+//			                By.xpath("//span[normalize-space()='"+MRNo+"']")
+//			            )
+//			        )
+//			);
+
+		driver.findElement(By.xpath("//span[normalize-space()='"+MRNo+"']")).click();
+	//	driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(5000);
 		/*   uparrow.click();//i[@class='dashboard-lock-arrow ki ki-chevron-up']
 			Thread.sleep(800);
@@ -798,7 +815,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(1000);
 		 Hamburger.click();
 		Thread.sleep(800);
-		driver.findElement(By.xpath("//label[normalize-space()='Modules']")).click();
+		//driver.findElement(By.xpath("//label[normalize-space()='Modules']")).click();
 		Thread.sleep(800);
 		FO.click();
 		Thread.sleep(1000);

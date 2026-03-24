@@ -29,7 +29,7 @@ public void navigateemradt() throws InterruptedException {
 	Thread.sleep(3000);
 	
 }
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void Reg(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String ADTprovider,String DOCuser ,String DOCpassword , String Site,String SecondNurse  ) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
@@ -52,7 +52,7 @@ public void Hidenote(String title,String Name,String lastname,String Dob, String
      
 		KIMS_EMRhidenote_Yasassiweb hide = new KIMS_EMRhidenote_Yasassiweb(driver);
 		
-		//hide.DoctorNote(DOCuser, DOCpassword, MRNo, ADTprovider);
+		hide.DoctorNote(DOCuser, DOCpassword, MRNo, ADTprovider);
 		
 		hide.CPOE( MRNo);
 		

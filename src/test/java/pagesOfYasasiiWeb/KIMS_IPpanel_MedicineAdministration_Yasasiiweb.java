@@ -1091,14 +1091,14 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		
 		Transfer.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+/*		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		
 		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait1.until(ExpectedConditions.elementToBeClickable(Hamburger));
-		Thread.sleep(10000);		
+		Thread.sleep(10000);	
 		
 		Status.click();
 		Thread.sleep(800);

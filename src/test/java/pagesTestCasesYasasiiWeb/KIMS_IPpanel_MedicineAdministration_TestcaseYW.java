@@ -65,8 +65,7 @@ public class KIMS_IPpanel_MedicineAdministration_TestcaseYW extends TestBaseYasa
 
 
 	}
-
-	@AfterClass
+@AfterClass
 	public void logout() throws Exception
 	{
 		Robot t=new Robot();

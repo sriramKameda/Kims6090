@@ -61,7 +61,7 @@ public class KIMS_FinalBilling_OP_TestcaseYW extends TestBaseYasasiiWeb  {
 	}
 
 
-	@AfterClass
+	//@AfterClass
 	public void logout() throws Exception
 	{
 		Robot t=new Robot(); 

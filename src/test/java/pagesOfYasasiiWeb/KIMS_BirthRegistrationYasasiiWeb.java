@@ -2612,7 +2612,7 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		MRNOsearch.sendKeys(MRNo1, Keys.ENTER);
 		Thread.sleep(1000);
 		finalBillSearch.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@title='Generate Invoice']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[@class='check-container zero-label']//span[@class='checkmark']")).click();
