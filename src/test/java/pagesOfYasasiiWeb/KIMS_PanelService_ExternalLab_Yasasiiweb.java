@@ -506,6 +506,9 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		RegSave.click();
 		Thread.sleep(3000);
 
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		
 	/*	js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
 		signupload.click();
@@ -532,6 +535,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);*/
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(3000);
 		//////Encounter
@@ -903,7 +907,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		Thread.sleep(700);
 		//Executionloc.click();
 		Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(700);
 		ExecutionlocOK.click();
 		Thread.sleep(700);

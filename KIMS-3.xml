@@ -3,13 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-  <!--     <class name="pagesTestCasesYasasiiWeb.KIMS_SecondOpinion_TestcaseYW"/> -->
-
-       
-       
-      <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_FrozenTestcaseYW"/>
+  <!--     <class name="pagesTestCasesYasasiiWeb.KIMS_SecondOpinion_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_FrozenTestcaseYW"/>   
       <class name="pagesTestCasesYasasiiWeb.KIMS_PatientFullReg_TestCaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_PanelService_ExternalLab_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.KIMS_PanelService_ExternalLab_TestcaseYW"/>-->
       <class name="pagesTestCasesYasasiiWeb.KIMS_PackageCreation_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_StatementSettlement_TestcaseYW"/>  
       <class name="pagesTestCasesYasasiiWeb.KIMS_WhiteboardStat_TestCaseYW"/>

@@ -38,9 +38,9 @@ public class PageFactoryInitYasasiiWeb {
 	public String SampleCollectionLocation ="IPD LEVEL 2 SAMPLE COLLECTION";
 	public String DischargeFollowupService ="Discharge Follow Up";
 	public String BiopsyDoctor ="Aaliya S";
-	public String BiopsyDoctorID ="NGL16508";
+	public String BiopsyDoctorID ="TVM16508";
 	public String BiopsyTechnician ="REMYA S";
-	public String Plan ="DefaultTVM"; //2.1
+	public String Plan ="DefaultTVM"; 
 	public String Samplepreparedby ="Aadil M S";
 	public String Sampledespatchby ="Karthik P";
 	public String OT_PharmacyLocation="OT MAIN";

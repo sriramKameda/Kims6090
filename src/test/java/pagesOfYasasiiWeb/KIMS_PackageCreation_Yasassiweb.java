@@ -238,7 +238,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 	public WebElement tariffSettingTab;
 	@FindBy(xpath = "//input[@placeholder='Search reference name...']")
 	public WebElement enterReference;// searchicon
-	@FindBy(xpath = "//li[normalize-space()='DefaultTVM']")
+	@FindBy(xpath = "//div[@title='Default']")
 	public WebElement defaultService;// editicon
 	@FindBy(xpath = "//input[@id='plan']")
 	public WebElement selectplan;
@@ -395,15 +395,24 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		baseCategoryLaboratory.click();
 		Thread.sleep(1000);
+		serviceName2.clear();
+		Thread.sleep(500);
 		serviceName2.sendKeys("Sodium (ISE Indirect)");
 		Thread.sleep(1000);
 		Robot t = new Robot();
 		t.keyPress(KeyEvent.VK_BACK_SPACE);
 		t.keyRelease(KeyEvent.VK_BACK_SPACE);
+		Thread.sleep(500);
+	
+		t.keyPress(KeyEvent.VK_BACK_SPACE);
+		t.keyRelease(KeyEvent.VK_BACK_SPACE);
 		Thread.sleep(1000);
-		serviceName2.sendKeys(")");
+//		serviceName2.sendKeys(")");
+//		Thread.sleep(1000);
+//		selectSodium.click();
 		Thread.sleep(1000);
-		selectSodium.click();
+		driver.findElement(By.xpath("//li[normalize-space()='Sodium (ISE Indirect)']")).click();
+		
 
 		// driver.findElement(By.xpath("//li[normalize-space()='Anti HBs']"));
 		Thread.sleep(2500);
@@ -986,9 +995,9 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
   
 		menuToggle.click();
 		Thread.sleep(1000);
-		mastersModule.click(); // del
+	//	mastersModule.click(); // del
 	//	Thread.sleep(1000); // del
-		rcmPackage.click();
+	//	rcmPackage.click();
 		Thread.sleep(1000);
 		packageDefinition.click();
 		Thread.sleep(2000);
@@ -1126,9 +1135,12 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		tariffSettingTab.click();
 		Thread.sleep(1000);
-		enterReference.sendKeys("DefaultTVM");
+		enterReference.sendKeys("Default");
 		Thread.sleep(1000);
 		searchIcon.click();
+		
+		
+		
 		Thread.sleep(1000);
 		defaultService.click();
 		Thread.sleep(1000);
@@ -1259,8 +1271,11 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		editIcon.click();
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='Savebutton']")));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='ki ki-upload']")));
+		Thread.sleep(1000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//i[@class='ki ki-upload']")));
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-package-tariff[1]/div[2]/form[1]/div[2]/form[1]/div[1]/div[3]/button[1]")).click();
 		
 		Thread.sleep(1000);
@@ -1273,10 +1288,10 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 
 		menuToggle.click();
 		Thread.sleep(4000);
-		 mastersModule.click(); // del for full run
-		Thread.sleep(1000); // del for full run
-		 rcmPackage.click();//
-		 Thread.sleep(1000);
+  //	 mastersModule.click(); // del for full run
+//		Thread.sleep(1000); // del for full run
+//		 rcmPackage.click();//
+//		 Thread.sleep(1000);
 		packageTOsiteMappingTab.click();
 		Thread.sleep(2000);
 		cooperateDropdown.click();
@@ -1288,11 +1303,11 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 //		WaitUtility.waitForElementToBeClickable(driver, selectDefault, 30);
 		selectDefault.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys("DefaultTVM");
+		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys(Plan);
 		Thread.sleep(1000);
 		searchIcon.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@title='DefaultTVM']")).click();
+		driver.findElement(By.xpath("//div[@title='"+Plan+"']")).click();
 		
 		Thread.sleep(1000);
 	
@@ -1307,7 +1322,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		editIconForDefaultPlan.click();
 		Thread.sleep(1000);
 		packageNameDropdown.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//li[normalize-space()='" + Packagename + "']"));
 		Thread.sleep(1000);
 		allowedSiteDropdowm.click();

@@ -582,7 +582,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 	public void investigtion( String User, String MRNO,String User1,String Password1) throws InterruptedException {
 
 
-		/*SWA((JavascriptExecutor)driver).executeScript("window.open()");
+		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		int Windowsize =driver.getWindowHandles().size();
 		int windowopen= Windowsize-1;
@@ -622,7 +622,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		Thread.sleep(700);
 		//Executionloc.click();
 		//Thread.sleep(700);
-		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+SampleCollectionLocation1+"']")).click();
 		Thread.sleep(700);
 		ExecutionlocOK.click();
 		Thread.sleep(700);
@@ -687,7 +687,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='ki ki-sample-check']")));
 		Accept.click();
 		Thread.sleep(5000);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//i[@class='ki ki-microscope pl-3']")));
 		pathologyProcess.click();
 		Thread.sleep(1000);
@@ -729,7 +729,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//li[normalize-space()='Lekshmi V L']")).click();
 		Thread.sleep(1000);
 		PathSave.click();
-		Thread.sleep(1000);swa*/
+		Thread.sleep(1000);
 		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		////Login-Louis Xaviour	
 
@@ -765,7 +765,7 @@ public class KIMS_pathology_FrozenYasasiiWeb extends  PageFactoryInitYasasiiWeb 
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(2000);
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link navbar-brand menu']//div[@class='menu-toggle']")));
 		Thread.sleep(1000);
 		//		Hamberger.click();

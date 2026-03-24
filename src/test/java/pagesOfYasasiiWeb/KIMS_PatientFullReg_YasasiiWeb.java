@@ -604,7 +604,7 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(800);
 
 
-		EnterAge.click();
+		EnterAge.clear();
 		Thread.sleep(500);
 		Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
