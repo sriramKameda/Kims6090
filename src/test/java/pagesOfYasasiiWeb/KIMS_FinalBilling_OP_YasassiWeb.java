@@ -954,8 +954,8 @@ public class KIMS_FinalBilling_OP_YasassiWeb extends PageFactoryInitYasasiiWeb{
 
 		toggle.click();
 		Thread.sleep(2000);
-		//FO.click();
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/div[1]/div[1]/div[3]/label[1]/i[1]")).click();
+		FO.click();
+	//	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/div[1]/div[1]/div[3]/label[1]/i[1]")).click();
 		
 		Thread.sleep(1000);
 		Registration.click();

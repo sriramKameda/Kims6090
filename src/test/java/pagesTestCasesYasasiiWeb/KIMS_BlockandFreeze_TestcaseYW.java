@@ -45,7 +45,7 @@ public void blockFreeze(String User , String Password , String cite , String MRN
 }
 
 
-@AfterClass
+//@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();

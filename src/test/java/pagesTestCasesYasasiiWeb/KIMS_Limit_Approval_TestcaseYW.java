@@ -73,7 +73,7 @@ public void LIMITBilling(String codeType , String code,String ServiceName , Stri
 		
 		price.OverlimitApproval(MRNO);	
 }
-//@AfterClass
+@AfterClass
 public void logout() throws Exception
 {
 	Robot t=new Robot();
