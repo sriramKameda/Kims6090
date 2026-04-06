@@ -1389,7 +1389,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 		Close.click();
 		Thread.sleep(1000);
 		
-	
+		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(admin1));
 		Thread.sleep(3000);		
 //////////Agotin
@@ -1426,7 +1426,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 
 		Save1.click();
 		Thread.sleep(30000);
-		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(admin3));
 		Thread.sleep(3000);		
 		
@@ -1772,8 +1772,7 @@ public class KIMS_IPpanel_MedicineAdministration_Yasasiiweb  extends PageFactory
 
 public void BackendBillgeneration(String MRNO ) throws InterruptedException {
 	
-	Logoutarw.click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 	Logoutbutton.click();
 	Thread.sleep(1000);
 	Logoutconfrm.click();

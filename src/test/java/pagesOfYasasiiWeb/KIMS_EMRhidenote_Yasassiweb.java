@@ -1001,12 +1001,12 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 		
 		Thread.sleep(700);
 		CpoeAdmin.click();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 
 
 		///////Second nurse verification
 
-		Admin1.click();
+	/*swa	Admin1.click();
 		Thread.sleep(700);
 		Brand.click();
 		Thread.sleep(700);
@@ -1069,7 +1069,7 @@ public class KIMS_EMRhidenote_Yasassiweb  extends PageFactoryInitYasasiiWeb {
 
 		else {
 			System.out.println("sri");
-		}
+		}swa*/
 
 		act.moveToElement(Admin1details).build().perform();
 		Thread.sleep(2000);

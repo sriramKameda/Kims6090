@@ -1727,10 +1727,10 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		Thread.sleep(1000);
 		ClickOk2.click();
 		Thread.sleep(500);
-		/*
-		 * TransferObj.click(); Thread.sleep(1000); ClickOk4.click();
-		 * Thread.sleep(1000);
-		 */
+		
+//		  TransferObj.click(); Thread.sleep(1000); ClickOk4.click();
+//		  Thread.sleep(1000);
+		 
 
 		ChildLangEval.click();
 		Thread.sleep(500);
@@ -2059,7 +2059,8 @@ public class KIMS_BirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb 
 		
 		js.executeScript("arguments[0].scrollIntoView();",taskIcon);
 		Thread.sleep(1000);
-		 taskIcon.click();
+		 //taskIcon.click();
+		js.executeScript("arguments[0].click();", taskIcon);
 		Thread.sleep(1000);
 		ClinicalPharmacistClearance.click();
 		Thread.sleep(1000);

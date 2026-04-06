@@ -759,8 +759,8 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		driver.findElement(By.xpath("//label[@title='Nursing Station Transfer Request']")).click();
 
 		//changetogridview.click();
-		//WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")));
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+	//	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")));
 //		Thread.sleep(1200);
 		Thread.sleep(2000);
 		
@@ -773,9 +773,8 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 //			            )
 //			        )
 //			);
-
-		driver.findElement(By.xpath("//span[normalize-space()='"+MRNo+"']")).click();
-	//	driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
+//	driver.findElement(By.xpath("//span[normalize-space()='"+MRNo+"']")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(5000);
 		/*   uparrow.click();//i[@class='dashboard-lock-arrow ki ki-chevron-up']
 			Thread.sleep(800);

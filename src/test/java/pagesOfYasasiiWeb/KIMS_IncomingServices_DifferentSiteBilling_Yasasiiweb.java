@@ -494,7 +494,7 @@ public class KIMS_IncomingServices_DifferentSiteBilling_Yasasiiweb extends PageF
 		ServiceName.sendKeys("Electrolyte Panel");
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//li[normalize-space()='Electrolyte Panel']")).click();
-		Thread.sleep(800);
+		Thread.sleep(1000);
 		add.click();
 		Thread.sleep(800);
 		billSave.click();

@@ -60,7 +60,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 		Schedule1.Birthreg(MRNo, Provider, MRNo1, AdminUser, AdminPassword);
 	}
 
-	@Test(dataProvider = "getData", priority = 2)
+    @Test(dataProvider = "getData", priority = 2)
 	public void babynote(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNO, String Provider, String MRNo1, String ADTprovider, String nurseUser,
 			String password, String AdminUser, String AdminPassword, String DOCuser, String DOCpassword, String Site,
@@ -103,7 +103,7 @@ public class KIMS_BirthRegistrationTestCasesYW extends TestBaseYasasiiWeb {
 		
 	}
 
-	@Test(dataProvider = "getData", priority = 4)
+@Test(dataProvider = "getData", priority = 4)
 	public void MOMdischarge(String title, String NAME, String lastName, String DOB, String MBLNO, String ADDRESS,
 			String DOCno, String MRNo, String Provider, String MRNo1, String ADTprovider, String nurseUser,
 			String password, String AdminUser, String AdminPassword, String DOCuser, String DOCpassword, String Site,

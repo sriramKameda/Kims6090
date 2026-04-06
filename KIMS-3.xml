@@ -23,7 +23,9 @@
       <class name="pagesTestCasesYasasiiWeb.KIMS_Pharmacybill_Availedservice_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_pathology_biopsy_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.KIMS_Pathology_IHCTestCaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.KIMS_CommisionMaster_TestCaseYW"/>       
+      <class name="pagesTestCasesYasasiiWeb.KIMS_CommisionMaster_TestCaseYW"/>   
+      <class name="pagesTestCasesYasasiiWeb.KIMS_ServiceGroup_ChargeUpdate_TestcaseYW"/>  
+          
       
     </classes>
   </test> <!-- Test -->
