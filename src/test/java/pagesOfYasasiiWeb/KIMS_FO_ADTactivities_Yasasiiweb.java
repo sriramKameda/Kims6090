@@ -583,13 +583,13 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//div[contains(text(),'Invoice Generation')]")
 	public WebElement InvoiceGeneration;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ki-calendar[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ki-calendar[1]/div[1]/input[1]")
 	public WebElement fromdate;
 
 	@FindBy(xpath = "//button[normalize-space()='Draft Generate']")
 	public WebElement DraftGenerate;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-alternate-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/ki-input-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-ip-invoice-generation[1]/div[1]/tabset[1]/div[1]/tab[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement MRNOsearch;
 
 	@FindBy(xpath = "//div[@class='col-1 pl-0 col-md-1 ta-r']//i[@class='ki ki-search']")
@@ -602,7 +602,7 @@ public class KIMS_FO_ADTactivities_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	public WebElement invoiceSearch;
 
 
-	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v bydefault']")
+	@FindBy(xpath = "//i[@class='fa fa-ellipsis-v']")
 	public WebElement options;
 
 	@FindBy(xpath = "//label[normalize-space()='Draft Finalization']")
@@ -1382,8 +1382,10 @@ public void dischargeApproval(String MRNO , String nurseUser , String  NursePass
 	
 	
 	Close.click();
-	Thread.sleep(1000);
-	taskIcon.click();
+	Thread.sleep(1500);
+	driver.findElement(By.xpath("//span[@class='count ng-star-inserted']")).click();
+	
+	//taskIcon.click();
 	Thread.sleep(1000);
 	ClinicalPharmacistClearance.click();
 	Thread.sleep(1000);
@@ -1958,9 +1960,9 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	
 	InvoiceGeneration.click();
 	Thread.sleep(1000);
-	fromdate.click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][normalize-space()='1']")).click();
+	//fromdate.click();
+	//Thread.sleep(1000);
+	//driver.findElement(By.xpath("//span[@class='owl-dt-calendar-cell-content'][normalize-space()='1']")).click();
 	Thread.sleep(2000);
 	MRNOsearch.sendKeys(MRNo,Keys.ENTER);
 	Thread.sleep(1000);
@@ -1999,10 +2001,10 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("APPROVED");
-	Thread.sleep(1000);
-	//input[@id='inputcontrol_3RmxbXOqB6a']
-	Save1.click();
+	//driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("APPROVED");
+	//Thread.sleep(1000);
+	
+	//Save1.click();
 	driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 	Thread.sleep(2000);
 
@@ -2018,10 +2020,10 @@ public void  financialClearance(String MRNo ) throws InterruptedException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 	Thread.sleep(2000);
-	driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("APPROVED");
-	Thread.sleep(1000);
-	Save1.click();
-	Thread.sleep(1000);
+	//driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/ki-input-control[1]/div[1]/input[1]")).sendKeys("APPROVED");
+	//Thread.sleep(1000);
+	//Save1.click();
+	//Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 	Thread.sleep(2000);
 	
