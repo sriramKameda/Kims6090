@@ -1100,6 +1100,9 @@ public class KIMS_pathology_biopsy_YasassiWeb extends  PageFactoryInitYasasiiWeb
 		SearchField.clear();
 		Thread.sleep(1000);
 		SearchField.sendKeys(MRNO , Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//i[@class='ki ki-search']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[@class='ki ki-search']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();

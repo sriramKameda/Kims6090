@@ -30,8 +30,8 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-/////@Test(dataProvider="getData"  , priority=0)
-public void ServiceMaster(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
+@Test(dataProvider="getData"  , priority=0)
+public void ServiceMaster(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2,String Service_name_1) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
 		    
@@ -41,29 +41,29 @@ public void ServiceMaster(String codeType , String code,String ServiceName , Str
 			
 	
 }
-//@Test(dataProvider="getData"  , priority=1)
-public void Limitsetting(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
+@Test(dataProvider="getData"  , priority=1)
+public void Limitsetting(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2,String Service_name_1) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
 		    
 		KIMS_Limit_Approval_Yasasiiweb price = new KIMS_Limit_Approval_Yasasiiweb(driver);
 		
 		
-	    price.tariff(ServiceName, SubCategory);
+	    price.tariff(Service_name_1, SubCategory);
 		 
     	price.Limit_Setting();
 		 		
 }
 @Test(dataProvider="getData"  , priority=2)
-public void LIMITBilling(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2) throws InterruptedException, IOException, AWTException {
+public void LIMITBilling(String codeType , String code,String ServiceName , String BaseCategory , String SubCategory, String User ,String Password , String Site , String MRNO,String Provider ,String ServiceDescription,String DOCuser ,String DOCpassword,String ApproveNO1, String ApproveNO2,String Service_name_1) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);
 		
 		    
 		KIMS_Limit_Approval_Yasasiiweb price = new KIMS_Limit_Approval_Yasasiiweb(driver);
 		
-		price.EncounterBilling(User, Password, MRNO, ServiceName);
+		price.EncounterBilling(User, Password, MRNO,Service_name_1);
 		
-		price.DoctorNote(DOCuser, DOCpassword, MRNO, ServiceName);
+		price.DoctorNote(DOCuser, DOCpassword, MRNO, Service_name_1);
 		
 		price.CPOEAdministration();
 		

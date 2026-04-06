@@ -605,6 +605,9 @@ public class KIMS_SecondOpinion_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Referral.click();
 		Thread.sleep(600);
+		driver.findElement(By.xpath("//button[normalize-space()='Add New Referral']")).click();
+		Thread.sleep(1000);
+		
 		providername.click();
 		Thread.sleep(600);
 		providername.sendKeys(SecondOpinionProviderID);

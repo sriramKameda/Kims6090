@@ -643,6 +643,11 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 
 		AppSave.click();
 		Thread.sleep(2000);
+		
+	//	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='OK']")));
+		Thread.sleep(3000);
+		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 
@@ -857,7 +862,7 @@ public class KIMS_nursingStationTransfer_YasassiWeb extends PageFactoryInitYasas
 		Thread.sleep(2000);
 
 		PatientInfo.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//i[@class='ki ki-pencil']")).click();
 		Thread.sleep(2000);
 		act.moveToElement(PatientStatus).build().perform();

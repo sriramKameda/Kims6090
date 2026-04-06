@@ -82,7 +82,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 	public void bed() throws InterruptedException {
 
 
-		String  a="A3";
+		String  a="A41";
 
 		
 		Thread.sleep(2000);

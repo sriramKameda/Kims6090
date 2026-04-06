@@ -41,8 +41,8 @@ public class PageFactoryInitYasasiiWeb {
 	public String BiopsyDoctorID ="TVM16508";
 	public String BiopsyTechnician ="REMYA S";
 	public String Plan ="DefaultTVM"; 
-	public String Samplepreparedby ="Aadil M S";
-	public String Sampledespatchby ="Karthik P";
+	public String Samplepreparedby ="AKHILA V T";
+	public String Sampledespatchby ="Abhijith S R";
 	public String OT_PharmacyLocation="OT MAIN";
 	public String SecondNurse="Anitha R (NGL17697)";
 	

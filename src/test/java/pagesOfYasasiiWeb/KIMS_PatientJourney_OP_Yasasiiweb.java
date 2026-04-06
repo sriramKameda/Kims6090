@@ -351,7 +351,7 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		@FindBy(xpath = "//button[@id='billholdsave']")
 		public WebElement holdbillSave;
 
-		@FindBy(xpath = "//button[@id='billingsave']")
+		@FindBy(xpath = "//button[@id='billingsave']//i[@class='ki ki-save']")
 		public WebElement BILLsave;
 
 		@FindBy(xpath = "//div[normalize-space()='Dispensing']")
@@ -1012,8 +1012,12 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(1000);
 		CpoeAdministration.click();
 		Thread.sleep(1000);
-
-		Serviceadmin.click();
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(Serviceadmin));
+		Thread.sleep(3000);
+        Serviceadmin.click();
 		Thread.sleep(1000);
 
 		service1.click();
@@ -1226,6 +1230,11 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		Thread.sleep(2000); 
 		medicineSaveconfirm.click();
 		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(confirmOK));
+		Thread.sleep(2000);
+		
+		
 		confirmOK.click(); 
 		Thread.sleep(3000);
 
@@ -1250,7 +1259,7 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		// driver.findElement(By.xpath("//li[normalize-space()='Bill Hold']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//JavascriptExecutor js= (JavascriptExecutor) driver;
 	
 		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
@@ -1265,11 +1274,11 @@ public class KIMS_PatientJourney_OP_Yasasiiweb  extends PageFactoryInitYasasiiWe
 		//		t.keyPress(KeyEvent.VK_ESCAPE);
 		//		t.keyRelease(KeyEvent.VK_ESCAPE);
 		//		Thread.sleep(1500);
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(confirmOK));
 		Thread.sleep(2000);
 		confirmOK.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		///dispensing 
 

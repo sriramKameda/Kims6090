@@ -451,8 +451,12 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "(//span[@class='option-name'])[1]")
 	public WebElement OrderNo2;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/div[1]/a[1]/span[1]/span[2]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/div[1]/a[3]/span[1]/span[1]/span[1]/i[1]")
 	public WebElement OrderNo1;
+	
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[2]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
+	public WebElement Order;
+	
 
 	@FindBy(xpath="//ki-select-control[@title='Status']//input[@id='undefined']")
 	public WebElement Status1;
@@ -721,7 +725,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		HSSFSheet BirthRegistration=wb.getSheetAt(32);	
 		int i=BirthRegistration.getLastRowNum();
 		System.out.println("Number of rows: " + i);		
-		BirthRegistration.getRow(i).createCell(2).setCellValue(servicename);	
+		BirthRegistration.getRow(i).createCell(15).setCellValue(servicename);	
 		FileOutputStream fout=new FileOutputStream(src);	
 		wb.write(fout);
 		Thread.sleep(2000);	
@@ -732,12 +736,16 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	
 	
 	
-	public void tariff(String ServiceName ,String SubCategory) throws InterruptedException, AWTException {
+	public void tariff(String Service_name_1 ,String SubCategory) throws InterruptedException, AWTException {
 
 
 		Thread.sleep(2000); 
 		Hamberger.click();
 		Thread.sleep(2000); 
+		
+		
+		
+		
 		RCM.click();
 		Thread.sleep(1000); 
 		TariffSetting.click();
@@ -776,9 +784,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000); 
 		Servicename.click();
 		Thread.sleep(1000); 
-		Servicename.sendKeys(ServiceName);
+		Servicename.sendKeys(Service_name_1);
 		Thread.sleep(1000); 
-		driver.findElement(By.xpath("//li[normalize-space()='"+ServiceName+"']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Service_name_1+"']")).click();
 		Thread.sleep(1000); 
 		Coverage.click();
 		Thread.sleep(1000); 
@@ -818,9 +826,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		Tax.click();
 		Thread.sleep(1000);
-		Basecharge.sendKeys("1500");
+		Basecharge.sendKeys("5000");
 		Thread.sleep(1000);
-		ContractCharge.sendKeys("1500");
+		ContractCharge.sendKeys("5000");
 		Thread.sleep(1000);
 
 		JavascriptExecutor js= (JavascriptExecutor) driver;
@@ -1297,7 +1305,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 	}
 
 
-	public void	DoctorNote(String DOCuser ,String DOCpassword , String MRNo,String ServiceName) throws InterruptedException, AWTException, IOException {
+	public void	DoctorNote(String DOCuser ,String DOCpassword , String MRNo,String Service_name_1) throws InterruptedException, AWTException, IOException {
 
 
 		Thread.sleep(3000);
@@ -1436,9 +1444,9 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 
 		CpoeServiceSearch.clear();
 		Thread.sleep(1000);
-		CpoeServiceSearch.sendKeys(ServiceName, Keys.ENTER);
+		CpoeServiceSearch.sendKeys(Service_name_1, Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[normalize-space()='"+ServiceName+"']")).click();
+		driver.findElement(By.xpath("//label[normalize-space()='"+Service_name_1+"']")).click();
 		Thread.sleep(1000);
 		List<WebElement> dynamicElement111=driver.findElements(By.xpath("//div[@class='dailog-btn']//button[@aria-label='Ok'][normalize-space()='Yes']"));
 
@@ -1825,7 +1833,7 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		/////////////////
 
 
-	public void billing_postapprove(String MRNo) throws InterruptedException {
+	public void billing_postapprove(String MRNo) throws InterruptedException, AWTException {
 		
 		Thread.sleep(1000);
 		Hamberger.click();
@@ -1882,13 +1890,21 @@ public class KIMS_Limit_Approval_Yasasiiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(3000);
 
-
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
 
 		//Servive 2
 
-		//		OrderNo1.click();
-		//		Thread.sleep(1000);
-		//		
+		Thread.sleep(1000);
+		Order.click();
+		Thread.sleep(1000);
+		OrderNo1.click();
+		Thread.sleep(1000);
+			
 		Save.click();
 		Thread.sleep(2000);
 		List<WebElement> dynamicElement1111=driver.findElements(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']"));

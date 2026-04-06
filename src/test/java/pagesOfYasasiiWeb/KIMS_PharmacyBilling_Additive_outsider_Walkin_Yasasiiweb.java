@@ -646,6 +646,10 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(600);
 		Save.click();
 		Thread.sleep(1000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(signupload));
+		Thread.sleep(3000);		
 
 		js.executeScript("arguments[0].scrollIntoView();", signupload);
 		Thread.sleep(1000);
@@ -671,6 +675,8 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//button[@id='consentsave'])[1]")).click();
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='OK']")));
+		
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
@@ -678,7 +684,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		
 
 		///////////////encounter
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(billing));
 		Thread.sleep(3000);
 		
@@ -753,7 +759,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 		/////doctornote
 		Thread.sleep(1000);
-	/*swa	Hamberger.click();
+		Hamberger.click();
 		Thread.sleep(1000);
 		EMRhomescreen.click();
 		Thread.sleep(2000);
@@ -887,8 +893,14 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 
 		////////logout
 	WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link dropdown-toggle pro-pic tab-prof-wrap']")));swa*/
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='nav-link dropdown-toggle pro-pic tab-prof-wrap']")));
 
+		
+	}
+	
+	public void Additive_billing(String MRNo ,String site , String User) throws InterruptedException {
+		
+		
 		Thread.sleep(3000);
 		username.click();
 		Thread.sleep(1000);
@@ -907,7 +919,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		site1.click();
 		Thread.sleep(1000);
 
-//			JavascriptExecutor js= (JavascriptExecutor) driver;
+			JavascriptExecutor js= (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
@@ -1014,14 +1026,14 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
-		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
+		//Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
 		Thread.sleep(1000);
 		
-		WebDriverWait wait1 = new WebDriverWait(driver,Duration.ofSeconds(30));
-		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
+		WebDriverWait wait11 = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(2000);
@@ -1158,6 +1170,9 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		Confirm.click();
 		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		Status.click();
@@ -1215,7 +1230,7 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 		
 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")));		
 		Thread.sleep(1000);
 		
@@ -1430,17 +1445,31 @@ public class KIMS_PharmacyBilling_Additive_outsider_Walkin_Yasasiiweb  extends P
 		Thread.sleep(1000);
 
 
-		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
-		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[normalize-space()='Print']//span[@class='checkmark']")).click();
+//		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//button[@id='billingsave']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
+		
+		
+		WebDriverWait wait11 = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='modal ki-dialog fade blockoutside in show']//label[@class='dialog-title'][normalize-space()='Success']")));		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//div[@class='dailog-btn']//button[@type='button'][normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_ESCAPE);
 		t.keyRelease(KeyEvent.VK_ESCAPE);
 		Thread.sleep(1000);
+		
+//		Robot t=new Robot();
+		
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(1000);
+		
+		
 		///dispense	
 
 		Dispensing.click();

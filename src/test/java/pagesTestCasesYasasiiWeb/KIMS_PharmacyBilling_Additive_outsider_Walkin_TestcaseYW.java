@@ -52,7 +52,7 @@ public void additive(String title,String Name,String Lastname,String Dob, String
 		
 	avail.doctorNote(MRNo, site, User);
 	
-
+   avail.Additive_billing(MRNo, site, User);
 }
 
 @Test(dataProvider="getData"  , priority=2)

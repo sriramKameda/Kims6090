@@ -914,7 +914,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		confirmOK.click();
 		Thread.sleep(2000);
 
-	ivstgnStatus.click();
+    	ivstgnStatus.click();
 		Thread.sleep(700);
 		driver.findElement(By.xpath("//li[normalize-space()='Sample Collection Pending - Unbilled']")).click();
 		Thread.sleep(1000);
@@ -1107,7 +1107,7 @@ public class KIMS_PanelService_ExternalLab_Yasasiiweb extends  PageFactoryInitYa
 		CarrierDetails.sendKeys("OK");
 		Thread.sleep(700);
 		EDOR.click();
-	   // Robot t=new Robot();
+//	    Robot t=new Robot();
 		t.keyPress(KeyEvent.VK_RIGHT);
 		t.keyRelease(KeyEvent.VK_RIGHT);
 		Thread.sleep(400);

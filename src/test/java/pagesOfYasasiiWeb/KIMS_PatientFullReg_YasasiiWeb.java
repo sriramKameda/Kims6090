@@ -918,7 +918,7 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		///Remarks
 
 		js.executeScript("arguments[0].scrollIntoView();", remarks);
-		Thread.sleep(600);
+		Thread.sleep(1200);
 		remarks.click();
 		Thread.sleep(600);
 		remarksarea.sendKeys("Patient is suffering from high fever");
@@ -958,7 +958,7 @@ public class KIMS_PatientFullReg_YasasiiWeb  extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(600);
 
 		js.executeScript("arguments[0].scrollIntoView();", Editguardian);
-		Thread.sleep(600);
+		Thread.sleep(1200);
 		Editguardian.click();
 		Thread.sleep(600);
 		Defaultguardian.click();

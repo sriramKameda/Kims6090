@@ -46,6 +46,7 @@ public void BirthReg(String title,String Name,String lastname,String Dob, String
 			
 		}
 
+
 @Test(dataProvider="getData"  , priority=1)
 public void EMRORDRING(String title,String Name,String lastname,String Dob, String DocID, String MobNo,String Address,String MRNo,String Provider ,String DOCuser ,String DOCpassword,String OrdersetName, String adminuser,String adminpassword, String service1,String service2,String service3 ) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(2000);

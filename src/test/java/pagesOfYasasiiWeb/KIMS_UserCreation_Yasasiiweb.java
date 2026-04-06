@@ -1098,8 +1098,24 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 
 		Update.click();
 		Thread.sleep(3000); 
-		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
-		Thread.sleep(1000);
+
+		try {
+			
+			driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+			Thread.sleep(1000);
+			
+		} catch (Exception e) {
+		   
+			Robot t=new Robot();
+			t.keyPress(KeyEvent.VK_ESCAPE);
+			t.keyRelease(KeyEvent.VK_ESCAPE);
+			Thread.sleep(400);
+			t.keyPress(KeyEvent.VK_ESCAPE);
+			t.keyRelease(KeyEvent.VK_ESCAPE);
+
+		} 
+		
+		
 
 		///consult rule mapping
 
@@ -1777,7 +1793,7 @@ public class KIMS_UserCreation_Yasasiiweb   extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);   
 		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);   
-		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+	//	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(5000);
 
 

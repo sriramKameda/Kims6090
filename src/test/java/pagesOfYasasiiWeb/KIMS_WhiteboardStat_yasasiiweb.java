@@ -565,7 +565,7 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("(//*[contains(text(),'"+NurseID+"')])")).click();
 		Thread.sleep(1000);
 		PAssword.click();
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		PAssword.sendKeys(Password);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='verifyuser']")).click();
@@ -621,7 +621,7 @@ public class KIMS_WhiteboardStat_yasasiiweb  extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='Release']")).click();
 		Thread.sleep(1000);
 		verifiedBy.click();
-		Thread.sleep(1000);
+		Thread.sleep(1200);
 		verifiedBy.sendKeys(NurseID);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+NurseID+"')])")).click();

@@ -12,6 +12,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -1303,7 +1304,7 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 //		WaitUtility.waitForElementToBeClickable(driver, selectDefault, 30);
 		selectDefault.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys(Plan);
+		driver.findElement(By.xpath("//input[@placeholder='Search...']")).sendKeys(Plan, Keys.ENTER);
 		Thread.sleep(1000);
 		searchIcon.click();
 		Thread.sleep(1000);
@@ -1311,14 +1312,6 @@ public class KIMS_PackageCreation_Yasassiweb extends PageFactoryInitYasasiiWeb {
 		
 		Thread.sleep(1000);
 	
-//		wait.until(ExpectedConditions.elementToBeClickable(editIconForDefaultPlan));
-//		Thread.sleep(3000);		
-//
-//		JavascriptExecutor js= (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].scrollIntoView();",editIconForDefaultPlan );
-//		Thread.sleep(1000);
-//		
-//		PageUtility.clickJavaScripExcecutor(editIconForDefaultTvm, driver);
 		editIconForDefaultPlan.click();
 		Thread.sleep(1000);
 		packageNameDropdown.click();
